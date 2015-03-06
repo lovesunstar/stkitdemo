@@ -10,9 +10,9 @@
 
 @protocol STDBookViewControllerDelegate <NSObject>
 
-- (void) backViewController;
+- (void)backViewController;
 
-- (void) navigationBarVisibleDidChangeTo:(BOOL) currentVisible;
+- (void)navigationBarVisibleDidChangeTo:(BOOL)currentVisible;
 
 @end
 
@@ -20,8 +20,8 @@
 
 @property (nonatomic, assign) NSInteger page;
 @property (nonatomic, assign) NSInteger total;
-@property (nonatomic, retain) NSString * content;
-@property (nonatomic, assign) BOOL       preferredNavigationBarHidden;
+@property (nonatomic, retain) NSString  *content;
+@property (nonatomic, assign) BOOL      preferredNavigationBarHidden;
 
 @property (nonatomic, weak)   id<STDBookViewControllerDelegate> delegate;
 

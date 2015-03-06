@@ -54,11 +54,11 @@
     CGContextSetTextMatrix(context, CGAffineTransformIdentity);
     CGContextTranslateCTM(context, 0, self.bounds.size.height);
     CGContextScaleCTM(context, 1.0, -1.0);
-    NSDictionary * basicAttributes = self.attributes;
-    NSMutableDictionary * attributes = [NSMutableDictionary dictionaryWithDictionary:basicAttributes];
+    NSDictionary *basicAttributes = self.attributes;
+    NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithDictionary:basicAttributes];
     [attributes setValue:(id)self.foregroundColor forKey:(id)kCTForegroundColorAttributeName];
-    NSAttributedString * attributedString = [[NSAttributedString alloc] initWithString:self.text attributes:attributes];
-    UIBezierPath * bezierPath = [UIBezierPath bezierPathWithRect:rect];
+    NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:self.text attributes:attributes];
+    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRect:rect];
     CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((__bridge CFAttributedStringRef)(attributedString));
     CTFrameRef frame = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, 0), bezierPath.CGPath, NULL);
     CTFrameDraw(frame, context);

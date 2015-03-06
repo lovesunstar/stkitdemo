@@ -18,12 +18,14 @@
 #define PFMatrixMaxSize 4
 
 typedef Float32 STFloat32;
+
 struct PFMatrix {
     NSInteger m;
     NSInteger n;
     
     STFloat32 data[PFMatrixMaxSize][PFMatrixMaxSize];
 };
+
 typedef struct PFMatrix PFMatrix;
 
 

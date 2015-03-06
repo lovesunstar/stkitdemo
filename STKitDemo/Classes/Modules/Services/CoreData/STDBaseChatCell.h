@@ -12,25 +12,24 @@
 
 @interface STDBaseChatCell : UITableViewCell
 
-@property (nonatomic, strong) UIImageView       * avatarView;
-@property (nonatomic, strong) UIView            * chatView;
-@property (nonatomic, strong) UIButton          * bubbleImageView;
+@property(nonatomic, strong) UIImageView *avatarView;
+@property(nonatomic, strong) UIView      *chatView;
+@property(nonatomic, strong) UIButton    *bubbleImageView;
 
 /// This is abstract . subview must override this. default nil
-@property (nonatomic, assign) UIView            * chatContentView;
+@property(nonatomic, assign) UIView      *chatContentView;
 
-@property (nonatomic, weak)   STDMessage        * message;
+@property(nonatomic, weak) STDMessage    *message;
 
 @end
 
+extern NSString *const NXChatCellTextActivityIdentifier;
 
-extern NSString * const NXChatCellTextActivityIdentifier;
+extern NSString *const NXChatCellTextLeftIdentifier;
+extern NSString *const NXChatCellTextRightIdentifier;
 
-extern NSString * const NXChatCellTextLeftIdentifier;
-extern NSString * const NXChatCellTextRightIdentifier;
+extern NSString *const NXChatCellImageLeftIdentifier;
+extern NSString *const NXChatCellImageRightIdentifier;
 
-extern NSString * const NXChatCellImageLeftIdentifier;
-extern NSString * const NXChatCellImageRightIdentifier;
-
-extern NSString * const NXChatCellQuoteLeftIdentifier;
-extern NSString * const NXChatCellQuoteRightIdentifier;
+extern NSString *const NXChatCellQuoteLeftIdentifier;
+extern NSString *const NXChatCellQuoteRightIdentifier;

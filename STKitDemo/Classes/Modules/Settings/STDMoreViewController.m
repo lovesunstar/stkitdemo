@@ -20,7 +20,7 @@
 
 @interface STDMoreViewController ()
 
-@property (nonatomic, strong) NSArray    * dataSource;
+@property (nonatomic, strong) NSArray    *dataSource;
 
 @end
 
@@ -29,7 +29,7 @@
 - (instancetype) initWithStyle:(UITableViewStyle)tableViewStyle {
     self = [super initWithStyle:tableViewStyle];
     if (self) {
-        NSMutableArray * dataSource = [NSMutableArray arrayWithCapacity:5];
+        NSMutableArray *dataSource = [NSMutableArray arrayWithCapacity:5];
 
         STDTableViewCellItem *item00 = [[STDTableViewCellItem alloc] initWithTitle:@"豆瓣妹子" target:self action:@selector(_dbMeiziActionFired)];
         STDTableViewSectionItem *section0 = [[STDTableViewSectionItem alloc] initWithSectionTitle:@"" items:@[item00]];
@@ -37,7 +37,7 @@
         
         STDTableViewCellItem *item30 = [[STDTableViewCellItem alloc] initWithTitle:@"开源组件许可" target:self action:@selector(_openSourceLicenseActionFired)];
         STDTableViewCellItem *item31 = [[STDTableViewCellItem alloc] initWithTitle:@"关于STKit" target:self action:@selector(_aboutActionFired)];
-        STDTableViewSectionItem * section3 = [[STDTableViewSectionItem alloc] initWithSectionTitle:@"" items:@[item30, item31]];
+        STDTableViewSectionItem *section3 = [[STDTableViewSectionItem alloc] initWithSectionTitle:@"" items:@[item30, item31]];
         [dataSource addObject:section3];
         
         STDTableViewCellItem *item40 = [[STDTableViewCellItem alloc] initWithTitle:@"退出" target:self action:@selector(_logoutActionFired)];
@@ -61,7 +61,7 @@
     }
     
     if (self.sideBarController) {
-        UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.autoresizingMask = UIViewAutoresizingFlexibleHeight;
         button.frame = CGRectMake(0, 0, 60, 44);
         [button setImage:[UIImage imageNamed:@"nav_menu_normal.png"] forState:UIControlStateNormal];
@@ -89,12 +89,12 @@
 }
 
 - (void)_dbMeiziActionFired {
-    STDBigViewController * viewController = [[STDBigViewController alloc] init];
+    STDBigViewController *viewController = [[STDBigViewController alloc] init];
     [self.customNavigationController pushViewController:viewController animated:YES];
 }
 
 - (void)_aboutActionFired {
-    STDAboutViewController * aboutViewController = [[STDAboutViewController alloc] initWithNibName:nil bundle:nil];
+    STDAboutViewController *aboutViewController = [[STDAboutViewController alloc] initWithNibName:nil bundle:nil];
     [self.customNavigationController pushViewController:aboutViewController animated:YES];
 }
 
@@ -113,7 +113,7 @@
 }
 
 - (void)_logoutActionFired {
-    STDAppDelegate * appDelegate = (STDAppDelegate *)[UIApplication sharedApplication].delegate;
+    STDAppDelegate *appDelegate = (STDAppDelegate *)[UIApplication sharedApplication].delegate;
     [appDelegate replaceRootViewController:[appDelegate startViewController] animationOptions:UIViewAnimationOptionTransitionFlipFromRight];
 }
 

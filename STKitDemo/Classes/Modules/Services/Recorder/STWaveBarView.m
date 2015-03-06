@@ -11,22 +11,22 @@
 #import <QuartzCore/CADisplayLink.h>
 
 @interface STWaveBarView () {
-    CADisplayLink * _displayLink;
-    STWaveAnalysis * _analysis;
-    NSArray * _frequency;
+    CADisplayLink   *_displayLink;
+    STWaveAnalysis  *_analysis;
+    NSArray         *_frequency;
     
-    CFAbsoluteTime _updatedTime;
+    CFAbsoluteTime  _updatedTime;
     
-    CGFloat _scaleFactor;
+    CGFloat         _scaleFactor;
 }
 
-@property (nonatomic, strong) NSMutableArray * heightArray;
+@property (nonatomic, strong) NSMutableArray *heightArray;
 
 @end
 
 @implementation STWaveBarView
 
-+ (Class) layerClass {
++ (Class)layerClass {
     return [CAEAGLLayer class];
 }
 
@@ -81,13 +81,13 @@
     return self;
 }
 
-- (void) setFrame:(CGRect)frame {
+- (void)setFrame:(CGRect)frame {
     [super setFrame:frame];
     _analysis.constraintsHeight = frame.size.height - 30;
     
 }
 
-- (void) appendDataWithAudioBuffer:(AudioQueueBufferRef) bufferRef {
+- (void)appendDataWithAudioBuffer:(AudioQueueBufferRef) bufferRef {
     if (!bufferRef || bufferRef->mAudioDataByteSize < self.channels * FFT_BUFFER_SIZE) {
         [_displayLink invalidate];
         _displayLink = nil;
@@ -101,8 +101,8 @@
         _updatedTime = CFAbsoluteTimeGetCurrent();
     }
 
-    NSData * data = [NSData dataWithBytes:bufferRef->mAudioData length:bufferRef->mAudioDataByteSize];
-    NSArray * heights = [_analysis heightForBarWithData:data channels:self.channels constraintsFrequency:_frequency];
+    NSData *data = [NSData dataWithBytes:bufferRef->mAudioData length:bufferRef->mAudioDataByteSize];
+    NSArray *heights = [_analysis heightForBarWithData:data channels:self.channels constraintsFrequency:_frequency];
     [heights enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         CGFloat old = [[self.heightArray objectAtIndex:idx] floatValue];
         CGFloat new = [obj floatValue];
@@ -112,15 +112,17 @@
 }
 
 
-- (void) reset {
+- (void)reset {
     [self.heightArray removeAllObjects];
     for (int i = 0; i < _frequency.count - 1; i ++) {
         [self.heightArray addObject:@(0.0f)];
     }
 }
 
-- (void) drawMediaWithWaveInfo:(NSDictionary *) userInfo {
-    if (!_frameBuffer) return;
+- (void)drawMediaWithWaveInfo:(NSDictionary *) userInfo {
+    if (!_frameBuffer) {
+        return;
+    }
 	[EAGLContext setCurrentContext:_context];
 	glBindFramebufferOES(GL_FRAMEBUFFER_OES, _frameBuffer);
 	glClear(GL_COLOR_BUFFER_BIT);
@@ -148,7 +150,7 @@
 	[_context presentRenderbuffer:GL_RENDERBUFFER_OES];
 }
 
-- (void) paintRunLoop:(id) sender{
+- (void)paintRunLoop:(id)sender {
     [self drawMediaWithWaveInfo:nil];
     CFAbsoluteTime currentTime = CFAbsoluteTimeGetCurrent();
     // 下落高度
@@ -173,7 +175,7 @@
     _updatedTime = currentTime;
 }
 
-- (void) setInterfaceOrientation:(UIInterfaceOrientation) orientation {
+- (void)setInterfaceOrientation:(UIInterfaceOrientation) orientation {
     if (UIInterfaceOrientationIsPortrait(orientation)) {
         _frequency = @[@(0), @(1), @(2), @(3), @(5), @(7), @(10), @(14), @(20), @(28), @(40), @(54), @(74), @(101), @(137), @(187), @(255)];
     } else {
@@ -185,7 +187,7 @@
     }
 }
 
-- (BOOL) createFramebuffer {
+- (BOOL)createFramebuffer {
     
 	glGenFramebuffersOES(1, &_frameBuffer);
 	glGenRenderbuffersOES(1, &_renderBuffer);
@@ -205,7 +207,7 @@
 	return YES;
 }
 
-- (void) setupView {
+- (void)setupView {
 	// Sets up matrices and transforms for OpenGL ES
 	glViewport(0, 0, _backingWidth, _backingHeight);
 	glMatrixMode(GL_PROJECTION);
@@ -217,7 +219,7 @@
 	
 }
 
-- (void) destroyFramebuffer {
+- (void)destroyFramebuffer {
 	glDeleteFramebuffersOES(1, &_frameBuffer);
 	_frameBuffer = 0;
 	glDeleteRenderbuffersOES(1, &_renderBuffer);
@@ -225,7 +227,7 @@
 	
 }
 
-- (void) layoutSubviews {
+- (void)layoutSubviews {
     [EAGLContext setCurrentContext:_context];
 	[self destroyFramebuffer];
 	[self createFramebuffer];
@@ -235,14 +237,14 @@
 	glOrthof(0, _backingWidth, 0, _backingHeight, -1.0f, 1.0f);
 }
 
-- (void) appliationWillResignActive:(id) sender {
+- (void)appliationWillResignActive:(id)sender {
     // invalidate displaylink when resign active
     [_displayLink invalidate];
     _displayLink = nil;
 	[self destroyFramebuffer];
 }
 
-- (void) applicationDidBecomeActive:(id) sender {
+- (void)applicationDidBecomeActive:(id)sender {
     [self createFramebuffer];
     // start the displaylink
 }

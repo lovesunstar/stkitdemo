@@ -12,18 +12,18 @@
 
 @interface STAHanoiView ()
 
-@property (nonatomic, strong) UIView * columnView1;
-@property (nonatomic, strong) UIView * columnView2;
-@property (nonatomic, strong) UIView * columnView3;
+@property (nonatomic, strong) UIView *columnView1;
+@property (nonatomic, strong) UIView *columnView2;
+@property (nonatomic, strong) UIView *columnView3;
 
 @property (nonatomic, assign) CGFloat  baseWidth;
 @property (nonatomic, assign) CGFloat  baseHeight;
 
-@property (nonatomic, strong) NSMutableArray * hanoiViewArray;
+@property (nonatomic, strong) NSMutableArray *hanoiViewArray;
 
-@property (nonatomic, strong) NSMutableArray * columnHanoi1;
-@property (nonatomic, strong) NSMutableArray * columnHanoi2;
-@property (nonatomic, strong) NSMutableArray * columnHanoi3;
+@property (nonatomic, strong) NSMutableArray *columnHanoi1;
+@property (nonatomic, strong) NSMutableArray *columnHanoi2;
+@property (nonatomic, strong) NSMutableArray *columnHanoi3;
 
 @property (nonatomic, assign) CGFloat hanoiHeight;
 @property (nonatomic, assign) CGFloat verticalMargin;
@@ -66,20 +66,20 @@ const NSInteger kSTDiskTagOffset = 100;
     CGRect frame = self.frame;
     self.baseWidth = CGRectGetWidth(frame) / 3;
     self.baseHeight = CGRectGetHeight(frame) * 2 / 3;
-    self.columnView1.frame = CGRectMake( self.baseWidth * 0.5 - 3, CGRectGetHeight(frame) - self.baseHeight, 6, self.baseHeight);
-    self.columnView2.frame = CGRectMake( self.baseWidth * 1.5 - 3, CGRectGetHeight(frame) - self.baseHeight, 6,  self.baseHeight);
+    self.columnView1.frame = CGRectMake(self.baseWidth * 0.5 - 3, CGRectGetHeight(frame) - self.baseHeight, 6, self.baseHeight);
+    self.columnView2.frame = CGRectMake(self.baseWidth * 1.5 - 3, CGRectGetHeight(frame) - self.baseHeight, 6,  self.baseHeight);
     self.columnView3.frame = CGRectMake(self.baseWidth * 2.5 - 3, CGRectGetHeight(frame) - self.baseHeight, 6, self.baseHeight);
     
     CGFloat height = MIN(self.baseHeight / _numberOfHanois, 15);
     self.hanoiHeight = height;
     CGFloat increment = MIN(30, (self.baseWidth - 20) / _numberOfHanois);
-    [self.hanoiViewArray enumerateObjectsUsingBlock:^(UIView * subview, NSUInteger idx, BOOL *stop) {
+    [self.hanoiViewArray enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
         CGRect frame = subview.frame;
         frame.size.width = self.baseWidth - idx * increment;
         subview.frame = frame;
     }];
     
-    [self.columnHanoi1 enumerateObjectsUsingBlock:^(UIView * subview, NSUInteger idx, BOOL *stop) {
+    [self.columnHanoi1 enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
         CGPoint center = subview.center;
         center.x = self.baseWidth * (0 + 0.5);
         CGFloat centerY = CGRectGetHeight(self.bounds) - idx * self.hanoiHeight - (self.hanoiHeight + 5) / 2 + 5;
@@ -87,7 +87,7 @@ const NSInteger kSTDiskTagOffset = 100;
         subview.center = center;
     }];
     
-    [self.columnHanoi2 enumerateObjectsUsingBlock:^(UIView * subview, NSUInteger idx, BOOL *stop) {
+    [self.columnHanoi2 enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
         CGPoint center = subview.center;
         center.x = self.baseWidth * (1 + 0.5);
         CGFloat centerY = CGRectGetHeight(self.bounds) - idx * self.hanoiHeight - (self.hanoiHeight + 5) / 2 + 5;
@@ -95,7 +95,7 @@ const NSInteger kSTDiskTagOffset = 100;
         subview.center = center;
     }];
     
-    [self.columnHanoi3 enumerateObjectsUsingBlock:^(UIView * subview, NSUInteger idx, BOOL *stop) {
+    [self.columnHanoi3 enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
         CGPoint center = subview.center;
         center.x = self.baseWidth * (2 + 0.5);
         CGFloat centerY = CGRectGetHeight(self.bounds) - idx * self.hanoiHeight - (self.hanoiHeight + 5) / 2 + 5;
@@ -104,8 +104,8 @@ const NSInteger kSTDiskTagOffset = 100;
     }];
 }
 
-- (void) reloadHanoiView {
-    [self.hanoiViewArray enumerateObjectsUsingBlock:^(UIView * subview, NSUInteger idx, BOOL *stop) {
+- (void)reloadHanoiView {
+    [self.hanoiViewArray enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
         [subview removeFromSuperview];
     }];
     [self.hanoiViewArray removeAllObjects];
@@ -129,10 +129,10 @@ const NSInteger kSTDiskTagOffset = 100;
     }
 }
 
-- (void) moveDiskAtIndex:(NSInteger) index
+- (void)moveDiskAtIndex:(NSInteger) index
                 toIndex:(NSInteger)  toIndex
-                duration:(NSTimeInterval) duration
-              completion:(void(^)(BOOL finished)) completion {
+               duration:(NSTimeInterval) duration
+             completion:(void(^)(BOOL finished)) completion {
     NSMutableArray * array1, * array2 = nil;
     switch (index) {
         case 0:
@@ -160,7 +160,7 @@ const NSInteger kSTDiskTagOffset = 100;
         default:
             break;
     }
-    UIView * view = [array1 lastObject];
+    UIView *view = [array1 lastObject];
     [array1 removeObject:view];
     CGPoint center = [self centerForHanoiAtColumn:toIndex];
     if (view) {
@@ -175,12 +175,12 @@ const NSInteger kSTDiskTagOffset = 100;
     }];
 }
 
-- (void) setNumberOfHanois:(NSInteger)numberOfHanois {
+- (void)setNumberOfHanois:(NSInteger)numberOfHanois {
     _numberOfHanois = numberOfHanois;
     [self reloadHanoiView];
 }
 
-- (CGPoint) centerForHanoiAtColumn:(NSInteger) column {
+- (CGPoint)centerForHanoiAtColumn:(NSInteger) column {
     NSArray * array = nil;
     switch (column) {
         case 0:

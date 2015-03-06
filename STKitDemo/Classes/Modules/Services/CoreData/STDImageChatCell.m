@@ -33,13 +33,13 @@ void trim(NSString * arg0) {
             contentFrame = CGRectMake(5, 4, 4, 10);
         }
         
-        UIImage * bubbleImage = [[UIImage imageNamed:bubbleImageName] resizableImageWithCapInsets:UIEdgeInsetsMake(30, 15, 10, 15) resizingMode:UIImageResizingModeStretch];
+        UIImage *bubbleImage = [[UIImage imageNamed:bubbleImageName] resizableImageWithCapInsets:UIEdgeInsetsMake(30, 15, 10, 15) resizingMode:UIImageResizingModeStretch];
         self.bubbleImageView.adjustsImageWhenHighlighted = NO;
         self.bubbleImageView.adjustsImageWhenDisabled = NO;
         self.bubbleImageView.userInteractionEnabled = NO;
         [self.bubbleImageView setBackgroundImage:bubbleImage forState:UIControlStateNormal];
         
-        STImageView * contentImageView = [[STImageView alloc] initWithFrame:contentFrame];
+        STImageView *contentImageView = [[STImageView alloc] initWithFrame:contentFrame];
         contentImageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         contentImageView.clipsToBounds = YES;
         contentImageView.contentMode = UIViewContentModeScaleAspectFill;
@@ -51,9 +51,9 @@ void trim(NSString * arg0) {
     return self;
 }
 
-- (void) setMessage:(STDMessage *)message {
+- (void)setMessage:(STDMessage *)message {
     [super setMessage:message];
-    STImageView * chatImageView = (STImageView *) self.chatContentView;
+    STImageView *chatImageView = (STImageView *) self.chatContentView;
     chatImageView.image = [UIImage imageNamed:message.image.imageURL];
 }
 @end

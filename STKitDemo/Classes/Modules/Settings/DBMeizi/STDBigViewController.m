@@ -14,7 +14,7 @@
 
 @property (nonatomic, strong) IBOutlet SUNSlideSwitchView *slideSwitchView;
 
-@property (nonatomic, strong) NSArray * dataSource;
+@property (nonatomic, strong) NSArray *dataSource;
 
 @end
 
@@ -27,7 +27,7 @@
 - (instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        NSArray * configs = @[
+        NSArray *configs = @[
                               @{@"title":@"所有", @"method":@"category/10"},
                               @{@"title":@"性感", @"method":@"category/1"},
                               @{@"title":@"有沟", @"method":@"category/2"},
@@ -36,7 +36,7 @@
                               @{@"title":@"文艺", @"method":@"category/12"},
                               @{@"title":@"美臀", @"method":@"category/14"},
                               ];
-        NSMutableArray * dataSource = [NSMutableArray arrayWithCapacity:5];
+        NSMutableArray *dataSource = [NSMutableArray arrayWithCapacity:5];
         [configs enumerateObjectsUsingBlock:^(NSDictionary * obj, NSUInteger idx, BOOL *stop) {
             STDBeautyViewController * viewController = [[STDBeautyViewController alloc] init];
             viewController.title = [obj valueForKey:@"title"];
@@ -89,7 +89,7 @@ static STDBeautyViewController * previousViewController;
         return;
     }
     [previousViewController cancelFetchData];
-    STDBeautyViewController * beautyViewController = self.dataSource[number];
+    STDBeautyViewController *beautyViewController = self.dataSource[number];
     [beautyViewController fetchDataFromRemote];
     previousViewController = beautyViewController;
 
@@ -97,7 +97,7 @@ static STDBeautyViewController * previousViewController;
 
 - (void) didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
     [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
-    [self.dataSource enumerateObjectsUsingBlock:^(UIViewController * obj, NSUInteger idx, BOOL *stop) {
+    [self.dataSource enumerateObjectsUsingBlock:^(UIViewController *obj, NSUInteger idx, BOOL *stop) {
         if (obj.isViewLoaded) {
             [obj didRotateFromInterfaceOrientation:fromInterfaceOrientation];
         }
@@ -107,7 +107,7 @@ static STDBeautyViewController * previousViewController;
 - (void) viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
     [previousViewController viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
-    [self.dataSource enumerateObjectsUsingBlock:^(UIViewController * obj, NSUInteger idx, BOOL *stop) {
+    [self.dataSource enumerateObjectsUsingBlock:^(UIViewController *obj, NSUInteger idx, BOOL *stop) {
         if (obj.isViewLoaded) {
             [obj viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
         }

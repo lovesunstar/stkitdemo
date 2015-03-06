@@ -22,6 +22,6 @@ typedef enum STArraySortType {
 @interface STASortViewController : STDViewController
 
 @property (nonatomic, assign) STArraySortType arraySortType;
-@property (nonatomic, strong) NSArray       * sortArray;
+@property (nonatomic, strong) NSArray       *sortArray;
 
 @end

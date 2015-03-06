@@ -10,41 +10,41 @@
 	<string>STKitDemo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>17613CBE-F1EF-4D26-9351-4F907DD11829</key>
-		<string>https://bitbucket.org/lovesunstar/stkit.git</string>
-		<key>1FEF3B6F-BB43-4D50-A0E4-828D44217147</key>
-		<string>https://bitbucket.org/lovesunstar/stkitdemo.git</string>
+		<key>03ECE2F4BC552402D85D7774A1929E9D975DC479</key>
+		<string>https://bitbucket.org/lovesunstar/stworkspace.git</string>
+		<key>93F17692AE8DF408ED5A68D4BDC744C439474B38</key>
+		<string>https://github.com/lovesunstar/stkitdemo.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>STKitDemo.xcodeproj/project.xcworkspace</string>
+	<string>STKitDemo.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>17613CBE-F1EF-4D26-9351-4F907DD11829</key>
-		<string>../../../stkit</string>
-		<key>1FEF3B6F-BB43-4D50-A0E4-828D44217147</key>
+		<key>03ECE2F4BC552402D85D7774A1929E9D975DC479</key>
+		<string>../../..</string>
+		<key>93F17692AE8DF408ED5A68D4BDC744C439474B38</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://bitbucket.org/lovesunstar/stkitdemo.git</string>
+	<string>https://github.com/lovesunstar/stkitdemo.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>1FEF3B6F-BB43-4D50-A0E4-828D44217147</string>
+	<string>93F17692AE8DF408ED5A68D4BDC744C439474B38</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>17613CBE-F1EF-4D26-9351-4F907DD11829</string>
+			<string>03ECE2F4BC552402D85D7774A1929E9D975DC479</string>
 			<key>IDESourceControlWCCName</key>
-			<string>stkit</string>
+			<string></string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>1FEF3B6F-BB43-4D50-A0E4-828D44217147</string>
+			<string>93F17692AE8DF408ED5A68D4BDC744C439474B38</string>
 			<key>IDESourceControlWCCName</key>
 			<string>stkitdemo</string>
 		</dict>

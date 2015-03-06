@@ -48,7 +48,7 @@
 }
 
 - (IBAction)navigationOffsetValueChanged:(UISlider *)sender {
-    sender.value = (NSInteger) sender.value;
+    sender.value = (NSInteger)sender.value;
     [[NSUserDefaults standardUserDefaults] setValue:@(sender.value) forKey:@"STDNavigationDefaultOffset"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"STDNavigationDefaultOffset" object:nil];

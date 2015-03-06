@@ -12,22 +12,22 @@ extern CGFloat const STDChatInputViewDefaultHeight;
 
 @interface STDChatInputView : UIView
 
-@property (nonatomic, copy) NSString * text;
-@property (nonatomic, weak) UIView * parentView;
-@property (nonatomic, readonly, strong) UITextView * textView;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic, weak) UIView   *parentView;
+@property (nonatomic, readonly, strong) UITextView *textView;
 
-- (instancetype) initWithSuperView:(UIView *) superView;
+- (instancetype)initWithSuperView:(UIView *)superView;
 
-@property (nonatomic, readonly, strong) UIButton * pickButton;
-@property (nonatomic, readonly, strong) UIButton * sendButton;
+@property (nonatomic, readonly, strong) UIButton *pickButton;
+@property (nonatomic, readonly, strong) UIButton *sendButton;
 
 - (NSString *) text;
 
 - (void) sizeToFit;
 @end
 
-extern NSString * const STDChatInputViewDidChangeNotification;
+extern NSString *const STDChatInputViewDidChangeNotification;
 
-extern NSString * const STDChatInputViewAnimationDurationUserInfoKey;
-extern NSString * const STDChatInputViewKeyboardHiddenUserInfoKey;
-extern NSString * const STDChatInputViewFrameUserInfoKey;
+extern NSString *const STDChatInputViewAnimationDurationUserInfoKey;
+extern NSString *const STDChatInputViewKeyboardHiddenUserInfoKey;
+extern NSString *const STDChatInputViewFrameUserInfoKey;

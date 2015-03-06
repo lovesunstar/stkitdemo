@@ -25,7 +25,7 @@ typedef enum STSortOperationType {
 @property (nonatomic, assign) NSTimeInterval duration;
 @property (nonatomic, assign) NSInteger index1;
 @property (nonatomic, assign) NSInteger index2;
-@property (nonatomic, weak)   STASortView  * sortView;
+@property (nonatomic, weak)   STASortView  *sortView;
 @property (nonatomic, assign) STSortOperationType operationType;
 
 @end

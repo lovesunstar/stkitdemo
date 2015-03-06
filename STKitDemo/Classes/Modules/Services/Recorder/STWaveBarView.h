@@ -25,18 +25,18 @@ typedef enum STWaveStyle {
 	GLint               _backingHeight;
     GLuint              _renderBuffer;
     GLuint              _frameBuffer;
-	EAGLContext     *   _context;
+	EAGLContext         *_context;
 }
 
-@property (nonatomic, assign) NSInteger channels;
+@property(nonatomic, assign) NSInteger channels;
 
-@property (nonatomic, assign) STWaveStyle waveStyle;
+@property(nonatomic, assign) STWaveStyle waveStyle;
 
-- (void) appendDataWithAudioBuffer:(AudioQueueBufferRef) bufferRef;
+- (void)appendDataWithAudioBuffer:(AudioQueueBufferRef)bufferRef;
 
-- (void) reset;
+- (void)reset;
 
-- (void) setInterfaceOrientation:(UIInterfaceOrientation) orientation;
+- (void)setInterfaceOrientation:(UIInterfaceOrientation)orientation;
 
 @end
 

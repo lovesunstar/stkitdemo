@@ -129,8 +129,8 @@
 
 
 - (void)_cleanActionFired {
-    NSFileManager * manager = [NSFileManager defaultManager];
-    NSString * imagePath = STImageCacheDirectory();
+    NSFileManager *manager = [NSFileManager defaultManager];
+    NSString *imagePath = STImageCacheDirectory();
     if ([manager fileExistsAtPath:imagePath isDirectory:NULL]) {
         CGFloat size = [[[manager attributesOfItemAtPath:imagePath error:nil] valueForKey:NSFileSize] floatValue];
         [manager removeItemAtPath:imagePath error:nil];
@@ -145,15 +145,15 @@
 }
 
 - (void)_deleteAllMessages {
-    STIndicatorView * indicatorView = [STIndicatorView showInView:self.view animated:YES];
+    STIndicatorView *indicatorView = [STIndicatorView showInView:self.view animated:YES];
     indicatorView.textLabel.text = @"删除中";
     indicatorView.blurEffectStyle = STBlurEffectStyleDark;
     indicatorView.forceSquare = YES;
-    [[STCoreDataManager defaultDataManager] performBlockOnMainThread:^(NSManagedObjectContext * context) {
-        NSFetchRequest * fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"STDMessage"];
-        NSArray * messages = [context executeFetchRequest:fetchRequest error:nil];
+    [[STCoreDataManager defaultDataManager] performBlockOnMainThread:^(NSManagedObjectContext *context) {
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"STDMessage"];
+        NSArray *messages = [context executeFetchRequest:fetchRequest error:nil];
         if (messages.count > 0) {
-            [messages enumerateObjectsUsingBlock:^(STDMessage * obj, NSUInteger idx, BOOL *stop) {
+            [messages enumerateObjectsUsingBlock:^(STDMessage *obj, NSUInteger idx, BOOL *stop) {
                 [context deleteObject:obj];
             }];
             [[STCoreDataManager defaultDataManager] saveManagedObjectContext:context error:nil];
@@ -166,7 +166,7 @@
 }
 
 - (void)_navigationSettingActionFired {
-    STDNavigationSettingViewController * settingViewController = [[STDNavigationSettingViewController alloc] initWithNibName:nil bundle:nil];
+    STDNavigationSettingViewController *settingViewController = [[STDNavigationSettingViewController alloc] initWithNibName:nil bundle:nil];
     [self.customNavigationController pushViewController:settingViewController animated:YES];
 }
 

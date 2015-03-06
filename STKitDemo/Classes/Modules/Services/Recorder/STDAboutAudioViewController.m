@@ -11,7 +11,7 @@
 
 @interface STDAboutAudioViewController ()
 
-@property (nonatomic, strong) STLinkLabel       * linkLabel;
+@property (nonatomic, strong) STLinkLabel       *linkLabel;
 
 @end
 

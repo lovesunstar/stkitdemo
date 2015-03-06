@@ -10,8 +10,8 @@
 
 @interface STRichView : UIView
 
-@property (nonatomic, strong) UIColor * foregroundColor;
-@property (nonatomic, strong) NSDictionary * attributes;
+@property(nonatomic, strong) UIColor *foregroundColor;
+@property(nonatomic, strong) NSDictionary *attributes;
 
-@property (nonatomic, copy)   NSString * text;
+@property(nonatomic, copy)   NSString *text;
 @end

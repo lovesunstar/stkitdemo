@@ -30,7 +30,7 @@
         NSArray * array = @[@(20),@(6),@(2),@(8),@(9),@(12), @(2), @(4), @(3), @(4), @(7), @(11)];
         self.sortArray = array;
         
-        NSMutableArray * dataSource = [NSMutableArray arrayWithCapacity:2];
+        NSMutableArray *dataSource = [NSMutableArray arrayWithCapacity:2];
         
         STDTableViewCellItem *item00 = [[STDTableViewCellItem alloc] initWithTitle:@"冒泡排序" target:self action:@selector(_bubbleSortActionFired)];
         STDTableViewCellItem *item01 = [[STDTableViewCellItem alloc] initWithTitle:@"选择排序" target:self action:@selector(_selectSortActionFired)];
@@ -54,9 +54,9 @@
     self.clearsSelectionOnViewWillAppear = YES;
     self.navigationItem.title = @"算法分析";
         
-    UIView * tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 90)];
+    UIView *tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 90)];
     
-    UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, 80, 30)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, 80, 30)];
     label.textAlignment = NSTextAlignmentLeft;
     label.text = @"速度比例";
     label.textColor = [UIColor blackColor];
@@ -69,7 +69,7 @@
         [[NSUserDefaults standardUserDefaults] setValue:speed forKey:@"STMoveAnimationDuration"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
-    UISlider * slider = [[UISlider alloc] initWithFrame:CGRectMake(100, 10, 200, 30)];
+    UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake(100, 10, 200, 30)];
     [tableHeaderView addSubview:slider];
     slider.minimumValue = 0.2;
     slider.maximumValue = 1.2;
@@ -77,7 +77,7 @@
     slider.continuous = NO;
     [slider addTarget:self action:@selector(speedChanged:) forControlEvents:UIControlEventValueChanged];
     
-    UILabel * label2 = [[UILabel alloc] initWithFrame:CGRectMake(20, 50, 80, 30)];
+    UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(20, 50, 80, 30)];
     label2.textAlignment = NSTextAlignmentLeft;
     label2.text = @"汉诺塔数";
     label2.backgroundColor = [UIColor clearColor];
@@ -110,20 +110,20 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)speedChanged:(UISlider *) slider {
+- (void)speedChanged:(UISlider *)slider {
     NSUserDefaults * userDefault = [NSUserDefaults standardUserDefaults];
     [userDefault setValue:@(slider.value) forKey:@"STMoveAnimationDuration"];
     [userDefault synchronize];
 }
 
-- (void) updateNumberOfDisks:(NSInteger) numberOfDisks {
+- (void)updateNumberOfDisks:(NSInteger)numberOfDisks {
     self.numberOfDisks = numberOfDisks;
     self.numberOfHanoiDiskLabel.text = [NSString stringWithFormat:@"%ld", (long)numberOfDisks];
     [[NSUserDefaults standardUserDefaults] setValue:@(numberOfDisks) forKey:@"STNumberOfHanoiDisks"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-- (void) numberOfDiskChanged:(UIStepper *) sender {
+- (void)numberOfDiskChanged:(UIStepper *)sender {
     [self updateNumberOfDisks:sender.value];
 }
 

@@ -17,15 +17,15 @@ typedef enum STDChatViewDirection {
 @class STDMessage;
 @interface STDChat : NSObject
 
-+ (NSDictionary *) availableTypeIdentifiers;
-+ (NSString *)     identifierForMessageType:(int) messageType;
++ (NSDictionary *)availableTypeIdentifiers;
++ (NSString *)identifierForMessageType:(int)messageType;
 
-+ (CGRect) convertRect:(CGRect ) rect0
-         fromDirection:(STDChatViewDirection) fromDirection
-           toDirection:(STDChatViewDirection) toDirection;
++ (CGRect)convertRect:(CGRect )rect0
+        fromDirection:(STDChatViewDirection)fromDirection
+          toDirection:(STDChatViewDirection)toDirection;
 
-+ (CGFloat) heightForMessageWithEntity:(STDMessage *) messageEntity
-                            identifier:(NSString **) identifier
-                          chatViewRect:(CGRect *) chatViewRect;
++ (CGFloat)heightForMessageWithEntity:(STDMessage *)messageEntity
+                           identifier:(NSString **)identifier
+                         chatViewRect:(CGRect *)chatViewRect;
 
 @end

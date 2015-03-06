@@ -44,7 +44,7 @@
 }
 
 - (void) loadDataWithPage:(NSInteger)page size:(NSInteger)size completionHandler:(STDFeedLoadHandler)completionHandler {
-    NSDictionary * parameters = @{@"p":@(page)};
+    NSDictionary *parameters = @{@"p":@(page)};
     [[STDBNetwork sharedNetwork] fetchDBFeedWithMethod:self.method parameters:parameters completionHandler:^(NSArray *feeds, BOOL hasMore, NSError *error) {
         if (completionHandler) {
             completionHandler(feeds, hasMore, error);   

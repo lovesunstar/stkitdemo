@@ -25,17 +25,17 @@
 
 @interface STDChatViewController () <NSFetchedResultsControllerDelegate, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate>
 
-@property (nonatomic, strong) NSFetchedResultsController * fetchedResultsController;
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
-@property (nonatomic, strong) NSArray * textContent;
-@property (nonatomic, strong) NSArray * imageContent;
+@property (nonatomic, strong) NSArray   *textContent;
+@property (nonatomic, strong) NSArray   *imageContent;
 
-@property (nonatomic, strong) STDChatInputView * chatInputView;
+@property (nonatomic, strong) STDChatInputView  *chatInputView;
+
 @property (nonatomic, assign) BOOL      needScrollBottom;
-
 @property (nonatomic, assign) BOOL      tableViewEditing;
 
-@property (nonatomic, strong) NSMutableArray   * selectedManagedObjects;
+@property (nonatomic, strong) NSMutableArray   *selectedManagedObjects;
 @end
 
 NSString *const STDChatUserDefaultID = @"97676901";
@@ -52,8 +52,8 @@ NSString *const STDChatSystemDefaultID = @"97676900";
     self = [super initWithStyle:UITableViewStyleGrouped];
     if (self) {
         self.hidesBottomBarWhenPushed = YES;
-        NSFetchRequest * fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"STDMessage"];
-        NSSortDescriptor * sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"time" ascending:YES];
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"STDMessage"];
+        NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"time" ascending:YES];
         fetchRequest.sortDescriptors = @[sortDescriptor];
         self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest sectionNameKeyPath:nil cacheName:nil];
         [self.fetchedResultsController performFetch:nil];
@@ -75,7 +75,7 @@ NSString *const STDChatSystemDefaultID = @"97676900";
     return self;
 }
 
-- (STDUser *) createUserIfNotExistWithID:(NSString *) userId inManageObjectContext:(NSManagedObjectContext *) managedObjectContext {
+- (STDUser *)createUserIfNotExistWithID:(NSString *) userId inManageObjectContext:(NSManagedObjectContext *) managedObjectContext {
     NSFetchRequest * fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"STDUser"];
     fetchRequest.predicate = [NSPredicate predicateWithFormat:@"uid=%@", userId];
     NSArray * users = [managedObjectContext executeFetchRequest:fetchRequest error:nil];
@@ -123,7 +123,7 @@ NSString *const STDChatSystemDefaultID = @"97676900";
     self.scrollDirector.refreshControl.enabled = NO;
 }
 
-- (void) viewWillDisappear:(BOOL)animated {
+- (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     if (self.tableView.editing) {
         [self.tableView setEditing:NO animated:animated];
@@ -162,30 +162,30 @@ NSString *const STDChatSystemDefaultID = @"97676900";
     }];
 }
 
-- (void) saveMessageInBackground:(id) sender {
+- (void)saveMessageInBackground:(id) sender {
     NSString * text = [self.chatInputView.text stringByTrimingWhitespace];
     self.chatInputView.text = nil;
     if (text.length == 0) {
         return;
     }
     
-    [[STCoreDataManager defaultDataManager] performBlockInBackground:^(NSManagedObjectContext * managedObjectContext) {
+    [[STCoreDataManager defaultDataManager] performBlockInBackground:^(NSManagedObjectContext *managedObjectContext) {
         {
-            STDUser * user = [self createUserIfNotExistWithID:STDChatUserDefaultID inManageObjectContext:managedObjectContext];
-            STDMessage * message = (STDMessage *)[managedObjectContext entityClassFromString:@"STDMessage" name:@"STDMessage"];
+            STDUser *user = [self createUserIfNotExistWithID:STDChatUserDefaultID inManageObjectContext:managedObjectContext];
+            STDMessage *message = (STDMessage *)[managedObjectContext entityClassFromString:@"STDMessage" name:@"STDMessage"];
             message.from = user;
             message.type = STDMessageTypeText;
             message.content = text;
             message.time = [[NSDate date] timeIntervalSince1970];
-            NSString * identifier;
+            NSString *identifier;
             CGRect chatViewRect;
             CGFloat height = [STDChat heightForMessageWithEntity:message identifier:&identifier chatViewRect:&chatViewRect];
             message.height = height;
             message.identifier = identifier;
             message.chatViewRect = NSStringFromCGRect(chatViewRect);
         }
-        STDUser * user = [self createUserIfNotExistWithID:STDChatSystemDefaultID inManageObjectContext:managedObjectContext];
-        STDMessage * message = (STDMessage *)[managedObjectContext entityClassFromString:@"STDMessage" name:@"STDMessage"];
+        STDUser *user = [self createUserIfNotExistWithID:STDChatSystemDefaultID inManageObjectContext:managedObjectContext];
+        STDMessage *message = (STDMessage *)[managedObjectContext entityClassFromString:@"STDMessage" name:@"STDMessage"];
         message.target = user;
         BOOL textType = arc4random() % 2;
         if (![STDSettingViewController chatReceiveImage]) {
@@ -198,10 +198,10 @@ NSString *const STDChatSystemDefaultID = @"97676900";
         } else {
             message.type = STDMessageTypeImage;
             int contentIdx = (arc4random() % self.imageContent.count);
-            NSDictionary * info = [self.imageContent objectAtIndex:contentIdx];
-            NSString * size = [info valueForKey:@"size"];
-            NSArray * sizes = [size componentsSeparatedByString:@"*"];
-            STDImage * image = (STDImage *)[managedObjectContext entityClassFromString:@"STDImage" name:@"STDImage"];
+            NSDictionary *info = [self.imageContent objectAtIndex:contentIdx];
+            NSString *size = [info valueForKey:@"size"];
+            NSArray *sizes = [size componentsSeparatedByString:@"*"];
+            STDImage *image = (STDImage *)[managedObjectContext entityClassFromString:@"STDImage" name:@"STDImage"];
             image.width = [sizes[0] floatValue];
             image.height = [sizes[1] floatValue];
             image.imageURL = [info valueForKey:@"imageURL"];
@@ -220,23 +220,23 @@ NSString *const STDChatSystemDefaultID = @"97676900";
 
 
 #pragma mark - TableViewDataSource
-- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.fetchedResultsController.sections.count;
 }
 
-- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger) section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger) section {
     return [[self.fetchedResultsController.sections objectAtIndex:section] numberOfObjects];
 }
 
-- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     id managedObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    STDMessage * message = (STDMessage *) managedObject;
+    STDMessage *message = (STDMessage *) managedObject;
     return message.height + 5;
 }
 
-- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    STDMessage * message = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    STDBaseChatCell * chatViewCell = [tableView dequeueReusableCellWithIdentifier:message.identifier forIndexPath:indexPath];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    STDMessage *message = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    STDBaseChatCell *chatViewCell = [tableView dequeueReusableCellWithIdentifier:message.identifier forIndexPath:indexPath];
     chatViewCell.message = message;
     return chatViewCell;
 }
@@ -245,14 +245,14 @@ NSString *const STDChatSystemDefaultID = @"97676900";
     return UITableViewCellEditingStyleDelete | UITableViewCellEditingStyleInsert;
 }
 
-- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    STDMessage * message = [self.fetchedResultsController objectAtIndexPath:indexPath];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    STDMessage *message = [self.fetchedResultsController objectAtIndexPath:indexPath];
     [self.selectedManagedObjects addObject:message];
     [self _selectedObjectChanged];
 }
 
-- (void) tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
-    STDMessage * message = [self.fetchedResultsController objectAtIndexPath:indexPath];
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    STDMessage *message = [self.fetchedResultsController objectAtIndexPath:indexPath];
     [self.selectedManagedObjects removeObject:message];
     [self _selectedObjectChanged];
 }
@@ -384,11 +384,11 @@ NSString *const STDChatSystemDefaultID = @"97676900";
 
 - (void)_snapshotMessageViewCellsCompletion:(void(^)(void))completionHandler {
     dispatch_async(dispatch_get_main_queue(), ^{
-        UIView * shotView = [[UIView alloc] initWithFrame:CGRectZero];
+        UIView *shotView = [[UIView alloc] initWithFrame:CGRectZero];
         shotView.backgroundColor = self.tableView.backgroundColor;
         [self.view addSubview:shotView];
         
-        NSArray * messages = [self.selectedManagedObjects sortedArrayUsingComparator:^NSComparisonResult(STDMessage * obj1, STDMessage * obj2) {
+        NSArray *messages = [self.selectedManagedObjects sortedArrayUsingComparator:^NSComparisonResult(STDMessage * obj1, STDMessage * obj2) {
             return obj1.time < obj2.time ? NSOrderedAscending:NSOrderedDescending;
         }];
         __block CGFloat height = 0.0f;
@@ -487,7 +487,7 @@ NSString *const STDChatSystemDefaultID = @"97676900";
 
 @implementation UITableView (STScrollToBottom)
 
-- (void) scrollToBottomAnimated:(BOOL)animated {
+- (void)scrollToBottomAnimated:(BOOL)animated {
     NSInteger sections = self.numberOfSections;
     if (sections == 0) {
         return;

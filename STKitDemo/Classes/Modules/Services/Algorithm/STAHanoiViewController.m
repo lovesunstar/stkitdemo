@@ -15,9 +15,9 @@
 
 @interface STAHanoiViewController ()
 
-@property (nonatomic, strong) STAHanoiView * hanoiView;
+@property (nonatomic, strong) STAHanoiView *hanoiView;
 
-@property (nonatomic, strong) NSOperationQueue * animationQueue;
+@property (nonatomic, strong) NSOperationQueue *animationQueue;
 @end
 
 @implementation STAHanoiViewController
@@ -27,7 +27,6 @@
     if (self) {
         self.animationQueue = [[NSOperationQueue alloc] init];
         self.animationQueue.maxConcurrentOperationCount = 1;
-        
         self.numberOfHanois = 4;
         self.hidesBottomBarWhenPushed = YES;
     }
@@ -40,7 +39,6 @@
     if (self) {
         self.animationQueue = [[NSOperationQueue alloc] init];
         self.animationQueue.maxConcurrentOperationCount = 1;
-        
         self.numberOfHanois = 4;
         self.hidesBottomBarWhenPushed = YES;
     }
@@ -64,7 +62,7 @@
     [self.view addSubview:self.hanoiView];
     
     [self.view removeConstraints:self.view.constraints];
-    NSDictionary * dict = @{@"hanoiView" : self.hanoiView};
+    NSDictionary *dict = @{@"hanoiView" : self.hanoiView};
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[hanoiView(>=200)]-|" options:0 metrics:nil views:dict]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(20)-[hanoiView(>=100)]-(30)-|" options:0 metrics:nil views:dict]];
     
@@ -86,12 +84,12 @@
     [self.animationQueue cancelAllOperations];
 }
 
-- (void) moveHanoiWithNumber:(NSInteger) number
-                   position0:(NSInteger) position0
-                   position1:(NSInteger) position1
-                   position2:(NSInteger) position2 {
+- (void) moveHanoiWithNumber:(NSInteger)number
+                   position0:(NSInteger)position0
+                   position1:(NSInteger)position1
+                   position2:(NSInteger)position2 {
     if (number == 0) {
-        STAHanoiOperation * operation1 = [[STAHanoiOperation alloc] init];
+        STAHanoiOperation *operation1 = [[STAHanoiOperation alloc] init];
         operation1.index = position0;
         operation1.toIndex = position2;
         operation1.hanoiView = self.hanoiView;
@@ -99,7 +97,7 @@
     } else {
         [self moveHanoiWithNumber:number - 1 position0:position0 position1:position2 position2:position1];
         
-        STAHanoiOperation * operation2 = [[STAHanoiOperation alloc] init];
+        STAHanoiOperation *operation2 = [[STAHanoiOperation alloc] init];
         operation2.index = position0;
         operation2.toIndex = position2;
         operation2.hanoiView = self.hanoiView;
@@ -110,7 +108,7 @@
 }
 
 - (void) viewSourceCode:(id) sender {
-    STACodeViewController * viewController = [[STACodeViewController alloc] initWithNibName:nil bundle:nil];
+    STACodeViewController *viewController = [[STACodeViewController alloc] initWithNibName:nil bundle:nil];
     viewController.algorithmType = STAlgorithmTypeHanoi;
     [self.customNavigationController pushViewController:viewController animated:YES];
 }

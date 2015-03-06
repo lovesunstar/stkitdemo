@@ -10,7 +10,7 @@
 
 @interface STDBeautyViewController : STDFeedViewController
 
-@property (nonatomic, copy) NSString        * method;
+@property (nonatomic, copy) NSString        *method;
 
 - (void) fetchDataFromRemote;
 - (void) cancelFetchData;

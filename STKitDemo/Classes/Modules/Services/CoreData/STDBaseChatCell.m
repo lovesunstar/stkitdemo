@@ -14,12 +14,12 @@
 
 @implementation STDBaseChatCell
 
-- (id) initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.frame = CGRectMake(0, 0, 320, 0);
         
-        UIView * bkgView = UIView.new;
+        UIView *bkgView = UIView.new;
         self.backgroundView = bkgView;
         self.backgroundColor = [UIColor clearColor];
         
@@ -57,10 +57,11 @@
     return self;
 }
 
-- (void) bubbleImageViewClicked:(id) sender {
+- (void)bubbleImageViewClicked:(id)sender {
     
 }
-- (void) setMessage:(STDMessage *)message {
+
+- (void)setMessage:(STDMessage *)message {
     self.avatarView.image = [UIImage imageNamed:@"avatar72.png"];
     CGRect chatViewRect = CGRectFromString(message.chatViewRect);
     if (!CGRectIsEmpty(chatViewRect)) {
@@ -81,13 +82,13 @@
 
 @end
 
-NSString * const NXChatCellTextActivityIdentifier = @"chat.text.activity.identifier";
+NSString *const NXChatCellTextActivityIdentifier = @"chat.text.activity.identifier";
 
-NSString * const NXChatCellTextLeftIdentifier = @"chat.text.left.identifier";
-NSString * const NXChatCellTextRightIdentifier = @"chat.text.right.identifier";
+NSString *const NXChatCellTextLeftIdentifier = @"chat.text.left.identifier";
+NSString *const NXChatCellTextRightIdentifier = @"chat.text.right.identifier";
 
-NSString * const NXChatCellImageLeftIdentifier = @"chat.image.left.identifier";
-NSString * const NXChatCellImageRightIdentifier = @"chat.image.right.identifier";
+NSString *const NXChatCellImageLeftIdentifier = @"chat.image.left.identifier";
+NSString *const NXChatCellImageRightIdentifier = @"chat.image.right.identifier";
 
-NSString * const NXChatCellQuoteLeftIdentifier = @"chat.quote.left.identifier";
-NSString * const NXChatCellQuoteRightIdentifier = @"chat.quote.right.identifier";
+NSString *const NXChatCellQuoteLeftIdentifier = @"chat.quote.left.identifier";
+NSString *const NXChatCellQuoteRightIdentifier = @"chat.quote.right.identifier";

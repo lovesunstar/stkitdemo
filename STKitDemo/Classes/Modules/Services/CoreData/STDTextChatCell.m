@@ -22,7 +22,7 @@
     if (self) {
         self.chatView.frame =  CGRectMake(45, 0, 35, 43);
         
-        NSString * bubbleImageName;
+        NSString *bubbleImageName;
         CGRect contentFrame;
         if ([reuseIdentifier hasSuffix:@"left.identifier"]) {
             bubbleImageName = @"bubble_text_white.png";
@@ -32,13 +32,13 @@
             contentFrame = CGRectMake(13, 10, 2, 20);
         }
         
-        UIImage * bubbleImage = [[UIImage imageNamed:bubbleImageName] resizableImageWithCapInsets:UIEdgeInsetsMake(30, 15, 10, 15) resizingMode:UIImageResizingModeStretch];
+        UIImage *bubbleImage = [[UIImage imageNamed:bubbleImageName] resizableImageWithCapInsets:UIEdgeInsetsMake(30, 15, 10, 15) resizingMode:UIImageResizingModeStretch];
         [self.bubbleImageView setBackgroundImage:bubbleImage forState:UIControlStateNormal];
         [self.bubbleImageView addTarget:self action:@selector(bubbleImageViewTouchDown:) forControlEvents:UIControlEventTouchDown];
         [self.bubbleImageView addTarget:self action:@selector(bubbleImageViewTouchCancel:) forControlEvents:(UIControlEventTouchCancel | UIControlEventTouchUpInside | UIControlEventTouchUpOutside | UIControlEventTouchDragExit | UIControlEventTouchDragOutside)];
         self.bubbleImageView.clipsToBounds = YES;
         
-        STLinkLabel * linkLabel = [[STLinkLabel alloc] initWithFrame:contentFrame];
+        STLinkLabel *linkLabel = [[STLinkLabel alloc] initWithFrame:contentFrame];
         linkLabel.font = [[STThemeManager currentTheme] themeValueForKey:@"STDChatViewFont" whenContainedIn:[STDTextChatCell class]];
         linkLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         linkLabel.backgroundColor = [UIColor clearColor];
@@ -50,40 +50,40 @@
 }
 
 
-- (void) setMessage:(STDMessage *)message {
+- (void)setMessage:(STDMessage *)message {
     [super setMessage:message];
-    UILabel * chatTextView = (UILabel *) self.chatContentView;
+    UILabel *chatTextView = (UILabel *) self.chatContentView;
     chatTextView.text = message.content;
 }
 
-- (void) bubbleImageViewTouchDown:(id) sender {
+- (void)bubbleImageViewTouchDown:(id) sender {
     [self performSelector:@selector(didClickText:) withObject:sender afterDelay:0.5];
 }
 
-- (void) bubbleImageViewTouchCancel:(id) sender {
+- (void)bubbleImageViewTouchCancel:(id) sender {
     [[self class] cancelPreviousPerformRequestsWithTarget:self selector:@selector(didClickText:) object:sender];
 }
 
-- (BOOL) canBecomeFirstResponder {
+- (BOOL)canBecomeFirstResponder {
     return YES;
 }
 
-- (BOOL) canPerformAction:(SEL)action withSender:(id)sender {
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
     if (![NSStringFromSelector(action) isEqualToString:@"copyMenuActionFired:"]) {
         return NO;
     }
     return YES;
 }
 
-- (void) copyMenuActionFired:(id) sender {
+- (void)copyMenuActionFired:(id) sender {
     UIPasteboard * pasteboard = [UIPasteboard generalPasteboard];
     pasteboard.string = self.message.content;
 }
 
-- (void) didClickText:(id) sender {
+- (void)didClickText:(id) sender {
     [self becomeFirstResponder];
-    UIMenuItem * menuItem = [[UIMenuItem alloc] initWithTitle:@"拷贝" action:@selector(copyMenuActionFired:)];
-    UIMenuController * menuController = [UIMenuController sharedMenuController];
+    UIMenuItem *menuItem = [[UIMenuItem alloc] initWithTitle:@"拷贝" action:@selector(copyMenuActionFired:)];
+    UIMenuController *menuController = [UIMenuController sharedMenuController];
     menuController.menuItems = @[menuItem];
     [menuController setTargetRect:self.bubbleImageView.frame inView:self.bubbleImageView.superview];
     [menuController setMenuVisible:YES animated:YES];

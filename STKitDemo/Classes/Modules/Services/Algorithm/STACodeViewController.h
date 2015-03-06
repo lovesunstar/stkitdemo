@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "STDViewController.h"
-
 #import "STASortDefines.h"
+
 @interface STACodeViewController : STDViewController
 
 @property (nonatomic, assign) STAlgorithmType algorithmType;

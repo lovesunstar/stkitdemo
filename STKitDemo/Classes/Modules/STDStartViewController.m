@@ -37,7 +37,7 @@
 	// Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor colorWithRGB:0x35495D];
     
-    UILabel * topLabel = [[UILabel alloc] init];
+    UILabel *topLabel = [[UILabel alloc] init];
     topLabel.numberOfLines = 0;
     topLabel.translatesAutoresizingMaskIntoConstraints = NO;
     topLabel.textColor = [UIColor whiteColor];
@@ -50,7 +50,7 @@
     self.sphereView = [[ZYQSphereView alloc] initWithFrame:CGRectMake(self.view.width * 0.5 - 150, self.view.height * 0.5 - 150, 300, 300)];
     self.sphereView.translatesAutoresizingMaskIntoConstraints = NO;
 
-    NSMutableArray * items = [[NSMutableArray alloc] init];
+    NSMutableArray *items = [[NSMutableArray alloc] init];
     [tags enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         UIButton *tagView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
         tagView.backgroundColor = [UIColor colorWithRed:arc4random_uniform(100)/100. green:arc4random_uniform(100)/100. blue:arc4random_uniform(100)/100. alpha:1];
@@ -63,8 +63,8 @@
     [self.sphereView setItems:items];
 	[self.view addSubview:self.sphereView];
     
-    UIImage * image = [UIImage imageNamed:@"aero_button"];
-    UIButton * tabBarButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *image = [UIImage imageNamed:@"aero_button"];
+    UIButton *tabBarButton = [UIButton buttonWithType:UIButtonTypeCustom];
     tabBarButton.translatesAutoresizingMaskIntoConstraints = NO;
     [tabBarButton setBackgroundImage:image forState:UIControlStateNormal];
     [tabBarButton setTitle:@"STTabBarController" forState:UIControlStateNormal];
@@ -80,7 +80,7 @@
     sideBarButton.titleLabel.adjustsFontSizeToFitWidth = YES;
     [self.view addSubview:sideBarButton];
     
-    NSDictionary * views = @{@"topLabel": topLabel , @"spereView":self.sphereView, @"tabBarButton":tabBarButton, @"sideBarButton":sideBarButton};
+    NSDictionary *views = @{@"topLabel": topLabel , @"spereView":self.sphereView, @"tabBarButton":tabBarButton, @"sideBarButton":sideBarButton};
 
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(10)-[topLabel(>=300)]-10-|" options:NSLayoutFormatAlignAllLeft metrics:nil views:views]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[spereView(==300)]" options:NSLayoutFormatAlignAllLeft metrics:nil views:views]];
@@ -96,17 +96,17 @@
     [self.sphereView timerStart];
 }
 
-- (void) viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    UIApplication * application = [UIApplication sharedApplication];
+    UIApplication *application = [UIApplication sharedApplication];
     if ([application respondsToSelector:@selector(setStatusBarStyle:)]) {
         application.statusBarStyle = UIStatusBarStyleLightContent;
     }
 }
 
-- (void) viewWillDisappear:(BOOL)animated {
+- (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    UIApplication * application = [UIApplication sharedApplication];
+    UIApplication *application = [UIApplication sharedApplication];
     if ([application respondsToSelector:@selector(setStatusBarStyle:)]) {
         application.statusBarStyle = UIStatusBarStyleDefault;
     }
@@ -127,15 +127,15 @@
     }];
 }
 
-- (void) enterTabBarControllerAction:(id) sender {
+- (void)enterTabBarControllerAction:(id) sender {
     [self.sphereView timerStop];
-    STDAppDelegate * appDelegate = (STDAppDelegate *)[UIApplication sharedApplication].delegate;
+    STDAppDelegate *appDelegate = (STDAppDelegate *)[UIApplication sharedApplication].delegate;
     [appDelegate replaceRootViewController:[appDelegate tabBarController] animationOptions:UIViewAnimationOptionTransitionFlipFromLeft];
 }
 
-- (void) enterSideBarControllerAction:(id) sender {
+- (void)enterSideBarControllerAction:(id) sender {
     [self.sphereView timerStop];
-    STDAppDelegate * appDelegate = (STDAppDelegate *)[UIApplication sharedApplication].delegate;
+    STDAppDelegate *appDelegate = (STDAppDelegate *)[UIApplication sharedApplication].delegate;
     [appDelegate replaceRootViewController:[appDelegate sideBarController] animationOptions:UIViewAnimationOptionTransitionFlipFromLeft];
 }
 

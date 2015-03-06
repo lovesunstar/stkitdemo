@@ -35,8 +35,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        NSString * name = [NSString stringWithFormat:@"%lli.caf",(long long int)[[NSDate date] timeIntervalSince1970]];
-        NSString * path = [NSTemporaryDirectory() stringByAppendingPathComponent:name];
+        NSString *name = [NSString stringWithFormat:@"%lli.caf",(long long int)[[NSDate date] timeIntervalSince1970]];
+        NSString *path = [NSTemporaryDirectory() stringByAppendingPathComponent:name];
         self.path = path;
         self.hidesBottomBarWhenPushed = YES;
     }
@@ -68,9 +68,9 @@
     [self.view addSubview:self.waveSiriView];
 }
 
-- (void) viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    __weak STDRecordViewController * recordViewController = self;
+    __weak STDRecordViewController *recordViewController = self;
     [[STAudioCenter sharedAudioCenter] startRecordWithPath:self.path handler:^(STAudioRecorderState state, id userInfo, NSError *error) {
         if (state == STAudioRecorderProgressed) {
             CGFloat averagePower = [[userInfo valueForKey:STAudioRecorderKeyAveragePower] floatValue];
@@ -82,11 +82,11 @@
     }];
 }
 
-- (void) viewWillDisappear:(BOOL)animated {
+- (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
 }
 
-- (void) viewDidDisappear:(BOOL)animated {
+- (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     [[STAudioCenter sharedAudioCenter] finishRecord];
 }
@@ -95,12 +95,12 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void) aboutActionFired:(id) sender {
-    STDAboutAudioViewController * aboutViewController = [[STDAboutAudioViewController alloc] initWithNibName:nil bundle:nil];
+- (void)aboutActionFired:(id)sender {
+    STDAboutAudioViewController *aboutViewController = [[STDAboutAudioViewController alloc] initWithNibName:nil bundle:nil];
     [self.customNavigationController pushViewController:aboutViewController animated:YES];
 }
 
-- (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
     [self.waveBarView setInterfaceOrientation:toInterfaceOrientation];
 }

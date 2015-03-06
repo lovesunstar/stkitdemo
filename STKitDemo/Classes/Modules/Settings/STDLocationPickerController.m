@@ -41,6 +41,11 @@
 
 @implementation STDLocationPickerController
 
+
+- (void)dealloc {
+    [[self class] setCachedRegion:self.mapView.region];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -52,6 +57,11 @@
     self.mapView.delegate = self;
     [[STLocationManager sharedManager] requestWhenInUseAuthorization];
     [self.view addSubview:self.mapView];
+    
+    MKCoordinateRegion region = [[self class] cachedRegion];
+    if (region.center.longitude * region.center.latitude != 0) {
+        [self.mapView setRegion:[[self class] cachedRegion] animated:YES];
+    }
     
     UILongPressGestureRecognizer *gestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(_longPressGestureRecognizerActionFired:)];
     gestureRecognizer.minimumPressDuration = 0.5f;
@@ -104,6 +114,28 @@
     [self.mapView addAnnotation:annotation];
 }
 
++ (void)setCachedRegion:(MKCoordinateRegion)region {
+    NSDictionary *coordinate = @{@"longitude":@(region.center.longitude), @"latitude":@(region.center.latitude), @"latitudeDelta":@(region.span.latitudeDelta), @"longitudeDelta":@(region.span.longitudeDelta)};
+    [[NSUserDefaults standardUserDefaults] setValue:coordinate forKey:@"STMapRegionCacheKey"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (MKCoordinateRegion)cachedRegion {
+    NSDictionary *coordinate = [[NSUserDefaults standardUserDefaults] valueForKey:@"STMapRegionCacheKey"];
+    CLLocationCoordinate2D coordinate2D;
+    coordinate2D.longitude = [coordinate[@"longitude"] doubleValue];
+    coordinate2D.latitude = [coordinate[@"latitude"] doubleValue];
+    
+    MKCoordinateSpan span;
+    span.latitudeDelta = [coordinate[@"latitudeDelta"] doubleValue];
+    span.longitudeDelta = [coordinate[@"longitudeDelta"] doubleValue];
+    
+    MKCoordinateRegion region;
+    region.center = coordinate2D;
+    region.span = span;
+    return region;
+}
+
 + (void)setCachedFakeLocationCoordinate:(CLLocationCoordinate2D)coordinate2D {
     NSDictionary *coordinate = @{@"longitude":@(coordinate2D.longitude), @"latitude":@(coordinate2D.latitude)};
     [[NSUserDefaults standardUserDefaults] setValue:coordinate forKey:STFakeLocationCoordinateCacheKey];
@@ -117,6 +149,7 @@
     coordinate2D.latitude = [coordinate[@"latitude"] doubleValue];
     return coordinate2D;
 }
+
 @end
 
 NSString *const STFakeLocationCoordinateCacheKey = @"STFakeLocationCoordinateCacheKey";

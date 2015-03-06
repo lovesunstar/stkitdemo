@@ -14,5 +14,5 @@
 
 @property (nonatomic, assign) NSInteger         index;
 @property (nonatomic, assign) NSInteger         toIndex;
-@property (nonatomic, weak)   STAHanoiView *    hanoiView;
+@property (nonatomic, weak)   STAHanoiView      *hanoiView;
 @end

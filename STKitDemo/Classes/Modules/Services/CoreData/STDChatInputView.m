@@ -12,15 +12,15 @@
 
 @interface STDChatInputView ()
 
-@property (nonatomic, strong) UIButton      * pickButton;
-@property (nonatomic, strong) UIButton      * sendButton;
-@property (nonatomic, strong) UITextView    * textView;
+@property (nonatomic, strong) UIButton      *pickButton;
+@property (nonatomic, strong) UIButton      *sendButton;
+@property (nonatomic, strong) UITextView    *textView;
 
 @end
 
 CGFloat const STChatInputViewDefaultHeight = 45;
-const CGFloat STChatInputViewHorizontalMargin = 10;
-const CGFloat STChatInputViewSendButtonWidth  = 50;
+CGFloat const STChatInputViewHorizontalMargin = 10;
+CGFloat const STChatInputViewSendButtonWidth  = 50;
 
 @implementation STDChatInputView
 
@@ -29,8 +29,7 @@ const CGFloat STChatInputViewSendButtonWidth  = 50;
     [self.textView removeObserver:self forKeyPath:@"contentSize"];
 }
 
-- (instancetype) initWithSuperView:(UIView *)superView {
-    
+- (instancetype)initWithSuperView:(UIView *)superView {
     CGFloat originY = CGRectGetHeight(superView.bounds) - STChatInputViewDefaultHeight;
     self = [super initWithFrame:CGRectMake(0, originY, CGRectGetWidth(superView.bounds), STChatInputViewDefaultHeight)];
     if (self) {
@@ -62,17 +61,16 @@ const CGFloat STChatInputViewSendButtonWidth  = 50;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
         
-        
         [self.textView addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:NULL];
     }
     return self;
 }
 
-- (NSString *) text {
+- (NSString *)text {
     return self.textView.text;
 }
 
-- (void) setText:(NSString *)text {
+- (void)setText:(NSString *)text {
     self.textView.text = text;
     [self sizeToFit];
 }
@@ -82,7 +80,7 @@ const CGFloat STChatInputViewSendButtonWidth  = 50;
     self.textView.contentInset = UIEdgeInsetsZero;
 }
 
-- (void) sizeToFit {
+- (void)sizeToFit {
     CGSize size = self.textView.size;
     CGSize contentSize = self.textView.contentSize;
     if (contentSize.height < 30) {
@@ -105,20 +103,17 @@ const CGFloat STChatInputViewSendButtonWidth  = 50;
     self.frame = frame;
 }
 
-- (BOOL) becomeFirstResponder {
+- (BOOL)becomeFirstResponder {
     return [self.textView becomeFirstResponder];
 }
 
-- (BOOL) resignFirstResponder {
+- (BOOL)resignFirstResponder {
     BOOL resignFirstResponder = [super resignFirstResponder];
     return [self.textView resignFirstResponder] && resignFirstResponder;
 }
 
 
-- (void) observeValueForKeyPath:(NSString *)keyPath
-                       ofObject:(id)object
-                         change:(NSDictionary *)change
-                        context:(void *)context {
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if (object == self.textView) {
         CGSize size = self.textView.size;
         CGSize contentSize = self.textView.contentSize;
@@ -141,7 +136,7 @@ const CGFloat STChatInputViewSendButtonWidth  = 50;
         frame.size.height += offset;
         self.frame = frame;
         
-        NSMutableDictionary * notificationUserInfo = [NSMutableDictionary dictionaryWithCapacity:2];
+        NSMutableDictionary *notificationUserInfo = [NSMutableDictionary dictionaryWithCapacity:2];
         [notificationUserInfo setValue:@(0.25) forKey:STDChatInputViewAnimationDurationUserInfoKey];
         [notificationUserInfo setValue:@([self isFirstResponder]) forKey:STDChatInputViewKeyboardHiddenUserInfoKey];
         [notificationUserInfo setValue:[NSValue valueWithCGRect:frame] forKey:STDChatInputViewFrameUserInfoKey];
@@ -150,8 +145,8 @@ const CGFloat STChatInputViewSendButtonWidth  = 50;
     
 }
 
-- (void) keyboardWillShow:(NSNotification *) notification {
-    NSDictionary * userInfo = notification.userInfo;
+- (void)keyboardWillShow:(NSNotification *) notification {
+    NSDictionary *userInfo = notification.userInfo;
     CGRect keyboardFrame = [[userInfo valueForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
     
     CGFloat keyboardWidth = keyboardFrame.size.width;
@@ -188,7 +183,7 @@ const CGFloat STChatInputViewSendButtonWidth  = 50;
 	}
 
     
-    NSMutableDictionary * notificationUserInfo = [NSMutableDictionary dictionaryWithCapacity:2];
+    NSMutableDictionary *notificationUserInfo = [NSMutableDictionary dictionaryWithCapacity:2];
     [notificationUserInfo setValue:@(duration) forKey:STDChatInputViewAnimationDurationUserInfoKey];
     [notificationUserInfo setValue:@(NO) forKey:STDChatInputViewKeyboardHiddenUserInfoKey];
     [notificationUserInfo setValue:[NSValue valueWithCGRect:rect] forKey:STDChatInputViewFrameUserInfoKey];
@@ -201,8 +196,8 @@ const CGFloat STChatInputViewSendButtonWidth  = 50;
     } completion:NULL];
 }
 
-- (void) keyboardWillHide:(NSNotification *) notification {
-    NSDictionary * userInfo = notification.userInfo;
+- (void)keyboardWillHide:(NSNotification *) notification {
+    NSDictionary *userInfo = notification.userInfo;
     
     UIViewAnimationCurve animationCurve = [[notification.userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] unsignedIntegerValue];
     
@@ -229,7 +224,7 @@ const CGFloat STChatInputViewSendButtonWidth  = 50;
     rect.origin.y = CGRectGetHeight(self.parentView.frame) - rect.size.height;
     NSTimeInterval duration = [[userInfo valueForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     
-    NSMutableDictionary * notificationUserInfo = [NSMutableDictionary dictionaryWithCapacity:2];
+    NSMutableDictionary *notificationUserInfo = [NSMutableDictionary dictionaryWithCapacity:2];
     [notificationUserInfo setValue:@(duration) forKey:STDChatInputViewAnimationDurationUserInfoKey];
     [notificationUserInfo setValue:@(YES) forKey:STDChatInputViewKeyboardHiddenUserInfoKey];
     [notificationUserInfo setValue:[NSValue valueWithCGRect:rect] forKey:STDChatInputViewFrameUserInfoKey];
@@ -245,8 +240,8 @@ const CGFloat STChatInputViewSendButtonWidth  = 50;
 
 @end
 
-NSString * const STDChatInputViewDidChangeNotification = @"STDChatInputViewDidChangeNotification";
+NSString *const STDChatInputViewDidChangeNotification = @"STDChatInputViewDidChangeNotification";
 
-NSString * const STDChatInputViewAnimationDurationUserInfoKey = @"STDChatInputViewAnimationDurationUserInfoKey";
-NSString * const STDChatInputViewKeyboardHiddenUserInfoKey = @"STDChatInputViewKeyboardHiddenUserInfoKey";
-NSString * const STDChatInputViewFrameUserInfoKey = @"STDChatInputViewFrameUserInfoKey";
+NSString *const STDChatInputViewAnimationDurationUserInfoKey = @"STDChatInputViewAnimationDurationUserInfoKey";
+NSString *const STDChatInputViewKeyboardHiddenUserInfoKey = @"STDChatInputViewKeyboardHiddenUserInfoKey";
+NSString *const STDChatInputViewFrameUserInfoKey = @"STDChatInputViewFrameUserInfoKey";

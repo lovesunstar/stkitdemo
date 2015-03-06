@@ -12,8 +12,7 @@
 @interface STAHanoiOperation ()
 
 @property (nonatomic, assign) NSTimeInterval duration;
-
-@property (atomic, assign)    BOOL complete;
+@property (atomic, assign)    BOOL           complete;
 
 @end
 
