@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>63626F8A-7EE9-43B2-908B-0D2B6EDE78EE</string>
+	<key>IDESourceControlProjectName</key>
+	<string>STKitDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>17613CBE-F1EF-4D26-9351-4F907DD11829</key>
+		<string>https://bitbucket.org/lovesunstar/stkit.git</string>
+		<key>1FEF3B6F-BB43-4D50-A0E4-828D44217147</key>
+		<string>https://bitbucket.org/lovesunstar/stkitdemo.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>STKitDemo.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>17613CBE-F1EF-4D26-9351-4F907DD11829</key>
+		<string>../../../stkit</string>
+		<key>1FEF3B6F-BB43-4D50-A0E4-828D44217147</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://bitbucket.org/lovesunstar/stkitdemo.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1FEF3B6F-BB43-4D50-A0E4-828D44217147</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>17613CBE-F1EF-4D26-9351-4F907DD11829</string>
+			<key>IDESourceControlWCCName</key>
+			<string>stkit</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1FEF3B6F-BB43-4D50-A0E4-828D44217147</string>
+			<key>IDESourceControlWCCName</key>
+			<string>stkitdemo</string>
+		</dict>
+	</array>
+</dict>
+</plist>

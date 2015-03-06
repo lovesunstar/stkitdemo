@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="STDNavigationSettingViewController">
+            <connections>
+                <outlet property="edgeSettingSlider" destination="g71-w9-pZH" id="Tl9-dG-iEJ"/>
+                <outlet property="offsetSettingSlider" destination="VNb-SR-MD2" id="sYZ-IV-KhE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="设置距离左侧多少距离以内开始左滑可以触发返回手势" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="D8H-3o-hsI">
+                    <rect key="frame" x="20" y="40" width="280" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="280" id="V7o-Gi-z3J"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="g71-w9-pZH">
+                    <rect key="frame" x="-2" y="115" width="324" height="31"/>
+                    <connections>
+                        <action selector="navigationDistanceValueChanged:" destination="-1" eventType="valueChanged" id="cVC-Xu-Plj"/>
+                    </connections>
+                </slider>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设置Push/Pop时，上一个页面移动的起始位置。" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="wkD-0u-VkW">
+                    <rect key="frame" x="20" y="185" width="280" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="280" id="hV7-ZV-P5W"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <slider opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="320" translatesAutoresizingMaskIntoConstraints="NO" id="VNb-SR-MD2" userLabel="Horizontal Sliders">
+                    <rect key="frame" x="0.0" y="246" width="324" height="31"/>
+                    <connections>
+                        <action selector="navigationOffsetValueChanged:" destination="-1" eventType="valueChanged" id="WAV-Ag-Tqn"/>
+                    </connections>
+                </slider>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="g71-w9-pZH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0xc-oc-AxZ"/>
+                <constraint firstItem="D8H-3o-hsI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="3du-86-xJj"/>
+                <constraint firstItem="VNb-SR-MD2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="2" id="556-4b-VJy"/>
+                <constraint firstAttribute="trailing" secondItem="g71-w9-pZH" secondAttribute="trailing" id="79U-AH-j3P"/>
+                <constraint firstItem="VNb-SR-MD2" firstAttribute="top" secondItem="wkD-0u-VkW" secondAttribute="bottom" constant="20" id="8u2-yS-qfm"/>
+                <constraint firstItem="D8H-3o-hsI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="B7D-NI-jKe"/>
+                <constraint firstItem="wkD-0u-VkW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Cdv-hs-iDa"/>
+                <constraint firstItem="g71-w9-pZH" firstAttribute="top" secondItem="D8H-3o-hsI" secondAttribute="bottom" constant="34" id="EUN-6q-e6Q" userLabel="Vertical Space - (34 - Horizontal Slider - Label - 设置距离左侧多少距离以内开始左滑可以触发返回手势"/>
+                <constraint firstAttribute="trailing" secondItem="VNb-SR-MD2" secondAttribute="trailing" constant="-2" id="Hhm-1q-tnP"/>
+                <constraint firstItem="wkD-0u-VkW" firstAttribute="top" secondItem="g71-w9-pZH" secondAttribute="bottom" constant="40" id="JNX-6D-hzW"/>
+                <constraint firstItem="VNb-SR-MD2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="2" id="bfS-CY-ibL"/>
+                <constraint firstItem="g71-w9-pZH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nqG-Zt-1up"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

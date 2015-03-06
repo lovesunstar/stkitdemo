@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="13F34" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="STDImage" representedClassName="STDImage" syncable="YES">
+        <attribute name="height" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="imageId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="width" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="avatars" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="STDUser" inverseName="avatar" inverseEntity="STDUser" syncable="YES"/>
+        <relationship name="messages" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="STDMessage" inverseName="image" inverseEntity="STDMessage" syncable="YES"/>
+    </entity>
+    <entity name="STDMessage" representedClassName="STDMessage" syncable="YES">
+        <attribute name="chatViewRect" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="height" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="from" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="STDUser" inverseName="messages" inverseEntity="STDUser" syncable="YES"/>
+        <relationship name="image" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="STDImage" inverseName="messages" inverseEntity="STDImage" syncable="YES"/>
+        <relationship name="target" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="STDUser" inverseName="messages1" inverseEntity="STDUser" syncable="YES"/>
+    </entity>
+    <entity name="STDSession" representedClassName="STDSession" syncable="YES"/>
+    <entity name="STDUser" representedClassName="STDUser" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nick" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="avatar" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="STDImage" inverseName="avatars" inverseEntity="STDImage" syncable="YES"/>
+        <relationship name="messages" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="STDMessage" inverseName="from" inverseEntity="STDMessage" syncable="YES"/>
+        <relationship name="messages1" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="STDMessage" inverseName="target" inverseEntity="STDMessage" syncable="YES"/>
+        <fetchedProperty name="nid" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="STDUser" predicateString="nid > 0"/>
+        </fetchedProperty>
+    </entity>
+    <elements>
+        <element name="STDImage" positionX="0" positionY="0" width="128" height="133"/>
+        <element name="STDMessage" positionX="0" positionY="0" width="128" height="193"/>
+        <element name="STDSession" positionX="0" positionY="0" width="128" height="45"/>
+        <element name="STDUser" positionX="0" positionY="0" width="128" height="161"/>
+    </elements>
+</model>
