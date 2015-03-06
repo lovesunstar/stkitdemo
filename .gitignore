@@ -1,3 +1,10 @@
+*.DS_Store
+*.swp
+*project.xcworkspace
+*contents.xcworkspacedata
+*.xcuserdata*
+*xcuserdata*
 .DS_Store
 xcuserdata/
 xcshareddata/
+
