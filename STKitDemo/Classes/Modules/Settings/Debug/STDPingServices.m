@@ -18,15 +18,15 @@
         return [NSString stringWithFormat:@"Request timeout for icmp_seq %ld", (long)self.ICMPSequence];
     }
     if (self.status == STDPingStatusDidReceivePacket) {
-        return [NSString stringWithFormat:@"%ld bytes from %@: icmp_seq=%ld ttl=%ld time=%f ms", (long)self.dateBytesLength, self.IPAddress, (long)self.ICMPSequence, (long)self.timeToLive, self.timeMilliseconds];
+        return [NSString stringWithFormat:@"%ld bytes from %@: icmp_seq=%ld ttl=%ld time=%.3f ms", (long)self.dateBytesLength, self.IPAddress, (long)self.ICMPSequence, (long)self.timeToLive, self.timeMilliseconds];
     }
     return super.description;
 }
 
 + (NSString *)statisticsWithPingItems:(NSArray *)pingItems {
-//    --- baidu.com ping statistics ---
-//    5 packets transmitted, 5 packets received, 0.0% packet loss
-//    round-trip min/avg/max/stddev = 4.445/9.496/12.210/2.832 ms
+    //    --- baidu.com ping statistics ---
+    //    5 packets transmitted, 5 packets received, 0.0% packet loss
+    //    round-trip min/avg/max/stddev = 4.445/9.496/12.210/2.832 ms
     NSString *address = [pingItems.firstObject originalAddress];
     NSMutableString *description = [NSMutableString stringWithCapacity:50];
     [description appendFormat:@"--- %@ ping statistics ---\n", address];
@@ -37,9 +37,9 @@
         }
     }];
     NSInteger allCount = pingItems.count;
-    CGFloat lossPercent = (CGFloat)(allCount - receivedCount) / MAX(1.0, allCount);
+    CGFloat lossPercent = (CGFloat)(allCount - receivedCount) / MAX(1.0, allCount) * 100;
     [description appendFormat:@"%ld packets transmitted, %ld packet received, %.1f%% packet loss\n", (long)allCount, (long)receivedCount, lossPercent];
-    return description;
+    return [description stringByReplacingOccurrencesOfString:@".0%" withString:@"%"];
 }
 @end
 
@@ -83,12 +83,16 @@
 }
 
 - (void)startPing {
+    _icmpSequence = 1;
+    _repingTimes = 0;
+    _hasStarted = NO;
+    [_pingItems removeAllObjects];
     [self.simplePing start];
 }
 
 - (void)reping {
     [self.simplePing stop];
-    [self startPing];
+    [self.simplePing start];
 }
 
 - (void)_timeoutActionFired {
@@ -126,11 +130,7 @@
     if (self.callbackHandler) {
         self.callbackHandler(pingItem, [_pingItems copy]);
     }
-    self.callbackHandler = nil;
-    _icmpSequence = 1;
-    _repingTimes = 0;
-    _hasStarted = NO;
-    [_pingItems removeAllObjects];
+    [[self class] cancelPreviousPerformRequestsWithTarget:self selector:@selector(_timeoutActionFired) object:nil];
 }
 
 - (void)simplePing:(SimplePing *)pinger didStartWithAddress:(NSData *)address {
@@ -150,8 +150,8 @@
 // On the receive side, it does.  In that case, use +[SimplePing icmpInPacket:]
 // to find the ICMP header within the packet.
 
-- (void)simplePing:(SimplePing *)pinger didSendPacket:(NSData *)packet ICMPHeader:(ICMPHeader *)ICMPHeader {
-
+- (void)simplePing:(SimplePing *)pinger didSendPacket:(NSData *)packet ICMPHeader:(ICMPHeader *)_ICMPHeader {
+    
     STDPingItem *pingItem = [[STDPingItem alloc] init];
     pingItem.IPAddress = pinger.IPAddress;
     pingItem.originalAddress = self.address;
