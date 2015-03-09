@@ -33,6 +33,8 @@
 		065D78E51A8382AC0083D058 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 065D78E41A8382AC0083D058 /* CFNetwork.framework */; };
 		066494FA1A90AE930026D498 /* licenses.html in Resources */ = {isa = PBXBuildFile; fileRef = 066494F91A90AE930026D498 /* licenses.html */; };
 		0664952F1A90C6020026D498 /* STDSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0664952E1A90C6020026D498 /* STDSettingViewController.m */; };
+		067A9F5F1AADA73300651433 /* STDDebugPingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 067A9F5E1AADA73300651433 /* STDDebugPingViewController.m */; };
+		067A9F621AADA94B00651433 /* STDebugFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 067A9F611AADA94B00651433 /* STDebugFoundation.m */; };
 		0681CCDB19D3BC9A00D897AF /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0681CCDA19D3BC9A00D897AF /* Photos.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		06A1CD341978DE0700F68F35 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A1CD331978DE0700F68F35 /* CoreTelephony.framework */; };
 		06A1CD381978DE3500F68F35 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A1CD371978DE3500F68F35 /* libstdc++.6.dylib */; };
@@ -41,6 +43,9 @@
 		06A4D3C819E6B3C7007D332D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A4D3C719E6B3C7007D332D /* MainInterface.storyboard */; };
 		06B6C1851A0407B600C9218E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0634101A19C9EBE3003BC34E /* LaunchScreen.xib */; };
 		06BE56D11A0404CF00FBC4C8 /* STDemoImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06BE56D01A0404CF00FBC4C8 /* STDemoImages.xcassets */; };
+		06C518601AAD4E3F00C2B2E3 /* SimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C5185D1AAD4E3F00C2B2E3 /* SimplePing.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		06C518651AAD4E6E00C2B2E3 /* STDLocationPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C518641AAD4E6E00C2B2E3 /* STDLocationPickerController.m */; };
+		06C518681AAD519900C2B2E3 /* STDPingServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C518671AAD519900C2B2E3 /* STDPingServices.m */; };
 		06C841681A7E2641008BB97F /* STKitWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 06A4D3BE19E6B3C7007D332D /* STKitWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		06C841711A7E3395008BB97F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F69CFE261873032B00327D8A /* libz.dylib */; };
 		06CB60011A594F9900ABD7D3 /* shangxin_292182.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 06CB5FFF1A594F9900ABD7D3 /* shangxin_292182.jpg */; };
@@ -131,7 +136,6 @@
 		06CF9BD51A8BD2A3000037EF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06CF9BD01A8BD2A3000037EF /* Info.plist */; };
 		06CF9BD61A8BD2A3000037EF /* STKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CF9BD11A8BD2A3000037EF /* STKitDemoTests.m */; };
 		06CFCBBF1A676F39003DDC93 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0698C21C19D1CCE400D0D69A /* WebKit.framework */; };
-		06E5DF581AA0476900BDEAD8 /* STDLocationPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06E5DF571AA0476900BDEAD8 /* STDLocationPickerController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -192,6 +196,10 @@
 		066494F91A90AE930026D498 /* licenses.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = licenses.html; sourceTree = "<group>"; };
 		0664952D1A90C6020026D498 /* STDSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDSettingViewController.h; sourceTree = "<group>"; };
 		0664952E1A90C6020026D498 /* STDSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STDSettingViewController.m; sourceTree = "<group>"; };
+		067A9F5D1AADA73300651433 /* STDDebugPingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDDebugPingViewController.h; sourceTree = "<group>"; };
+		067A9F5E1AADA73300651433 /* STDDebugPingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STDDebugPingViewController.m; sourceTree = "<group>"; };
+		067A9F601AADA94B00651433 /* STDebugFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDebugFoundation.h; sourceTree = "<group>"; };
+		067A9F611AADA94B00651433 /* STDebugFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STDebugFoundation.m; sourceTree = "<group>"; };
 		0681CCDA19D3BC9A00D897AF /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		0698C21C19D1CCE400D0D69A /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		06A1CD331978DE0700F68F35 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -205,6 +213,12 @@
 		06A4D3C719E6B3C7007D332D /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		06A4D46719E80498007D332D /* STKitDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = STKitDemo.entitlements; sourceTree = "<group>"; };
 		06BE56D01A0404CF00FBC4C8 /* STDemoImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = STDemoImages.xcassets; sourceTree = "<group>"; };
+		06C5185C1AAD4E3F00C2B2E3 /* SimplePing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplePing.h; sourceTree = "<group>"; };
+		06C5185D1AAD4E3F00C2B2E3 /* SimplePing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimplePing.m; sourceTree = "<group>"; };
+		06C518631AAD4E6E00C2B2E3 /* STDLocationPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDLocationPickerController.h; sourceTree = "<group>"; };
+		06C518641AAD4E6E00C2B2E3 /* STDLocationPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STDLocationPickerController.m; sourceTree = "<group>"; };
+		06C518661AAD519900C2B2E3 /* STDPingServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDPingServices.h; sourceTree = "<group>"; };
+		06C518671AAD519900C2B2E3 /* STDPingServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STDPingServices.m; sourceTree = "<group>"; };
 		06C6F9CD1920F0C10028B2B3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		06CB5FFF1A594F9900ABD7D3 /* shangxin_292182.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shangxin_292182.jpg; sourceTree = "<group>"; };
 		06CB60001A594F9900ABD7D3 /* shangxin_292182@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "shangxin_292182@2x.jpg"; sourceTree = "<group>"; };
@@ -357,8 +371,6 @@
 		06CF9BD11A8BD2A3000037EF /* STKitDemoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKitDemoTests.m; sourceTree = "<group>"; };
 		06CFCB9C1A63973C003DDC93 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		06DBF9E019F8CFBB009ECABA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		06E5DF561AA0476900BDEAD8 /* STDLocationPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDLocationPickerController.h; sourceTree = "<group>"; };
-		06E5DF571AA0476900BDEAD8 /* STDLocationPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STDLocationPickerController.m; sourceTree = "<group>"; };
 		F6471E791851CD7C00574E94 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F6471E7B1851CD7C00574E94 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F6471E7D1851CD7C00574E94 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -490,6 +502,30 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		06C5185B1AAD4E3F00C2B2E3 /* PingTester */ = {
+			isa = PBXGroup;
+			children = (
+				06C5185C1AAD4E3F00C2B2E3 /* SimplePing.h */,
+				06C5185D1AAD4E3F00C2B2E3 /* SimplePing.m */,
+			);
+			path = PingTester;
+			sourceTree = "<group>";
+		};
+		06C518621AAD4E6E00C2B2E3 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				067A9F601AADA94B00651433 /* STDebugFoundation.h */,
+				067A9F611AADA94B00651433 /* STDebugFoundation.m */,
+				067A9F5D1AADA73300651433 /* STDDebugPingViewController.h */,
+				067A9F5E1AADA73300651433 /* STDDebugPingViewController.m */,
+				06C518631AAD4E6E00C2B2E3 /* STDLocationPickerController.h */,
+				06C518641AAD4E6E00C2B2E3 /* STDLocationPickerController.m */,
+				06C518661AAD519900C2B2E3 /* STDPingServices.h */,
+				06C518671AAD519900C2B2E3 /* STDPingServices.m */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
 		06CB5FFE1A594F9900ABD7D3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -514,6 +550,7 @@
 		06CB61E61A59523F00ABD7D3 /* 3rdLibs */ = {
 			isa = PBXGroup;
 			children = (
+				06C5185B1AAD4E3F00C2B2E3 /* PingTester */,
 				06CB63571A59523F00ABD7D3 /* MZCroppableView */,
 				06CB635C1A59523F00ABD7D3 /* SphereView */,
 			);
@@ -760,6 +797,7 @@
 		06CB64621A59523F00ABD7D3 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				06C518621AAD4E6E00C2B2E3 /* Debug */,
 				06CB64631A59523F00ABD7D3 /* DBMeizi */,
 				06CB64751A59523F00ABD7D3 /* STDMoreViewController.h */,
 				06CB64761A59523F00ABD7D3 /* STDMoreViewController.m */,
@@ -768,8 +806,6 @@
 				06CB64771A59523F00ABD7D3 /* STDNavigationSettingViewController.h */,
 				06CB64781A59523F00ABD7D3 /* STDNavigationSettingViewController.m */,
 				06CB64791A59523F00ABD7D3 /* STDNavigationSettingViewController.xib */,
-				06E5DF561AA0476900BDEAD8 /* STDLocationPickerController.h */,
-				06E5DF571AA0476900BDEAD8 /* STDLocationPickerController.m */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1094,6 +1130,7 @@
 				06CB65E21A59524000ABD7D3 /* STDMoreViewController.m in Sources */,
 				06CB65C21A59523F00ABD7D3 /* STDSession.m in Sources */,
 				06CB653D1A59523F00ABD7D3 /* STDTextTableViewController.m in Sources */,
+				06C518651AAD4E6E00C2B2E3 /* STDLocationPickerController.m in Sources */,
 				0602B499196974150004ACBB /* STDAppDelegate.m in Sources */,
 				06CB653A1A59523F00ABD7D3 /* STDropMenuView.m in Sources */,
 				06CB65D71A59524000ABD7D3 /* STWaveBarView.m in Sources */,
@@ -1122,7 +1159,6 @@
 				06CB65E71A59524000ABD7D3 /* STDStartViewController.m in Sources */,
 				065D78D51A822ECF0083D058 /* STDPrototype.m in Sources */,
 				06CB65C61A59523F00ABD7D3 /* STDChat.m in Sources */,
-				06E5DF581AA0476900BDEAD8 /* STDLocationPickerController.m in Sources */,
 				06CB652F1A59523F00ABD7D3 /* MZCroppableView.m in Sources */,
 				06CB65BD1A59523F00ABD7D3 /* STDBookViewController.m in Sources */,
 				06CB65C11A59523F00ABD7D3 /* STDMessage.m in Sources */,
@@ -1132,12 +1168,15 @@
 				06CB65AE1A59523F00ABD7D3 /* STDemoViewController.m in Sources */,
 				06CB65E51A59524000ABD7D3 /* STDMapViewController.m in Sources */,
 				06CB65BF1A59523F00ABD7D3 /* STRichView.m in Sources */,
+				06C518601AAD4E3F00C2B2E3 /* SimplePing.m in Sources */,
 				06CB653E1A59523F00ABD7D3 /* STDViewController.m in Sources */,
 				06CB65AF1A59523F00ABD7D3 /* STDImageBlurViewController.m in Sources */,
 				06CB65B91A59523F00ABD7D3 /* STASortOperation.m in Sources */,
+				06C518681AAD519900C2B2E3 /* STDPingServices.m in Sources */,
 				06CB653C1A59523F00ABD7D3 /* STDTableViewController.m in Sources */,
 				06CB65311A59523F00ABD7D3 /* PFGoldenSectionSpiral.m in Sources */,
 				06CB653B1A59523F00ABD7D3 /* STDTabBarController.m in Sources */,
+				067A9F621AADA94B00651433 /* STDebugFoundation.m in Sources */,
 				065D78D31A822ECF0083D058 /* STDBuilder.m in Sources */,
 				06CB65DC1A59524000ABD7D3 /* SUNSlideSwitchView.m in Sources */,
 				06CB65DE1A59524000ABD7D3 /* STDBigViewController.m in Sources */,
@@ -1149,6 +1188,7 @@
 				065D78D61A822ECF0083D058 /* STDSingleton.m in Sources */,
 				06CB65AC1A59523F00ABD7D3 /* STDFeedViewController.m in Sources */,
 				06CB65B71A59523F00ABD7D3 /* STAHanoiViewController.m in Sources */,
+				067A9F5F1AADA73300651433 /* STDDebugPingViewController.m in Sources */,
 				065D78DE1A8344C30083D058 /* STDFacade.m in Sources */,
 				06CB65C31A59523F00ABD7D3 /* STDUser.m in Sources */,
 				06CB65B31A59523F00ABD7D3 /* STDTextViewController.m in Sources */,

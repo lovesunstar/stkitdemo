@@ -11,6 +11,7 @@
 #import "STDChatViewController.h"
 #import "STDMessage.h"
 #import "STDLocationPickerController.h"
+#import "STDDebugPingViewController.h"
 
 @interface STDSettingViewController ()
 @property(nonatomic, weak) STDTableViewCellItem *item20;
@@ -39,7 +40,8 @@
         NSMutableArray * dataSource = [NSMutableArray arrayWithCapacity:5];
         STDTableViewCellItem * item00 = [[STDTableViewCellItem alloc] initWithTitle:@"还原设置" target:self action:@selector(_resetSettingActionFired)];
         STDTableViewCellItem * item01 = [[STDTableViewCellItem alloc] initWithTitle:@"模拟位置" target:self action:@selector(_fakeSettingActionFired)];
-        STDTableViewSectionItem *section0 = [[STDTableViewSectionItem alloc] initWithSectionTitle:@"" items:@[item00, item01]];
+        STDTableViewCellItem * item02 = [[STDTableViewCellItem alloc] initWithTitle:@"Ping测试" target:self action:@selector(_pingActionFired)];
+        STDTableViewSectionItem *section0 = [[STDTableViewSectionItem alloc] initWithSectionTitle:@"" items:@[item00, item01, item02]];
         [dataSource addObject:section0];
         
         STDTableViewCellItem *item10 = [[STDTableViewCellItem alloc] initWithTitle:@"导航设置" target:self action:@selector(_navigationSettingActionFired)];
@@ -96,6 +98,12 @@
     STDLocationPickerController *pickerController = [[STDLocationPickerController alloc] init];
     pickerController.hidesBottomBarWhenPushed = YES;
     [self.customNavigationController pushViewController:pickerController animated:YES];
+}
+
+- (void)_pingActionFired {
+    STDDebugPingViewController *pingViewController = [[STDDebugPingViewController alloc] init];
+    pingViewController.hidesBottomBarWhenPushed = YES;
+    [self.customNavigationController pushViewController:pingViewController animated:YES];
 }
 
 - (void)_navigationSettingActionFired:(UISwitch *)uiswitch {
