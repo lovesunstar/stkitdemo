@@ -28,6 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"Ping网络";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Clear" target:self action:@selector(_clearDebugViewActionFired:)];
     if ([UIViewController instancesRespondToSelector:@selector(setEdgesForExtendedLayout:)]) {
         self.edgesForExtendedLayout  = UIRectEdgeNone;
     }
@@ -51,6 +52,10 @@
     self.textView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.textView.editable = NO;
     [self.view addSubview:self.textView];
+}
+
+- (void)_clearDebugViewActionFired:(id)sender {
+    self.textView.text = nil;
 }
 
 - (void)_pingActionFired:(UIButton *)button {
