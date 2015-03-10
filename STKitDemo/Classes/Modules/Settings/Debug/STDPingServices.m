@@ -137,12 +137,6 @@
     [pinger sendPingWithData:nil];
     [self performSelector:@selector(_timeoutActionFired) withObject:nil afterDelay:self.timeoutMilliseconds / 1000.0];
 }
-// Called after the SimplePing has successfully started up.  After this callback, you
-// can start sending pings via -sendPingWithData:
-
-- (void)simplePing:(SimplePing *)pinger didFailWithError:(NSError *)error {
-    
-}
 // If this is called, the SimplePing object has failed.  By the time this callback is
 // called, the object has stopped (that is, you don't need to call -stop yourself).
 
@@ -162,13 +156,8 @@
         _hasStarted = YES;
     }
 }
-// Called whenever the SimplePing object has successfully sent a ping packet.
 
-- (void)simplePing:(SimplePing *)pinger didFailToSendPacket:(NSData *)packet error:(NSError *)error {
-    
-}
 // Called whenever the SimplePing object tries and fails to send a ping packet.
-
 - (void)simplePing:(SimplePing *)pinger didReceivePingResponsePacket:(NSData *)packet timeElasped:(NSTimeInterval)timeElasped {
     [[self class] cancelPreviousPerformRequestsWithTarget:self selector:@selector(_timeoutActionFired) object:nil];
     const struct IPHeader * ipPtr = NULL;
