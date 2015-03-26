@@ -114,7 +114,7 @@ CGSize const STDLinkViewCellSize = {320, 40};
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"STLinkLabel";
     [self.tableView registerClass:[STDLinkViewCell class] forCellReuseIdentifier:@"Identifier"];
-    self.tableView.tableFooterView = nil;
+    self.scrollDirector.refreshControl.enabled = NO;
 }
 
 - (void)didReceiveMemoryWarning {

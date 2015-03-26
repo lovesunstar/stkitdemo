@@ -21,6 +21,7 @@
 		0602B501196974150004ACBB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6471E7D1851CD7C00574E94 /* UIKit.framework */; };
 		0602B503196974150004ACBB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6471E791851CD7C00574E94 /* Foundation.framework */; };
 		0602B512196974150004ACBB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F6471E821851CD7C00574E94 /* InfoPlist.strings */; };
+		060798F11AC3E68A007C1AA7 /* STDAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 060798F01AC3E68A007C1AA7 /* STDAuthorization.m */; };
 		065D78B81A81ECB60083D058 /* STDScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 065D78B71A81ECB60083D058 /* STDScrollViewController.m */; };
 		065D78D21A822ECF0083D058 /* STDAbstractFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 065D78C91A822ECF0083D058 /* STDAbstractFactory.m */; };
 		065D78D31A822ECF0083D058 /* STDBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 065D78CB1A822ECF0083D058 /* STDBuilder.m */; };
@@ -171,6 +172,8 @@
 
 /* Begin PBXFileReference section */
 		0602B51B196974150004ACBB /* STKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		060798EF1AC3E68A007C1AA7 /* STDAuthorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDAuthorization.h; sourceTree = "<group>"; };
+		060798F01AC3E68A007C1AA7 /* STDAuthorization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STDAuthorization.m; sourceTree = "<group>"; };
 		06291AE4191F314700EDBD35 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		0634101A19C9EBE3003BC34E /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		065D787D1A80C3BB0083D058 /* STDesignPatterns.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDesignPatterns.h; sourceTree = "<group>"; };
@@ -514,6 +517,8 @@
 		06C518621AAD4E6E00C2B2E3 /* Debug */ = {
 			isa = PBXGroup;
 			children = (
+				060798EF1AC3E68A007C1AA7 /* STDAuthorization.h */,
+				060798F01AC3E68A007C1AA7 /* STDAuthorization.m */,
 				067A9F601AADA94B00651433 /* STDebugFoundation.h */,
 				067A9F611AADA94B00651433 /* STDebugFoundation.m */,
 				067A9F5D1AADA73300651433 /* STDDebugPingViewController.h */,
@@ -1193,6 +1198,7 @@
 				06CB65C31A59523F00ABD7D3 /* STDUser.m in Sources */,
 				06CB65B31A59523F00ABD7D3 /* STDTextViewController.m in Sources */,
 				06CB88A61A88C8C40082DACA /* STDBridge.m in Sources */,
+				060798F11AC3E68A007C1AA7 /* STDAuthorization.m in Sources */,
 				0664952F1A90C6020026D498 /* STDSettingViewController.m in Sources */,
 				06CB65AB1A59523F00ABD7D3 /* STDFeedItem.m in Sources */,
 				065D78D41A822ECF0083D058 /* STDFactoryMethod.m in Sources */,
@@ -1288,6 +1294,7 @@
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = STKitDemo;
 				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 arm64";
 				WRAPPER_EXTENSION = app;
@@ -1328,6 +1335,7 @@
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = STKitDemo;
 				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 arm64";
 				WRAPPER_EXTENSION = app;

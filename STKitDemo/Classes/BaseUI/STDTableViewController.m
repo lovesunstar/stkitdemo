@@ -55,9 +55,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    CGFloat value1 = [[[NSUserDefaults standardUserDefaults] valueForKey:@"STDNavigationDefaultOffset"] floatValue];
+    if (![[NSUserDefaults standardUserDefaults] valueForKey:@"STDNavigationDefaultOffset"]) {
+        value1 = 80;
+        [[NSUserDefaults standardUserDefaults] setValue:@(value1) forKey:@"STDNavigationDefaultOffset"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    self.interactivePopTransitionOffset = value1;
+    
+    // Do any additional setup after loading the view, typically from a nib.
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(maximumInteractiveDistanceChanged:)
+                                                 name:@"STDNavigationDefaultEdgeOffset"
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(maximumInteractiveOffsetChanged:)
+                                                 name:@"STDNavigationDefaultOffset"
+                                               object:nil];
+    
     self.scrollDirector.scrollView = self.tableView;
     [self.scrollDirector.refreshControl addTarget:self action:@selector(_refreshControlActionFired:) forControlEvents:UIControlEventValueChanged];
     [self.scrollDirector.paginationControl addTarget:self action:@selector(_paginationControlActionFired:) forControlEvents:UIControlEventValueChanged];
+}
+
+- (void)maximumInteractiveDistanceChanged:(id)sender {
+    self.maximumInteractivePopEdgeDistance = [[[NSUserDefaults standardUserDefaults] valueForKey:@"STDNavigationDefaultEdgeOffset"] floatValue];
+}
+
+- (void)maximumInteractiveOffsetChanged:(id)sender {
+    self.interactivePopTransitionOffset = [[[NSUserDefaults standardUserDefaults] valueForKey:@"STDNavigationDefaultOffset"] floatValue];
 }
 
 - (void)_refreshControlActionFired:(STRefreshControl *)refreshControl {
