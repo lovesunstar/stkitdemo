@@ -55,6 +55,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    CGFloat value = [[[NSUserDefaults standardUserDefaults] valueForKey:@"STDNavigationDefaultEdgeOffset"] floatValue];
+    if (value == 0) {
+        value = 80;
+        [[NSUserDefaults standardUserDefaults] setValue:@(value) forKey:@"STDNavigationDefaultEdgeOffset"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    self.maximumInteractivePopEdgeDistance = value;
+
+    
     CGFloat value1 = [[[NSUserDefaults standardUserDefaults] valueForKey:@"STDNavigationDefaultOffset"] floatValue];
     if (![[NSUserDefaults standardUserDefaults] valueForKey:@"STDNavigationDefaultOffset"]) {
         value1 = 80;
