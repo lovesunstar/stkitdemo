@@ -32,25 +32,23 @@
     self.navigationItem.title = @"导航设置";
     
     self.edgeSettingSlider.maximumValue = self.view.width;
-    CGFloat value = [[[NSUserDefaults standardUserDefaults] valueForKey:@"STDNavigationDefaultEdgeOffset"] floatValue];
+    CGFloat value = [[[STPersistence standardPersistence] valueForKey:@"STDNavigationDefaultEdgeOffset"] floatValue];
     self.edgeSettingSlider.value = value;
     
-    CGFloat value1 = [[[NSUserDefaults standardUserDefaults] valueForKey:@"STDNavigationDefaultOffset"] floatValue];
+    CGFloat value1 = [[[STPersistence standardPersistence] valueForKey:@"STDNavigationDefaultOffset"] floatValue];
     self.offsetSettingSlider.maximumValue = self.view.width;
     self.offsetSettingSlider.value = value1;
 }
 
 - (IBAction)navigationDistanceValueChanged:(UISlider *)sender {
     sender.value = (NSInteger) sender.value;
-    [[NSUserDefaults standardUserDefaults] setValue:@(sender.value) forKey:@"STDNavigationDefaultEdgeOffset"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [[STPersistence standardPersistence] setValue:@(sender.value) forKey:@"STDNavigationDefaultEdgeOffset"];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"STDNavigationDefaultEdgeOffset" object:nil];
 }
 
 - (IBAction)navigationOffsetValueChanged:(UISlider *)sender {
     sender.value = (NSInteger)sender.value;
-    [[NSUserDefaults standardUserDefaults] setValue:@(sender.value) forKey:@"STDNavigationDefaultOffset"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [[STPersistence standardPersistence] setValue:@(sender.value) forKey:@"STDNavigationDefaultOffset"];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"STDNavigationDefaultOffset" object:nil];
 }
 

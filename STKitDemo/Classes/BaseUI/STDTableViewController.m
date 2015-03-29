@@ -55,21 +55,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
-    CGFloat value = [[[NSUserDefaults standardUserDefaults] valueForKey:@"STDNavigationDefaultEdgeOffset"] floatValue];
+    CGFloat value = [[[STPersistence standardPersistence] valueForKey:@"STDNavigationDefaultEdgeOffset"] doubleValue];
     if (value == 0) {
         value = 80;
-        [[NSUserDefaults standardUserDefaults] setValue:@(value) forKey:@"STDNavigationDefaultEdgeOffset"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+        [[STPersistence standardPersistence] setValue:@(value) forKey:@"STDNavigationDefaultEdgeOffset"];
     }
     self.maximumInteractivePopEdgeDistance = value;
 
-    
-    CGFloat value1 = [[[NSUserDefaults standardUserDefaults] valueForKey:@"STDNavigationDefaultOffset"] floatValue];
-    if (![[NSUserDefaults standardUserDefaults] valueForKey:@"STDNavigationDefaultOffset"]) {
+    CGFloat value1 = [[[STPersistence standardPersistence] valueForKey:@"STDNavigationDefaultOffset"] floatValue];
+    if (value1 == 0) {
         value1 = 80;
-        [[NSUserDefaults standardUserDefaults] setValue:@(value1) forKey:@"STDNavigationDefaultOffset"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+        [[STPersistence standardPersistence] setValue:@(value1) forKey:@"STDNavigationDefaultOffset"];
     }
     self.interactivePopTransitionOffset = value1;
     
@@ -90,11 +86,11 @@
 }
 
 - (void)maximumInteractiveDistanceChanged:(id)sender {
-    self.maximumInteractivePopEdgeDistance = [[[NSUserDefaults standardUserDefaults] valueForKey:@"STDNavigationDefaultEdgeOffset"] floatValue];
+    self.maximumInteractivePopEdgeDistance = [[[STPersistence standardPersistence] valueForKey:@"STDNavigationDefaultEdgeOffset"] floatValue];
 }
 
 - (void)maximumInteractiveOffsetChanged:(id)sender {
-    self.interactivePopTransitionOffset = [[[NSUserDefaults standardUserDefaults] valueForKey:@"STDNavigationDefaultOffset"] floatValue];
+    self.interactivePopTransitionOffset = [[[STPersistence standardPersistence] valueForKey:@"STDNavigationDefaultOffset"] floatValue];
 }
 
 - (void)_refreshControlActionFired:(STRefreshControl *)refreshControl {
