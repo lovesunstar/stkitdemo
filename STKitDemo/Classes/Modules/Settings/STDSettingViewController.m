@@ -48,7 +48,7 @@
         STDTableViewSectionItem * section1 = [[STDTableViewSectionItem alloc] initWithSectionTitle:@"" items:@[item10]];
         [dataSource addObject:section1];
         
-        STDTableViewCellItem *item20 = [[STDTableViewCellItem alloc] initWithTitle:@"允许自定义导航切换" target:self action:@selector(_navigationSettingActionFired:)];
+        STDTableViewCellItem *item20 = [[STDTableViewCellItem alloc] initWithTitle:@"允许自定义导航切换" target:self action:@selector(_allowSettingActionFired:)];
         item20.switchStyle = YES;
         item20.checked = [[[STPersistence standardPersistence] valueForKey:@"STDAllowsCustomNavigationTransition"] boolValue];
         self.item20 = item20;
@@ -106,7 +106,7 @@
     [self.customNavigationController pushViewController:pingViewController animated:YES];
 }
 
-- (void)_navigationSettingActionFired:(UISwitch *)uiswitch {
+- (void)_allowSettingActionFired:(UISwitch *)uiswitch {
     if ([uiswitch isKindOfClass:[UISwitch class]]) {
         [[STPersistence standardPersistence] setValue:@(uiswitch.on) forKey:@"STDAllowsCustomNavigationTransition"];
     }

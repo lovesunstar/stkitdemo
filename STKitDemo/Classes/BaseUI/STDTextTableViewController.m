@@ -140,10 +140,7 @@
     STDTableViewSectionItem *sectionItem = [self.dataSource objectAtIndex:indexPath.section];
     STDTableViewCellItem *item = sectionItem.items[indexPath.row];
     if ([item isKindOfClass:[STDTableViewCellItem class]] && [item.target respondsToSelector:item.action]) {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-        [item.target performSelector:item.action];
-#pragma clang diagnostic pop
+        [item.target st_performSelector:item.action withObjects:nil, nil];
     }
 }
 
