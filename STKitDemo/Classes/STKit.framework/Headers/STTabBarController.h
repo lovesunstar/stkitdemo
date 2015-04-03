@@ -12,12 +12,13 @@
 @protocol STTabBarControllerDelegate;
 @class STTabBar, STTabBarItem;
 
+IB_DESIGNABLE
 @interface STTabBarController : STViewController
 
 @property(nonatomic, readonly, strong) UIView *transitionView;
 @property(nonatomic) BOOL animatedWhenTransition;
 
-@property(nonatomic, copy) NSArray *viewControllers;
+@property(nonatomic, copy) IBOutletCollection(UIViewController) NSArray *viewControllers;
 // If the number of view controllers is greater than the number displayable by a tab bar, a "More" navigation controller will automatically be shown.
 // The "More" navigation controller will not be returned by -viewControllers, but it may be returned by -selectedViewController.
 - (void)setViewControllers:(NSArray *)viewControllers animated:(BOOL)animated;

@@ -90,12 +90,20 @@
         aPath = [UIBezierPath bezierPath];
         
         // Set the starting point of the shape.
-        CGPoint p1 = [MZCroppableView convertCGPoint:[[points objectAtIndex:0] CGPointValue] fromRect1:image.frame.size toRect2:image.image.size];
+        CGPoint point = ([points[0] isKindOfClass:[NSString class]]) ? CGPointFromString(points[0]) : [points[0] CGPointValue];
+        CGPoint p1 = [MZCroppableView convertCGPoint:point fromRect1:image.frame.size toRect2:image.image.size];
         [aPath moveToPoint:CGPointMake(p1.x, p1.y)];
         
         for (uint i=1; i<points.count; i++)
         {
-            CGPoint p = [MZCroppableView convertCGPoint:[[points objectAtIndex:i] CGPointValue] fromRect1:image.frame.size toRect2:image.image.size];
+            id pvalue = points[i];
+            CGPoint p = CGPointZero;
+            if ([pvalue isKindOfClass:[NSString class]]) {
+                p = CGPointFromString(pvalue);
+            } else {
+                p = [pvalue CGPointValue];
+            }
+            p = [MZCroppableView convertCGPoint:p fromRect1:image.frame.size toRect2:image.image.size];
             [aPath addLineToPoint:CGPointMake(p.x, p.y)];
         }
         [aPath closePath];

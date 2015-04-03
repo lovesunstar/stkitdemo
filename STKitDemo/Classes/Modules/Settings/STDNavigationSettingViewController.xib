@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="STDNavigationSettingViewController">
             <connections>
                 <outlet property="edgeSettingSlider" destination="g71-w9-pZH" id="Tl9-dG-iEJ"/>
+                <outlet property="loadingView" destination="4dc-H3-0Mu" id="xap-Gc-ttO"/>
                 <outlet property="offsetSettingSlider" destination="VNb-SR-MD2" id="sYZ-IV-KhE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,7 +24,7 @@
                         <constraint firstAttribute="width" constant="280" id="V7o-Gi-z3J"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="g71-w9-pZH">
@@ -38,7 +39,7 @@
                         <constraint firstAttribute="width" constant="280" id="hV7-ZV-P5W"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <slider opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="320" translatesAutoresizingMaskIntoConstraints="NO" id="VNb-SR-MD2" userLabel="Horizontal Sliders">
@@ -47,24 +48,45 @@
                         <action selector="navigationOffsetValueChanged:" destination="-1" eventType="valueChanged" id="WAV-Ag-Tqn"/>
                     </connections>
                 </slider>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4dc-H3-0Mu" customClass="TTLoadingView">
+                    <rect key="frame" x="110" y="408" width="100" height="76"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="4eJ-28-2e0"/>
+                        <constraint firstAttribute="height" constant="76" id="moK-CZ-nj4"/>
+                    </constraints>
+                </view>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="75" translatesAutoresizingMaskIntoConstraints="NO" id="JeM-Ja-Af5">
+                    <rect key="frame" x="78" y="325" width="204" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="SXz-vm-ndz"/>
+                    </constraints>
+                    <connections>
+                        <action selector="offsetValueChanged:" destination="-1" eventType="valueChanged" id="jUj-ZH-zUg"/>
+                    </connections>
+                </slider>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="g71-w9-pZH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0xc-oc-AxZ"/>
+                <constraint firstItem="JeM-Ja-Af5" firstAttribute="top" secondItem="VNb-SR-MD2" secondAttribute="bottom" constant="49" id="29z-De-7Nq"/>
                 <constraint firstItem="D8H-3o-hsI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="3du-86-xJj"/>
                 <constraint firstItem="VNb-SR-MD2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="2" id="556-4b-VJy"/>
                 <constraint firstAttribute="trailing" secondItem="g71-w9-pZH" secondAttribute="trailing" id="79U-AH-j3P"/>
                 <constraint firstItem="VNb-SR-MD2" firstAttribute="top" secondItem="wkD-0u-VkW" secondAttribute="bottom" constant="20" id="8u2-yS-qfm"/>
+                <constraint firstAttribute="bottom" secondItem="4dc-H3-0Mu" secondAttribute="bottom" constant="20" id="AO0-Gk-8ke"/>
                 <constraint firstItem="D8H-3o-hsI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="B7D-NI-jKe"/>
                 <constraint firstItem="wkD-0u-VkW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Cdv-hs-iDa"/>
                 <constraint firstItem="g71-w9-pZH" firstAttribute="top" secondItem="D8H-3o-hsI" secondAttribute="bottom" constant="34" id="EUN-6q-e6Q" userLabel="Vertical Space - (34 - Horizontal Slider - Label - 设置距离左侧多少距离以内开始左滑可以触发返回手势"/>
                 <constraint firstAttribute="trailing" secondItem="VNb-SR-MD2" secondAttribute="trailing" constant="-2" id="Hhm-1q-tnP"/>
                 <constraint firstItem="wkD-0u-VkW" firstAttribute="top" secondItem="g71-w9-pZH" secondAttribute="bottom" constant="40" id="JNX-6D-hzW"/>
+                <constraint firstItem="JeM-Ja-Af5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="80" id="OgD-QB-12v"/>
                 <constraint firstItem="VNb-SR-MD2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="2" id="bfS-CY-ibL"/>
                 <constraint firstItem="g71-w9-pZH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nqG-Zt-1up"/>
+                <constraint firstAttribute="centerX" secondItem="4dc-H3-0Mu" secondAttribute="centerX" id="v32-Xg-zlP"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <point key="canvasLocation" x="93" y="227"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

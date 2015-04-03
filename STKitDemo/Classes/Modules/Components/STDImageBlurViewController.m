@@ -91,10 +91,10 @@
     UIBezierPath *aPath = [UIBezierPath bezierPath];
     {
         // Set the starting point of the shape.
-        CGPoint p1 = [MZCroppableView convertCGPoint:[points[0] CGPointValue] fromRect1:imageViewSize toRect2:imageSize];
+        CGPoint p1 = [MZCroppableView convertCGPoint:CGPointFromString(points[0]) fromRect1:imageViewSize toRect2:imageSize];
         [aPath moveToPoint:p1];
         for (uint i = 1; i < points.count; i++) {
-            CGPoint p = [MZCroppableView convertCGPoint:[points[i] CGPointValue] fromRect1:imageViewSize toRect2:imageSize];
+            CGPoint p = [MZCroppableView convertCGPoint:CGPointFromString(points[i]) fromRect1:imageViewSize toRect2:imageSize];
             [aPath addLineToPoint:p];
         }
         [aPath closePath];

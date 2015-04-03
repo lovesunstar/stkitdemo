@@ -9,7 +9,7 @@
 #import "STDFeedViewController.h"
 #import "STDFeedCell.h"
 #import "STDFeedImageView.h"
-
+#import "TTRefreshControl.h"
 #import "STDAppDelegate.h"
 
 @interface STDFeedViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, STImagePresentDelegate>
@@ -31,9 +31,12 @@
     if (self) {
         
         self.collectionDirector = [[STScrollDirector alloc] init];
-        [self.collectionDirector setTitle:@"下拉可以刷新" forState:STScrollDirectorStateRefreshNormal];
-        [self.collectionDirector setTitle:@"松手开始刷新" forState:STScrollDirectorStateRefreshReachedThreshold];
-        [self.collectionDirector setTitle:@"正在刷新..." forState:STScrollDirectorStateRefreshLoading];
+        TTRefreshControl *refreshControl = [[TTRefreshControl alloc] initWithFrame:CGRectMake(0, 0, 200, 76)];
+        refreshControl.threshold = 76;
+        self.collectionDirector.refreshControl = refreshControl;
+//        [self.collectionDirector setTitle:@"下拉可以刷新" forState:STScrollDirectorStateRefreshNormal];
+//        [self.collectionDirector setTitle:@"松手开始刷新" forState:STScrollDirectorStateRefreshReachedThreshold];
+//        [self.collectionDirector setTitle:@"正在刷新..." forState:STScrollDirectorStateRefreshLoading];
         [self.collectionDirector setTitle:@"加载更多" forState:STScrollDirectorStatePaginationNormal];
         [self.collectionDirector setTitle:@"正在加载更多" forState:STScrollDirectorStatePaginationLoading];
         [self.collectionDirector setTitle:@"重新加载" forState:STScrollDirectorStatePaginationFailed];

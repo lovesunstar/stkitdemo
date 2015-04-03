@@ -7,10 +7,12 @@
 //
 
 #import "STDNavigationSettingViewController.h"
-
+#import "TTLoadingView.h"
 @interface STDNavigationSettingViewController ()
 @property (weak, nonatomic) IBOutlet UISlider *edgeSettingSlider;
 @property (weak, nonatomic) IBOutlet UISlider *offsetSettingSlider;
+
+@property(strong, nonatomic) IBOutlet TTLoadingView *loadingView;
 
 @end
 
@@ -55,6 +57,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)offsetValueChanged:(UISlider *)sender {
+    CGFloat maximumValue = sender.maximumValue;
+    CGFloat minimumValue = sender.minimumValue;
+    CGFloat completion = sender.value/(maximumValue - minimumValue);
+    self.loadingView.completion = completion;
 }
 
 @end

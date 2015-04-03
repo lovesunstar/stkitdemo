@@ -88,11 +88,8 @@
 
 @end
 
+@interface NSString (STURLParameters)
 
-@interface NSData (STGZip)
-
-- (NSData *)st_compressDataUsingGZip;
-+ (NSData *)st_dataWithZipCompressedData:(NSData *)data;
+- (NSString *)stringByAppendingURLParameters:(NSDictionary *)parameters;
 
 @end
-

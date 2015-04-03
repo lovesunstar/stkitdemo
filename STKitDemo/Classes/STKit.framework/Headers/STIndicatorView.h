@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <STKit/UIKit+STKit.h>
 
-typedef enum STIndicatorType { STIndicatorTypeCustom, STIndicatorTypeWaiting, STIndicatorTypeText } STIndicatorType;
+typedef NS_ENUM(NSInteger, STIndicatorType) {
+    STIndicatorTypeCustom,
+    STIndicatorTypeWaiting,
+    STIndicatorTypeText
+};
 
 @class STIndicatorView;
 @protocol STIndicatorViewDelegate <NSObject>

@@ -237,3 +237,4 @@ typedef void(^STTimerFiredHandler) (NSTimer * timer, BOOL *invalidate);
 - (NSString *)st_stringByURLDecoded;
 @end
 
+extern NSString *STKitGetVersion(void);

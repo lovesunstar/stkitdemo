@@ -23,8 +23,7 @@
 - (void)endRefreshing;
 
 /// 下拉刷新组件当前状态
-@property(nonatomic, assign, readonly)
-    STRefreshControlState refreshControlState;
+@property(nonatomic, assign, readonly) STRefreshControlState refreshControlState;
 
 /// these are callback functions, do not call this method directly, if you want
 /// to custom your refreshcontrol, you should override them to fit different
@@ -34,6 +33,8 @@
 - (void)refreshControlDidChangedToState:(STRefreshControlState)refreshControlState;
 
 @property(nonatomic, assign) NSTimeInterval animationDuration;
+/// 最短的加载时间
+@property(nonatomic, assign) NSTimeInterval minimumLoadingDuration;
 
 @end
 

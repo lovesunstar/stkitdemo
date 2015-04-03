@@ -31,6 +31,10 @@ extern CGSize const STAccessoryViewMinimumSize;
 @property(nonatomic, strong) STRefreshControl *refreshControl;
 @property(nonatomic, strong) STPaginationControl *paginationControl;
 
+@end
+
+@interface STScrollDirector (STDefaultControl)
+
 /// @see STRefreshControlState @see STPaginationControlState
 - (void)setTitle:(NSString *)title forState:(STScrollDirectorState)state;
 - (NSString *)titleForState:(NSInteger)state;

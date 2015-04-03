@@ -10,6 +10,7 @@
 #import <Foundation/Foundation.h>
 #import "STNetworkConfiguration.h"
 
+/// 100以下的是客户端错误， 100->600 之间的为标准的HTTP协议错误
 typedef NS_ENUM(NSInteger, STHTTPNetworkErrorCode) {
     STHTTPNetworkErrorCodeUserCancelled     = 1,
     STHTTPNetworkErrorCodeCantLoadCache     = 10,
@@ -28,6 +29,9 @@ typedef NS_ENUM(NSInteger, STHTTPNetworkErrorCode) {
     STHTTPNetworkErrorCodeServiceUnavailable  = 503,
     STHTTPNetworkErrorCodeGatewayTimeout      = 504,
     STHTTPNetworkErrorCodeHTTPVersionNotSupported = 505,
+    
+    STHTTPNetworkErrorCodeUnsupportedResponseDataType  = 1001,   // 不是预期的返回结果
+    
 };
 
 @class STHTTPOperation;

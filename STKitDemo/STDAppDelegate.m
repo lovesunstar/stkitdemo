@@ -40,7 +40,6 @@
     }
     [self.window makeKeyAndVisible];
     return YES;
-    
 }
 
 - (UIViewController *)startViewController {
