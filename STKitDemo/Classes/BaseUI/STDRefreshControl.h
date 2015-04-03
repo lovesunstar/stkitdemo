@@ -1,5 +1,5 @@
 //
-//  TTRefreshControl.h
+//  STDRefreshControl.h
 //  STKitDemo
 //
 //  Created by SunJiangting on 15-4-2.
@@ -8,6 +8,6 @@
 
 #import <STKit/STKit.h>
 
-@interface TTRefreshControl : STRefreshControl
+@interface STDRefreshControl : STRefreshControl
 
 @end

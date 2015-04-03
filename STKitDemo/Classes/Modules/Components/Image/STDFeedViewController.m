@@ -9,7 +9,7 @@
 #import "STDFeedViewController.h"
 #import "STDFeedCell.h"
 #import "STDFeedImageView.h"
-#import "TTRefreshControl.h"
+#import "STDRefreshControl.h"
 #import "STDAppDelegate.h"
 
 @interface STDFeedViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, STImagePresentDelegate>
@@ -31,7 +31,7 @@
     if (self) {
         
         self.collectionDirector = [[STScrollDirector alloc] init];
-        TTRefreshControl *refreshControl = [[TTRefreshControl alloc] initWithFrame:CGRectMake(0, 0, 200, 76)];
+        STDRefreshControl *refreshControl = [[STDRefreshControl alloc] initWithFrame:CGRectMake(0, 0, 200, 76)];
         refreshControl.threshold = 76;
         self.collectionDirector.refreshControl = refreshControl;
 //        [self.collectionDirector setTitle:@"下拉可以刷新" forState:STScrollDirectorStateRefreshNormal];

@@ -6,21 +6,21 @@
 //  Copyright (c) 2015年 SunJiangting. All rights reserved.
 //
 
-#import "TTRefreshControl.h"
-#import "TTLoadingView.h"
+#import "STDRefreshControl.h"
+#import "STDLoadingView.h"
 
-@interface TTRefreshControl ()
+@interface STDRefreshControl ()
 
-@property(nonatomic, strong) TTLoadingView *loadingView;
+@property(nonatomic, strong) STDLoadingView *loadingView;
 
 @end
 
-@implementation TTRefreshControl
+@implementation STDRefreshControl
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.loadingView = [[TTLoadingView alloc] initWithFrame:CGRectZero];
+        self.loadingView = [[STDLoadingView alloc] initWithFrame:CGRectZero];
         [self addSubview:self.loadingView];
         self.minimumLoadingDuration = 2.0;
     }

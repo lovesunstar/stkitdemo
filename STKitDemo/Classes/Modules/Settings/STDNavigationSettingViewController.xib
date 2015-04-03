@@ -48,8 +48,8 @@
                         <action selector="navigationOffsetValueChanged:" destination="-1" eventType="valueChanged" id="WAV-Ag-Tqn"/>
                     </connections>
                 </slider>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4dc-H3-0Mu" customClass="TTLoadingView">
-                    <rect key="frame" x="110" y="408" width="100" height="76"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4dc-H3-0Mu" customClass="STDLoadingView">
+                    <rect key="frame" x="110" y="375" width="100" height="76"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="4eJ-28-2e0"/>
@@ -73,13 +73,13 @@
                 <constraint firstItem="VNb-SR-MD2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="2" id="556-4b-VJy"/>
                 <constraint firstAttribute="trailing" secondItem="g71-w9-pZH" secondAttribute="trailing" id="79U-AH-j3P"/>
                 <constraint firstItem="VNb-SR-MD2" firstAttribute="top" secondItem="wkD-0u-VkW" secondAttribute="bottom" constant="20" id="8u2-yS-qfm"/>
-                <constraint firstAttribute="bottom" secondItem="4dc-H3-0Mu" secondAttribute="bottom" constant="20" id="AO0-Gk-8ke"/>
                 <constraint firstItem="D8H-3o-hsI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="B7D-NI-jKe"/>
                 <constraint firstItem="wkD-0u-VkW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Cdv-hs-iDa"/>
                 <constraint firstItem="g71-w9-pZH" firstAttribute="top" secondItem="D8H-3o-hsI" secondAttribute="bottom" constant="34" id="EUN-6q-e6Q" userLabel="Vertical Space - (34 - Horizontal Slider - Label - 设置距离左侧多少距离以内开始左滑可以触发返回手势"/>
                 <constraint firstAttribute="trailing" secondItem="VNb-SR-MD2" secondAttribute="trailing" constant="-2" id="Hhm-1q-tnP"/>
                 <constraint firstItem="wkD-0u-VkW" firstAttribute="top" secondItem="g71-w9-pZH" secondAttribute="bottom" constant="40" id="JNX-6D-hzW"/>
                 <constraint firstItem="JeM-Ja-Af5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="80" id="OgD-QB-12v"/>
+                <constraint firstItem="4dc-H3-0Mu" firstAttribute="top" secondItem="JeM-Ja-Af5" secondAttribute="bottom" constant="20" id="TsT-Gh-gBR"/>
                 <constraint firstItem="VNb-SR-MD2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="2" id="bfS-CY-ibL"/>
                 <constraint firstItem="g71-w9-pZH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nqG-Zt-1up"/>
                 <constraint firstAttribute="centerX" secondItem="4dc-H3-0Mu" secondAttribute="centerX" id="v32-Xg-zlP"/>

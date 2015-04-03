@@ -58,22 +58,25 @@
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, 80, 30)];
     label.textAlignment = NSTextAlignmentLeft;
-    label.text = @"速度比例";
+    label.text = @"速度";
     label.textColor = [UIColor blackColor];
     label.backgroundColor = [UIColor clearColor];
     [tableHeaderView addSubview:label];
     
-    id speed = [[NSUserDefaults standardUserDefaults] valueForKey:@"STMoveAnimationDuration"];
-    if (!speed) {
-        speed = @(0.5);
-        [[NSUserDefaults standardUserDefaults] setValue:speed forKey:@"STMoveAnimationDuration"];
+    CGFloat duration = [[[NSUserDefaults standardUserDefaults] valueForKey:@"STMoveAnimationDuration"] floatValue];
+    if (!duration) {
+        duration = 0.5;
+        [[NSUserDefaults standardUserDefaults] setValue:@(duration) forKey:@"STMoveAnimationDuration"];
         [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    if (duration > 1) {
+        duration = duration / 10;
     }
     UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake(100, 10, 200, 30)];
     [tableHeaderView addSubview:slider];
-    slider.minimumValue = 0.2;
-    slider.maximumValue = 1.2;
-    slider.value = [speed floatValue];
+    slider.minimumValue = 1;
+    slider.maximumValue = 10;
+    slider.value = 1 / duration;
     slider.continuous = NO;
     [slider addTarget:self action:@selector(speedChanged:) forControlEvents:UIControlEventValueChanged];
     
@@ -112,7 +115,9 @@
 
 - (void)speedChanged:(UISlider *)slider {
     NSUserDefaults * userDefault = [NSUserDefaults standardUserDefaults];
-    [userDefault setValue:@(slider.value) forKey:@"STMoveAnimationDuration"];
+    CGFloat value = MAX(MIN(slider.value, 10), 1);
+    CGFloat duration = 1 / value;
+    [userDefault setValue:@(duration) forKey:@"STMoveAnimationDuration"];
     [userDefault synchronize];
 }
 

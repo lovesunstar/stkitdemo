@@ -7,12 +7,16 @@
 //
 
 #import "STDNavigationSettingViewController.h"
-#import "TTLoadingView.h"
-@interface STDNavigationSettingViewController ()
+#import "STDLoadingView.h"
+
+@interface STDNavigationSettingViewController () {
+    NSInteger   _startY;
+}
+
 @property (weak, nonatomic) IBOutlet UISlider *edgeSettingSlider;
 @property (weak, nonatomic) IBOutlet UISlider *offsetSettingSlider;
 
-@property(strong, nonatomic) IBOutlet TTLoadingView *loadingView;
+@property(strong, nonatomic) IBOutlet STDLoadingView *loadingView;
 
 @end
 
@@ -40,6 +44,9 @@
     CGFloat value1 = [[[STPersistence standardPersistence] valueForKey:@"STDNavigationDefaultOffset"] floatValue];
     self.offsetSettingSlider.maximumValue = self.view.width;
     self.offsetSettingSlider.value = value1;
+    
+    
+    _startY = self.loadingView.top;
 }
 
 - (IBAction)navigationDistanceValueChanged:(UISlider *)sender {
@@ -64,6 +71,7 @@
     CGFloat minimumValue = sender.minimumValue;
     CGFloat completion = sender.value/(maximumValue - minimumValue);
     self.loadingView.completion = completion;
+    self.loadingView.top = (_startY + completion * 76);
 }
 
 @end

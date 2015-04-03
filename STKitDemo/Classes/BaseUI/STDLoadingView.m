@@ -1,22 +1,22 @@
 //
-//  TTLoadingView.m
+//  STDLoadingView.m
 //  STKitDemo
 //
 //  Created by SunJiangting on 15-4-2.
 //  Copyright (c) 2015年 SunJiangting. All rights reserved.
 //
 
-#import "TTLoadingView.h"
+#import "STDLoadingView.h"
 #import <STKit/STKit.h>
 
-@interface TTLoadingView ()
+@interface STDLoadingView ()
 
 @property(nonatomic, strong) CAShapeLayer    *shapeLayer;
 @property(nonatomic, strong) UIImageView     *imageView;
 
 @end
 
-@implementation TTLoadingView
+@implementation STDLoadingView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -32,6 +32,7 @@
 }
 
 - (void)_commonInitialize {
+    self.backgroundColor = [UIColor clearColor];
     
     CAShapeLayer *shapeLayer = [CAShapeLayer layer];
     shapeLayer.frame = self.bounds;

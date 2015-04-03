@@ -1,5 +1,5 @@
 //
-//  TTLoadingView.h
+//  STDLoadingView.h
 //  STKitDemo
 //
 //  Created by SunJiangting on 15-4-2.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TTLoadingView : UIView
+@interface STDLoadingView : UIView
 
 @property(nonatomic) CGFloat    completion;
 
