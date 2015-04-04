@@ -109,6 +109,7 @@
 - (void)_allowSettingActionFired:(UISwitch *)uiswitch {
     if ([uiswitch isKindOfClass:[UISwitch class]]) {
         [[STPersistence standardPersistence] setValue:@(uiswitch.on) forKey:@"STDAllowsCustomNavigationTransition"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"STDAllowsCustomNavigationTransitionDidChangeNotification" object:nil];
     }
 }
 

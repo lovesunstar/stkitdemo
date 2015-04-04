@@ -13,6 +13,9 @@
 #import "STDServiceViewController.h"
 #import "STDSettingViewController.h"
 
+#import "STDCardTransitionDelegate.h"
+#import "STDRotateTransitionDelegate.h"
+
 @interface STDTabBarController ()
 
 @end
@@ -20,6 +23,7 @@
 @implementation STDTabBarController
 
 - (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -60,6 +64,15 @@
     }
     if (![[[STPersistence standardPersistence] valueForKey:@"STHasEnteredAboutViewController"] boolValue]) {
         [self setBadgeValue:@"New" forIndex:2];
+    }
+    [self reloadNavigationTransitionDelegate];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadNavigationTransitionDelegate) name:@"STDAllowsCustomNavigationTransitionDidChangeNotification" object:nil];
+}
+
+- (void)reloadNavigationTransitionDelegate {
+    STNavigationController *navigationController = [self.viewControllers firstObject];
+    if ([navigationController isKindOfClass:[STNavigationController class]]) {
+        navigationController.delegate = [STDSettingViewController allowsCustomNavigationTransition]?[STDRotateTransitionDelegate sharedDelegate]:nil;
     }
 }
 

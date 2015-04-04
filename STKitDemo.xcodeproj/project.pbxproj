@@ -44,6 +44,9 @@
 		06758AC51ACED7330000E2F8 /* 06@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06758ABD1ACED7330000E2F8 /* 06@2x.png */; };
 		06758AC61ACED7330000E2F8 /* 07@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06758ABE1ACED7330000E2F8 /* 07@2x.png */; };
 		06758AC71ACED7330000E2F8 /* 08@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06758ABF1ACED7330000E2F8 /* 08@2x.png */; };
+		06758ACA1ACEE09E0000E2F8 /* STDTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06758AC91ACEE09E0000E2F8 /* STDTransitionDelegate.m */; };
+		06758AD01ACEE34D0000E2F8 /* STDRotateTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06758ACF1ACEE34D0000E2F8 /* STDRotateTransitionDelegate.m */; };
+		06758AD31ACEE38C0000E2F8 /* STDCardTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06758AD21ACEE38C0000E2F8 /* STDCardTransitionDelegate.m */; };
 		067A9F5F1AADA73300651433 /* STDDebugPingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 067A9F5E1AADA73300651433 /* STDDebugPingViewController.m */; };
 		067A9F621AADA94B00651433 /* STDebugFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 067A9F611AADA94B00651433 /* STDebugFoundation.m */; };
 		0681CCDB19D3BC9A00D897AF /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0681CCDA19D3BC9A00D897AF /* Photos.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -221,6 +224,12 @@
 		06758ABD1ACED7330000E2F8 /* 06@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "06@2x.png"; sourceTree = "<group>"; };
 		06758ABE1ACED7330000E2F8 /* 07@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "07@2x.png"; sourceTree = "<group>"; };
 		06758ABF1ACED7330000E2F8 /* 08@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "08@2x.png"; sourceTree = "<group>"; };
+		06758AC81ACEE09E0000E2F8 /* STDTransitionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDTransitionDelegate.h; sourceTree = "<group>"; };
+		06758AC91ACEE09E0000E2F8 /* STDTransitionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STDTransitionDelegate.m; sourceTree = "<group>"; };
+		06758ACE1ACEE34D0000E2F8 /* STDRotateTransitionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDRotateTransitionDelegate.h; sourceTree = "<group>"; };
+		06758ACF1ACEE34D0000E2F8 /* STDRotateTransitionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STDRotateTransitionDelegate.m; sourceTree = "<group>"; };
+		06758AD11ACEE38C0000E2F8 /* STDCardTransitionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDCardTransitionDelegate.h; sourceTree = "<group>"; };
+		06758AD21ACEE38C0000E2F8 /* STDCardTransitionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STDCardTransitionDelegate.m; sourceTree = "<group>"; };
 		067A9F5D1AADA73300651433 /* STDDebugPingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDDebugPingViewController.h; sourceTree = "<group>"; };
 		067A9F5E1AADA73300651433 /* STDDebugPingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STDDebugPingViewController.m; sourceTree = "<group>"; };
 		067A9F601AADA94B00651433 /* STDebugFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDebugFoundation.h; sourceTree = "<group>"; };
@@ -644,6 +653,12 @@
 				06479D511ACCF54200A44FB9 /* STDLoadingView.m */,
 				06479D531ACD101E00A44FB9 /* STDRefreshControl.h */,
 				06479D541ACD101E00A44FB9 /* STDRefreshControl.m */,
+				06758AC81ACEE09E0000E2F8 /* STDTransitionDelegate.h */,
+				06758AC91ACEE09E0000E2F8 /* STDTransitionDelegate.m */,
+				06758AD11ACEE38C0000E2F8 /* STDCardTransitionDelegate.h */,
+				06758AD21ACEE38C0000E2F8 /* STDCardTransitionDelegate.m */,
+				06758ACE1ACEE34D0000E2F8 /* STDRotateTransitionDelegate.h */,
+				06758ACF1ACEE34D0000E2F8 /* STDRotateTransitionDelegate.m */,
 			);
 			path = BaseUI;
 			sourceTree = "<group>";
@@ -1081,7 +1096,6 @@
 				ORGANIZATIONNAME = SunJiangting;
 				TargetAttributes = {
 					0602B48E196974150004ACBB = {
-						DevelopmentTeam = XXHND5J98K;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
@@ -1093,7 +1107,6 @@
 					};
 					06A4D3BD19E6B3C7007D332D = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = XXHND5J98K;
 					};
 					06CF9BAB1A8BB802000037EF = {
 						CreatedOnToolsVersion = 6.1;
@@ -1201,6 +1214,8 @@
 				06CB65B61A59523F00ABD7D3 /* STAHanoiView.m in Sources */,
 				065D78DB1A8230640083D058 /* STDAdapter.m in Sources */,
 				06CB65D81A59524000ABD7D3 /* STDServiceViewController.m in Sources */,
+				06758AD31ACEE38C0000E2F8 /* STDCardTransitionDelegate.m in Sources */,
+				06758ACA1ACEE09E0000E2F8 /* STDTransitionDelegate.m in Sources */,
 				06CF9BC71A8BC697000037EF /* STDModel.xcdatamodeld in Sources */,
 				06CB65B21A59523F00ABD7D3 /* STDLinkViewController.m in Sources */,
 				06CB65D41A59524000ABD7D3 /* SCSiriWaveformView.m in Sources */,
@@ -1251,6 +1266,7 @@
 				06CB88A61A88C8C40082DACA /* STDBridge.m in Sources */,
 				060798F11AC3E68A007C1AA7 /* STDAuthorization.m in Sources */,
 				0664952F1A90C6020026D498 /* STDSettingViewController.m in Sources */,
+				06758AD01ACEE34D0000E2F8 /* STDRotateTransitionDelegate.m in Sources */,
 				06CB65AB1A59523F00ABD7D3 /* STDFeedItem.m in Sources */,
 				065D78D41A822ECF0083D058 /* STDFactoryMethod.m in Sources */,
 				06CB65BA1A59523F00ABD7D3 /* STASortView.m in Sources */,

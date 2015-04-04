@@ -61,10 +61,9 @@
 - (void)setCompletion:(CGFloat)completion {
     _completion = completion;
     if (completion < 1 && !self.imageView.isAnimating) {
-        [self _drawBerizerPathWithCompletion:completion];
-        self.imageView.hidden = YES;
+        [self _layoutWithCompletion:completion];
     } else {
-        [self _drawBerizerPathWithCompletion:1];
+        [self _layoutWithCompletion:1];
         self.imageView.frame = CGRectMake(self.inCenterX - 30, self.height - 60, 60, 60);
         self.imageView.hidden = NO;
     }
@@ -85,13 +84,9 @@
     return self.imageView.isAnimating;
 }
 
-- (void)_drawBerizerPathWithCompletion:(CGFloat)completion {
-    UIBezierPath *berizierPath = [self _bezierPathWithCompletion:completion];
-    self.shapeLayer.path = berizierPath.CGPath;
-}
-
-- (UIBezierPath *)_bezierPathWithCompletion:(CGFloat)completion {
+- (void)_layoutWithCompletion:(CGFloat)completion {
     CGFloat width = 0, height = 0;
+    self.imageView.hidden = YES;
     // 先从5到20----然后从20----40------>40
     if (completion < 0.3) {
         CGFloat phaseCompletion = completion / 0.3;
@@ -104,17 +99,19 @@
     } else if (completion < 0.8) {
         CGFloat phaseCompletion = (completion - 0.7) / 0.1;
         width = 20 + phaseCompletion * 10;
-        height = 45 - phaseCompletion * 20;
+        height = 45 - phaseCompletion * 15;
     } else {
+        self.imageView.hidden = NO;
         CGFloat phaseCompletion = (completion - 0.8) / 0.2;
-        width = 30 + phaseCompletion * 40;
-        height = 25 + phaseCompletion * 40;
+        width = 30 + phaseCompletion * 30;
+        height = 30 + phaseCompletion * 30;
     }
-    
     CGFloat x = (CGRectGetWidth(self.bounds) - width ) / 2;
     CGFloat y = CGRectGetHeight(self.bounds) - height;
     CGRect rect = CGRectMake(x, y, width, height);
     UIBezierPath *bezierPath = [UIBezierPath bezierPathWithOvalInRect:rect];
-    return bezierPath;
+    self.shapeLayer.path = bezierPath.CGPath;
+    self.imageView.frame = rect;
+    
 }
 @end

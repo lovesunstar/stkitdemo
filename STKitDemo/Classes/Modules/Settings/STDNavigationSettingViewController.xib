@@ -19,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="设置距离左侧多少距离以内开始左滑可以触发返回手势" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="D8H-3o-hsI">
-                    <rect key="frame" x="20" y="40" width="280" height="41"/>
+                    <rect key="frame" x="20" y="20" width="280" height="41"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="280" id="V7o-Gi-z3J"/>
                     </constraints>
@@ -28,13 +28,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="g71-w9-pZH">
-                    <rect key="frame" x="-2" y="115" width="324" height="31"/>
+                    <rect key="frame" x="-2" y="71" width="324" height="31"/>
                     <connections>
                         <action selector="navigationDistanceValueChanged:" destination="-1" eventType="valueChanged" id="cVC-Xu-Plj"/>
                     </connections>
                 </slider>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设置Push/Pop时，上一个页面移动的起始位置。" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="wkD-0u-VkW">
-                    <rect key="frame" x="20" y="185" width="280" height="41"/>
+                    <rect key="frame" x="20" y="121" width="280" height="41"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="280" id="hV7-ZV-P5W"/>
                     </constraints>
@@ -43,46 +43,53 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <slider opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="320" translatesAutoresizingMaskIntoConstraints="NO" id="VNb-SR-MD2" userLabel="Horizontal Sliders">
-                    <rect key="frame" x="0.0" y="246" width="324" height="31"/>
+                    <rect key="frame" x="0.0" y="172" width="322" height="31"/>
                     <connections>
                         <action selector="navigationOffsetValueChanged:" destination="-1" eventType="valueChanged" id="WAV-Ag-Tqn"/>
                     </connections>
                 </slider>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4dc-H3-0Mu" customClass="STDLoadingView">
-                    <rect key="frame" x="110" y="375" width="100" height="76"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="100" id="4eJ-28-2e0"/>
-                        <constraint firstAttribute="height" constant="76" id="moK-CZ-nj4"/>
-                    </constraints>
-                </view>
-                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="75" translatesAutoresizingMaskIntoConstraints="NO" id="JeM-Ja-Af5">
-                    <rect key="frame" x="78" y="325" width="204" height="31"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="200" id="SXz-vm-ndz"/>
-                    </constraints>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="滑动测试下拉刷新效果" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4j1-nC-gsC">
+                    <rect key="frame" x="20" y="212" width="290" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="75" translatesAutoresizingMaskIntoConstraints="NO" id="JeM-Ja-Af5">
+                    <rect key="frame" x="78" y="242" width="244" height="31"/>
                     <connections>
                         <action selector="offsetValueChanged:" destination="-1" eventType="valueChanged" id="jUj-ZH-zUg"/>
                     </connections>
                 </slider>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4dc-H3-0Mu" customClass="STDLoadingView">
+                    <rect key="frame" x="110" y="220" width="100" height="76"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="76" id="8ry-7K-fNf"/>
+                        <constraint firstAttribute="width" constant="100" id="m4O-kY-YlW"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="JeM-Ja-Af5" firstAttribute="top" secondItem="VNb-SR-MD2" secondAttribute="bottom" constant="49" id="29z-De-7Nq"/>
                 <constraint firstItem="D8H-3o-hsI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="3du-86-xJj"/>
                 <constraint firstItem="VNb-SR-MD2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="2" id="556-4b-VJy"/>
                 <constraint firstAttribute="trailing" secondItem="g71-w9-pZH" secondAttribute="trailing" id="79U-AH-j3P"/>
-                <constraint firstItem="VNb-SR-MD2" firstAttribute="top" secondItem="wkD-0u-VkW" secondAttribute="bottom" constant="20" id="8u2-yS-qfm"/>
-                <constraint firstItem="D8H-3o-hsI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="B7D-NI-jKe"/>
+                <constraint firstItem="VNb-SR-MD2" firstAttribute="top" secondItem="wkD-0u-VkW" secondAttribute="bottom" constant="10" id="8u2-yS-qfm"/>
+                <constraint firstItem="4j1-nC-gsC" firstAttribute="top" secondItem="VNb-SR-MD2" secondAttribute="bottom" constant="10" id="9yE-8V-kVz"/>
+                <constraint firstItem="JeM-Ja-Af5" firstAttribute="top" secondItem="4j1-nC-gsC" secondAttribute="bottom" constant="10" id="Acf-Ct-eIU"/>
+                <constraint firstItem="D8H-3o-hsI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="B7D-NI-jKe"/>
                 <constraint firstItem="wkD-0u-VkW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Cdv-hs-iDa"/>
-                <constraint firstItem="g71-w9-pZH" firstAttribute="top" secondItem="D8H-3o-hsI" secondAttribute="bottom" constant="34" id="EUN-6q-e6Q" userLabel="Vertical Space - (34 - Horizontal Slider - Label - 设置距离左侧多少距离以内开始左滑可以触发返回手势"/>
-                <constraint firstAttribute="trailing" secondItem="VNb-SR-MD2" secondAttribute="trailing" constant="-2" id="Hhm-1q-tnP"/>
-                <constraint firstItem="wkD-0u-VkW" firstAttribute="top" secondItem="g71-w9-pZH" secondAttribute="bottom" constant="40" id="JNX-6D-hzW"/>
-                <constraint firstItem="JeM-Ja-Af5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="80" id="OgD-QB-12v"/>
-                <constraint firstItem="4dc-H3-0Mu" firstAttribute="top" secondItem="JeM-Ja-Af5" secondAttribute="bottom" constant="20" id="TsT-Gh-gBR"/>
+                <constraint firstItem="4dc-H3-0Mu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="220" id="Cft-qF-i5x"/>
+                <constraint firstItem="g71-w9-pZH" firstAttribute="top" secondItem="D8H-3o-hsI" secondAttribute="bottom" constant="10" id="EUN-6q-e6Q" userLabel="Vertical Space - (34 - Horizontal Slider - Label - 设置距离左侧多少距离以内开始左滑可以触发返回手势"/>
+                <constraint firstItem="wkD-0u-VkW" firstAttribute="top" secondItem="g71-w9-pZH" secondAttribute="bottom" constant="20" id="JNX-6D-hzW"/>
+                <constraint firstItem="VNb-SR-MD2" firstAttribute="trailing" secondItem="JeM-Ja-Af5" secondAttribute="trailing" id="LK4-ri-eVf"/>
+                <constraint firstItem="4j1-nC-gsC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="NH9-af-osD"/>
+                <constraint firstAttribute="centerX" secondItem="4dc-H3-0Mu" secondAttribute="centerX" id="Pwq-JS-KJ5"/>
+                <constraint firstAttribute="trailing" secondItem="VNb-SR-MD2" secondAttribute="trailing" id="Zi1-jQ-OwM"/>
+                <constraint firstItem="JeM-Ja-Af5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="80" id="aQd-1J-INL"/>
                 <constraint firstItem="VNb-SR-MD2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="2" id="bfS-CY-ibL"/>
+                <constraint firstAttribute="trailing" secondItem="4j1-nC-gsC" secondAttribute="trailing" constant="10" id="nWF-y7-3pg"/>
                 <constraint firstItem="g71-w9-pZH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nqG-Zt-1up"/>
-                <constraint firstAttribute="centerX" secondItem="4dc-H3-0Mu" secondAttribute="centerX" id="v32-Xg-zlP"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
