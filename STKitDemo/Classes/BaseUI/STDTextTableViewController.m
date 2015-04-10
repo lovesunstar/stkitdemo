@@ -23,6 +23,7 @@
         self.switchView = [[UISwitch alloc] init];
         self.accessoryView = self.switchView;
         [self.switchView addTarget:self action:@selector(_switchActionFired:) forControlEvents:UIControlEventTouchUpInside];
+        self.textLabel.highlightedTextColor = [UIColor lightGrayColor];
     }
     return self;
 }

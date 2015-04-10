@@ -19,7 +19,13 @@ shouldBeginTransitionContext:(STNavigationControllerTransitionContext *)transiti
   willBeginTransitionContext:(STNavigationControllerTransitionContext *)transitionContext {
     UIView *fromView = transitionContext.fromView, *toView = transitionContext.toView, *transitionView = transitionContext.transitionView;
     STViewControllerTransitionType transitionType = transitionContext.transitionType;
-    [self _transformAppliedToFromView:fromView andToView:toView withTransitionView:transitionView completion:0 transitionType:transitionType];
+    fromView.layer.transform = toView.layer.transform = CATransform3DIdentity;
+    fromView.left = 0;
+    if (transitionType == STViewControllerTransitionTypePush) {
+        toView.left = CGRectGetWidth(transitionView.bounds);
+    } else {
+        toView.left = - CGRectGetWidth(transitionView.bounds);;
+    }
 }
 
 - (void)navigationController:(STNavigationController *)navigationController
@@ -29,6 +35,19 @@ shouldBeginTransitionContext:(STNavigationControllerTransitionContext *)transiti
     STViewControllerTransitionType transitionType = transitionContext.transitionType;
     [self _transformAppliedToFromView:fromView andToView:toView withTransitionView:transitionView completion:completion transitionType:transitionType];
 }
+
+- (void)navigationController:(STNavigationController *)navigationController didEndTransitionContext:(STNavigationControllerTransitionContext *)transitionContext {
+    UIView *fromView = transitionContext.fromView, *toView = transitionContext.toView, *transitionView = transitionContext.transitionView;
+    STViewControllerTransitionType transitionType = transitionContext.transitionType;
+    fromView.layer.transform = toView.layer.transform = CATransform3DIdentity;
+    toView.left = 0;
+    if (transitionType == STViewControllerTransitionTypePush) {
+        fromView.left = -CGRectGetWidth(transitionView.bounds);
+    } else {
+        fromView.left = CGRectGetWidth(transitionView.bounds);
+    }
+}
+
 
 - (void)_transformAppliedToFromView:(UIView *)fromView
                           andToView:(UIView *)toView
@@ -62,42 +81,20 @@ shouldBeginTransitionContext:(STNavigationControllerTransitionContext *)transiti
     
     leftView.layer.transform = CATransform3DIdentity;
     leftView.left = leftX;
-    leftView.layer.transform = [self transformfromAngle:leftAngel height:leftHeight xAxis:leftXAxis];
+    leftView.layer.transform = [self _transform3DWithAngle:leftAngel height:leftHeight xAxis:leftXAxis];
     
     rightView.layer.transform = CATransform3DIdentity;
     rightView.left = rightX;
-    rightView.layer.transform = [self transformfromAngle:rightAngel height:rightHeight xAxis:rightXAxis];
+    rightView.layer.transform = [self _transform3DWithAngle:rightAngel height:rightHeight xAxis:rightXAxis];
 }
 
-- (void)navigationController:(STNavigationController *)navigationController didEndTransitionContext:(STNavigationControllerTransitionContext *)transitionContext {
-    UIView *fromView = transitionContext.fromView, *toView = transitionContext.toView, *transitionView = transitionContext.transitionView;
-    fromView.layer.transform = toView.layer.transform = CATransform3DIdentity;
-    toView.left = 0;
-    if (transitionContext == STViewControllerTransitionTypePush) {
-        fromView.left = -CGRectGetWidth(transitionView.bounds);
-    } else {
-        fromView.left = CGRectGetWidth(transitionView.bounds) * transitionContext.completion;
-        toView.left = CGRectGetWidth(transitionView.bounds) * (transitionContext.completion - 1);
-    }
-//    UIView *fromView = transitionContext.fromView, *toView = transitionContext.toView, *transitionView = transitionContext.transitionView;
-//    CGFloat completion = transitionContext.completion;
-//    STViewControllerTransitionType transitionType = transitionContext.transitionType;
-//    [self _transformAppliedToFromView:fromView andToView:toView withTransitionView:transitionView completion:completion transitionType:transitionType];
-    
-}
-
-- (CATransform3D)transformfromAngle:(CGFloat)angle
+- (CATransform3D)_transform3DWithAngle:(CGFloat)angle
                              height:(CGFloat)height
                               xAxis:(BOOL)axis {
-    CATransform3D t = CATransform3DIdentity;
-    t.m34  = 1.0/-500;
-    if (axis) {
-        t = CATransform3DRotate(t,angle, 1, 1, 0);
-    } else {
-        t = CATransform3DRotate(t,angle, -1, 1, 0);
-    }
-//    NSLog(@"%@", [NSValue valueWithCATransform3D:t]);
-    return t;
+    CATransform3D transform = CATransform3DIdentity;
+    transform.m34  = 1.0/-500;
+    CGFloat x = axis ? 1 : -1;
+    return CATransform3DRotate(transform, angle, x, 1, 0);
 }
 
 @end

@@ -24,7 +24,6 @@
 		060798F11AC3E68A007C1AA7 /* STDAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 060798F01AC3E68A007C1AA7 /* STDAuthorization.m */; };
 		06479D521ACCF54200A44FB9 /* STDLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06479D511ACCF54200A44FB9 /* STDLoadingView.m */; };
 		06479D551ACD101E00A44FB9 /* STDRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 06479D541ACD101E00A44FB9 /* STDRefreshControl.m */; };
-		065D78B81A81ECB60083D058 /* STDScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 065D78B71A81ECB60083D058 /* STDScrollViewController.m */; };
 		065D78D21A822ECF0083D058 /* STDAbstractFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 065D78C91A822ECF0083D058 /* STDAbstractFactory.m */; };
 		065D78D31A822ECF0083D058 /* STDBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 065D78CB1A822ECF0083D058 /* STDBuilder.m */; };
 		065D78D41A822ECF0083D058 /* STDFactoryMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 065D78CD1A822ECF0083D058 /* STDFactoryMethod.m */; };
@@ -47,6 +46,7 @@
 		06758ACA1ACEE09E0000E2F8 /* STDTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06758AC91ACEE09E0000E2F8 /* STDTransitionDelegate.m */; };
 		06758AD01ACEE34D0000E2F8 /* STDRotateTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06758ACF1ACEE34D0000E2F8 /* STDRotateTransitionDelegate.m */; };
 		06758AD31ACEE38C0000E2F8 /* STDCardTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06758AD21ACEE38C0000E2F8 /* STDCardTransitionDelegate.m */; };
+		06758AD61AD3BC3F0000E2F8 /* STDScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06758AD51AD3BC3F0000E2F8 /* STDScrollViewController.m */; };
 		067A9F5F1AADA73300651433 /* STDDebugPingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 067A9F5E1AADA73300651433 /* STDDebugPingViewController.m */; };
 		067A9F621AADA94B00651433 /* STDebugFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 067A9F611AADA94B00651433 /* STDebugFoundation.m */; };
 		0681CCDB19D3BC9A00D897AF /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0681CCDA19D3BC9A00D897AF /* Photos.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -230,6 +230,8 @@
 		06758ACF1ACEE34D0000E2F8 /* STDRotateTransitionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STDRotateTransitionDelegate.m; sourceTree = "<group>"; };
 		06758AD11ACEE38C0000E2F8 /* STDCardTransitionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDCardTransitionDelegate.h; sourceTree = "<group>"; };
 		06758AD21ACEE38C0000E2F8 /* STDCardTransitionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STDCardTransitionDelegate.m; sourceTree = "<group>"; };
+		06758AD41AD3BC3F0000E2F8 /* STDScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDScrollViewController.h; sourceTree = "<group>"; };
+		06758AD51AD3BC3F0000E2F8 /* STDScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STDScrollViewController.m; sourceTree = "<group>"; };
 		067A9F5D1AADA73300651433 /* STDDebugPingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDDebugPingViewController.h; sourceTree = "<group>"; };
 		067A9F5E1AADA73300651433 /* STDDebugPingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STDDebugPingViewController.m; sourceTree = "<group>"; };
 		067A9F601AADA94B00651433 /* STDebugFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDebugFoundation.h; sourceTree = "<group>"; };
@@ -659,6 +661,8 @@
 				06758AD21ACEE38C0000E2F8 /* STDCardTransitionDelegate.m */,
 				06758ACE1ACEE34D0000E2F8 /* STDRotateTransitionDelegate.h */,
 				06758ACF1ACEE34D0000E2F8 /* STDRotateTransitionDelegate.m */,
+				06758AD41AD3BC3F0000E2F8 /* STDScrollViewController.h */,
+				06758AD51AD3BC3F0000E2F8 /* STDScrollViewController.m */,
 			);
 			path = BaseUI;
 			sourceTree = "<group>";
@@ -1262,6 +1266,7 @@
 				067A9F5F1AADA73300651433 /* STDDebugPingViewController.m in Sources */,
 				065D78DE1A8344C30083D058 /* STDFacade.m in Sources */,
 				06CB65C31A59523F00ABD7D3 /* STDUser.m in Sources */,
+				06758AD61AD3BC3F0000E2F8 /* STDScrollViewController.m in Sources */,
 				06CB65B31A59523F00ABD7D3 /* STDTextViewController.m in Sources */,
 				06CB88A61A88C8C40082DACA /* STDBridge.m in Sources */,
 				060798F11AC3E68A007C1AA7 /* STDAuthorization.m in Sources */,
@@ -1276,7 +1281,6 @@
 				06CB65CB1A59524000ABD7D3 /* STDTextChatCell.m in Sources */,
 				06CB65AA1A59523F00ABD7D3 /* STDFeedImageView.m in Sources */,
 				06CB65B51A59523F00ABD7D3 /* STAHanoiOperation.m in Sources */,
-				065D78B81A81ECB60083D058 /* STDScrollViewController.m in Sources */,
 				06479D551ACD101E00A44FB9 /* STDRefreshControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
