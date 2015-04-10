@@ -26,8 +26,13 @@
     if ([application respondsToSelector:@selector(setStatusBarStyle:)]) {
         application.statusBarStyle = UIStatusBarStyleDefault;
     }
+    application.statusBarHidden = NO;
 
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    if (STGetSystemVersion() < 7) {
+        // iOS6以前statusBar 会有圆角
+        self.window.windowLevel = UIWindowLevelStatusBar + 1;
+    }
     self.window.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
     NSString *previousStyle = [[STPersistence standardPersistence] valueForKey:@"SelectedStyle"];

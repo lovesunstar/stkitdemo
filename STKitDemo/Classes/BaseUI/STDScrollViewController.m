@@ -76,12 +76,12 @@
         contentOffset.y = 0;
         self.webView.top = self.headerView.bottom;
         scrollView.contentOffset = contentOffset;
-        self.webView.height = self.view.height - self.headerView.bottom;
+        self.webView.height = self.view.height - MAX(self.headerView.bottom, 0);
     } else {
         CGFloat targetY = self.webView.top - contentOffset.y;
         if (targetY <= 200) {
             self.webView.top = targetY;
-            self.webView.height = self.view.height - targetY;
+            self.webView.height = self.view.height - MAX(0, targetY);
         }
     }
 }
