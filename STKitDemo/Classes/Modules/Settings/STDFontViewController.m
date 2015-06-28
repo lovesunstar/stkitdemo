@@ -6,8 +6,6 @@
 //  Copyright (c) 2015年 SunJiangting. All rights reserved.
 //
 
-#import "STDFontViewController.h"
-
 @implementation STDFontViewController
 
 @end

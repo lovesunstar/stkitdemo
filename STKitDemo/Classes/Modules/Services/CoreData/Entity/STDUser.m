@@ -7,7 +7,6 @@
 //
 
 #import "STDUser.h"
-#import "STDImage.h"
 
 
 @implementation STDUser

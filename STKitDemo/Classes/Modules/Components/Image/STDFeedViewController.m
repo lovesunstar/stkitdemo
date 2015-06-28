@@ -8,9 +8,7 @@
 
 #import "STDFeedViewController.h"
 #import "STDFeedCell.h"
-#import "STDFeedImageView.h"
 #import "STDRefreshControl.h"
-#import "STDAppDelegate.h"
 
 @interface STDFeedViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, STImagePresentDelegate>
 
@@ -34,9 +32,6 @@
         STDRefreshControl *refreshControl = [[STDRefreshControl alloc] initWithFrame:CGRectMake(0, 0, 200, 76)];
         refreshControl.threshold = 76;
         self.collectionDirector.refreshControl = refreshControl;
-//        [self.collectionDirector setTitle:@"下拉可以刷新" forState:STScrollDirectorStateRefreshNormal];
-//        [self.collectionDirector setTitle:@"松手开始刷新" forState:STScrollDirectorStateRefreshReachedThreshold];
-//        [self.collectionDirector setTitle:@"正在刷新..." forState:STScrollDirectorStateRefreshLoading];
         [self.collectionDirector setTitle:@"加载更多" forState:STScrollDirectorStatePaginationNormal];
         [self.collectionDirector setTitle:@"正在加载更多" forState:STScrollDirectorStatePaginationLoading];
         [self.collectionDirector setTitle:@"重新加载" forState:STScrollDirectorStatePaginationFailed];
@@ -73,14 +68,16 @@
     [self.collectionDirector.refreshControl addTarget:self action:@selector(refreshControlActionFired:) forControlEvents:UIControlEventValueChanged];
     [self.collectionDirector.paginationControl addTarget:self action:@selector(paginationControlActionFired:) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = self.collectionDirector.refreshControl;
+    
+    [self.refreshControl beginRefreshing];
 }
 
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    NSTimeInterval timeInterval = [[NSDate date] timeIntervalSince1970];
-    if (((timeInterval - self.previousRequestTime) > 300 || self.feeds.count == 0) && !self.refreshControl.isRefreshing && self.automaticallyFetchRemoteData) {
-        [self.refreshControl beginRefreshing];
-    }
+//    NSTimeInterval timeInterval = [[NSDate date] timeIntervalSince1970];
+//    if (((timeInterval - self.previousRequestTime) > 300 || self.feeds.count == 0) && !self.refreshControl.isRefreshing && self.automaticallyFetchRemoteData) {
+//        [self.refreshControl beginRefreshing];
+//    }
 }
 
 - (void)GIFGeneratorActionFired:(id) sender {
@@ -148,13 +145,13 @@
     }];
 }
 
-- (void) loadDataFromCacheWithHandler:(STDFeedLoadHandler) completionHandler {
+- (void)loadDataFromCacheWithHandler:(STDFeedLoadHandler) completionHandler {
     NSMutableArray * result = [NSMutableArray arrayWithCapacity:5];
     NSString * cacheKey = [NSString stringWithFormat:@"%@-CachedData", [self cacheIdentifier]].md5String;
     NSArray * cachedData = [[STPersistence cachePersistenceWithSubpath:@"FeedCache"] valueForKey:cacheKey];
     if ([cachedData isKindOfClass:[NSArray class]]) {
         [cachedData enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            STDFeedItem * feedItem = [[STDFeedItem alloc] initWithDictinoary:obj];
+            STDFeedItem * feedItem = [[STDFeedItem alloc] initWithDictionary:obj];
             [result addObject:feedItem];
         }];
     }

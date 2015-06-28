@@ -9,7 +9,6 @@
 #import "STDImageBlurViewController.h"
 #import "MZCroppableView.h"
 #import "UIBezierPath-Points.h"
-#import <CoreImage/CoreImage.h>
 
 @interface STDImageBlurViewController ()
 
@@ -25,7 +24,7 @@
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.interactivePopTransitionOffset = 15;
+        self.st_interactivePopTransitionOffset = 15;
         self.customizeEdgeOffset = NO;
     }
     return self;

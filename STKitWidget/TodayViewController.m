@@ -104,7 +104,7 @@
     NSArray * cachedFeeds = [[STPersistence documentPersistence] valueForKey:cacheKey];
     if ([cachedFeeds isKindOfClass:[NSArray class]]) {
         [cachedFeeds enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            STDFeedItem * feedItem = [[STDFeedItem alloc] initWithDictinoary:obj];
+            STDFeedItem * feedItem = [[STDFeedItem alloc] initWithDictionary:obj];
             [result addObject:feedItem];
         }];
         self.feeds = result;

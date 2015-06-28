@@ -45,10 +45,10 @@ IB_DESIGNABLE
 @interface UIViewController (STTabBarControllerItem)
 
 @property(nonatomic, strong)
-    STTabBarItem *customTabBarItem; // Automatically created lazily with the view controller's title if it's not set explicitly.
+    STTabBarItem *st_tabBarItem; // Automatically created lazily with the view controller's title if it's not set explicitly.
 
 @property(nonatomic, readonly, strong)
-    STTabBarController *customTabBarController; // If the view controller has a tab bar controller as its ancestor, return it. Returns nil otherwise.
+    STTabBarController *st_tabBarController; // If the view controller has a tab bar controller as its ancestor, return it. Returns nil otherwise.
 
 @end
 

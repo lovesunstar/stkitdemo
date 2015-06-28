@@ -7,22 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <STKit/STDefines.h>
-#import "Foundation+STKit.h"
+#import <STKit/Foundation+STKit.h>
+#import <CoreGraphics/CoreGraphics.h>
 
-#define STLogPoint(point) STLog(@"Point (%f, %f)", point.x, point.y);
-#define STLogSize(size) STLog(@"Size (%f, %f)", size.width, size.height);
-#define STLogRect(rect) STLog(@"Rect (%f,%f,%f,%f)", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
-#define STLogEdgeInsets(insets) STLog(@"EdgeInsets (%f,%f,%f,%f)", insets.top, insets.left, insets.bottom, insets.right);
+ST_EXTERN CGFloat STOnePixel();
+ST_EXTERN CGFloat STGetScreenWidth();
+ST_EXTERN CGFloat STGetScreenHeight();
 
-extern CGFloat STOnePixel();
-extern CGFloat STGetScreenWidth();
-extern CGFloat STGetScreenHeight();
+ST_EXTERN CGAffineTransform STTransformMakeRotation(CGPoint center, CGPoint anchorPoint, CGFloat angle);
 
-extern CGFloat STGetSystemVersion();
-extern NSString *STGetSystemVersionString();
+ST_EXTERN CGFloat STGetSystemVersion();
+ST_EXTERN NSString *STGetSystemVersionString();
 
-extern CGPoint STConvertPointBetweenSize(CGPoint point, CGSize fromSize, CGSize toSize);
+ST_EXTERN CGPoint STConvertPointBetweenSize(CGPoint point, CGSize fromSize, CGSize toSize);
+ST_EXTERN CGRect STConvertFrameBetweenSize(CGRect frame, CGSize fromSize, CGSize toSize);
 
 #pragma mark - UIColor Extension
 /// 给UIColor增加rgb的构造方法
@@ -112,17 +110,6 @@ extern CGPoint STConvertPointBetweenSize(CGPoint point, CGSize fromSize, CGSize 
 - (UIViewController *)viewController;
 
 /**
- * @abstract 递归查找view的nextResponder，直到找到类型为class的Responder
- *
- * @param class  nextResponder 的 class
- * @return       第一个满足类型为class的UIResponder
- */
-- (UIResponder *)nextResponderWithClass:(Class) class;
-
-/// 查找firstResponder
-- (UIResponder *)findFirstResponder;
-
-/**
  * @abstract view的superview中，是否包含某一类的view
  *
  * @param viewClass  superview 的 class
@@ -187,6 +174,32 @@ extern CGPoint STConvertPointBetweenSize(CGPoint point, CGSize fromSize, CGSize 
 - (CGPoint)offsetFromView:(UIView *)otherView;
 
 @property(nonatomic) CGPoint    anchorPoint;
+
+@end
+
+@interface UIScrollView (STKit)
+
+@property(nonatomic) CGFloat contentOffsetX;
+@property(nonatomic) CGFloat contentOffsetY;
+
+@property(nonatomic) CGFloat contentWidth;
+@property(nonatomic) CGFloat contentHeight;
+
+@end
+
+@interface UIResponder (STResponder)
+
+/**
+ * @abstract 递归查找view的nextResponder，直到找到类型为class的Responder
+ *
+ * @param class  nextResponder 的 class
+ * @return       第一个满足类型为class的UIResponder
+ */
+- (UIResponder *)nextResponderWithClass:(Class) class;
+
+/// 查找firstResponder
+- (UIResponder *)findFirstResponder;
+
 
 @end
 
@@ -337,6 +350,12 @@ typedef void (^STInvokeHandler)(void);
 @end
 
 @interface UIImage (STSubimage)
+
+- (UIImage *)fixedOrientationImage;
+
+- (UIImage *)imageRotatedByRadians:(CGFloat)radians;
+- (UIImage *)imageRotatedByDegrees:(CGFloat)degrees;
+
 + (UIImage *)imageWithColor:(UIColor *)color;
 + (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size;
 /// 某个rect下的子图像
@@ -344,19 +363,7 @@ typedef void (^STInvokeHandler)(void);
 
 - (UIImage *)imageWithTransform:(CGAffineTransform)transform;
 
+- (UIImage *)imageConstrainedToSize:(CGSize)size;
 - (UIImage *)imageConstrainedToSize:(CGSize)size contentMode:(UIViewContentMode)contentMode;
 
-@end
-
-typedef enum STBarButtonCustomItem {
-    STBarButtonCustomItemBack,
-    STBarButtonCustomItemDismiss,
-    STBarButtonCustomItemMore,
-} STBarButtonCustomItem;
-@interface UIBarButtonItem (STKit)
-
-+ (instancetype)backBarButtonItemWithTarget:(id)target action:(SEL)action;
-- (instancetype)initWithBarButtonCustomItem:(STBarButtonCustomItem)customItem target:(id)target action:(SEL)action;
-
-- (instancetype)initWithTitle:(NSString *)title target:(id)target action:(SEL)action;
 @end

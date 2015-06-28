@@ -8,12 +8,7 @@
 
 #import "STDMoreViewController.h"
 
-#import <STKit/STKit.h>
-
 #import "STDAboutViewController.h"
-#import "STDRecordViewController.h"
-#import "STDReaderViewController.h"
-#import "STARootViewController.h"
 #import "STDAppDelegate.h"
 #import "STDBigViewController.h"
 #import "STDSettingViewController.h"
@@ -56,8 +51,8 @@
     
     [[STPersistence standardPersistence] setValue:@(YES) forKey:@"STHasEnteredAboutViewController"];
     
-    if (self.customTabBarController) {
-        [self.customTabBarController setBadgeValue:nil forIndex:2];
+    if (self.st_tabBarController) {
+        [self.st_tabBarController setBadgeValue:nil forIndex:2];
     }
     
     if (self.sideBarController) {
@@ -85,17 +80,17 @@
 - (void)_settingActionFired:(id)sender {
     STDSettingViewController *settingViewController = [[STDSettingViewController alloc] initWithStyle:UITableViewStyleGrouped];
     settingViewController.hidesBottomBarWhenPushed = YES;
-    [self.customNavigationController pushViewController:settingViewController animated:YES];
+    [self.st_navigationController pushViewController:settingViewController animated:YES];
 }
 
 - (void)_dbMeiziActionFired {
     STDBigViewController *viewController = [[STDBigViewController alloc] init];
-    [self.customNavigationController pushViewController:viewController animated:YES];
+    [self.st_navigationController pushViewController:viewController animated:YES];
 }
 
 - (void)_aboutActionFired {
     STDAboutViewController *aboutViewController = [[STDAboutViewController alloc] initWithNibName:nil bundle:nil];
-    [self.customNavigationController pushViewController:aboutViewController animated:YES];
+    [self.st_navigationController pushViewController:aboutViewController animated:YES];
 }
 
 - (void)_openSourceLicenseActionFired {
@@ -108,7 +103,7 @@
     }
     webViewController.hidesBottomBarWhenPushed = YES;
     webViewController.webViewBarHidden = YES;
-    [self.customNavigationController pushViewController:webViewController animated:YES];
+    [self.st_navigationController pushViewController:webViewController animated:YES];
     
 }
 

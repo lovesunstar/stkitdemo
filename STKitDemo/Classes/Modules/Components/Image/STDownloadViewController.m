@@ -7,8 +7,6 @@
 //
 
 #import "STDownloadViewController.h"
-#import <STKit/STKit.h>
-#import "STDAppDelegate.h"
 
 #import "STAlertView.h"
 

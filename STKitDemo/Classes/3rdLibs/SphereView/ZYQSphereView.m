@@ -7,7 +7,6 @@
 //
 
 #import "ZYQSphereView.h"
-#import "PFGoldenSectionSpiral.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface ZYQSphereView(Private)

@@ -7,7 +7,6 @@
 //
 
 #import "STDMapViewController.h"
-#import <STKit/STKit.h>
 
 @interface STDMapViewController ()
 
@@ -28,7 +27,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"测试测试";
-    self.customNavigationController.sideInteractionArea = STSideInteractiveAreaNavigationBar;
+    self.st_navigationController.sideInteractionArea = STSideInteractiveAreaNavigationBar;
     self.edgesForExtendedLayout = (UIRectEdgeLeft | UIRectEdgeRight);
     if (self.sideBarController) {
         UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];

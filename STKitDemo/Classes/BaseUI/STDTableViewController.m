@@ -60,14 +60,14 @@
         value = 80;
         [[STPersistence standardPersistence] setValue:@(value) forKey:@"STDNavigationDefaultEdgeOffset"];
     }
-    self.maximumInteractivePopEdgeDistance = value;
+    self.st_maximumInteractivePopEdgeDistance = value;
 
     CGFloat value1 = [[[STPersistence standardPersistence] valueForKey:@"STDNavigationDefaultOffset"] floatValue];
     if (value1 == 0) {
         value1 = 80;
         [[STPersistence standardPersistence] setValue:@(value1) forKey:@"STDNavigationDefaultOffset"];
     }
-    self.interactivePopTransitionOffset = value1;
+    self.st_interactivePopTransitionOffset = value1;
     
     // Do any additional setup after loading the view, typically from a nib.
     
@@ -86,11 +86,11 @@
 }
 
 - (void)maximumInteractiveDistanceChanged:(id)sender {
-    self.maximumInteractivePopEdgeDistance = [[[STPersistence standardPersistence] valueForKey:@"STDNavigationDefaultEdgeOffset"] floatValue];
+    self.st_maximumInteractivePopEdgeDistance = [[[STPersistence standardPersistence] valueForKey:@"STDNavigationDefaultEdgeOffset"] floatValue];
 }
 
 - (void)maximumInteractiveOffsetChanged:(id)sender {
-    self.interactivePopTransitionOffset = [[[STPersistence standardPersistence] valueForKey:@"STDNavigationDefaultOffset"] floatValue];
+    self.st_interactivePopTransitionOffset = [[[STPersistence standardPersistence] valueForKey:@"STDNavigationDefaultOffset"] floatValue];
 }
 
 - (void)_refreshControlActionFired:(STRefreshControl *)refreshControl {

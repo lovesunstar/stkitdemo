@@ -30,16 +30,15 @@
 @optional
 - (void)imageCollectionView:(STImageCollectionView *)collectionView didDisplayImageAtIndex:(NSInteger)index;
 - (void)imageCollectionView:(STImageCollectionView *)collectionView didTapImageAtIndex:(NSInteger)index;
-
 - (void)imageCollectionView:(STImageCollectionView *)collectionView didLongPressImage:(UIImage *)image atIndex:(NSInteger)index;
 @end
 
 @interface STImageItem : STObject
 
 @property(nonatomic, strong) UIImage *thumb;
-@property(nonatomic, copy) NSString *thumbURLString;
+@property(nonatomic, copy) NSString  *thumbURLString;
 
 @property(nonatomic, strong) UIImage *image;
-@property(nonatomic, copy) NSString *imageURLString;
+@property(nonatomic, copy) NSString  *imageURLString;
 
 @end

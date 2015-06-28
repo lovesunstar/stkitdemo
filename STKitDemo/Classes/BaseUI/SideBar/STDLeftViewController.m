@@ -8,7 +8,6 @@
 
 #import "STDLeftViewController.h"
 
-#import <STKit/STKit.h>
 #import "STDAboutViewController.h"
 
 @interface STDLeftViewController () <UITableViewDataSource, UITableViewDelegate, STLinkLabelDelegate>
@@ -145,7 +144,7 @@
     if ([linkObject.URL.absoluteString hasSuffix:@"about"]) {
         STDAboutViewController *aboutViewController = [[STDAboutViewController alloc] init];
         aboutViewController.hidesBottomBarWhenPushed = YES;
-        [self.sideBarController.customNavigationController pushViewController:aboutViewController animated:YES];
+        [self.sideBarController.st_navigationController pushViewController:aboutViewController animated:YES];
     }
 }
 

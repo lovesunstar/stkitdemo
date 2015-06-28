@@ -109,7 +109,7 @@ static STDBNetwork *_sharedNetwork;
                     if (hasImage && !hasThumb) {
                         [dictionary setValue:[dictionary valueForKey:@"photo"] forKey:@"thumb"];
                     }
-                    STDFeedItem *feedItem = [[STDFeedItem alloc] initWithDictinoary:dictionary];
+                    STDFeedItem *feedItem = [[STDFeedItem alloc] initWithDictionary:dictionary];
                     [result addObject:feedItem];
                 }
             }

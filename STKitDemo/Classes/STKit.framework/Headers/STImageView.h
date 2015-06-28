@@ -33,7 +33,7 @@ typedef enum STImageViewState {
 /// 是否正在播放GIF
 @property (nonatomic, assign, readonly, getter=isPlaying) BOOL  playing;
 @property (nonatomic, assign) BOOL  automaticallyPlay;
-@property (nonatomic, strong) void (^completionHandler)(BOOL finished);
+@property (nonatomic, strong) void (^completionHandler)(STImageView *imageView, BOOL finished);
 /// Default NSRunLoopCommonModes
 @property (nonatomic, strong) NSString   *playInMode;
 

@@ -7,7 +7,6 @@
 //
 
 #import "STDTextViewController.h"
-#import <STkit/STKit.h>
 
 @interface STDTextViewController ()
 

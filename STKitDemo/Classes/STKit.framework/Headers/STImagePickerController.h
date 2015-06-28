@@ -10,8 +10,20 @@
 #import <UIKit/UIKit.h>
 
 @class STImagePickerController;
+
+@protocol STImageProcessDelegate <NSObject>
+
+@optional
+- (NSData *)compressedOriginalImage:(UIImage *)originalImage;
+
+- (void)saveImageData:(NSData *)imageData withIdentifier:(NSString *)identifier;
+
+- (UIImage *)imageWithIdentifier:(NSString *)identifier;
+@end
+
 @protocol STImagePickerControllerDelegate <NSObject>
 
+@optional
 // The picker does not dismiss itself; the client dismisses it in these callbacks.
 // The delegate will receive one or the other, but not both, depending whether the user
 // confirms or cancels.
@@ -24,15 +36,28 @@
     //    UIImagePickerController
 }
 
-@property(nonatomic, assign) BOOL allowsMultipleSelection;
-@property(nonatomic, assign) NSInteger maximumNumberOfSelection; // default 20
+- (instancetype)init NS_DESIGNATED_INITIALIZER;
+
+@property(nonatomic) BOOL allowsMultipleSelection;
+/// 当相册load完之后，是否直接push进入第一个（全部照片）
+@property(nonatomic) BOOL wantsEnterFirstAlbumWhenLoaded;
+@property(nonatomic) NSInteger maximumNumberOfSelection; // default 20
+
+@property(nonatomic) CGFloat maximumInteractivePopEdgeDistance; // default 13
+
+@property(nonatomic, strong) UIButton    *backBarButton;
+
+@property(nonatomic, strong) id userInfo;
 
 @property(nonatomic, weak) id<STNavigationControllerDelegate, STImagePickerControllerDelegate> delegate;
 
+@property(nonatomic, weak) id <STImageProcessDelegate> processDelegate;
+
++ (UIImage *)imageWithIdentifier:(NSString *)identifier;
 @end
 
-extern NSString *const STImagePickerControllerOriginalImagePath; // a path of image in temp
-extern NSString *const STImagePickerControllerThumbImage;
-extern NSString *const STImagePickerControllerOriginalImageAssetPath;
+extern NSString *const STImagePickerControllerImageIdentifierKey; // a path of image in temp
+extern NSString *const STImagePickerControllerThumbImageKey;
+extern NSString *const STImagePickerControllerImageSizeKey;
 
 extern UIImage *STExactImageWithPath();

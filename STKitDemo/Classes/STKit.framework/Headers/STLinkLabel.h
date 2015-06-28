@@ -7,14 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
 #import <STKit/Foundation+STKit.h>
 
 /**
  * @abstract location是否被该Range包含
  */
 ST_INLINE BOOL STLocationInRange(NSRange range, NSUInteger location) {
-    return (location >= range.location) && (location <= (range.location + range.length));
+    return (location >= range.location) && (location < (range.location + range.length));
 }
 /**
  * @abstract range1 是否包含range2
@@ -69,7 +68,7 @@ static u_int64_t STTextCheckingTypeCustomLink = (1ULL << 33);
 
 /**
  * @abstract 此Label为可以带链接的Label。其中会自动解析文本中包含的链接 @see NSDataDetector, 并为其添加点击事件@see STLinkLabelDelegate。
- * 支持CustomLink，格式为 <link href="someURL" value="xxxx" color="0xFFFFFF" highlightedColor="0xFF0000" highlightedBackgroundColor="">display</link>
+ * 支持CustomLink，格式为 <link href="someURL" value="xxxx" color="0xFFFFFF" highlightedColor="0xFF0000" highlightedBackgroundColor="" backgroundColor="0xF0F0F0">display</link>
  * 若要支持CustomLink，需要设置checkingType|STTextCheckingTypeCustomLink
  * CustomLink 优先于SystemTextCheckingType
  */
@@ -92,12 +91,14 @@ static u_int64_t STTextCheckingTypeCustomLink = (1ULL << 33);
 @property(nonatomic, strong) UIColor *textColor;
 /// 超链接颜色， 默认blue
 @property(nonatomic, strong) UIColor *linkColor;
+/// 超链接背景颜色
+@property(nonatomic, strong) UIColor *linkBackgroundColor;
 /// 文本高亮的颜色
 @property(nonatomic, strong) UIColor *highlightedTextColor;
 /// 超链接高亮的颜色
 @property(nonatomic, strong) UIColor *highlightedLinkColor;
 /// 超链接高亮时的背景颜色，默认gray
-@property(nonatomic, strong) UIColor *linkBackgroundColor;
+@property(nonatomic, strong) UIColor *highlightedLinkBackgroundColor;
 @property(nonatomic, assign) BOOL     continueTouchEvent;
 
 @property(nonatomic, assign, getter=isHighlighted) BOOL highlighted; // default is  NO

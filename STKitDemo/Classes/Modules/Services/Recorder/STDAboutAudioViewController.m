@@ -7,7 +7,6 @@
 //
 
 #import "STDAboutAudioViewController.h"
-#import <STKit/STLinkLabel.h>
 
 @interface STDAboutAudioViewController ()
 

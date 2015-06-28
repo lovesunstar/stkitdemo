@@ -23,19 +23,25 @@ extern NSString *STPersistTemporyDirectory();
 
 @interface STPersistence : NSObject
 
-+ (instancetype)standardPersistence;
-+ (void)resetStandardPersistence;
-
-+ (instancetype)persistenceNamed:(NSString *)name;
-+ (void)resetPersistenceNamed:(NSString *)name;
-
 - (instancetype)initWithDirectory:(STPersistenceDirectory)directory
                           subpath:(NSString *)subpath;
 
 - (void)setValue:(id)value forKey:(NSString *)key;
 - (id)valueForKey:(NSString *)key;
 
+- (NSString *)cacheDirectory;
+
 @end
+
+/// 通过以下方法创建的都会都会根据name来创建name.plist.相同name会被存储到单独的文件中
+@interface STPersistence (STFileBased)
+
++ (instancetype)standardPersistence;
+
++ (instancetype)persistenceNamed:(NSString *)name;
+
+@end
+
 
 @interface STPersistence (STPersistCreation)
 
@@ -48,5 +54,14 @@ extern NSString *STPersistTemporyDirectory();
 + (instancetype)libiaryPersistenceWithSubpath:(NSString *)subpath;
 + (instancetype)cachePersistenceWithSubpath:(NSString *)subpath;
 + (instancetype)tempoaryPersistenceWithSubpath:(NSString *)subpath;
+
+@end
+
+@interface STPersistence (STPersistenceClean)
+
+/// 这个对 persistenceNamed的无效， persistenceNamed的需要使用reset/removeAllCachedValues来清空
+- (void)removeCachedValuesSinceDate:(NSDate *)date;
+/// 
+- (void)removeAllCachedValues;
 
 @end

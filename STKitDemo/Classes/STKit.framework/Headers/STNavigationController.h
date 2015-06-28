@@ -56,6 +56,8 @@ typedef enum STViewControllerTransitionType {
 ///
 @property(nonatomic, readonly) UIGestureRecognizer *interactivePopGestureRecognizer;
 
+@property(nonatomic, strong, readonly) UIView *transitionView;
+
 @end
 
 /// NavigationController Push/Pop时间
@@ -63,18 +65,17 @@ extern CGFloat const STTransitionViewControllerAnimationDuration;
 
 @interface UIViewController (STNavigationController)
 
-@property(nonatomic, assign) BOOL navigationBarHidden;
+@property(nonatomic, assign) BOOL st_navigationBarHidden;
 
-@property(nonatomic, readonly, strong) STNavigationBar *customNavigationBar;
-@property(nonatomic, readonly, strong) STNavigationController *customNavigationController;
+@property(nonatomic, readonly, strong) STNavigationBar *st_navigationBar;
+@property(nonatomic, readonly, strong) STNavigationController *st_navigationController;
 
 /// @li 从最左侧开始生效返回手势，这个变量决定距离左侧多少可以激活手势，设置为0，则禁止左滑跟随返回
 /// @li 有些套了手机壳的手机，壳边缘比较厚，设置比较小的话，影响操作，很难触发。
-@property(nonatomic, assign) CGFloat maximumInteractivePopEdgeDistance; // 默认 30pt,系统默认13。
-
+@property(nonatomic, assign) CGFloat st_maximumInteractivePopEdgeDistance; // 默认 30pt,系统默认13。
 /// Pop/Push ViewController时，前一个ViewController's view的偏移量（iOS7的返回效果）。
 /// 变量应该为Unsigned
-@property(nonatomic, assign) CGFloat interactivePopTransitionOffset; // default 80pt
+@property(nonatomic, assign) CGFloat st_interactivePopTransitionOffset; // default 80pt
 
 @end
 /// 30pt

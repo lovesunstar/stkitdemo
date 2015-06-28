@@ -8,7 +8,6 @@
 
 #import "STWaveBarView.h"
 #import <STKit/STKit.h>
-#import <QuartzCore/CADisplayLink.h>
 
 @interface STWaveBarView () {
     CADisplayLink   *_displayLink;

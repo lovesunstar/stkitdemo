@@ -8,7 +8,6 @@
 
 #import "STDBaseChatCell.h"
 
-#import <QuartzCore/QuartzCore.h>
 #import "STDMessage.h"
 #import <STKit/STKit.h>
 

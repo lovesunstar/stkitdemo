@@ -9,34 +9,33 @@
 #import <STKit/STDefines.h>
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
-#import <STKit/STHTTPNetwork.h>
 
 /// 是否是某个类的子类
 ST_EXTERN BOOL STClassIsKindOfClass(Class _class, Class parentClass);
 /// 根据基本类型+值，转换成NSValue， 不包含CGRect等等
-extern NSValue *STCreateValueFromPrimitivePointer(void *pointer, const char *objCType);
+ST_EXTERN NSValue *STCreateValueFromPrimitivePointer(void *pointer, const char *objCType);
 /// 某个类是否响应某个类方法
-extern BOOL STClassRespondsToSelector(Class class, SEL aSelector);
+ST_EXTERN BOOL STClassRespondsToSelector(Class class, SEL aSelector);
 
-extern void STPrintClassMethods(Class cls);
-extern void STPrintClassProperities(Class cls);
+ST_EXTERN void STPrintClassMethods(Class cls);
+ST_EXTERN void STPrintClassProperities(Class cls);
 
 #pragma mark - STRadian Degree
-extern CGFloat STRadianToDegree(CGFloat radian);
+ST_EXTERN CGFloat STRadianToDegree(CGFloat radian);
 
-extern CGFloat STDegreeToRadian(CGFloat degree);
+ST_EXTERN CGFloat STDegreeToRadian(CGFloat degree);
 
-extern NSString *STTemporaryDirectory();
-extern NSString *STDocumentDirectory();
-extern NSString *STLibiaryDirectory();
-extern NSString *STCacheDirectory();
+ST_EXTERN NSString *STTemporaryDirectory();
+ST_EXTERN NSString *STDocumentDirectory();
+ST_EXTERN NSString *STLibiaryDirectory();
+ST_EXTERN NSString *STCacheDirectory();
 
 #pragma mark - BitOffset
-extern BOOL STGetBitOffset(NSInteger value, NSInteger offset);
+ST_EXTERN BOOL STGetBitOffset(NSInteger value, NSInteger offset);
 
-extern NSInteger STSetBitOffset(NSInteger value, NSInteger bit, BOOL t);
+ST_EXTERN NSInteger STSetBitOffset(NSInteger value, NSInteger bit, BOOL t);
 
-extern NSInteger STCleanBitOffset(NSInteger value, NSInteger bit);
+ST_EXTERN NSInteger STCleanBitOffset(NSInteger value, NSInteger bit);
 
 @interface NSObject (STKit)
 /**
@@ -81,7 +80,7 @@ extern NSInteger STCleanBitOffset(NSInteger value, NSInteger bit);
 - (NSArray *)componentsSeparatedByRegex:(NSString *)regex ranges:(NSArray **)ranges;
 /// ranges 表示正则表达式的区间。 里面为字符串，使用 NSRangeFromString可以直接解析
 - (NSArray *)componentsSeparatedByRegex:(NSString *)regex regexRanges:(NSArray **)ranges;
-- (NSArray *)componentsSeparatedByRegex:(NSString *)regex ranges:(NSArray **)ranges checkingResults:(NSArray **)ranges;
+- (NSArray *)componentsSeparatedByRegex:(NSString *)regex ranges:(NSArray **)ranges checkingResults:(NSArray **)checkingResults;
 - (NSString *)stringByAddingHTMLEscapes;
 - (NSString *)stringByReplacingHTMLEscapes;
 - (NSData *)UTF8EncodedData;
@@ -98,6 +97,8 @@ extern NSInteger STCleanBitOffset(NSInteger value, NSInteger bit);
 - (NSString *)base64String;
 
 - (NSString *)UTF8String;
+
+- (NSString *)md5String;
 
 @end
 
@@ -174,7 +175,12 @@ typedef void(^STTimerFiredHandler) (NSTimer * timer, BOOL *invalidate);
 /// MS MillSecond
 + (NSDate *)dateWithMSTimeIntervalSince1970:(NSTimeInterval)millisecond;
 
++ (NSString *)dateWithTimeIntervalSince1970:(NSTimeInterval)millisecond format:(NSString *)format;
+
 + (NSString *)dateWithMSTimeIntervalSince1970:(NSTimeInterval)millisecond format:(NSString *)format;
++ (NSString *)timestampFormattedStringWithTimeIntervalSince1970:(NSTimeInterval)millisecond;
+
+- (NSString*)timestampFormattedString;
 
 @end
 
@@ -212,6 +218,22 @@ typedef void(^STTimerFiredHandler) (NSTimer * timer, BOOL *invalidate);
 
 @interface NSArray (STSecure)
 
+- (id)st_objectAtIndex:(NSUInteger)index;
+
+@end
+
+@interface NSDictionary (STSecure)
+
+- (NSInteger)st_integerValueForKey:(NSString *)key;
+- (long long)st_longLongValueForKey:(NSString *)key;
+- (int)st_intValueForKey:(NSString *)key;
+- (double)st_doubleValueForKey:(NSString *)key;
+- (BOOL)st_boolValueForKey:(NSString *)key;
+
+- (NSArray *)st_arrayValueForKey:(NSString *)key;
+- (NSDictionary *)st_dictionaryValueForKey:(NSString *)key;
+- (NSString *)st_stringValueForKey:(NSString *)key;
+
 @end
 
 @interface NSArray (STClass)
@@ -232,6 +254,8 @@ typedef void(^STTimerFiredHandler) (NSTimer * timer, BOOL *invalidate);
 - (NSString *)st_compontentsJoinedByConnector:(NSString *)connector separator:(NSString *)separator;
 /// URL
 - (NSString *)st_compontentsJoinedUsingURLStyle;
+
++ (instancetype)dictionaryWithURLQuery:(NSString *)URLQuery;
 
 @end
 

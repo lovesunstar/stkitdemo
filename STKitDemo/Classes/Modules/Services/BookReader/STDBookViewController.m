@@ -10,8 +10,6 @@
 
 #import "STRichView.h"
 
-#import <STKit/STKit.h>
-
 @interface STDBookViewController () {
 }
 
@@ -101,7 +99,7 @@
 
 - (void)showOverlayIfNeeded {
     BOOL visible = YES;
-    if (!self.navigationBarHidden) {
+    if (!self.st_navigationBarHidden) {
         // 需要隐藏
         [self hideOverlayAnimated:YES];
         visible = NO;

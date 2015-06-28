@@ -11,7 +11,6 @@
 #import "STAHanoiOperation.h"
 
 #import "STACodeViewController.h"
-#import <STKit/STKit.h>
 
 @interface STAHanoiViewController ()
 
@@ -110,7 +109,7 @@
 - (void) viewSourceCode:(id) sender {
     STACodeViewController *viewController = [[STACodeViewController alloc] initWithNibName:nil bundle:nil];
     viewController.algorithmType = STAlgorithmTypeHanoi;
-    [self.customNavigationController pushViewController:viewController animated:YES];
+    [self.st_navigationController pushViewController:viewController animated:YES];
 }
 
 @end

@@ -9,15 +9,35 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>STKitDemoInHouse.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>12</integer>
+		</dict>
 		<key>STKitWidget.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
+		<key>STKitWidgetInHouse.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>11</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>0602B48E196974150004ACBB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0642E2301AE0F3D100B820D1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0642E2C21AE0F47700B820D1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

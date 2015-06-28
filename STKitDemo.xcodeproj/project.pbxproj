@@ -22,8 +22,147 @@
 		0602B503196974150004ACBB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6471E791851CD7C00574E94 /* Foundation.framework */; };
 		0602B512196974150004ACBB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F6471E821851CD7C00574E94 /* InfoPlist.strings */; };
 		060798F11AC3E68A007C1AA7 /* STDAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 060798F01AC3E68A007C1AA7 /* STDAuthorization.m */; };
+		0642E2341AE0F3D100B820D1 /* STDLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB636F1A59523F00ABD7D3 /* STDLeftViewController.m */; };
+		0642E2351AE0F3D100B820D1 /* STDSwitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64721A59523F00ABD7D3 /* STDSwitchViewController.m */; };
+		0642E2361AE0F3D100B820D1 /* STDMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64761A59523F00ABD7D3 /* STDMoreViewController.m */; };
+		0642E2371AE0F3D100B820D1 /* STDSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB643C1A59523F00ABD7D3 /* STDSession.m */; };
+		0642E2381AE0F3D100B820D1 /* STDTextTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB637B1A59523F00ABD7D3 /* STDTextTableViewController.m */; };
+		0642E2391AE0F3D100B820D1 /* STDLocationPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C518641AAD4E6E00C2B2E3 /* STDLocationPickerController.m */; };
+		0642E23A1AE0F3D100B820D1 /* STDLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06479D511ACCF54200A44FB9 /* STDLoadingView.m */; };
+		0642E23B1AE0F3D100B820D1 /* STDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F6471E891851CD7C00574E94 /* STDAppDelegate.m */; };
+		0642E23C1AE0F3D100B820D1 /* STDropMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB63751A59523F00ABD7D3 /* STDropMenuView.m */; };
+		0642E23D1AE0F3D100B820D1 /* STWaveBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB645F1A59523F00ABD7D3 /* STWaveBarView.m */; };
+		0642E23E1AE0F3D100B820D1 /* STDBeautyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB646C1A59523F00ABD7D3 /* STDBeautyViewController.m */; };
+		0642E23F1AE0F3D100B820D1 /* STASortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB642B1A59523F00ABD7D3 /* STASortViewController.m */; };
+		0642E2401AE0F3D100B820D1 /* STDRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB645D1A59523F00ABD7D3 /* STDRecordViewController.m */; };
+		0642E2411AE0F3D100B820D1 /* STDBaseChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64411A59523F00ABD7D3 /* STDBaseChatCell.m */; };
+		0642E2421AE0F3D100B820D1 /* UIBezierPath-Points.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB635B1A59523F00ABD7D3 /* UIBezierPath-Points.m */; };
+		0642E2431AE0F3D100B820D1 /* STDImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64381A59523F00ABD7D3 /* STDImage.m */; };
+		0642E2441AE0F3D100B820D1 /* STDAbstractFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 065D78C91A822ECF0083D058 /* STDAbstractFactory.m */; };
+		0642E2451AE0F3D100B820D1 /* STAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB63731A59523F00ABD7D3 /* STAlertView.m */; };
+		0642E2461AE0F3D100B820D1 /* STAHanoiView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64201A59523F00ABD7D3 /* STAHanoiView.m */; };
+		0642E2471AE0F3D100B820D1 /* STDAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 065D78DA1A8230640083D058 /* STDAdapter.m */; };
+		0642E2481AE0F3D100B820D1 /* STDServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64611A59523F00ABD7D3 /* STDServiceViewController.m */; };
+		0642E2491AE0F3D100B820D1 /* STDCardTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06758AD21ACEE38C0000E2F8 /* STDCardTransitionDelegate.m */; };
+		0642E24A1AE0F3D100B820D1 /* STDTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06758AC91ACEE09E0000E2F8 /* STDTransitionDelegate.m */; };
+		0642E24B1AE0F3D100B820D1 /* STDModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 06CF9BC51A8BC697000037EF /* STDModel.xcdatamodeld */; };
+		0642E24C1AE0F3D100B820D1 /* STDLinkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64161A59523F00ABD7D3 /* STDLinkViewController.m */; };
+		0642E24D1AE0F3D100B820D1 /* SCSiriWaveformView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64591A59523F00ABD7D3 /* SCSiriWaveformView.m */; };
+		0642E24E1AE0F3D100B820D1 /* STDBNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64701A59523F00ABD7D3 /* STDBNetwork.m */; };
+		0642E24F1AE0F3D100B820D1 /* STDProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 065D78E01A834AF00083D058 /* STDProxy.m */; };
+		0642E2501AE0F3D100B820D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F6471E851851CD7C00574E94 /* main.m */; };
+		0642E2511AE0F3D100B820D1 /* STDSideBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB63711A59523F00ABD7D3 /* STDSideBarController.m */; };
+		0642E2521AE0F3D100B820D1 /* STDReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64311A59523F00ABD7D3 /* STDReaderViewController.m */; };
+		0642E2531AE0F3D100B820D1 /* STARootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64241A59523F00ABD7D3 /* STARootViewController.m */; };
+		0642E2541AE0F3D100B820D1 /* STDNavigationTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64111A59523F00ABD7D3 /* STDNavigationTestViewController.m */; };
+		0642E2551AE0F3D100B820D1 /* STDAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64141A59523F00ABD7D3 /* STDAboutViewController.m */; };
+		0642E2561AE0F3D100B820D1 /* STDStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB647F1A59523F00ABD7D3 /* STDStartViewController.m */; };
+		0642E2571AE0F3D100B820D1 /* STDPrototype.m in Sources */ = {isa = PBXBuildFile; fileRef = 065D78CF1A822ECF0083D058 /* STDPrototype.m */; };
+		0642E2581AE0F3D100B820D1 /* STDChat.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64431A59523F00ABD7D3 /* STDChat.m */; };
+		0642E2591AE0F3D100B820D1 /* MZCroppableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB63591A59523F00ABD7D3 /* MZCroppableView.m */; };
+		0642E25A1AE0F3D100B820D1 /* STDBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB642F1A59523F00ABD7D3 /* STDBookViewController.m */; };
+		0642E25B1AE0F3D100B820D1 /* STDMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB643A1A59523F00ABD7D3 /* STDMessage.m */; };
+		0642E25C1AE0F3D100B820D1 /* STDImageChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64491A59523F00ABD7D3 /* STDImageChatCell.m */; };
+		0642E25D1AE0F3D100B820D1 /* ZYQSphereView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB63601A59523F00ABD7D3 /* ZYQSphereView.m */; };
+		0642E25E1AE0F3D100B820D1 /* STDChatInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64451A59523F00ABD7D3 /* STDChatInputView.m */; };
+		0642E25F1AE0F3D100B820D1 /* STDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB640D1A59523F00ABD7D3 /* STDemoViewController.m */; };
+		0642E2601AE0F3D100B820D1 /* STDMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB647C1A59523F00ABD7D3 /* STDMapViewController.m */; };
+		0642E2611AE0F3D100B820D1 /* STRichView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64331A59523F00ABD7D3 /* STRichView.m */; };
+		0642E2621AE0F3D100B820D1 /* SimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C5185D1AAD4E3F00C2B2E3 /* SimplePing.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0642E2631AE0F3D100B820D1 /* STDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB637D1A59523F00ABD7D3 /* STDViewController.m */; };
+		0642E2641AE0F3D100B820D1 /* STDImageBlurViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB640F1A59523F00ABD7D3 /* STDImageBlurViewController.m */; };
+		0642E2651AE0F3D100B820D1 /* STASortOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64271A59523F00ABD7D3 /* STASortOperation.m */; };
+		0642E2661AE0F3D100B820D1 /* STDPingServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C518671AAD519900C2B2E3 /* STDPingServices.m */; };
+		0642E2671AE0F3D100B820D1 /* STDTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB63791A59523F00ABD7D3 /* STDTableViewController.m */; };
+		0642E2681AE0F3D100B820D1 /* PFGoldenSectionSpiral.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB635E1A59523F00ABD7D3 /* PFGoldenSectionSpiral.m */; };
+		0642E2691AE0F3D100B820D1 /* STDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB63771A59523F00ABD7D3 /* STDTabBarController.m */; };
+		0642E26A1AE0F3D100B820D1 /* STDebugFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 067A9F611AADA94B00651433 /* STDebugFoundation.m */; };
+		0642E26B1AE0F3D100B820D1 /* STDBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 065D78CB1A822ECF0083D058 /* STDBuilder.m */; };
+		0642E26C1AE0F3D100B820D1 /* SUNSlideSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB646A1A59523F00ABD7D3 /* SUNSlideSwitchView.m */; };
+		0642E26D1AE0F3D100B820D1 /* STDBigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB646E1A59523F00ABD7D3 /* STDBigViewController.m */; };
+		0642E26E1AE0F3D100B820D1 /* STDownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB640B1A59523F00ABD7D3 /* STDownloadViewController.m */; };
+		0642E26F1AE0F3D100B820D1 /* STACodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB641C1A59523F00ABD7D3 /* STACodeViewController.m */; };
+		0642E2701AE0F3D100B820D1 /* STDCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64011A59523F00ABD7D3 /* STDCardViewController.m */; };
+		0642E2711AE0F3D100B820D1 /* STDAboutAudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB645B1A59523F00ABD7D3 /* STDAboutAudioViewController.m */; };
+		0642E2721AE0F3D100B820D1 /* STDChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64471A59523F00ABD7D3 /* STDChatViewController.m */; };
+		0642E2731AE0F3D100B820D1 /* STDSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 065D78D11A822ECF0083D058 /* STDSingleton.m */; };
+		0642E2741AE0F3D100B820D1 /* STDFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64091A59523F00ABD7D3 /* STDFeedViewController.m */; };
+		0642E2751AE0F3D100B820D1 /* STAHanoiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64221A59523F00ABD7D3 /* STAHanoiViewController.m */; };
+		0642E2761AE0F3D100B820D1 /* STDDebugPingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 067A9F5E1AADA73300651433 /* STDDebugPingViewController.m */; };
+		0642E2771AE0F3D100B820D1 /* STDFacade.m in Sources */ = {isa = PBXBuildFile; fileRef = 065D78DD1A8344C30083D058 /* STDFacade.m */; };
+		0642E2781AE0F3D100B820D1 /* STDUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB643E1A59523F00ABD7D3 /* STDUser.m */; };
+		0642E2791AE0F3D100B820D1 /* STDScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06758AD51AD3BC3F0000E2F8 /* STDScrollViewController.m */; };
+		0642E27A1AE0F3D100B820D1 /* STDTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64181A59523F00ABD7D3 /* STDTextViewController.m */; };
+		0642E27B1AE0F3D100B820D1 /* STDBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB88A51A88C8C40082DACA /* STDBridge.m */; };
+		0642E27C1AE0F3D100B820D1 /* STDAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 060798F01AC3E68A007C1AA7 /* STDAuthorization.m */; };
+		0642E27D1AE0F3D100B820D1 /* STDSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0664952E1A90C6020026D498 /* STDSettingViewController.m */; };
+		0642E27E1AE0F3D100B820D1 /* STDRotateTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06758ACF1ACEE34D0000E2F8 /* STDRotateTransitionDelegate.m */; };
+		0642E27F1AE0F3D100B820D1 /* STDFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64071A59523F00ABD7D3 /* STDFeedItem.m */; };
+		0642E2801AE0F3D100B820D1 /* STDFactoryMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 065D78CD1A822ECF0083D058 /* STDFactoryMethod.m */; };
+		0642E2811AE0F3D100B820D1 /* STASortView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64291A59523F00ABD7D3 /* STASortView.m */; };
+		0642E2821AE0F3D100B820D1 /* STDNavigationSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64781A59523F00ABD7D3 /* STDNavigationSettingViewController.m */; };
+		0642E2831AE0F3D100B820D1 /* STDFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64031A59523F00ABD7D3 /* STDFeedCell.m */; };
+		0642E2841AE0F3D100B820D1 /* STMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB637F1A59523F00ABD7D3 /* STMenuView.m */; };
+		0642E2851AE0F3D100B820D1 /* STDTextChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB644D1A59523F00ABD7D3 /* STDTextChatCell.m */; };
+		0642E2861AE0F3D100B820D1 /* STDFeedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64051A59523F00ABD7D3 /* STDFeedImageView.m */; };
+		0642E2871AE0F3D100B820D1 /* STAHanoiOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB641E1A59523F00ABD7D3 /* STAHanoiOperation.m */; };
+		0642E2881AE0F3D100B820D1 /* STDRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 06479D541ACD101E00A44FB9 /* STDRefreshControl.m */; };
+		0642E28A1AE0F3D100B820D1 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 065D78E41A8382AC0083D058 /* CFNetwork.framework */; };
+		0642E28B1AE0F3D100B820D1 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0698C21C19D1CCE400D0D69A /* WebKit.framework */; };
+		0642E28C1AE0F3D100B820D1 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0681CCDA19D3BC9A00D897AF /* Photos.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		0642E28D1AE0F3D100B820D1 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A1CD371978DE3500F68F35 /* libstdc++.6.dylib */; };
+		0642E28E1AE0F3D100B820D1 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A1CD331978DE0700F68F35 /* CoreTelephony.framework */; };
+		0642E28F1AE0F3D100B820D1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C6F9CD1920F0C10028B2B3 /* CoreLocation.framework */; };
+		0642E2901AE0F3D100B820D1 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 06291AE4191F314700EDBD35 /* libxml2.dylib */; };
+		0642E2911AE0F3D100B820D1 /* STKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CB648C1A59523F00ABD7D3 /* STKit.framework */; };
+		0642E2921AE0F3D100B820D1 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F69CFE261873032B00327D8A /* libz.dylib */; };
+		0642E2931AE0F3D100B820D1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E5B875186413A700FF3408 /* AVFoundation.framework */; };
+		0642E2941AE0F3D100B820D1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E5B8721864139D00FF3408 /* AudioToolbox.framework */; };
+		0642E2951AE0F3D100B820D1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F66A09E318522F2A002D0597 /* SystemConfiguration.framework */; };
+		0642E2961AE0F3D100B820D1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6471EE31851CED400574E94 /* QuartzCore.framework */; };
+		0642E2971AE0F3D100B820D1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6471EE11851CECF00574E94 /* MapKit.framework */; };
+		0642E2981AE0F3D100B820D1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6471E7B1851CD7C00574E94 /* CoreGraphics.framework */; };
+		0642E2991AE0F3D100B820D1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6471E7D1851CD7C00574E94 /* UIKit.framework */; };
+		0642E29A1AE0F3D100B820D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6471E791851CD7C00574E94 /* Foundation.framework */; };
+		0642E29C1AE0F3D100B820D1 /* icon_rightarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 06CB64661A59523F00ABD7D3 /* icon_rightarrow.png */; };
+		0642E29D1AE0F3D100B820D1 /* shangxin_292182.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 06CB5FFF1A594F9900ABD7D3 /* shangxin_292182.jpg */; };
+		0642E29E1AE0F3D100B820D1 /* 02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06758AB91ACED7330000E2F8 /* 02@2x.png */; };
+		0642E29F1AE0F3D100B820D1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0634101A19C9EBE3003BC34E /* LaunchScreen.xib */; };
+		0642E2A01AE0F3D100B820D1 /* 06@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06758ABD1ACED7330000E2F8 /* 06@2x.png */; };
+		0642E2A11AE0F3D100B820D1 /* shangxin_292182@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 06CB60001A594F9900ABD7D3 /* shangxin_292182@2x.jpg */; };
+		0642E2A21AE0F3D100B820D1 /* red_line_and_shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06CB64681A59523F00ABD7D3 /* red_line_and_shadow@2x.png */; };
+		0642E2A31AE0F3D100B820D1 /* chat_image_5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 06CB64531A59523F00ABD7D3 /* chat_image_5.jpg */; };
+		0642E2A41AE0F3D100B820D1 /* licenses.html in Resources */ = {isa = PBXBuildFile; fileRef = 066494F91A90AE930026D498 /* licenses.html */; };
+		0642E2A51AE0F3D100B820D1 /* chat_image_6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 06CB64541A59523F00ABD7D3 /* chat_image_6.jpg */; };
+		0642E2A61AE0F3D100B820D1 /* chat_image_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 06CB644F1A59523F00ABD7D3 /* chat_image_1.jpg */; };
+		0642E2A71AE0F3D100B820D1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F6471E821851CD7C00574E94 /* InfoPlist.strings */; };
+		0642E2A81AE0F3D100B820D1 /* chat_image_8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 06CB64561A59523F00ABD7D3 /* chat_image_8.jpg */; };
+		0642E2A91AE0F3D100B820D1 /* icon_rightarrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06CB64671A59523F00ABD7D3 /* icon_rightarrow@2x.png */; };
+		0642E2AA1AE0F3D100B820D1 /* chat_image_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 06CB64511A59523F00ABD7D3 /* chat_image_3.jpg */; };
+		0642E2AB1AE0F3D100B820D1 /* STDMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06CB647D1A59523F00ABD7D3 /* STDMapViewController.xib */; };
+		0642E2AC1AE0F3D100B820D1 /* book.txt in Resources */ = {isa = PBXBuildFile; fileRef = 06CB642D1A59523F00ABD7D3 /* book.txt */; };
+		0642E2AD1AE0F3D100B820D1 /* 01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06758AB81ACED7330000E2F8 /* 01@2x.png */; };
+		0642E2AE1AE0F3D100B820D1 /* chat_image_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 06CB64501A59523F00ABD7D3 /* chat_image_2.jpg */; };
+		0642E2AF1AE0F3D100B820D1 /* 04@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06758ABB1ACED7330000E2F8 /* 04@2x.png */; };
+		0642E2B01AE0F3D100B820D1 /* chat_image_4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 06CB64521A59523F00ABD7D3 /* chat_image_4.jpg */; };
+		0642E2B11AE0F3D100B820D1 /* 05@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06758ABC1ACED7330000E2F8 /* 05@2x.png */; };
+		0642E2B21AE0F3D100B820D1 /* 08@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06758ABF1ACED7330000E2F8 /* 08@2x.png */; };
+		0642E2B31AE0F3D100B820D1 /* 03@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06758ABA1ACED7330000E2F8 /* 03@2x.png */; };
+		0642E2B41AE0F3D100B820D1 /* chat_image_7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 06CB64551A59523F00ABD7D3 /* chat_image_7.jpg */; };
+		0642E2B51AE0F3D100B820D1 /* 07@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06758ABE1ACED7330000E2F8 /* 07@2x.png */; };
+		0642E2B61AE0F3D100B820D1 /* STDemoImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06BE56D01A0404CF00FBC4C8 /* STDemoImages.xcassets */; };
+		0642E2B71AE0F3D100B820D1 /* STDNavigationSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06CB64791A59523F00ABD7D3 /* STDNavigationSettingViewController.xib */; };
+		0642E2C41AE0F47700B820D1 /* STDFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64071A59523F00ABD7D3 /* STDFeedItem.m */; };
+		0642E2C51AE0F47700B820D1 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A4D3C519E6B3C7007D332D /* TodayViewController.m */; };
+		0642E2C61AE0F47700B820D1 /* STDBNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64701A59523F00ABD7D3 /* STDBNetwork.m */; };
+		0642E2C81AE0F47700B820D1 /* STKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CB648C1A59523F00ABD7D3 /* STKit.framework */; };
+		0642E2C91AE0F47700B820D1 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A4D3BF19E6B3C7007D332D /* NotificationCenter.framework */; };
+		0642E2CA1AE0F47700B820D1 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F69CFE261873032B00327D8A /* libz.dylib */; };
+		0642E2CC1AE0F47700B820D1 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A4D3C719E6B3C7007D332D /* MainInterface.storyboard */; };
+		0642E2D41AE0F51A00B820D1 /* STKitWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0642E2D01AE0F47700B820D1 /* STKitWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		06479D521ACCF54200A44FB9 /* STDLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06479D511ACCF54200A44FB9 /* STDLoadingView.m */; };
 		06479D551ACD101E00A44FB9 /* STDRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 06479D541ACD101E00A44FB9 /* STDRefreshControl.m */; };
+		065B7C911B3FF573006EFEDA /* STDFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64071A59523F00ABD7D3 /* STDFeedItem.m */; };
 		065D78D21A822ECF0083D058 /* STDAbstractFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 065D78C91A822ECF0083D058 /* STDAbstractFactory.m */; };
 		065D78D31A822ECF0083D058 /* STDBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 065D78CB1A822ECF0083D058 /* STDBuilder.m */; };
 		065D78D41A822ECF0083D058 /* STDFactoryMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 065D78CD1A822ECF0083D058 /* STDFactoryMethod.m */; };
@@ -50,6 +189,7 @@
 		067A9F5F1AADA73300651433 /* STDDebugPingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 067A9F5E1AADA73300651433 /* STDDebugPingViewController.m */; };
 		067A9F621AADA94B00651433 /* STDebugFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 067A9F611AADA94B00651433 /* STDebugFoundation.m */; };
 		0681CCDB19D3BC9A00D897AF /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0681CCDA19D3BC9A00D897AF /* Photos.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		069586E71AE5FF6000F149F1 /* STKitWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 06A4D3BE19E6B3C7007D332D /* STKitWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		06A1CD341978DE0700F68F35 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A1CD331978DE0700F68F35 /* CoreTelephony.framework */; };
 		06A1CD381978DE3500F68F35 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A1CD371978DE3500F68F35 /* libstdc++.6.dylib */; };
 		06A4D3C019E6B3C7007D332D /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A4D3BF19E6B3C7007D332D /* NotificationCenter.framework */; };
@@ -60,7 +200,6 @@
 		06C518601AAD4E3F00C2B2E3 /* SimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C5185D1AAD4E3F00C2B2E3 /* SimplePing.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		06C518651AAD4E6E00C2B2E3 /* STDLocationPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C518641AAD4E6E00C2B2E3 /* STDLocationPickerController.m */; };
 		06C518681AAD519900C2B2E3 /* STDPingServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C518671AAD519900C2B2E3 /* STDPingServices.m */; };
-		06C841681A7E2641008BB97F /* STKitWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 06A4D3BE19E6B3C7007D332D /* STKitWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		06C841711A7E3395008BB97F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F69CFE261873032B00327D8A /* libz.dylib */; };
 		06CB60011A594F9900ABD7D3 /* shangxin_292182.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 06CB5FFF1A594F9900ABD7D3 /* shangxin_292182.jpg */; };
 		06CB60021A594F9900ABD7D3 /* shangxin_292182@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 06CB60001A594F9900ABD7D3 /* shangxin_292182@2x.jpg */; };
@@ -80,7 +219,6 @@
 		06CB65A81A59523F00ABD7D3 /* STDCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64011A59523F00ABD7D3 /* STDCardViewController.m */; };
 		06CB65A91A59523F00ABD7D3 /* STDFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64031A59523F00ABD7D3 /* STDFeedCell.m */; };
 		06CB65AA1A59523F00ABD7D3 /* STDFeedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64051A59523F00ABD7D3 /* STDFeedImageView.m */; };
-		06CB65AB1A59523F00ABD7D3 /* STDFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64071A59523F00ABD7D3 /* STDFeedItem.m */; };
 		06CB65AC1A59523F00ABD7D3 /* STDFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64091A59523F00ABD7D3 /* STDFeedViewController.m */; };
 		06CB65AD1A59523F00ABD7D3 /* STDownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB640B1A59523F00ABD7D3 /* STDownloadViewController.m */; };
 		06CB65AE1A59523F00ABD7D3 /* STDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB640D1A59523F00ABD7D3 /* STDemoViewController.m */; };
@@ -153,7 +291,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		06A4D3CC19E6B3C7007D332D /* PBXContainerItemProxy */ = {
+		0642E2D51AE0F51A00B820D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F6471E6E1851CD7C00574E94 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0642E2C21AE0F47700B820D1;
+			remoteInfo = STKitWidgetInHouse;
+		};
+		069586E81AE5FF6000F149F1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F6471E6E1851CD7C00574E94 /* Project object */;
 			proxyType = 1;
@@ -170,13 +315,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		06C841691A7E2641008BB97F /* Embed App Extensions */ = {
+		0642E2D71AE0F51A00B820D1 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				06C841681A7E2641008BB97F /* STKitWidget.appex in Embed App Extensions */,
+				0642E2D41AE0F51A00B820D1 /* STKitWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		069586EA1AE5FF6100F149F1 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				069586E71AE5FF6000F149F1 /* STKitWidget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -189,6 +345,10 @@
 		060798F01AC3E68A007C1AA7 /* STDAuthorization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STDAuthorization.m; sourceTree = "<group>"; };
 		06291AE4191F314700EDBD35 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		0634101A19C9EBE3003BC34E /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		0642E2BD1AE0F3D100B820D1 /* STKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0642E2BF1AE0F45D00B820D1 /* STKitDemoInHouse-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "STKitDemoInHouse-Info.plist"; sourceTree = "<group>"; };
+		0642E2D01AE0F47700B820D1 /* STKitWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = STKitWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0642E2D21AE0F4B900B820D1 /* STKitWidgetInHouse-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "STKitWidgetInHouse-Info.plist"; sourceTree = "<group>"; };
 		06479D501ACCF54200A44FB9 /* STDLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDLoadingView.h; sourceTree = "<group>"; };
 		06479D511ACCF54200A44FB9 /* STDLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STDLoadingView.m; sourceTree = "<group>"; };
 		06479D531ACD101E00A44FB9 /* STDRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDRefreshControl.h; sourceTree = "<group>"; };
@@ -449,6 +609,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0642E2891AE0F3D100B820D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0642E28A1AE0F3D100B820D1 /* CFNetwork.framework in Frameworks */,
+				0642E28B1AE0F3D100B820D1 /* WebKit.framework in Frameworks */,
+				0642E28C1AE0F3D100B820D1 /* Photos.framework in Frameworks */,
+				0642E28D1AE0F3D100B820D1 /* libstdc++.6.dylib in Frameworks */,
+				0642E28E1AE0F3D100B820D1 /* CoreTelephony.framework in Frameworks */,
+				0642E28F1AE0F3D100B820D1 /* CoreLocation.framework in Frameworks */,
+				0642E2901AE0F3D100B820D1 /* libxml2.dylib in Frameworks */,
+				0642E2911AE0F3D100B820D1 /* STKit.framework in Frameworks */,
+				0642E2921AE0F3D100B820D1 /* libz.dylib in Frameworks */,
+				0642E2931AE0F3D100B820D1 /* AVFoundation.framework in Frameworks */,
+				0642E2941AE0F3D100B820D1 /* AudioToolbox.framework in Frameworks */,
+				0642E2951AE0F3D100B820D1 /* SystemConfiguration.framework in Frameworks */,
+				0642E2961AE0F3D100B820D1 /* QuartzCore.framework in Frameworks */,
+				0642E2971AE0F3D100B820D1 /* MapKit.framework in Frameworks */,
+				0642E2981AE0F3D100B820D1 /* CoreGraphics.framework in Frameworks */,
+				0642E2991AE0F3D100B820D1 /* UIKit.framework in Frameworks */,
+				0642E29A1AE0F3D100B820D1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0642E2C71AE0F47700B820D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0642E2C81AE0F47700B820D1 /* STKit.framework in Frameworks */,
+				0642E2C91AE0F47700B820D1 /* NotificationCenter.framework in Frameworks */,
+				0642E2CA1AE0F47700B820D1 /* libz.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		06A4D3BB19E6B3C7007D332D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -548,6 +742,7 @@
 		06A4D3C219E6B3C7007D332D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0642E2D21AE0F4B900B820D1 /* STKitWidgetInHouse-Info.plist */,
 				06A4D3C319E6B3C7007D332D /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -975,6 +1170,8 @@
 				0602B51B196974150004ACBB /* STKitDemo.app */,
 				06A4D3BE19E6B3C7007D332D /* STKitWidget.appex */,
 				06CF9BAC1A8BB802000037EF /* STKitDemoTests.xctest */,
+				0642E2BD1AE0F3D100B820D1 /* STKitDemo.app */,
+				0642E2D01AE0F47700B820D1 /* STKitWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1024,6 +1221,7 @@
 		F6471E801851CD7C00574E94 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0642E2BF1AE0F45D00B820D1 /* STKitDemoInHouse-Info.plist */,
 				F6471E811851CD7C00574E94 /* STKitDemo-Info.plist */,
 				F6471E821851CD7C00574E94 /* InfoPlist.strings */,
 				F6471E851851CD7C00574E94 /* main.m */,
@@ -1042,17 +1240,53 @@
 				0602B48F196974150004ACBB /* Sources */,
 				0602B4F5196974150004ACBB /* Frameworks */,
 				0602B504196974150004ACBB /* Resources */,
-				06C841691A7E2641008BB97F /* Embed App Extensions */,
+				069586EA1AE5FF6100F149F1 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				06A4D3CD19E6B3C7007D332D /* PBXTargetDependency */,
+				069586E91AE5FF6000F149F1 /* PBXTargetDependency */,
 			);
 			name = STKitDemo;
 			productName = STKitDemo;
 			productReference = 0602B51B196974150004ACBB /* STKitDemo.app */;
 			productType = "com.apple.product-type.application";
+		};
+		0642E2301AE0F3D100B820D1 /* STKitDemoInHouse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0642E2BA1AE0F3D100B820D1 /* Build configuration list for PBXNativeTarget "STKitDemoInHouse" */;
+			buildPhases = (
+				0642E2331AE0F3D100B820D1 /* Sources */,
+				0642E2891AE0F3D100B820D1 /* Frameworks */,
+				0642E29B1AE0F3D100B820D1 /* Resources */,
+				0642E2D71AE0F51A00B820D1 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0642E2D61AE0F51A00B820D1 /* PBXTargetDependency */,
+			);
+			name = STKitDemoInHouse;
+			productName = STKitDemo;
+			productReference = 0642E2BD1AE0F3D100B820D1 /* STKitDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0642E2C21AE0F47700B820D1 /* STKitWidgetInHouse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0642E2CD1AE0F47700B820D1 /* Build configuration list for PBXNativeTarget "STKitWidgetInHouse" */;
+			buildPhases = (
+				0642E2C31AE0F47700B820D1 /* Sources */,
+				0642E2C71AE0F47700B820D1 /* Frameworks */,
+				0642E2CB1AE0F47700B820D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = STKitWidgetInHouse;
+			productName = STKitWidget;
+			productReference = 0642E2D01AE0F47700B820D1 /* STKitWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 		06A4D3BD19E6B3C7007D332D /* STKitWidget */ = {
 			isa = PBXNativeTarget;
@@ -1109,6 +1343,12 @@
 							};
 						};
 					};
+					0642E2301AE0F3D100B820D1 = {
+						DevelopmentTeam = XXHND5J98K;
+					};
+					0642E2C21AE0F47700B820D1 = {
+						DevelopmentTeam = XXHND5J98K;
+					};
 					06A4D3BD19E6B3C7007D332D = {
 						CreatedOnToolsVersion = 6.0;
 					};
@@ -1134,6 +1374,8 @@
 				0602B48E196974150004ACBB /* STKitDemo */,
 				06A4D3BD19E6B3C7007D332D /* STKitWidget */,
 				06CF9BAB1A8BB802000037EF /* STKitDemoTests */,
+				0642E2301AE0F3D100B820D1 /* STKitDemoInHouse */,
+				0642E2C21AE0F47700B820D1 /* STKitWidgetInHouse */,
 			);
 		};
 /* End PBXProject section */
@@ -1171,6 +1413,49 @@
 				06758AC61ACED7330000E2F8 /* 07@2x.png in Resources */,
 				06BE56D11A0404CF00FBC4C8 /* STDemoImages.xcassets in Resources */,
 				06CB65E41A59524000ABD7D3 /* STDNavigationSettingViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0642E29B1AE0F3D100B820D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0642E29C1AE0F3D100B820D1 /* icon_rightarrow.png in Resources */,
+				0642E29D1AE0F3D100B820D1 /* shangxin_292182.jpg in Resources */,
+				0642E29E1AE0F3D100B820D1 /* 02@2x.png in Resources */,
+				0642E29F1AE0F3D100B820D1 /* LaunchScreen.xib in Resources */,
+				0642E2A01AE0F3D100B820D1 /* 06@2x.png in Resources */,
+				0642E2A11AE0F3D100B820D1 /* shangxin_292182@2x.jpg in Resources */,
+				0642E2A21AE0F3D100B820D1 /* red_line_and_shadow@2x.png in Resources */,
+				0642E2A31AE0F3D100B820D1 /* chat_image_5.jpg in Resources */,
+				0642E2A41AE0F3D100B820D1 /* licenses.html in Resources */,
+				0642E2A51AE0F3D100B820D1 /* chat_image_6.jpg in Resources */,
+				0642E2A61AE0F3D100B820D1 /* chat_image_1.jpg in Resources */,
+				0642E2A71AE0F3D100B820D1 /* InfoPlist.strings in Resources */,
+				0642E2A81AE0F3D100B820D1 /* chat_image_8.jpg in Resources */,
+				0642E2A91AE0F3D100B820D1 /* icon_rightarrow@2x.png in Resources */,
+				0642E2AA1AE0F3D100B820D1 /* chat_image_3.jpg in Resources */,
+				0642E2AB1AE0F3D100B820D1 /* STDMapViewController.xib in Resources */,
+				0642E2AC1AE0F3D100B820D1 /* book.txt in Resources */,
+				0642E2AD1AE0F3D100B820D1 /* 01@2x.png in Resources */,
+				0642E2AE1AE0F3D100B820D1 /* chat_image_2.jpg in Resources */,
+				0642E2AF1AE0F3D100B820D1 /* 04@2x.png in Resources */,
+				0642E2B01AE0F3D100B820D1 /* chat_image_4.jpg in Resources */,
+				0642E2B11AE0F3D100B820D1 /* 05@2x.png in Resources */,
+				0642E2B21AE0F3D100B820D1 /* 08@2x.png in Resources */,
+				0642E2B31AE0F3D100B820D1 /* 03@2x.png in Resources */,
+				0642E2B41AE0F3D100B820D1 /* chat_image_7.jpg in Resources */,
+				0642E2B51AE0F3D100B820D1 /* 07@2x.png in Resources */,
+				0642E2B61AE0F3D100B820D1 /* STDemoImages.xcassets in Resources */,
+				0642E2B71AE0F3D100B820D1 /* STDNavigationSettingViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0642E2CB1AE0F47700B820D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0642E2CC1AE0F47700B820D1 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1218,6 +1503,7 @@
 				06CB65B61A59523F00ABD7D3 /* STAHanoiView.m in Sources */,
 				065D78DB1A8230640083D058 /* STDAdapter.m in Sources */,
 				06CB65D81A59524000ABD7D3 /* STDServiceViewController.m in Sources */,
+				065B7C911B3FF573006EFEDA /* STDFeedItem.m in Sources */,
 				06758AD31ACEE38C0000E2F8 /* STDCardTransitionDelegate.m in Sources */,
 				06758ACA1ACEE09E0000E2F8 /* STDTransitionDelegate.m in Sources */,
 				06CF9BC71A8BC697000037EF /* STDModel.xcdatamodeld in Sources */,
@@ -1272,7 +1558,6 @@
 				060798F11AC3E68A007C1AA7 /* STDAuthorization.m in Sources */,
 				0664952F1A90C6020026D498 /* STDSettingViewController.m in Sources */,
 				06758AD01ACEE34D0000E2F8 /* STDRotateTransitionDelegate.m in Sources */,
-				06CB65AB1A59523F00ABD7D3 /* STDFeedItem.m in Sources */,
 				065D78D41A822ECF0083D058 /* STDFactoryMethod.m in Sources */,
 				06CB65BA1A59523F00ABD7D3 /* STASortView.m in Sources */,
 				06CB65E31A59524000ABD7D3 /* STDNavigationSettingViewController.m in Sources */,
@@ -1282,6 +1567,108 @@
 				06CB65AA1A59523F00ABD7D3 /* STDFeedImageView.m in Sources */,
 				06CB65B51A59523F00ABD7D3 /* STAHanoiOperation.m in Sources */,
 				06479D551ACD101E00A44FB9 /* STDRefreshControl.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0642E2331AE0F3D100B820D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0642E2341AE0F3D100B820D1 /* STDLeftViewController.m in Sources */,
+				0642E2351AE0F3D100B820D1 /* STDSwitchViewController.m in Sources */,
+				0642E2361AE0F3D100B820D1 /* STDMoreViewController.m in Sources */,
+				0642E2371AE0F3D100B820D1 /* STDSession.m in Sources */,
+				0642E2381AE0F3D100B820D1 /* STDTextTableViewController.m in Sources */,
+				0642E2391AE0F3D100B820D1 /* STDLocationPickerController.m in Sources */,
+				0642E23A1AE0F3D100B820D1 /* STDLoadingView.m in Sources */,
+				0642E23B1AE0F3D100B820D1 /* STDAppDelegate.m in Sources */,
+				0642E23C1AE0F3D100B820D1 /* STDropMenuView.m in Sources */,
+				0642E23D1AE0F3D100B820D1 /* STWaveBarView.m in Sources */,
+				0642E23E1AE0F3D100B820D1 /* STDBeautyViewController.m in Sources */,
+				0642E23F1AE0F3D100B820D1 /* STASortViewController.m in Sources */,
+				0642E2401AE0F3D100B820D1 /* STDRecordViewController.m in Sources */,
+				0642E2411AE0F3D100B820D1 /* STDBaseChatCell.m in Sources */,
+				0642E2421AE0F3D100B820D1 /* UIBezierPath-Points.m in Sources */,
+				0642E2431AE0F3D100B820D1 /* STDImage.m in Sources */,
+				0642E2441AE0F3D100B820D1 /* STDAbstractFactory.m in Sources */,
+				0642E2451AE0F3D100B820D1 /* STAlertView.m in Sources */,
+				0642E2461AE0F3D100B820D1 /* STAHanoiView.m in Sources */,
+				0642E2471AE0F3D100B820D1 /* STDAdapter.m in Sources */,
+				0642E2481AE0F3D100B820D1 /* STDServiceViewController.m in Sources */,
+				0642E2491AE0F3D100B820D1 /* STDCardTransitionDelegate.m in Sources */,
+				0642E24A1AE0F3D100B820D1 /* STDTransitionDelegate.m in Sources */,
+				0642E24B1AE0F3D100B820D1 /* STDModel.xcdatamodeld in Sources */,
+				0642E24C1AE0F3D100B820D1 /* STDLinkViewController.m in Sources */,
+				0642E24D1AE0F3D100B820D1 /* SCSiriWaveformView.m in Sources */,
+				0642E24E1AE0F3D100B820D1 /* STDBNetwork.m in Sources */,
+				0642E24F1AE0F3D100B820D1 /* STDProxy.m in Sources */,
+				0642E2501AE0F3D100B820D1 /* main.m in Sources */,
+				0642E2511AE0F3D100B820D1 /* STDSideBarController.m in Sources */,
+				0642E2521AE0F3D100B820D1 /* STDReaderViewController.m in Sources */,
+				0642E2531AE0F3D100B820D1 /* STARootViewController.m in Sources */,
+				0642E2541AE0F3D100B820D1 /* STDNavigationTestViewController.m in Sources */,
+				0642E2551AE0F3D100B820D1 /* STDAboutViewController.m in Sources */,
+				0642E2561AE0F3D100B820D1 /* STDStartViewController.m in Sources */,
+				0642E2571AE0F3D100B820D1 /* STDPrototype.m in Sources */,
+				0642E2581AE0F3D100B820D1 /* STDChat.m in Sources */,
+				0642E2591AE0F3D100B820D1 /* MZCroppableView.m in Sources */,
+				0642E25A1AE0F3D100B820D1 /* STDBookViewController.m in Sources */,
+				0642E25B1AE0F3D100B820D1 /* STDMessage.m in Sources */,
+				0642E25C1AE0F3D100B820D1 /* STDImageChatCell.m in Sources */,
+				0642E25D1AE0F3D100B820D1 /* ZYQSphereView.m in Sources */,
+				0642E25E1AE0F3D100B820D1 /* STDChatInputView.m in Sources */,
+				0642E25F1AE0F3D100B820D1 /* STDemoViewController.m in Sources */,
+				0642E2601AE0F3D100B820D1 /* STDMapViewController.m in Sources */,
+				0642E2611AE0F3D100B820D1 /* STRichView.m in Sources */,
+				0642E2621AE0F3D100B820D1 /* SimplePing.m in Sources */,
+				0642E2631AE0F3D100B820D1 /* STDViewController.m in Sources */,
+				0642E2641AE0F3D100B820D1 /* STDImageBlurViewController.m in Sources */,
+				0642E2651AE0F3D100B820D1 /* STASortOperation.m in Sources */,
+				0642E2661AE0F3D100B820D1 /* STDPingServices.m in Sources */,
+				0642E2671AE0F3D100B820D1 /* STDTableViewController.m in Sources */,
+				0642E2681AE0F3D100B820D1 /* PFGoldenSectionSpiral.m in Sources */,
+				0642E2691AE0F3D100B820D1 /* STDTabBarController.m in Sources */,
+				0642E26A1AE0F3D100B820D1 /* STDebugFoundation.m in Sources */,
+				0642E26B1AE0F3D100B820D1 /* STDBuilder.m in Sources */,
+				0642E26C1AE0F3D100B820D1 /* SUNSlideSwitchView.m in Sources */,
+				0642E26D1AE0F3D100B820D1 /* STDBigViewController.m in Sources */,
+				0642E26E1AE0F3D100B820D1 /* STDownloadViewController.m in Sources */,
+				0642E26F1AE0F3D100B820D1 /* STACodeViewController.m in Sources */,
+				0642E2701AE0F3D100B820D1 /* STDCardViewController.m in Sources */,
+				0642E2711AE0F3D100B820D1 /* STDAboutAudioViewController.m in Sources */,
+				0642E2721AE0F3D100B820D1 /* STDChatViewController.m in Sources */,
+				0642E2731AE0F3D100B820D1 /* STDSingleton.m in Sources */,
+				0642E2741AE0F3D100B820D1 /* STDFeedViewController.m in Sources */,
+				0642E2751AE0F3D100B820D1 /* STAHanoiViewController.m in Sources */,
+				0642E2761AE0F3D100B820D1 /* STDDebugPingViewController.m in Sources */,
+				0642E2771AE0F3D100B820D1 /* STDFacade.m in Sources */,
+				0642E2781AE0F3D100B820D1 /* STDUser.m in Sources */,
+				0642E2791AE0F3D100B820D1 /* STDScrollViewController.m in Sources */,
+				0642E27A1AE0F3D100B820D1 /* STDTextViewController.m in Sources */,
+				0642E27B1AE0F3D100B820D1 /* STDBridge.m in Sources */,
+				0642E27C1AE0F3D100B820D1 /* STDAuthorization.m in Sources */,
+				0642E27D1AE0F3D100B820D1 /* STDSettingViewController.m in Sources */,
+				0642E27E1AE0F3D100B820D1 /* STDRotateTransitionDelegate.m in Sources */,
+				0642E27F1AE0F3D100B820D1 /* STDFeedItem.m in Sources */,
+				0642E2801AE0F3D100B820D1 /* STDFactoryMethod.m in Sources */,
+				0642E2811AE0F3D100B820D1 /* STASortView.m in Sources */,
+				0642E2821AE0F3D100B820D1 /* STDNavigationSettingViewController.m in Sources */,
+				0642E2831AE0F3D100B820D1 /* STDFeedCell.m in Sources */,
+				0642E2841AE0F3D100B820D1 /* STMenuView.m in Sources */,
+				0642E2851AE0F3D100B820D1 /* STDTextChatCell.m in Sources */,
+				0642E2861AE0F3D100B820D1 /* STDFeedImageView.m in Sources */,
+				0642E2871AE0F3D100B820D1 /* STAHanoiOperation.m in Sources */,
+				0642E2881AE0F3D100B820D1 /* STDRefreshControl.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0642E2C31AE0F47700B820D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0642E2C41AE0F47700B820D1 /* STDFeedItem.m in Sources */,
+				0642E2C51AE0F47700B820D1 /* TodayViewController.m in Sources */,
+				0642E2C61AE0F47700B820D1 /* STDBNetwork.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1309,10 +1696,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		06A4D3CD19E6B3C7007D332D /* PBXTargetDependency */ = {
+		0642E2D61AE0F51A00B820D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0642E2C21AE0F47700B820D1 /* STKitWidgetInHouse */;
+			targetProxy = 0642E2D51AE0F51A00B820D1 /* PBXContainerItemProxy */;
+		};
+		069586E91AE5FF6000F149F1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 06A4D3BD19E6B3C7007D332D /* STKitWidget */;
-			targetProxy = 06A4D3CC19E6B3C7007D332D /* PBXContainerItemProxy */;
+			targetProxy = 069586E81AE5FF6000F149F1 /* PBXContainerItemProxy */;
 		};
 		06CF9BB31A8BB802000037EF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1366,7 +1758,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = STKitDemo;
 				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos6.1;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 arm64";
 				WRAPPER_EXTENSION = app;
@@ -1381,7 +1773,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: WEIWEI YE (U9JEY66N6A)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1407,10 +1799,151 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = STKitDemo;
 				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos6.1;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 arm64";
 				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		0642E2BB1AE0F3D100B820D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/STKitDemo",
+					"$(PROJECT_DIR)/STKitDemo/Classes",
+					"$(PROJECT_DIR)/STKitDemo/Classes/3rdLibs",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/STWorkspace-geijllfmuymgingxsjgqvtuhlffp/Build/Products/Debug-iphonesimulator",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "STKitDemo/STKitDemo-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
+				INFOPLIST_FILE = "STKitDemo/STKitDemoInHouse-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/STKitDemo",
+					"$(PROJECT_DIR)/STKitDemo/Classes/3rdLibs",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = STKitDemo;
+				PROVISIONING_PROFILE = "c91df21d-8649-45cd-9714-e2d34515ffc7";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 arm64";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0642E2BC1AE0F3D100B820D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Distribution: Beijing Bytedance Technology Co., Ltd";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Bytedance Technology Co., Ltd";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/STKitDemo",
+					"$(PROJECT_DIR)/STKitDemo/Classes",
+					"$(PROJECT_DIR)/STKitDemo/Classes/3rdLibs",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/STWorkspace-geijllfmuymgingxsjgqvtuhlffp/Build/Products/Debug-iphonesimulator",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "STKitDemo/STKitDemo-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
+				INFOPLIST_FILE = "STKitDemo/STKitDemoInHouse-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/STKitDemo",
+					"$(PROJECT_DIR)/STKitDemo/Classes/3rdLibs",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = STKitDemo;
+				PROVISIONING_PROFILE = "c91df21d-8649-45cd-9714-e2d34515ffc7";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 arm64";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		0642E2CE1AE0F47700B820D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/STWorkspace-geijllfmuymgingxsjgqvtuhlffp/Build/Products/Debug-iphonesimulator",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/STKitDemo/Classes",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "STKitWidget/STKitWidgetInHouse-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = STKitWidget;
+				PROVISIONING_PROFILE = "28060c4c-eb03-4e66-99b3-012ca6a95da6";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = "armv7 armv7s arm64";
+			};
+			name = Debug;
+		};
+		0642E2CF1AE0F47700B820D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Distribution: Beijing Bytedance Technology Co., Ltd";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Bytedance Technology Co., Ltd";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/STWorkspace-geijllfmuymgingxsjgqvtuhlffp/Build/Products/Debug-iphonesimulator",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/STKitDemo/Classes",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "STKitWidget/STKitWidgetInHouse-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = STKitWidget;
+				PROVISIONING_PROFILE = "28060c4c-eb03-4e66-99b3-012ca6a95da6";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};
@@ -1440,6 +1973,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
@@ -1452,7 +1986,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: WEIWEI YE (U9JEY66N6A)";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1467,6 +2001,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
@@ -1598,6 +2133,24 @@
 			buildConfigurations = (
 				0602B519196974150004ACBB /* Debug */,
 				0602B51A196974150004ACBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0642E2BA1AE0F3D100B820D1 /* Build configuration list for PBXNativeTarget "STKitDemoInHouse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0642E2BB1AE0F3D100B820D1 /* Debug */,
+				0642E2BC1AE0F3D100B820D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0642E2CD1AE0F47700B820D1 /* Build configuration list for PBXNativeTarget "STKitWidgetInHouse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0642E2CE1AE0F47700B820D1 /* Debug */,
+				0642E2CF1AE0F47700B820D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

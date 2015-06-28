@@ -8,7 +8,6 @@
 
 #import "STDAboutViewController.h"
 
-#import <STKit/STKit.h>
 #import <MessageUI/MessageUI.h>
 
 @interface STDAboutViewController () <MFMailComposeViewControllerDelegate, STLinkLabelDelegate>
@@ -91,7 +90,7 @@
             return;
         }
         STWebViewController *webViewController = [[STWebViewController alloc] initWithURL:URL];
-        [self.customNavigationController pushViewController:webViewController animated:YES];
+        [self.st_navigationController pushViewController:webViewController animated:YES];
     } else {
         NSString *value = linkObject.value;
         NSArray *components = [value componentsSeparatedByString:@"|"];

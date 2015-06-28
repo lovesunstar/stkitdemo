@@ -8,7 +8,6 @@
 
 #import "STDChatViewController.h"
 
-#import <STKit/STKit.h>
 #import <STKit/STAlbumManager.h>
 
 #import "STDChat.h"
@@ -96,7 +95,7 @@ NSString *const STDChatSystemDefaultID = @"97676900";
     self.navigationItem.rightBarButtonItem.enabled = (self.fetchedResultsController.fetchedObjects.count > 0);
     
     
-    self.customNavigationController.sideInteractionArea = STSideInteractiveAreaNavigationBar;
+    self.st_navigationController.sideInteractionArea = STSideInteractiveAreaNavigationBar;
     self.tableView.backgroundView = nil;
     self.tableView.backgroundColor = [UIColor colorWithRGB:0xE2E4E5];
     self.tableView.separatorColor = [UIColor clearColor];
@@ -363,7 +362,7 @@ NSString *const STDChatSystemDefaultID = @"97676900";
 }
 
 - (void)_backViewControllerActionFired:(id)sender {
-    [self.customNavigationController popViewControllerAnimated:YES];
+    [self.st_navigationController popViewControllerAnimated:YES];
 }
 
 - (void)_deleteViewControllerActionFired:(id)sender {

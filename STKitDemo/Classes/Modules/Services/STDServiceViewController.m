@@ -12,8 +12,6 @@
 #import "STDReaderViewController.h"
 #import "STARootViewController.h"
 #import "STDChatViewController.h"
-#import "STDAppDelegate.h"
-#import <STKit/STKit.h>
 
 @interface STDServiceViewController () <UISearchBarDelegate, UISearchDisplayDelegate>
 
@@ -81,22 +79,22 @@
 - (void)chatActionFired {
     STDChatViewController *chatViewController = [[STDChatViewController alloc] initWithPageInfo:nil];
     chatViewController.hidesBottomBarWhenPushed = YES;
-    [self.customNavigationController pushViewController:chatViewController animated:YES];
+    [self.st_navigationController pushViewController:chatViewController animated:YES];
 }
 
 - (void)recordActionFired {
     STDRecordViewController *recordViewController = STDRecordViewController.new;
-    [self.customNavigationController pushViewController:recordViewController animated:YES];
+    [self.st_navigationController pushViewController:recordViewController animated:YES];
 }
 
 - (void)avcActionFired {
     STARootViewController *avc = [[STARootViewController alloc] initWithStyle:UITableViewStyleGrouped];
-    [self.customNavigationController pushViewController:avc animated:YES];
+    [self.st_navigationController pushViewController:avc animated:YES];
 }
 
 - (void)readerActionFired {
     STDReaderViewController *readerViewController = STDReaderViewController.new;
-    [self.customNavigationController pushViewController:readerViewController animated:YES];
+    [self.st_navigationController pushViewController:readerViewController animated:YES];
 }
 
 - (void)leftBarButtonItemAction:(id)sender {

@@ -38,6 +38,8 @@ typedef NS_ENUM(NSInteger, STIndicatorType) {
  * @param    animated 是否需要动画
  */
 + (instancetype)showInView:(UIView *)view animated:(BOOL)animated;
+/// If window is nil, add to new window (level higher than statusBar)
++ (instancetype)showInWindow:(UIWindow *)window animated:(BOOL)animated;
 
 /**
  * @abstract 关闭view上的所有指示器
@@ -93,4 +95,6 @@ typedef NS_ENUM(NSInteger, STIndicatorType) {
 @property(nonatomic, assign, getter=isForceSquare) BOOL forceSquare;
 /// 当指示器不显示的时候是否将指示器移除
 @property(nonatomic, assign) BOOL removeWhenStopped;
+
+@property(nonatomic) CGFloat    minimumDisplayDuration;
 @end

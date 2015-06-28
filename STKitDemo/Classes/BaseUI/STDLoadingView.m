@@ -9,20 +9,6 @@
 #import "STDLoadingView.h"
 #import <STKit/STKit.h>
 
-
-NS_INLINE CGPoint pointLineToArc(CGPoint center, CGPoint p2, float angle, CGFloat radius) {
-    float angleS = atan2f(p2.y - center.y, p2.x - center.x);
-    float angleT = angleS + angle;
-    float x = radius * cosf(angleT);
-    float y = radius * sinf(angleT);
-    return CGPointMake(x + center.x, y + center.y);
-}
-
-
-NS_INLINE CGFloat distansBetween(CGPoint p1 , CGPoint p2) {
-    return sqrtf((p1.x - p2.x)*(p1.x - p2.x) + (p1.y - p2.y)*(p1.y - p2.y));
-}
-
 @interface STDLoadingView ()
 
 @property(nonatomic, strong) CAShapeLayer    *shapeLayer;
@@ -128,26 +114,4 @@ NS_INLINE CGFloat distansBetween(CGPoint p1 , CGPoint p2) {
     self.imageView.frame = rect;
 }
 
-
-- (UIBezierPath *)bezierPathWithCompletion:(CGFloat)completion {
-    UIBezierPath *bezierPath = [UIBezierPath bezierPath];
-    CGFloat startRadius = (15 - completion * 10) * 0.5, endRadius = (5 + completion * 10) * 0.5;
-    CGPoint startCenter = CGPointMake(self.width * 0.5, startRadius);
-    CGFloat height = 15 + completion * 30;
-    CGPoint endCenter = CGPointMake(self.width * 0.5, height - endRadius);
-    [bezierPath moveToPoint:CGPointMake(startCenter.x - startRadius, startCenter.y + startRadius)];
-    [bezierPath addLineToPoint:CGPointMake(startCenter.x - startRadius, startCenter.y - startRadius)];
-    [bezierPath addLineToPoint:CGPointMake(startCenter.x + startRadius, startCenter.y - startRadius)];
-    [bezierPath addLineToPoint:CGPointMake(startCenter.x + startRadius, startCenter.y + startRadius)];
-    [bezierPath addLineToPoint:CGPointMake(startCenter.x - startRadius, startCenter.y - startRadius)];
-//    [bezierPath addArcWithCenter:startCenter radius:startRadius startAngle:0 endAngle:M_PI / 2 clockwise:YES];
-    [bezierPath closePath];
-    return bezierPath;
-    
-    [bezierPath addLineToPoint:CGPointMake(endCenter.x + endRadius, endCenter.y)];
-    [bezierPath addArcWithCenter:endCenter radius:endRadius startAngle:M_PI endAngle:0 clockwise:NO];
-    [bezierPath closePath];
-    
-    return bezierPath;
-}
 @end

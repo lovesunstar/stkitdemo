@@ -7,17 +7,16 @@
 //
 
 #import "STDCardViewController.h"
-#import "STDAppDelegate.h"
 
 @interface STDCardViewController ()
 
-@property (nonatomic, strong) STHTTPNetwork * network;
+@property (nonatomic, strong) STHTTPNetwork *network;
 
 @end
 
 @implementation STDCardViewController
 
-- (instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.network = [[STHTTPNetwork alloc] init];
@@ -40,7 +39,7 @@
             NSArray * array = [response objectForKey:@"photos"];
             BOOL hasMore = [[response objectForKey:@"more"] boolValue] && array.count > 0;
             [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                STDFeedItem * feedItem = [[STDFeedItem alloc] initWithDictinoary:obj];
+                STDFeedItem * feedItem = [[STDFeedItem alloc] initWithDictionary:obj];
                 [result addObject:feedItem];
             }];
             if (completionHandler) {

@@ -10,8 +10,6 @@
 #import "STASortViewController.h"
 #import "STAHanoiViewController.h"
 
-#import <STKit/STKit.h>
-
 @interface STARootViewController ()
 
 @property (nonatomic, strong) NSArray * dataSource;
@@ -136,34 +134,34 @@
     STASortViewController * viewController = [[STASortViewController alloc] init];
     viewController.sortArray = self.sortArray;
     viewController.arraySortType = STArraySortTypeBubbleSort;
-    [self.customNavigationController pushViewController:viewController animated:YES];
+    [self.st_navigationController pushViewController:viewController animated:YES];
 }
 
 - (void)_selectSortActionFired {
     STASortViewController * viewController = [[STASortViewController alloc] init];
     viewController.sortArray = self.sortArray;
     viewController.arraySortType = STArraySortTypeSelectSort;
-    [self.customNavigationController pushViewController:viewController animated:YES];
+    [self.st_navigationController pushViewController:viewController animated:YES];
 }
 
 - (void)_insertSortActionFired {
     STASortViewController * viewController = [[STASortViewController alloc] init];
     viewController.sortArray = self.sortArray;
     viewController.arraySortType = STArraySortTypeInsertSort;
-    [self.customNavigationController pushViewController:viewController animated:YES];
+    [self.st_navigationController pushViewController:viewController animated:YES];
 }
 
 - (void)_quickSortActionFired {
     STASortViewController * viewController = [[STASortViewController alloc] init];
     viewController.sortArray = self.sortArray;
     viewController.arraySortType = STArraySortTypeQuickSort;
-    [self.customNavigationController pushViewController:viewController animated:YES];
+    [self.st_navigationController pushViewController:viewController animated:YES];
 }
 
 - (void)_hanoiActionFired {
     STAHanoiViewController * viewController = [[STAHanoiViewController alloc] init];
     viewController.numberOfHanois = self.numberOfDisks;
-    [self.customNavigationController pushViewController:viewController animated:YES];
+    [self.st_navigationController pushViewController:viewController animated:YES];
 }
 
 - (void)leftBarButtonItemAction:(id) sender {

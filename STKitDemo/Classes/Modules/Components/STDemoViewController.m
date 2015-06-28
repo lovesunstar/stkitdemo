@@ -14,9 +14,8 @@
 #import <STKit/STNotificationWindow.h>
 #import "STDCardViewController.h"
 #import "STDImageBlurViewController.h"
-#import "STMenuView.h"
-#import "STDAppDelegate.h"
 #import "STDScrollViewController.h"
+
 
 @interface STDemoViewController () <STImagePickerControllerDelegate, STNotificationWindowDelegate, UIGestureRecognizerDelegate,
                                     STNavigationControllerDelegate>
@@ -76,11 +75,11 @@
                                                             items:@[ item40 ]];
         [dataSource addObject:section4];
         
-//        STDTableViewCellItem *item50 = [[STDTableViewCellItem alloc] initWithTitle:@"WebViewScrollView" target:self action:@selector(frameVSBoundsActionFired)];
-//        STDTableViewSectionItem *section5 =
-//        [[STDTableViewSectionItem alloc] initWithSectionTitle:@"ScrollViewController"
-//                                                        items:@[ item50 ]];
-//        [dataSource addObject:section5];
+        STDTableViewCellItem *item50 = [[STDTableViewCellItem alloc] initWithTitle:@"WebViewScrollView" target:self action:@selector(frameVSBoundsActionFired)];
+        STDTableViewSectionItem *section5 =
+        [[STDTableViewSectionItem alloc] initWithSectionTitle:@"ScrollViewController"
+                                                        items:@[ item50 ]];
+        [dataSource addObject:section5];
 
         self.dataSource = dataSource;
     }
@@ -103,6 +102,41 @@
     }
 }
 
+- (void)_longPressActionFired:(UIGestureRecognizer *)gesture {
+    NSLog(@"%@", NSStringFromCGPoint([gesture locationInView:self.view]));
+}
+- (void)_changeRowActionFired:(id)sender {
+    STDTableViewSectionItem *sectionItem0 = self.dataSource[0];
+    STDTableViewSectionItem *sectionItem1 = self.dataSource[1];
+    NSMutableArray *items0 = [sectionItem0.items mutableCopy];
+    NSMutableArray *items1 = [sectionItem1.items mutableCopy];
+    
+    NSIndexPath *fromIndexPath;
+    NSIndexPath *targetIndexPath;
+    
+    if (items0.count == 2) {
+        // 从0 到2
+        id item0 = [items0 lastObject];
+        [items1 addObject:item0];
+        [items0 removeLastObject];
+        sectionItem0.items = items0;
+        sectionItem1.items = items1;
+        fromIndexPath = [NSIndexPath indexPathForRow:1 inSection:0];
+        targetIndexPath = [NSIndexPath indexPathForRow:0 inSection:1];
+    } else {
+        id item1 = [items1 firstObject];
+        [items0 addObject:item1];
+        [items1 removeObjectAtIndex:0];
+        sectionItem0.items = items0;
+        sectionItem1.items = items1;
+        fromIndexPath = [NSIndexPath indexPathForRow:0 inSection:1];
+        targetIndexPath = [NSIndexPath indexPathForRow:1 inSection:0];
+    }
+    
+    [self.tableView beginUpdates];
+    [self.tableView moveRowAtIndexPath:fromIndexPath toIndexPath:targetIndexPath];
+    [self.tableView endUpdates];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -111,19 +145,19 @@
 - (void)testNavigationActionFired {
     STDNavigationTestViewController *viewController = [[STDNavigationTestViewController alloc] initWithStyle:UITableViewStyleGrouped];
     viewController.hidesBottomBarWhenPushed = YES;
-    [self.customNavigationController pushViewController:viewController animated:YES];
+    [self.st_navigationController pushViewController:viewController animated:YES];
 }
 
 - (void)imageDownloadActionFired {
     STDownloadViewController *viewController = STDownloadViewController.new;
     viewController.hidesBottomBarWhenPushed = YES;
-    [self.customNavigationController pushViewController:viewController animated:YES];
+    [self.st_navigationController pushViewController:viewController animated:YES];
 }
 
 - (void)imageCardActionFired {
     STDCardViewController *cardViewController = STDCardViewController.new;
     cardViewController.hidesBottomBarWhenPushed = YES;
-    [self.customNavigationController pushViewController:cardViewController animated:YES];
+    [self.st_navigationController pushViewController:cardViewController animated:YES];
 }
 
 - (void)imagePickerActionFired {
@@ -135,19 +169,19 @@
 - (void)imageBlurActionFired {
     STDImageBlurViewController *imageBlurViewController = [[STDImageBlurViewController alloc] init];
     imageBlurViewController.hidesBottomBarWhenPushed = YES;
-    [self.customNavigationController pushViewController:imageBlurViewController animated:YES];
+    [self.st_navigationController pushViewController:imageBlurViewController animated:YES];
 }
 
 - (void)textActionFired {
     STDTextViewController *textViewController = STDTextViewController.new;
     textViewController.hidesBottomBarWhenPushed = YES;
-    [self.customNavigationController pushViewController:textViewController animated:YES];
+    [self.st_navigationController pushViewController:textViewController animated:YES];
 }
 
 - (void)linkActionFired {
     STDLinkViewController *linkViewController = STDLinkViewController.new;
     linkViewController.hidesBottomBarWhenPushed = YES;
-    [self.customNavigationController pushViewController:linkViewController animated:YES];
+    [self.st_navigationController pushViewController:linkViewController animated:YES];
 }
 
 - (void)notificationActionFired {
@@ -160,12 +194,12 @@
 
 - (void)webViewActionFired {
     STWebViewController *webViewController = [[STWebViewController alloc] initWithURLString:@"http://xstore.duapp.com"];
-    [self.customNavigationController pushViewController:webViewController animated:YES];
+    [self.st_navigationController pushViewController:webViewController animated:YES];
 }
 
 - (void)frameVSBoundsActionFired {
     STDScrollViewController *scrollViewController = [[STDScrollViewController alloc] init];
-    [self.customNavigationController pushViewController:scrollViewController animated:YES];
+    [self.st_navigationController pushViewController:scrollViewController animated:YES];
 }
 
 - (void)imagePickerController:(STImagePickerController *)picker didFinishPickingImageWithInfo:(NSDictionary *)info {
@@ -207,7 +241,7 @@
 }
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
-    self.navigationBarHidden = YES;
+    self.st_navigationBarHidden = YES;
 }
 
 @end

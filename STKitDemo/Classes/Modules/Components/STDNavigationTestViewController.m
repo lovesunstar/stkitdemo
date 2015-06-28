@@ -7,7 +7,6 @@
 //
 
 #import "STDNavigationTestViewController.h"
-#import "STDSettingViewController.h"
 
 @interface STDNavigationTestViewController () <STNavigationControllerDelegate>
 
@@ -62,38 +61,38 @@
 }
 
 - (void)_popViewControllerActionFired {
-    [self.customNavigationController popViewControllerAnimated:YES];
+    [self.st_navigationController popViewControllerAnimated:YES];
 }
 
 - (void)_popToRootViewControllerActionFired {
-    [self.customNavigationController popToRootViewControllerAnimated:YES];
+    [self.st_navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void)_pushNHNBHSActionFired {
     STDNavigationTestViewController * viewController = [[STDNavigationTestViewController alloc] initWithStyle:UITableViewStyleGrouped];
-    viewController.navigationBarHidden = NO;
+    viewController.st_navigationBarHidden = NO;
     viewController.hidesBottomBarWhenPushed = self.hidesBottomBarWhenPushed;
-    [self.customNavigationController pushViewController:viewController animated:YES];
+    [self.st_navigationController pushViewController:viewController animated:YES];
 }
 
 - (void)_pushNHYBHSActionFired {
     STDNavigationTestViewController * viewController = [[STDNavigationTestViewController alloc] initWithStyle:UITableViewStyleGrouped];
-    viewController.navigationBarHidden = YES;
+    viewController.st_navigationBarHidden = YES;
     viewController.hidesBottomBarWhenPushed = self.hidesBottomBarWhenPushed;
-    [self.customNavigationController pushViewController:viewController animated:YES];
+    [self.st_navigationController pushViewController:viewController animated:YES];
 }
 
 - (void)_pushNHSBHNActionFired {
     STDNavigationTestViewController * viewController = [[STDNavigationTestViewController alloc] initWithStyle:UITableViewStyleGrouped];
-    viewController.navigationBarHidden = self.navigationBarHidden;
+    viewController.st_navigationBarHidden = self.st_navigationBarHidden;
     viewController.hidesBottomBarWhenPushed = NO;
-    [self.customNavigationController pushViewController:viewController animated:YES];
+    [self.st_navigationController pushViewController:viewController animated:YES];
 }
 
 - (void)_pushNHSBHYActionFired {
     STDNavigationTestViewController * viewController = [[STDNavigationTestViewController alloc] initWithStyle:UITableViewStyleGrouped];
-    viewController.navigationBarHidden = self.navigationBarHidden;
+    viewController.st_navigationBarHidden = self.st_navigationBarHidden;
     viewController.hidesBottomBarWhenPushed = YES;
-    [self.customNavigationController pushViewController:viewController animated:YES];
+    [self.st_navigationController pushViewController:viewController animated:YES];
 }
 @end

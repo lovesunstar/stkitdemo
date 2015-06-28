@@ -12,7 +12,6 @@
 #import "STASortView.h"
 
 #import "STACodeViewController.h"
-#import <STKit/UIKit+STKit.h>
 
 @interface STASortViewController ()
 
@@ -329,7 +328,7 @@
 - (void)viewSourceCode:(id)sender {
     STACodeViewController *viewController = [[STACodeViewController alloc] initWithNibName:nil bundle:nil];
     viewController.algorithmType = (STAlgorithmType)self.arraySortType;
-    [self.customNavigationController pushViewController:viewController animated:YES];
+    [self.st_navigationController pushViewController:viewController animated:YES];
 }
 
 - (void)logArray:(NSArray *)array {

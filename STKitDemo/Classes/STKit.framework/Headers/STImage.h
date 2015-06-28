@@ -10,9 +10,9 @@
 
 @interface STImage : UIImage
 
-@property (nonatomic, assign, readonly, getter=isGIFImage) BOOL  GIFImage;
-@property (nonatomic, assign, readonly) NSInteger numberOfImages;
+@property(nonatomic, assign, readonly, getter=isGIFImage) BOOL  GIFImage;
+@property(nonatomic, assign, readonly) NSInteger numberOfImages;
 
-- (UIImage *) imageAtIndex:(NSInteger)index duration:(NSTimeInterval *)duration;
+- (UIImage *)imageAtIndex:(NSInteger)index duration:(NSTimeInterval *)duration;
 
 @end

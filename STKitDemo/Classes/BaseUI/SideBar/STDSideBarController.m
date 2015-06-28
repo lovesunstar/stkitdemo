@@ -9,10 +9,7 @@
 #import "STDSideBarController.h"
 #import "STARootViewController.h"
 
-#import "STDChatViewController.h"
-
 #import "STDMoreViewController.h"
-#import "STDTabBarController.h"
 #import "STDMapViewController.h"
 #import "STDemoViewController.h"
 #import "STDServiceViewController.h"

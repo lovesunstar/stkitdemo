@@ -7,7 +7,6 @@
 //
 
 #import "STDRecordViewController.h"
-#import <STKit/STKit.h>
 #import "STWaveBarView.h"
 #import "STDAboutAudioViewController.h"
 #import "SCSiriWaveformView.h"
@@ -97,7 +96,7 @@
 
 - (void)aboutActionFired:(id)sender {
     STDAboutAudioViewController *aboutViewController = [[STDAboutAudioViewController alloc] initWithNibName:nil bundle:nil];
-    [self.customNavigationController pushViewController:aboutViewController animated:YES];
+    [self.st_navigationController pushViewController:aboutViewController animated:YES];
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {

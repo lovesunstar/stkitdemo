@@ -23,4 +23,25 @@
 @property(nonatomic, strong) UIColor          *barTintColor;
 
 @property(nonatomic, copy) NSDictionary       *titleTextAttributes;
+
+@property(nonatomic,assign,getter=isTranslucent) BOOL translucent NS_AVAILABLE_IOS(3_0);
+
 @end
+
+typedef enum STBarButtonCustomItem {
+    STBarButtonCustomItemBack,
+    STBarButtonCustomItemDismiss,
+    STBarButtonCustomItemMore,
+} STBarButtonCustomItem;
+@interface UIBarButtonItem (STKit)
+
++ (instancetype)backBarButtonItemWithTarget:(id)target action:(SEL)action;
+- (instancetype)initWithBarButtonCustomItem:(STBarButtonCustomItem)customItem target:(id)target action:(SEL)action;
+
+- (instancetype)initWithTitle:(NSString *)title target:(id)target action:(SEL)action;
+
+- (instancetype)initWithTitle:(NSString *)title tintColor:(UIColor *)tintColor target:(id)target action:(SEL)action;
+
+- (UIView *)st_customView;
+@end
+

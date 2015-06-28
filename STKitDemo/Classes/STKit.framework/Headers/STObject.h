@@ -55,23 +55,23 @@ ST_EXTERN NSDictionary *STClassGetPropertyRelationship(Class class);
 
  @interface STTestObject : STObject
 
- @property (nonatomic, copy) NSString * name;
+ @property(nonatomic, copy) NSString *name;
 
- @property (nonatomic, strong) STTestObject * friendObject;
+ @property(nonatomic, strong) STTestObject *friendObject;
 
- @property (nonatomic, copy)   NSArray * otherObjects;
+ @property(nonatomic, copy)   NSArray *otherObjects;
 
- @property (nonatomic, copy)   NSArray * descriptions;
+ @property(nonatomic, copy)   NSArray *descriptions;
 
  @end
 
  @implementation STTestObject
 
- + (Class) otherObjectsClass {
+ + (Class)otherObjectsClass {
     return [STTestObject class];
  }
 
- + (Class) descriptionsClass {
+ + (Class)descriptionsClass {
     return [NSString class];
  }
 
@@ -95,7 +95,7 @@ ST_EXTERN NSDictionary *STClassGetPropertyRelationship(Class class);
 
 + (instancetype)objectWithDictionary:(NSDictionary *)dictionary;
 
-- (instancetype)initWithDictinoary:(NSDictionary *)dictionary;
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 /**
  * @abstract 根据dict更新Object中对应的属性

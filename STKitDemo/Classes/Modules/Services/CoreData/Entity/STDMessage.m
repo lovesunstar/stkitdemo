@@ -7,8 +7,6 @@
 //
 
 #import "STDMessage.h"
-#import "STDImage.h"
-#import "STDUser.h"
 
 
 @implementation STDMessage

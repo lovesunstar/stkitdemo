@@ -74,7 +74,8 @@ typedef void (^STHTTPFinishedHandler)(STHTTPOperation *operation, NSData *data, 
 @property(nonatomic, strong) STHTTPProgressHandler  progressHandler;
 /// 请求结束时的回调
 @property(nonatomic, strong) STHTTPFinishedHandler  finishedHandler;
-
+/// 请求时带的额外信息
+@property(nonatomic, strong) NSDictionary          *contextInfo;
 @end
 
 @interface STHTTPOperation (STHTTPRequest)
@@ -133,5 +134,3 @@ typedef void (^STHTTPFinishedHandler)(STHTTPOperation *operation, NSData *data, 
 - (STHTTPConfiguration *)HTTPConfiguration;
 
 @end
-
-const NSInteger STNetworkErrorCodeUserCancelled;

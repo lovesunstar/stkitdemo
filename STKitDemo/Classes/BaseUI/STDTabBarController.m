@@ -31,19 +31,19 @@
     if (self) {
         STDemoViewController *controlsViewController = [[STDemoViewController alloc] initWithStyle:UITableViewStyleGrouped];
         STNavigationController *controlsNavigationController = [[STNavigationController alloc] initWithRootViewController:controlsViewController];
-        controlsNavigationController.customTabBarItem = [[STTabBarItem alloc] initWithTitle:@"组件"
+        controlsNavigationController.st_tabBarItem = [[STTabBarItem alloc] initWithTitle:@"组件"
                                                                                       image:[UIImage imageNamed:@"tab_receipt_normal.png"]
                                                                               selectedImage:[UIImage imageNamed:@"tab_receipt_highlighted.png"]];
 
         STDServiceViewController *serviceViewController = [[STDServiceViewController alloc] initWithStyle:UITableViewStyleGrouped];
         STNavigationController *serviceNavigationController = [[STNavigationController alloc] initWithRootViewController:serviceViewController];
-        serviceNavigationController.customTabBarItem = [[STTabBarItem alloc] initWithTitle:@"服务"
+        serviceNavigationController.st_tabBarItem = [[STTabBarItem alloc] initWithTitle:@"服务"
                                                                                      image:[UIImage imageNamed:@"tab_service_normal.png"]
                                                                              selectedImage:[UIImage imageNamed:@"tab_service_highlighted.png"]];
 
         STDMoreViewController *moreViewController = [[STDMoreViewController alloc] initWithStyle:UITableViewStyleGrouped];
         STNavigationController *moreNavigationController = [[STNavigationController alloc] initWithRootViewController:moreViewController];
-        moreNavigationController.customTabBarItem = [[STTabBarItem alloc] initWithTitle:@"我的"
+        moreNavigationController.st_tabBarItem = [[STTabBarItem alloc] initWithTitle:@"我的"
                                                                                   image:[UIImage imageNamed:@"tab_profile_normal.png"]
                                                                           selectedImage:[UIImage imageNamed:@"tab_profile_highlighted.png"]];
         self.viewControllers = @[controlsNavigationController, serviceNavigationController, moreNavigationController];

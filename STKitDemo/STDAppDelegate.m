@@ -12,8 +12,8 @@
 #import "STDLeftViewController.h"
 #import "STDTabBarController.h"
 #import "STDStartViewController.h"
-
-#import <STKit/STKit.h>
+#import <objc/runtime.h>
+#import <objc/message.h>
 
 @interface STDAppDelegate ()
 
@@ -22,6 +22,7 @@
 @implementation STDAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     [self initializeCustomUserSetting];
     if ([application respondsToSelector:@selector(setStatusBarStyle:)]) {
         application.statusBarStyle = UIStatusBarStyleDefault;
@@ -62,7 +63,7 @@
     [[STPersistence standardPersistence] setValue:@"SideBar" forKey:@"SelectedStyle"];
     STDLeftViewController *leftViewController = [[STDLeftViewController alloc] init];
     STDSideBarController *sideBarController = [[STDSideBarController alloc] initWithRootViewController:leftViewController];
-    sideBarController.navigationBarHidden = YES;
+    sideBarController.st_navigationBarHidden = YES;
     STNavigationController *navigationController = [[STNavigationController alloc] initWithRootViewController:sideBarController];
     return navigationController;
 }

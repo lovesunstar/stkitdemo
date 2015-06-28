@@ -17,13 +17,14 @@
 @property(nonatomic, strong) UIImage *image;
 @property(nonatomic, strong) UIImage *selectedImage;
 
+@property(nonatomic, strong) UIColor   *titleColor;
+@property(nonatomic, strong) UIColor   *selectedTitleColor;
+@property(nonatomic, strong) UIFont    *titleFont;
+
 @property(nonatomic, copy) NSString *badgeValue;
 
 @property(nonatomic, assign) CGRect imageFrame;
 @property(nonatomic, assign) CGRect titleFrame;
-
-//- (CGRect) imageRectForBounds:(CGRect) bounds;
-//- (CGRect) titleRectForBounds:(CGRect) bounds;
 
 @property(nonatomic, weak) UIView *itemView;
 /// UITabBarItem

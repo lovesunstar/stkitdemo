@@ -9,7 +9,6 @@
 #import "STDReaderViewController.h"
 
 #import "STDBookViewController.h"
-#import <STKit/STKit.h>
 
 @interface STDReaderViewController () <UIPageViewControllerDelegate, UIPageViewControllerDataSource, STDBookViewControllerDelegate>
 
@@ -36,7 +35,7 @@
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
         self.book = string;
-        self.navigationBarHidden = YES;
+        self.st_navigationBarHidden = YES;
         self.hidesBottomBarWhenPushed = YES;
     }
     return self;
@@ -91,7 +90,7 @@
     STDBookViewController *oldViewController = (STDBookViewController *)oldNavigationController.viewControllers[0];
     NSInteger page = oldViewController.page;
     if (page == 0) {
-        UIGestureRecognizer *gestureRecognizer = self.customNavigationController.interactivePopGestureRecognizer;
+        UIGestureRecognizer *gestureRecognizer = self.st_navigationController.interactivePopGestureRecognizer;
         gestureRecognizer.enabled = YES;
         return nil;
     }
@@ -109,7 +108,7 @@
     previousViewController.total = self.pages.count;
     previousViewController.content = content;
     /// 往前翻的话，只有第0页支持左滑
-    UIGestureRecognizer *gestureRecognizer = self.customNavigationController.interactivePopGestureRecognizer;
+    UIGestureRecognizer *gestureRecognizer = self.st_navigationController.interactivePopGestureRecognizer;
     if (page == 1) {
         gestureRecognizer.enabled = YES;
     } else {
@@ -129,7 +128,7 @@
     NSInteger page = newerViewController.page;
     if (page == self.pages.count - 1 || page >= self.pages.count) {
         if (page == 0 && self.pages.count == 0) {
-            UIGestureRecognizer *gestureRecognizer = self.customNavigationController.interactivePopGestureRecognizer;
+            UIGestureRecognizer *gestureRecognizer = self.st_navigationController.interactivePopGestureRecognizer;
             gestureRecognizer.enabled = YES;
         }
         return nil;
@@ -146,7 +145,7 @@
     nextViewController.total = self.pages.count;
     nextViewController.content = content;
     /// 往后翻的话，都不支持左滑收拾
-    UIGestureRecognizer *gestureRecognizer = self.customNavigationController.interactivePopGestureRecognizer;
+    UIGestureRecognizer *gestureRecognizer = self.st_navigationController.interactivePopGestureRecognizer;
     gestureRecognizer.enabled = NO;
 
     return navigationController;
@@ -235,11 +234,11 @@
 #pragma mark - STDBookViewControllerDelegate
 
 - (void)backViewController {
-    [self.customNavigationController popViewControllerAnimated:YES];
+    [self.st_navigationController popViewControllerAnimated:YES];
 }
 
 - (void)navigationBarVisibleDidChangeTo:(BOOL)currentVisible {
-    UIGestureRecognizer *gestureRecognizer = self.customNavigationController.interactivePopGestureRecognizer;
+    UIGestureRecognizer *gestureRecognizer = self.st_navigationController.interactivePopGestureRecognizer;
     NSArray *viewControllers = self.pageViewController.viewControllers;
     BOOL firstPage = NO;
     if (viewControllers.count > 0) {

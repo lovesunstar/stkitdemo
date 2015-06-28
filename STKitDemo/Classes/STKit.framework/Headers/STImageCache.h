@@ -31,6 +31,10 @@ extern void STImageCachePopContext(STIdentifier contextId);
 + (void)removeMemoryCacheForKey:(NSString *)key;
 + (BOOL)hasMemoryCacheForKey:(NSString *)key;
 
+
++ (void)removeCachedImagesSinceDate:(NSDate *)date
+                  completionHandler:(void(^)())completionHandler;
+
 /**
  * @abstract 得到该key的图片缓存目录
  */

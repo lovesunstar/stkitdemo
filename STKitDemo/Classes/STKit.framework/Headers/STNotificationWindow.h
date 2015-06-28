@@ -21,10 +21,12 @@ typedef void (^Completion)(BOOL completion);
 @class STNotificationWindow, STImageView, STLabel;
 ;
 @interface STNotificationView : UIView
-
+@property(nonatomic, strong, readonly) UIView *contentView;
 @property(nonatomic, readonly, strong) STImageView *imageView;
 @property(nonatomic, readonly, strong) STLabel *textLabel;
 @property(nonatomic, readonly, strong) STLabel *detailLabel;
+@property(nonatomic, strong, readonly) UIButton *closeButton;
+
 
 - (instancetype)initWithFrame:(CGRect)frame; /// do not use this initializer
 

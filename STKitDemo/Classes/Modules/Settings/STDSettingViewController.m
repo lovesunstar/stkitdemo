@@ -8,7 +8,6 @@
 
 #import "STDSettingViewController.h"
 #import "STDNavigationSettingViewController.h"
-#import "STDChatViewController.h"
 #import "STDMessage.h"
 #import "STDLocationPickerController.h"
 #import "STDDebugPingViewController.h"
@@ -97,13 +96,13 @@
 - (void)_fakeSettingActionFired {
     STDLocationPickerController *pickerController = [[STDLocationPickerController alloc] init];
     pickerController.hidesBottomBarWhenPushed = YES;
-    [self.customNavigationController pushViewController:pickerController animated:YES];
+    [self.st_navigationController pushViewController:pickerController animated:YES];
 }
 
 - (void)_pingActionFired {
     STDDebugPingViewController *pingViewController = [[STDDebugPingViewController alloc] init];
     pingViewController.hidesBottomBarWhenPushed = YES;
-    [self.customNavigationController pushViewController:pingViewController animated:YES];
+    [self.st_navigationController pushViewController:pingViewController animated:YES];
 }
 
 - (void)_allowSettingActionFired:(UISwitch *)uiswitch {
@@ -116,7 +115,7 @@
 - (void)_reduceAnimationActionFired:(UISwitch *)uiswitch {
     if ([uiswitch isKindOfClass:[UISwitch class]]) {
         [[STPersistence standardPersistence] setValue:@(uiswitch.on) forKey:@"STDReduceTransitionAnimation"];
-        self.customTabBarController.animatedWhenTransition = !uiswitch.on;
+        self.st_tabBarController.animatedWhenTransition = !uiswitch.on;
     }
 }
 
@@ -126,7 +125,7 @@
     }
 }
 - (void)_resetSettingActionFired {
-    [STPersistence resetStandardPersistence];
+    [[STPersistence standardPersistence] removeAllCachedValues];
     STIndicatorView * indicatorView = [STIndicatorView showInView:self.view animated:YES];
     indicatorView.forceSquare = YES;
     indicatorView.indicatorType = STIndicatorTypeText;
@@ -176,7 +175,7 @@
 
 - (void)_navigationSettingActionFired {
     STDNavigationSettingViewController *settingViewController = [[STDNavigationSettingViewController alloc] initWithNibName:nil bundle:nil];
-    [self.customNavigationController pushViewController:settingViewController animated:YES];
+    [self.st_navigationController pushViewController:settingViewController animated:YES];
 }
 
 @end

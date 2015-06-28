@@ -17,12 +17,12 @@
 @property(nonatomic, weak, readonly) STRefreshControl *refreshControl;
 @property(nonatomic, weak, readonly) STPaginationControl *paginationControl;
 /// designed initializer
-- (instancetype)initWithStyle:(UITableViewStyle)style;
+- (instancetype)initWithStyle:(UITableViewStyle)style NS_DESIGNATED_INITIALIZER;
 //// 触发刷新方法
 - (void)refreshData;
 - (void)refreshDataUsingRefreshControl;
 
-//// 当数据加载完成之后，会调用此方法，子类徐重写，刷新列表等
+//// 当数据加载完成之后，会调用此方法，子类需重写，刷新列表等
 - (void)reloadData;
 
 /// 当出现异常失败时，是否列表可以滚动

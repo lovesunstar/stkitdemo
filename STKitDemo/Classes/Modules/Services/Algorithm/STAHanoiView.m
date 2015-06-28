@@ -8,8 +8,6 @@
 
 #import "STAHanoiView.h"
 
-#import <UIKit/UIKit.h>
-
 @interface STAHanoiView ()
 
 @property (nonatomic, strong) UIView *columnView1;
