@@ -84,9 +84,13 @@
 }
 
 - (void)finishActionFired:(id)sender {
+    NSArray *points = [self.croppableView.croppingPath points];
+    if (!points.count) {
+        [[[UIAlertView alloc]initWithTitle:@"摸我！" message:@"尝试用手在图片上随便摸两下" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil] show];
+        return;
+    }
     CGSize imageViewSize = self.backgroundImageView.size;
     CGSize imageSize = self.backgroundImageView.image.size;
-    NSArray *points = [self.croppableView.croppingPath points];
     UIBezierPath *aPath = [UIBezierPath bezierPath];
     {
         // Set the starting point of the shape.
