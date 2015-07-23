@@ -115,8 +115,8 @@
 
 - (void)initializeCustomUserSetting {
 
-    [[STThemeManager currentTheme] setThemeValue:[UIColor colorWithRGB:0x999999]
-                                          forKey:@"BookTextColor"
+    [[STThemeManager currentTheme] setThemeValue:[UIColor st_colorWithRGB:0x999999]
+                                        forKey:@"BookTextColor"
                                  whenContainedIn:NSClassFromString(@"STRichView")];
     UIFont *bookFont = [UIFont fontWithName:@"STHeitiSC-Light" size:21.];
     [[STThemeManager currentTheme] setThemeValue:bookFont forKey:@"BookTextFont" whenContainedIn:NSClassFromString(@"STRichView")];

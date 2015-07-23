@@ -63,7 +63,7 @@
     self.imageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     self.imageView.userInteractionEnabled = YES;
-    [self.imageView addTouchTarget:self action:@selector(seeBigImage:)];
+    [self.imageView st_addTouchTarget:self action:@selector(seeBigImage:)];
     [self.view addSubview:self.imageView];
     
     

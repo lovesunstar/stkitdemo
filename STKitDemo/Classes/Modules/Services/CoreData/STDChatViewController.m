@@ -95,9 +95,9 @@ NSString *const STDChatSystemDefaultID = @"97676900";
     self.navigationItem.rightBarButtonItem.enabled = (self.fetchedResultsController.fetchedObjects.count > 0);
     
     
-    self.st_navigationController.sideInteractionArea = STSideInteractiveAreaNavigationBar;
+    self.st_navigationController.st_sideInteractionArea = STSideInteractiveAreaNavigationBar;
     self.tableView.backgroundView = nil;
-    self.tableView.backgroundColor = [UIColor colorWithRGB:0xE2E4E5];
+    self.tableView.backgroundColor = [UIColor st_colorWithRGB:0xE2E4E5];
     self.tableView.separatorColor = [UIColor clearColor];
     
     [self.tableView registerClass:[STDTextChatCell class] forCellReuseIdentifier:NXChatCellTextLeftIdentifier];
@@ -162,7 +162,7 @@ NSString *const STDChatSystemDefaultID = @"97676900";
 }
 
 - (void)saveMessageInBackground:(id) sender {
-    NSString * text = [self.chatInputView.text stringByTrimingWhitespace];
+    NSString * text = [self.chatInputView.text st_stringByTrimingWhitespace];
     self.chatInputView.text = nil;
     if (text.length == 0) {
         return;
@@ -469,10 +469,10 @@ NSString *const STDChatSystemDefaultID = @"97676900";
 
 
 - (void) leftBarButtonItemAction:(id) sender {
-    if (self.sideBarController.sideAppeared) {
-        [self.sideBarController concealSideViewControllerAnimated:YES];
+    if (self.st_sideBarController.sideAppeared) {
+        [self.st_sideBarController concealSideViewControllerAnimated:YES];
     } else {
-        [self.sideBarController revealSideViewControllerAnimated:YES];
+        [self.st_sideBarController revealSideViewControllerAnimated:YES];
     }
 }
 

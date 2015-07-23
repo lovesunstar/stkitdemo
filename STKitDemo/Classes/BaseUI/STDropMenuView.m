@@ -45,7 +45,7 @@ const CGFloat _STDropMenuCellHeight = 45;
 
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
     [super setHighlighted:highlighted animated:animated];
-    self.separatorView.backgroundColor = [UIColor colorWithRGB:0x999999];
+    self.separatorView.backgroundColor = [UIColor st_colorWithRGB:0x999999];
 }
 
 @end
@@ -94,7 +94,7 @@ const CGFloat _STDropMenuCellHeight = 45;
         self.tableView = tableView;
 
         tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, footerHeight)];
-        tableView.tableFooterView.backgroundColor = [UIColor colorWithRGB:0xFF7300];
+        tableView.tableFooterView.backgroundColor = [UIColor st_colorWithRGB:0xFF7300];
 
         if (height > maxHeight) {
             tableView.scrollEnabled = YES;

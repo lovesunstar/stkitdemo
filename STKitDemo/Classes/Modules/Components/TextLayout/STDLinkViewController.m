@@ -49,12 +49,12 @@ CGSize const STDLinkViewCellSize = {320, 40};
     NSURL * URL = linkObject.URL;
     if ([[URL scheme] isEqualToString:@"mailto"]) {
         MFMailComposeViewController * viewController = [[MFMailComposeViewController alloc] init];
-        viewController.navigationBar.tintColor = [UIColor colorWithRGB:0xFF7300];
+        viewController.navigationBar.tintColor = [UIColor st_colorWithRGB:0xFF7300];
         [viewController setToRecipients:@[@"lovesunstar@sina.com"]];
         [viewController setCcRecipients:@[@"97676901@qq.com"]];
         [viewController setBccRecipients:nil];
         [viewController setSubject:@"【STKit】意见反馈"];
-        [viewController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithRGB:0xFF7300]}];
+        [viewController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor st_colorWithRGB:0xFF7300]}];
         [viewController setMessageBody:[NSString stringWithFormat:@"Dear 技术哥:<br /><br /><br/><span style=\"font-size:14px;\">当前版本 %@</span><br/>", [STApplicationContext sharedContext].bundleVersion] isHTML:YES];
         viewController.mailComposeDelegate = self;
         [self.viewController presentViewController:viewController animated:YES completion:NULL];
@@ -78,7 +78,7 @@ CGSize const STDLinkViewCellSize = {320, 40};
             }
         }
         UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:message message:nil delegate:nil cancelButtonTitle:title otherButtonTitles:nil, nil];
-        [alertView showWithDismissBlock:NULL];
+        [alertView st_showWithDismissBlock:NULL];
     }
 }
 

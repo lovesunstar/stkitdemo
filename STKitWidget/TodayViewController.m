@@ -30,7 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSString * cacheKey = [NSString stringWithFormat:@"%@-LastRequest", self.class].md5String;
+    NSString * cacheKey = [NSString stringWithFormat:@"%@-LastRequest", self.class].st_md5String;
     self.previousRequestTime = [[[STPersistence standardPersistence] valueForKey:cacheKey] doubleValue];
     
     self.edgeInsets = UIEdgeInsetsZero;
@@ -85,14 +85,14 @@
             self.feeds = feeds;
             self.selectedIndex = 0;
             self.previousRequestTime = [[NSDate date] timeIntervalSince1970];
-            NSString * cacheKey = [NSString stringWithFormat:@"%@-LastRequest", self.class].md5String;
+            NSString * cacheKey = [NSString stringWithFormat:@"%@-LastRequest", self.class].st_md5String;
             [[STPersistence standardPersistence] setValue:@(weakSelf.previousRequestTime) forKey:cacheKey];
             
             NSMutableArray * result = [NSMutableArray arrayWithCapacity:5];
             [feeds enumerateObjectsUsingBlock:^(STDFeedItem * obj, NSUInteger idx, BOOL *stop) {
                 [result addObject:[obj toDictionary]];
             }];
-            NSString * cacheFeedsKey = [NSString stringWithFormat:@"%@-CachedData", self.class].md5String;
+            NSString * cacheFeedsKey = [NSString stringWithFormat:@"%@-CachedData", self.class].st_md5String;
             [[STPersistence documentPersistence] setValue:result forKey:cacheFeedsKey];
         }];
     }
@@ -100,7 +100,7 @@
 
 - (void) loadDataFromCache {
     NSMutableArray * result = [NSMutableArray arrayWithCapacity:5];
-    NSString * cacheKey = [NSString stringWithFormat:@"%@-CachedData", self.class].md5String;
+    NSString * cacheKey = [NSString stringWithFormat:@"%@-CachedData", self.class].st_md5String;
     NSArray * cachedFeeds = [[STPersistence documentPersistence] valueForKey:cacheKey];
     if ([cachedFeeds isKindOfClass:[NSArray class]]) {
         [cachedFeeds enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {

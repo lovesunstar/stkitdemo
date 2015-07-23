@@ -23,7 +23,7 @@
         self.selectedView = [[UIView alloc] initWithFrame:self.bounds];
         self.selectedView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         self.selectedView.hidden = YES;
-        self.selectedView.backgroundColor = [UIColor colorWithRGB:0x0 alpha:0.5];
+        self.selectedView.backgroundColor = [UIColor st_colorWithRGB:0x0 alpha:0.5];
         [self addSubview:self.selectedView];
     }
     return self;

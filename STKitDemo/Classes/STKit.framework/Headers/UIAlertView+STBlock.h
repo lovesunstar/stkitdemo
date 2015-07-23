@@ -13,6 +13,6 @@ typedef void (^STAlertViewDismissBlock)(UIAlertView *alertView, NSUInteger dismi
 
 @interface UIAlertView (STBlock)
 
-- (void)showWithDismissBlock:(STAlertViewDismissBlock)block;
+- (void)st_showWithDismissBlock:(STAlertViewDismissBlock)block;
 
 @end

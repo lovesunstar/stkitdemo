@@ -21,6 +21,8 @@
 
 @implementation STDMoreViewController
 
+@dynamic dataSource;
+
 - (instancetype) initWithStyle:(UITableViewStyle)tableViewStyle {
     self = [super initWithStyle:tableViewStyle];
     if (self) {
@@ -55,7 +57,7 @@
         [self.st_tabBarController setBadgeValue:nil forIndex:2];
     }
     
-    if (self.sideBarController) {
+    if (self.st_sideBarController) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.autoresizingMask = UIViewAutoresizingFlexibleHeight;
         button.frame = CGRectMake(0, 0, 60, 44);
@@ -113,10 +115,10 @@
 }
 
 - (void)_leftBarButtonItemAction:(id)sender {
-    if (self.sideBarController.sideAppeared) {
-        [self.sideBarController concealSideViewControllerAnimated:YES];
+    if (self.st_sideBarController.sideAppeared) {
+        [self.st_sideBarController concealSideViewControllerAnimated:YES];
     } else {
-        [self.sideBarController revealSideViewControllerAnimated:YES];
+        [self.st_sideBarController revealSideViewControllerAnimated:YES];
     }
 }
 @end

@@ -21,6 +21,8 @@
 
 @implementation STARootViewController
 
+@dynamic dataSource;
+
 - (id)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];
     if (self) {
@@ -165,10 +167,10 @@
 }
 
 - (void)leftBarButtonItemAction:(id) sender {
-    if (self.sideBarController.sideAppeared) {
-        [self.sideBarController concealSideViewControllerAnimated:YES];
+    if (self.st_sideBarController.sideAppeared) {
+        [self.st_sideBarController concealSideViewControllerAnimated:YES];
     } else {
-        [self.sideBarController revealSideViewControllerAnimated:YES];
+        [self.st_sideBarController revealSideViewControllerAnimated:YES];
     }
 }
 

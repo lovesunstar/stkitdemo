@@ -77,12 +77,12 @@ static STDBNetwork *_sharedNetwork;
         if ([checkingResult numberOfRanges] > 0) {
             NSString *imageString = [responseString substringWithRange:[checkingResult rangeAtIndex:0]];
             imageString = [imageString stringByReplacingOccurrencesOfString:@"<img" withString:@""];
-            imageString = [[[imageString stringByReplacingOccurrencesOfString:@">" withString:@""] stringByTrimingWhitespace] stringByReplacingOccurrencesOfString:@"\"" withString:@""];
-            NSArray *array = [imageString componentsSeparatedByRegex:@"\\s+"];
+            imageString = [[[imageString stringByReplacingOccurrencesOfString:@">" withString:@""] st_stringByTrimingWhitespace] stringByReplacingOccurrencesOfString:@"\"" withString:@""];
+            NSArray *array = [imageString st_componentsSeparatedByRegex:@"\\s+"];
             if (array.count > 2) {
                 NSMutableDictionary * dictionary = [NSMutableDictionary dictionaryWithCapacity:2];
                 [array enumerateObjectsUsingBlock:^(NSString * obj, NSUInteger idx, BOOL *stop) {
-                    NSArray * kv = [[obj stringByTrimingWhitespace] componentsSeparatedByString:@"="];
+                    NSArray * kv = [[obj st_stringByTrimingWhitespace] componentsSeparatedByString:@"="];
                     if (kv.count >= 2) {
                         NSString *key = kv[0], *value = kv[1];
                         if ([key isEqualToString:@"src"]) {

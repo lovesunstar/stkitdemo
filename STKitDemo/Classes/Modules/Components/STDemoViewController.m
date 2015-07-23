@@ -30,6 +30,8 @@
 
 @implementation STDemoViewController
 
+@dynamic dataSource;
+
 - (id)initWithStyle:(UITableViewStyle)tableViewStyle {
     self = [super initWithStyle:tableViewStyle];
     if (self) {
@@ -91,7 +93,7 @@
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"基本组件";
     self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    if (self.sideBarController) {
+    if (self.st_sideBarController) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.autoresizingMask = UIViewAutoresizingFlexibleHeight;
         button.frame = CGRectMake(0, 0, 60, 44);
@@ -233,10 +235,10 @@
 }
 
 - (void)leftBarButtonItemAction:(id)sender {
-    if (self.sideBarController.sideAppeared) {
-        [self.sideBarController concealSideViewControllerAnimated:YES];
+    if (self.st_sideBarController.sideAppeared) {
+        [self.st_sideBarController concealSideViewControllerAnimated:YES];
     } else {
-        [self.sideBarController revealSideViewControllerAnimated:YES];
+        [self.st_sideBarController revealSideViewControllerAnimated:YES];
     }
 }
 

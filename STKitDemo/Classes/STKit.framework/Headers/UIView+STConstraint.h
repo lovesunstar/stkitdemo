@@ -10,8 +10,8 @@
 
 @interface UIView (STConstraint)
 
-- (NSArray *)constraintsWithFirstItem:(UIView *)firstItem;
-- (NSArray *)constraintsWithFirstItem:(UIView *)firstItem
-                       firstAttribute:(NSLayoutAttribute)attribute;
+- (NSArray *)st_constraintsWithFirstItem:(UIView *)firstItem;
+- (NSArray *)st_constraintsWithFirstItem:(UIView *)firstItem
+                          firstAttribute:(NSLayoutAttribute)attribute;
 
 @end

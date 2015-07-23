@@ -103,7 +103,7 @@
 }
 
 - (void)_reloadLocateAnnotationWithCoordinate:(CLLocationCoordinate2D)coordinate {
-    STAnnotation *annotation = [[self.mapView annotations] firstObjectOfClass:[STAnnotation class]];
+    STAnnotation *annotation = [[self.mapView annotations] st_firstObjectOfClass:[STAnnotation class]];
     if (!annotation) {
         annotation = [[STAnnotation alloc] init];
     } else {

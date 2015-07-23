@@ -30,7 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithRGB:0xF9F9F9];
+    self.view.backgroundColor = [UIColor st_colorWithRGB:0xF9F9F9];
 
     self.presentationView = [[UIView alloc] initWithFrame:self.view.bounds];
     self.presentationView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;

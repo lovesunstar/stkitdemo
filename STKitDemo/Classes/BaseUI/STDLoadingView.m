@@ -36,7 +36,7 @@
     
     CAShapeLayer *shapeLayer = [CAShapeLayer layer];
     shapeLayer.frame = self.bounds;
-    shapeLayer.fillColor = [UIColor colorWithRGB:0xFF7300].CGColor;
+    shapeLayer.fillColor = [UIColor st_colorWithRGB:0xFF7300].CGColor;
     [self.layer addSublayer:shapeLayer];
     self.shapeLayer = shapeLayer;
     

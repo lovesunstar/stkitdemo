@@ -28,7 +28,7 @@
         
         self.textLabel = [[UILabel alloc] initWithFrame:CGRectMake(18, 4, 30, 16)];
         self.textLabel.backgroundColor = [UIColor clearColor];
-        self.textLabel.textColor = [UIColor colorWithRGB: 0xFF7300];
+        self.textLabel.textColor = [UIColor st_colorWithRGB: 0xFF7300];
         self.textLabel.font = [UIFont systemFontOfSize:14.];
         self.textLabel.text = @"Hot";
         [self addSubview:self.textLabel];
@@ -58,7 +58,7 @@ const UIEdgeInsets    STDFeedCellTitleContentInset = {5,5,10,5};
     if (self) {
         self.frame = CGRectMake(0, 0, STDFeedCellDefaultSize.width, STDFeedCellDefaultSize.height);
         self.contentView.frame = self.bounds;
-        self.backgroundColor = [UIColor colorWithRGB:0xCCCCCC];
+        self.backgroundColor = [UIColor st_colorWithRGB:0xCCCCCC];
         
         self.backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(STDFeedCellContentInset.left, STDFeedCellContentInset.top, STDFeedCellDefaultSize.width - (STDFeedCellContentInset.left + STDFeedCellContentInset.right), STDFeedCellDefaultSize.height - (STDFeedCellContentInset.top + STDFeedCellContentInset.bottom))];
         self.backgroundImageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -93,7 +93,7 @@ const UIEdgeInsets    STDFeedCellTitleContentInset = {5,5,10,5};
         
         UIView * separatorView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, STOnePixel())];
         separatorView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-        separatorView.backgroundColor = [UIColor colorWithRGB:0xdddddd];
+        separatorView.backgroundColor = [UIColor st_colorWithRGB:0xdddddd];
         [self.accessoryView addSubview:separatorView];
         
         self.hotView = [[STDFeedHotView alloc] initWithFrame:CGRectMake(5, 2, 60, STDFeedCellAccessoryHeight)];
@@ -135,7 +135,7 @@ const UIEdgeInsets    STDFeedCellTitleContentInset = {5,5,10,5};
     CGFloat height = feedItem.height * width / feedItem.width + STDFeedCellContentInset.top + STDFeedCellContentInset.bottom;
     if (feedItem.title.length > 0) {
         CGFloat titleWidth = width - (STDFeedCellTitleContentInset.left + STDFeedCellTitleContentInset.right);
-        CGFloat titleHeight = [feedItem.title heightWithFont:[UIFont systemFontOfSize:14] constrainedToWidth:titleWidth];
+        CGFloat titleHeight = [feedItem.title st_heightWithFont:[UIFont systemFontOfSize:14] constrainedToWidth:titleWidth];
         height += (titleHeight + STDFeedCellTitleContentInset.top + STDFeedCellTitleContentInset.bottom);
     }
     height += STDFeedCellAccessoryHeight;

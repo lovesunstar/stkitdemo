@@ -20,6 +20,7 @@ typedef enum {
  */
 @interface STReachability : NSObject
 
++ (instancetype)defaultReachability;
 /// 是否能够ping通host
 + (instancetype)reachabilityWithHost:(NSString *)host;
 
@@ -51,4 +52,8 @@ typedef enum {
 - (BOOL)reachWIFI;
 
 @end
+
+extern BOOL STIsNetworkConnected();
+extern BOOL STIsWIFIConnected();
+
 extern NSString *const STReachabilityDidChangedNotification;

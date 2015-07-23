@@ -35,7 +35,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor colorWithRGB:0x35495D];
+    self.view.backgroundColor = [UIColor st_colorWithRGB:0x35495D];
     
     UILabel *topLabel = [[UILabel alloc] init];
     topLabel.numberOfLines = 0;

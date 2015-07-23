@@ -102,7 +102,7 @@
         }
         [aPath closePath];
     }
-    UIImage *blurImage = [self.backgroundImageView.image blurImageWithRadius:20. tintColor:nil saturationDeltaFactor:1.3];
+    UIImage *blurImage = [self.backgroundImageView.image st_blurImageWithRadius:20. tintColor:nil saturationDeltaFactor:1.3];
     UIGraphicsBeginImageContextWithOptions(blurImage.size, NO, [UIScreen mainScreen].scale);
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGContextRef context = CGBitmapContextCreate(0, blurImage.size.width, blurImage.size.height, 8, blurImage.size.width * 4, colorSpace,

@@ -56,7 +56,7 @@
                                                                             options:nil];
     self.pageViewController.view.backgroundColor = [UIColor clearColor];
 
-    self.view.backgroundColor = [UIColor colorWithRGB:0x1C222D];
+    self.view.backgroundColor = [UIColor st_colorWithRGB:0x1C222D];
     self.pageViewController.view.frame = frame;
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
@@ -177,7 +177,7 @@
         CGSize size = self.pageViewController.view.bounds.size;
         CGFloat delta = (STGetSystemVersion() >= 7) ? 20 : 0;
         size.height -= delta;
-        self.pages = [self.book paginationWithAttributes:attributes constrainedToSize:size];
+        self.pages = [self.book st_paginationWithAttributes:attributes constrainedToSize:size];
         dispatch_async(dispatch_get_main_queue(), ^{
             if (self.pages.count == 0) {
                 completion(NO);

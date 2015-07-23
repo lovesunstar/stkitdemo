@@ -25,13 +25,13 @@ ST_EXTERN CGRect STConvertFrameBetweenSize(CGRect frame, CGSize fromSize, CGSize
 #pragma mark - UIColor Extension
 /// 给UIColor增加rgb的构造方法
 @interface UIColor (STExtension)
-/// 使用rgbValue构造UIColor [UIColor colorWithRGB:0xCB553B];
-+ (UIColor *)colorWithRGB:(NSInteger)rgb;
-/// 使用rgbValue构造UIColor [UIColor colorWithRGB:0xCB553B alpha:0.3];
-+ (UIColor *)colorWithRGB:(NSInteger)rgb alpha:(CGFloat)alpha;
-/// 使用rgb 16进制String构造UIColor [UIColor colorWithHexString:@"0xFFFFFF"];
-+ (UIColor *)colorWithHexString:(NSString *)hexString;
-+ (UIColor *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha;
+/// 使用rgbValue构造UIColor [UIColor st_colorWithRGB:0xCB553B];
++ (UIColor *)st_colorWithRGB:(NSInteger)rgb;
+/// 使用rgbValue构造UIColor [UIColor st_colorWithRGB:0xCB553B alpha:0.3];
++ (UIColor *)st_colorWithRGB:(NSInteger)rgb alpha:(CGFloat)alpha;
+/// 使用rgb 16进制String构造UIColor [UIColor st_colorWithHexString:@"0xFFFFFF"];
++ (UIColor *)st_colorWithHexString:(NSString *)hexString;
++ (UIColor *)st_colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha;
 @end
 
 #pragma mark - UIView Extension
@@ -115,7 +115,7 @@ ST_EXTERN CGRect STConvertFrameBetweenSize(CGRect frame, CGSize fromSize, CGSize
  * @param viewClass  superview 的 class
  * @return           view是否被添加到 类型为viewClass的superview上面
  */
-- (BOOL)isDescendantOfClass:(Class)viewClass;
+- (BOOL)st_isDescendantOfClass:(Class)viewClass;
 
 /**
  * @abstract    递归查找view的superview，直到找到类型为viewClass的view
@@ -123,7 +123,7 @@ ST_EXTERN CGRect STConvertFrameBetweenSize(CGRect frame, CGSize fromSize, CGSize
  * @param viewClass  superview 的 class
  * @return           第一个满足类型为viewClass的superview
  */
-- (UIView *)superviewWithClass:(Class)viewClass;
+- (UIView *)st_superviewWithClass:(Class)viewClass;
 
 /**
  * @abstract 递归遍历该view，找到该view中的所有subview类型为class的view
@@ -131,7 +131,7 @@ ST_EXTERN CGRect STConvertFrameBetweenSize(CGRect frame, CGSize fromSize, CGSize
  * @param viewClass  subview 的 class
  * @return           所有类型为class的subview
  */
-- (NSArray *)viewWithClass:(Class) class;
+- (NSArray *)st_viewWithClass:(Class) class;
 
 /**
  * @abstract 为该View添加轻拍手势
@@ -139,8 +139,8 @@ ST_EXTERN CGRect STConvertFrameBetweenSize(CGRect frame, CGSize fromSize, CGSize
  * @param target 接受手势通知的对象
  * @param action 回调方法
  */
-- (void)addTouchTarget:(id)target action:(SEL)action;
-- (void)removeTouchTarget:(id)target action:(SEL)action;
+- (void)st_addTouchTarget:(id)target action:(SEL)action;
+- (void)st_removeTouchTarget:(id)target action:(SEL)action;
 
 /**
  * Return the x coordinate on the screen, taking into account scroll views.
@@ -171,7 +171,7 @@ ST_EXTERN CGRect STConvertFrameBetweenSize(CGRect frame, CGSize fromSize, CGSize
  *
  * otherView should be a parent view of this view.
  */
-- (CGPoint)offsetFromView:(UIView *)otherView;
+- (CGPoint)st_offsetFromView:(UIView *)otherView;
 
 @property(nonatomic) CGPoint    anchorPoint;
 
@@ -195,10 +195,10 @@ ST_EXTERN CGRect STConvertFrameBetweenSize(CGRect frame, CGSize fromSize, CGSize
  * @param class  nextResponder 的 class
  * @return       第一个满足类型为class的UIResponder
  */
-- (UIResponder *)nextResponderWithClass:(Class) class;
+- (UIResponder *)st_nextResponderWithClass:(Class) class;
 
 /// 查找firstResponder
-- (UIResponder *)findFirstResponder;
+- (UIResponder *)st_findFirstResponder;
 
 
 @end
@@ -266,7 +266,7 @@ typedef enum {
  */
 @interface UIImage (STImage)
 /// 判断图片类型，支持GIF解析
-+ (UIImage *)imageWithSTData:(NSData *)data;
++ (UIImage *)st_imageWithSTData:(NSData *)data;
 
 @end
 
@@ -293,34 +293,36 @@ typedef enum STBlurEffectStyle {
 /// 给图片添加毛玻璃效果
 @interface UIImage (STBlurImage)
 
-- (UIImage *)blurImageWithStyle:(STBlurEffectStyle)style;
+- (UIImage *)st_blurImageWithStyle:(STBlurEffectStyle)style;
 
-- (UIImage *)blurImageWithTintColor:(UIColor *)tintColor;
+- (UIImage *)st_blurImageWithTintColor:(UIColor *)tintColor;
 
-- (UIImage *)blurImageWithRadius:(CGFloat)blurRadius tintColor:(UIColor *)tintColor saturationDeltaFactor:(CGFloat)saturationDeltaFactor;
+- (UIImage *)st_blurImageWithRadius:(CGFloat)blurRadius
+                          tintColor:(UIColor *)tintColor
+              saturationDeltaFactor:(CGFloat)saturationDeltaFactor;
 
-- (UIImage *)blurImageWithRadius:(CGFloat)blurRadius
-                       tintColor:(UIColor *)tintColor
-           saturationDeltaFactor:(CGFloat)saturationDeltaFactor
-                       maskImage:(UIImage *)maskImage;
+- (UIImage *)st_blurImageWithRadius:(CGFloat)blurRadius
+                          tintColor:(UIColor *)tintColor
+              saturationDeltaFactor:(CGFloat)saturationDeltaFactor
+                          maskImage:(UIImage *)maskImage;
 @end
 
 /// UIView 截图
 @interface UIView (STSnapshot)
 /// 截图后的image
-- (UIImage *)snapshotImage;
+- (UIImage *)st_snapshotImage;
 /// 截取View中的某一小块
-- (UIImage *)snapshotImageInRect:(CGRect)rect;
+- (UIImage *)st_snapshotImageInRect:(CGRect)rect;
 /// 把 UIView的transform也放进截图中
-- (UIImage *)transformedSnapshotImage;
+- (UIImage *)st_transformedSnapshotImage;
 
 @end
 
 @interface UIView (STBlur)
 
-- (UIImage *)blurImage;
+- (UIImage *)st_blurImage;
 
-- (UIView *)statusBarWindow;
+- (UIView *)st_statusBarWindow;
 
 @end
 
@@ -351,19 +353,19 @@ typedef void (^STInvokeHandler)(void);
 
 @interface UIImage (STSubimage)
 
-- (UIImage *)fixedOrientationImage;
+- (UIImage *)st_fixedOrientationImage;
 
-- (UIImage *)imageRotatedByRadians:(CGFloat)radians;
-- (UIImage *)imageRotatedByDegrees:(CGFloat)degrees;
+- (UIImage *)st_imageRotatedByRadians:(CGFloat)radians;
+- (UIImage *)st_imageRotatedByDegrees:(CGFloat)degrees;
 
-+ (UIImage *)imageWithColor:(UIColor *)color;
-+ (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size;
++ (UIImage *)st_imageWithColor:(UIColor *)color;
++ (UIImage *)st_imageWithColor:(UIColor *)color size:(CGSize)size;
 /// 某个rect下的子图像
-- (UIImage *)subimageInRect:(CGRect)rect;
+- (UIImage *)st_subimageInRect:(CGRect)rect;
 
-- (UIImage *)imageWithTransform:(CGAffineTransform)transform;
+- (UIImage *)st_imageWithTransform:(CGAffineTransform)transform;
 
-- (UIImage *)imageConstrainedToSize:(CGSize)size;
-- (UIImage *)imageConstrainedToSize:(CGSize)size contentMode:(UIViewContentMode)contentMode;
+- (UIImage *)st_imageConstrainedToSize:(CGSize)size;
+- (UIImage *)st_imageConstrainedToSize:(CGSize)size contentMode:(UIViewContentMode)contentMode;
 
 @end

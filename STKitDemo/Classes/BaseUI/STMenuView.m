@@ -126,8 +126,8 @@
     if (!view) {
         view = [UIApplication sharedApplication].keyWindow;
     }
-    UIImage *snapView = [view snapshotImage];
-    UIImage *image = [snapView blurImageWithStyle:STBlurEffectStyleLight];
+    UIImage *snapView = [view st_snapshotImage];
+    UIImage *image = [snapView st_blurImageWithStyle:STBlurEffectStyleLight];
     self.blurView.image = image;
 
     self.frame = view.bounds;

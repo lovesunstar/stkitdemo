@@ -57,7 +57,7 @@
     UICollectionView * collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:collectionViewFlowLayout];
     collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     collectionView.backgroundView = nil;
-    collectionView.backgroundColor = [UIColor colorWithRGB:0xCCCCCC];
+    collectionView.backgroundColor = [UIColor st_colorWithRGB:0xCCCCCC];
     collectionView.dataSource = self;
     collectionView.delegate = self;
     [collectionView registerClass:[STDFeedCell class] forCellWithReuseIdentifier:@"Identifier"];
@@ -105,7 +105,7 @@
             weakSelf.hasMore = hasMore;
             [weakSelf reloadCollectionFooterView];
             weakSelf.previousRequestTime = [[NSDate date] timeIntervalSince1970];
-            NSString * cacheKey = [NSString stringWithFormat:@"%@-LastRequest", [self cacheIdentifier]].md5String;
+            NSString * cacheKey = [NSString stringWithFormat:@"%@-LastRequest", [self cacheIdentifier]].st_md5String;
             [[STPersistence standardPersistence] setValue:@(weakSelf.previousRequestTime) forKey:cacheKey];
             [weakSelf.collectionView reloadData];
             [weakSelf saveDataToCache:feeds];
@@ -119,7 +119,7 @@
     [feeds enumerateObjectsUsingBlock:^(STDFeedItem * obj, NSUInteger idx, BOOL *stop) {
         [result addObject:[obj toDictionary]];
     }];
-    NSString * cacheKey = [NSString stringWithFormat:@"%@-CachedData", [self cacheIdentifier]].md5String;
+    NSString * cacheKey = [NSString stringWithFormat:@"%@-CachedData", [self cacheIdentifier]].st_md5String;
     [[STPersistence cachePersistenceWithSubpath:@"FeedCache"] setValue:result forKey:cacheKey];
 }
 
@@ -147,7 +147,7 @@
 
 - (void)loadDataFromCacheWithHandler:(STDFeedLoadHandler) completionHandler {
     NSMutableArray * result = [NSMutableArray arrayWithCapacity:5];
-    NSString * cacheKey = [NSString stringWithFormat:@"%@-CachedData", [self cacheIdentifier]].md5String;
+    NSString * cacheKey = [NSString stringWithFormat:@"%@-CachedData", [self cacheIdentifier]].st_md5String;
     NSArray * cachedData = [[STPersistence cachePersistenceWithSubpath:@"FeedCache"] valueForKey:cacheKey];
     if ([cachedData isKindOfClass:[NSArray class]]) {
         [cachedData enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -253,7 +253,7 @@
 
 - (NSTimeInterval)previousRequestTime {
     if (_previousRequestTime == 0) {
-        NSString * cacheKey = [NSString stringWithFormat:@"%@-LastRequest", [self cacheIdentifier]].md5String;
+        NSString * cacheKey = [NSString stringWithFormat:@"%@-LastRequest", [self cacheIdentifier]].st_md5String;
         _previousRequestTime = [[[STPersistence standardPersistence] valueForKey:cacheKey] doubleValue];
     }
     return _previousRequestTime;

@@ -33,6 +33,7 @@ typedef enum STBarButtonCustomItem {
     STBarButtonCustomItemDismiss,
     STBarButtonCustomItemMore,
 } STBarButtonCustomItem;
+
 @interface UIBarButtonItem (STKit)
 
 + (instancetype)backBarButtonItemWithTarget:(id)target action:(SEL)action;

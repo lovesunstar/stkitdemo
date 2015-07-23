@@ -58,8 +58,8 @@
     
     self.slideSwitchView = [[SUNSlideSwitchView alloc] initWithFrame:self.view.bounds];
     self.slideSwitchView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    self.slideSwitchView.tabItemNormalColor = [UIColor colorWithRGB:0x868686];
-    self.slideSwitchView.tabItemSelectedColor = [UIColor colorWithRGB:0xbb0b15];
+    self.slideSwitchView.tabItemNormalColor = [UIColor st_colorWithRGB:0x868686];
+    self.slideSwitchView.tabItemSelectedColor = [UIColor st_colorWithRGB:0xbb0b15];
     self.slideSwitchView.shadowImage = [[UIImage imageNamed:@"red_line_and_shadow.png"]
                                         stretchableImageWithLeftCapWidth:59.0f topCapHeight:0.0f];
     self.slideSwitchView.slideSwitchViewDelegate = self;

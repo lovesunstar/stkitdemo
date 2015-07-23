@@ -48,7 +48,7 @@
                                                                           selectedImage:[UIImage imageNamed:@"tab_profile_highlighted.png"]];
         self.viewControllers = @[controlsNavigationController, serviceNavigationController, moreNavigationController];
 
-        self.sideInteractionArea = STSideInteractiveAreaNone;
+        self.st_sideInteractionArea = STSideInteractiveAreaNone;
         self.animatedWhenTransition = ![STDSettingViewController reduceTransitionAnimation];
     }
     return self;

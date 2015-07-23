@@ -77,5 +77,6 @@
 // Security
 #import <STKit/STAESCryptor.h>
 #import <STKit/STRSACryptor.h>
+#import <STKit/STKeychain.h>
 
 #import <STKit/STCategories.h>

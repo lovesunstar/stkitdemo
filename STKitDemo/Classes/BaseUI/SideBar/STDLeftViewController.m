@@ -118,8 +118,8 @@
     NSString *title = [information valueForKey:@"title"];
     NSString *imageName = [information valueForKey:@"image"];
     cell.textLabel.text = title;
-    cell.textLabel.textColor = [UIColor colorWithRGB:0xACACAC];
-    cell.textLabel.highlightedTextColor = [UIColor colorWithRGB:0xFF7300];
+    cell.textLabel.textColor = [UIColor st_colorWithRGB:0xACACAC];
+    cell.textLabel.highlightedTextColor = [UIColor st_colorWithRGB:0xFF7300];
     cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@_normal.png", imageName]];
     cell.imageView.highlightedImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@_highlighted.png", imageName]];
     return cell;
@@ -132,7 +132,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.sideBarController.selectedIndex = indexPath.row;
+    self.st_sideBarController.selectedIndex = indexPath.row;
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -144,7 +144,7 @@
     if ([linkObject.URL.absoluteString hasSuffix:@"about"]) {
         STDAboutViewController *aboutViewController = [[STDAboutViewController alloc] init];
         aboutViewController.hidesBottomBarWhenPushed = YES;
-        [self.sideBarController.st_navigationController pushViewController:aboutViewController animated:YES];
+        [self.st_sideBarController.st_navigationController pushViewController:aboutViewController animated:YES];
     }
 }
 

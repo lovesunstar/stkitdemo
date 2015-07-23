@@ -38,6 +38,8 @@
 
 - (instancetype)init NS_DESIGNATED_INITIALIZER;
 
+@property(nonatomic, copy) NSString *tips;
+
 @property(nonatomic) BOOL allowsMultipleSelection;
 /// 当相册load完之后，是否直接push进入第一个（全部照片）
 @property(nonatomic) BOOL wantsEnterFirstAlbumWhenLoaded;

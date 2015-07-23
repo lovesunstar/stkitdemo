@@ -16,6 +16,8 @@
 
 @implementation STDNavigationTestViewController
 
+@dynamic dataSource;
+
 - (void)dealloc {
     
 }
