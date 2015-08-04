@@ -13,21 +13,23 @@
 
 @interface STTabBarItem : NSObject
 
-@property(nonatomic, copy) NSString *title;
-@property(nonatomic, strong) UIImage *image;
-@property(nonatomic, strong) UIImage *selectedImage;
+@property(STPROPERTYNULLABLE nonatomic, copy)  NSString *title;
+@property(STPROPERTYNULLABLE nonatomic, strong) UIImage *image;
+@property(STPROPERTYNULLABLE nonatomic, strong) UIImage *selectedImage;
 
-@property(nonatomic, strong) UIColor   *titleColor;
-@property(nonatomic, strong) UIColor   *selectedTitleColor;
-@property(nonatomic, strong) UIFont    *titleFont;
+@property(STPROPERTYNULLABLE nonatomic, strong) UIColor   *titleColor;
+@property(STPROPERTYNULLABLE nonatomic, strong) UIColor   *selectedTitleColor;
+@property(STPROPERTYNULLABLE nonatomic, strong) UIFont    *titleFont;
 
-@property(nonatomic, copy) NSString *badgeValue;
+@property(STPROPERTYNULLABLE nonatomic, copy) NSString *badgeValue;
 
 @property(nonatomic, assign) CGRect imageFrame;
 @property(nonatomic, assign) CGRect titleFrame;
 
-@property(nonatomic, weak) UIView *itemView;
+@property(STPROPERTYNULLABLE nonatomic, weak) UIView *itemView;
 /// UITabBarItem
-- (instancetype)initWithTitle:(NSString *)title image:(UIImage *)image selectedImage:(UIImage *)selectedImage;
+- (STNONNULL instancetype)initWithTitle:(STNULLABLE NSString *)title
+                        image:(STNULLABLE UIImage *)image
+                selectedImage:(STNULLABLE UIImage *)selectedImage;
 
 @end

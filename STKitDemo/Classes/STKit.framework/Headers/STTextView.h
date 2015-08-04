@@ -11,7 +11,7 @@
 /// 提供了有placeHolder的文本输入框
 @interface STTextView : UITextView
 
-@property(nonatomic, strong, readonly) STLabel *placeholderLabel;
-@property(nonatomic, copy) NSString *placeholder;
+@property(STPROPERTYNONNULL nonatomic, strong, readonly) STLabel *placeholderLabel;
+@property(STPROPERTYNULLABLE nonatomic, copy) NSString *placeholder;
 
 @end

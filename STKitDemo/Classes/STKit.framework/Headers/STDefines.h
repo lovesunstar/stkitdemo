@@ -9,6 +9,38 @@
 #ifndef STKit_STDefines_h
 #define STKit_STDefines_h
 
+#define ST_UNAVAILABLE(x) __attribute__((unavailable(x)))
+
+#if __has_feature(nullability)
+#define STNONNULL nonnull
+#define STPROPERTYNONNULL nonnull,
+#define ST_NONNULL __nonnull
+
+#define STNULLABLE nullable
+#define STPROPERTYNULLABLE nullable,
+#define ST_NULLABLE __nullable
+
+#define ST_ASSUME_NONNULL_BEGIN NS_ASSUME_NONNULL_BEGIN
+#define ST_ASSUME_NONNULL_END NS_ASSUME_NONNULL_END
+
+#else
+
+#define STNONNULL
+#define STPROPERTYNONNULL
+#define ST_NONNULL
+
+#define STNULLABLE
+#define STPROPERTYNULLABLE
+
+#define ST_NULLABLE
+#define ST_START_NONNULL
+#define ST_END_NONNULL
+
+#define ST_ASSUME_NONNULL_BEGIN
+#define ST_ASSUME_NONNULL_END
+
+#endif
+
 #if !defined(ST_INLINE)
 #if defined(__STDC_VERSION__) && __STDC_VERSION__ >= 199901L
 #define ST_INLINE static inline

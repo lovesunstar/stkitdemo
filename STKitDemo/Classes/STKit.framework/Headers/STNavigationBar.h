@@ -7,26 +7,29 @@
 //
 
 #import <UIKit/UIKit.h>
-// UINavigationBar
+#import <STKit/STDefines.h>
+
+ST_ASSUME_NONNULL_BEGIN
 @interface STNavigationBar : UIView
 
-@property(nonatomic, copy) NSString           *title;
-@property(nonatomic, strong) UIView           *leftBarView;
-@property(nonatomic, strong) UIView           *titleView;
-@property(nonatomic, strong) UIView           *rightBarView;
+@property(STPROPERTYNULLABLE nonatomic, copy) NSString    *title;
+@property(STPROPERTYNULLABLE nonatomic, strong) UIView    *leftBarView;
+@property(STPROPERTYNULLABLE nonatomic, strong) UIView    *titleView;
+@property(STPROPERTYNULLABLE nonatomic, strong) UIView    *rightBarView;
 
 @property(nonatomic, strong, readonly) UIView *transitionView;
-@property(nonatomic, strong) UIImage          *backgroundImage;
+@property(STPROPERTYNULLABLE nonatomic, strong) UIImage          *backgroundImage;
 
 @property(nonatomic, strong, readonly) UIView *separatorView;
 
-@property(nonatomic, strong) UIColor          *barTintColor;
+@property(STPROPERTYNULLABLE nonatomic, strong) UIColor          *barTintColor;
 
-@property(nonatomic, copy) NSDictionary       *titleTextAttributes;
+@property(STPROPERTYNULLABLE nonatomic, copy) NSDictionary       *titleTextAttributes;
 
-@property(nonatomic,assign,getter=isTranslucent) BOOL translucent NS_AVAILABLE_IOS(3_0);
+@property(nonatomic,assign,getter=isTranslucent) BOOL translucent;
 
 @end
+ST_ASSUME_NONNULL_END
 
 typedef enum STBarButtonCustomItem {
     STBarButtonCustomItemBack,
@@ -36,13 +39,12 @@ typedef enum STBarButtonCustomItem {
 
 @interface UIBarButtonItem (STKit)
 
-+ (instancetype)backBarButtonItemWithTarget:(id)target action:(SEL)action;
-- (instancetype)initWithBarButtonCustomItem:(STBarButtonCustomItem)customItem target:(id)target action:(SEL)action;
++ (STNULLABLE instancetype)backBarButtonItemWithTarget:(STNULLABLE id)target action:(STNULLABLE SEL)action;
+- (STNULLABLE instancetype)initWithBarButtonCustomItem:(STBarButtonCustomItem)customItem target:(STNULLABLE id)target action:(STNULLABLE SEL)action;
 
-- (instancetype)initWithTitle:(NSString *)title target:(id)target action:(SEL)action;
+- (STNULLABLE instancetype)initWithTitle:(STNULLABLE NSString *)title target:(STNULLABLE id)target action:(STNULLABLE SEL)action;
 
-- (instancetype)initWithTitle:(NSString *)title tintColor:(UIColor *)tintColor target:(id)target action:(SEL)action;
+- (STNULLABLE instancetype)initWithTitle:(STNULLABLE NSString *)title tintColor:(STNULLABLE UIColor *)tintColor target:(STNULLABLE id)target action:(STNULLABLE SEL)action;
 
-- (UIView *)st_customView;
+- (STNULLABLE UIView *)st_customView;
 @end
-

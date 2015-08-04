@@ -53,6 +53,9 @@
     
     [[STPersistence standardPersistence] setValue:@(YES) forKey:@"STHasEnteredAboutViewController"];
     
+    self.st_navigationBar.barTintColor = [UIColor st_colorWithRGB:0x32BBF8];
+    self.st_navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
+    
     if (self.st_tabBarController) {
         [self.st_tabBarController setBadgeValue:nil forIndex:2];
     }

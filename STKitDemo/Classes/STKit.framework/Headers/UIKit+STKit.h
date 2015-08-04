@@ -32,6 +32,7 @@ ST_EXTERN CGRect STConvertFrameBetweenSize(CGRect frame, CGSize fromSize, CGSize
 /// 使用rgb 16进制String构造UIColor [UIColor st_colorWithHexString:@"0xFFFFFF"];
 + (UIColor *)st_colorWithHexString:(NSString *)hexString;
 + (UIColor *)st_colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha;
+
 @end
 
 #pragma mark - UIView Extension

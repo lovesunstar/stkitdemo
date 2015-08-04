@@ -14,6 +14,7 @@ typedef enum STViewControllerTransitionType {
     STViewControllerTransitionTypePop,
 } STViewControllerTransitionType;
 
+ST_ASSUME_NONNULL_BEGIN
 @interface STNavigationControllerTransitionContext : NSObject
 
 @property (nonatomic, readonly) UIViewController    *fromViewController;
@@ -29,34 +30,35 @@ typedef enum STViewControllerTransitionType {
 //@property (nonatomic, readonly) BOOL                 transitionWithInteraction;
 
 @end
+ST_ASSUME_NONNULL_END
 
 /// UINavigationController
 @class STNavigationBar;
 @protocol STNavigationControllerDelegate;
 @interface STNavigationController : STViewController
 
-- (id)initWithRootViewController:(UIViewController *)rootViewController; // Convenience method pushes the root view controller without animation.
+- (STNULLABLE instancetype)initWithRootViewController:(UIViewController * ST_NULLABLE)rootViewController; // Convenience method pushes the root view controller without animation.
 
-- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated; // Uses a horizontal slide transition. Has no effect if the view controller is already in the stack.
+- (void)pushViewController:(UIViewController * ST_NONNULL)viewController animated:(BOOL)animated; // Uses a horizontal slide transition. Has no effect if the view controller is already in the stack.
 
-- (UIViewController *)popViewControllerAnimated:(BOOL)animated; // Returns the popped controller.
-- (NSArray *)popToViewController:(UIViewController *)viewController animated:(BOOL)animated; // Pops view controllers until the one specified is on top. Returns the popped controllers.
-- (NSArray *)popToRootViewControllerAnimated:(BOOL)animated; // Pops until there's only a single view controller left on the stack. Returns the popped controllers.
+- (UIViewController * ST_NULLABLE)popViewControllerAnimated:(BOOL)animated; // Returns the popped controller.
+- (NSArray * ST_NULLABLE)popToViewController:(UIViewController * ST_NONNULL)viewController animated:(BOOL)animated; // Pops view controllers until the one specified is on top. Returns the popped controllers.
+- (NSArray * ST_NULLABLE)popToRootViewControllerAnimated:(BOOL)animated; // Pops until there's only a single view controller left on the stack. Returns the popped controllers.
 
-@property(nonatomic, readonly, strong) UIViewController *topViewController; // The top view controller on the stack.
-@property(nonatomic, readonly, strong) UIViewController *visibleViewController; // Return modal view controller if it exists. Otherwise the top view controller.
+@property(STPROPERTYNULLABLE nonatomic, readonly, strong) UIViewController *topViewController; // The top view controller on the stack.
+@property(STPROPERTYNULLABLE nonatomic, readonly, strong) UIViewController *visibleViewController; // Return modal view controller if it exists. Otherwise the top view controller.
 
-@property(nonatomic, copy) NSArray *viewControllers; // The current view controller stack.
-- (void)setViewControllers:(NSArray *)viewControllers animated:(BOOL)animated; // If animated is YES, then simulate a push or pop depending on whether the new top view controller was
+@property(STPROPERTYNULLABLE nonatomic, copy) NSArray *viewControllers; // The current view controller stack.
+- (void)setViewControllers:(NSArray * ST_NULLABLE)viewControllers animated:(BOOL)animated; // If animated is YES, then simulate a push or pop depending on whether the new top view controller was
                                            // previously in the stack.
-@property(nonatomic, readonly) STNavigationBar *navigationBar; // The navigation bar managed by the controller. Pushing, popping or setting navigation
+@property(STPROPERTYNONNULL nonatomic, readonly) STNavigationBar *navigationBar; // The navigation bar managed by the controller. Pushing, popping or setting navigation
                                                                // items on a managed navigation bar is not supported.
 
-@property(nonatomic, weak) id<STNavigationControllerDelegate> delegate;
+@property(STPROPERTYNULLABLE nonatomic, weak) id<STNavigationControllerDelegate> delegate;
 ///
-@property(nonatomic, readonly) UIGestureRecognizer *interactivePopGestureRecognizer;
+@property(STPROPERTYNONNULL nonatomic, readonly) UIGestureRecognizer *interactivePopGestureRecognizer;
 
-@property(nonatomic, strong, readonly) UIView *transitionView;
+@property(STPROPERTYNONNULL nonatomic, strong, readonly) UIView *transitionView;
 
 @end
 
@@ -67,8 +69,8 @@ extern CGFloat const STTransitionViewControllerAnimationDuration;
 
 @property(nonatomic, assign) BOOL st_navigationBarHidden;
 
-@property(nonatomic, readonly, strong) STNavigationBar *st_navigationBar;
-@property(nonatomic, readonly, strong) STNavigationController *st_navigationController;
+@property(STPROPERTYNULLABLE nonatomic, readonly, strong) STNavigationBar *st_navigationBar;
+@property(STPROPERTYNULLABLE nonatomic, readonly, strong) STNavigationController *st_navigationController;
 
 /// @li 从最左侧开始生效返回手势，这个变量决定距离左侧多少可以激活手势，设置为0，则禁止左滑跟随返回
 /// @li 有些套了手机壳的手机，壳边缘比较厚，设置比较小的话，影响操作，很难触发。
@@ -87,12 +89,12 @@ extern CGFloat const STInteractivePopTransitionOffset;
 
 @optional
 /// 是否可以使用自定义的transition切换,如果返回False，则使用默认动画
-- (BOOL)navigationController:(STNavigationController *)navigationController
-shouldBeginTransitionContext:(STNavigationControllerTransitionContext *)transitionContext;
+- (BOOL)navigationController:(STNavigationController * ST_NONNULL)navigationController
+shouldBeginTransitionContext:(STNavigationControllerTransitionContext * ST_NONNULL)transitionContext;
 
-- (void)navigationController:(STNavigationController *)navigationController willBeginTransitionContext:(STNavigationControllerTransitionContext *)transitionContext;
+- (void)navigationController:(STNavigationController * ST_NONNULL)navigationController willBeginTransitionContext:(STNavigationControllerTransitionContext * ST_NONNULL)transitionContext;
 
-- (void)navigationController:(STNavigationController *)navigationController transitingWithContext:(STNavigationControllerTransitionContext *)transitionContext;
+- (void)navigationController:(STNavigationController * ST_NONNULL)navigationController transitingWithContext:(STNavigationControllerTransitionContext * ST_NONNULL)transitionContext;
 
-- (void)navigationController:(STNavigationController *)navigationController didEndTransitionContext:(STNavigationControllerTransitionContext *)transitionContext;
+- (void)navigationController:(STNavigationController * ST_NONNULL)navigationController didEndTransitionContext:(STNavigationControllerTransitionContext * ST_NONNULL)transitionContext;
 @end

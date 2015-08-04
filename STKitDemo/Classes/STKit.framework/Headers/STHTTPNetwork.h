@@ -49,6 +49,8 @@ typedef void (^STHTTPSynchronousNetworkHandler)(NSURLResponse *response, id data
 + (instancetype)defaultHTTPNetwork;
 + (NSURLCache *)defaultHTTPCache;
 
+@property(nonatomic, strong, readonly) NSURLSession *URLSession;
+
 - (instancetype)initWithConfiguration:(STNetworkConfiguration *)configuration;
 /// default mainQueue
 @property(nonatomic, strong) dispatch_queue_t   callbackQueue;

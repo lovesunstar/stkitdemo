@@ -61,7 +61,7 @@ ST_EXTERN NSInteger STCleanBitOffset(NSInteger value, NSInteger bit);
 
 @interface NSObject (STPerformSelector)
 /// 注明： 如果返回值为基本类型，struct除外，其余都转换为NSNumber。 如果返回值是struct。则转为NSValue,
-/// 如果selector不存在，则直接返回nil, 如果参数不足，则nil填充
+/// 如果selector不存在，则直接返回nil, 如果参数不足，则nil填充。如果selector参数类型为基本类型，则可以直接传NSNumber
 - (id)st_performSelector:(SEL)aSelector withObjects:(id)object, ... __attribute__((sentinel(0, 1)));
 
 @end
@@ -241,13 +241,13 @@ typedef void(^STTimerFiredHandler) (NSTimer * timer, BOOL *invalidate);
 
 @interface NSArray (STClass)
 
-- (BOOL)st_containsClass:(Class) class;
-- (NSUInteger)st_indexOfClass:(Class) class;
-- (NSUInteger)st_firstIndexOfClass:(Class) class;
-- (NSUInteger)st_lastIndexOfClass:(Class) class;
+- (BOOL)st_containsClass:(Class)aClass;
+- (NSUInteger)st_indexOfClass:(Class)aClass;
+- (NSUInteger)st_firstIndexOfClass:(Class)aClass;
+- (NSUInteger)st_lastIndexOfClass:(Class)aClass;
 
-- (id)st_firstObjectOfClass:(Class) class;
-- (id)st_lastObjectOfClass:(Class) class;
+- (id)st_firstObjectOfClass:(Class)aClass;
+- (id)st_lastObjectOfClass:(Class)aClass;
 
 @end
 
