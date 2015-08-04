@@ -53,7 +53,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"关于STKit";
-
+    self.st_navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor blueColor]};
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
         self.edgesForExtendedLayout = UIRectEdgeLeft | UIRectEdgeRight;
     }
