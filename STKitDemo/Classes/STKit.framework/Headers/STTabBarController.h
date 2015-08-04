@@ -35,8 +35,8 @@ ST_ASSUME_NONNULL_BEGIN
 @property(nonatomic, assign) CGFloat tabBarHeight;
 @property(nonatomic, assign) CGFloat actualTabBarHeight;
 
-- (void)setBadgeValue:(NSString *)badgeValue forIndex:(NSInteger)index;
-- (NSString *)badgeValueForIndex:(NSInteger)index;
+- (void)setBadgeValue:(STNULLABLE NSString *)badgeValue forIndex:(NSInteger)index;
+- (STNULLABLE NSString *)badgeValueForIndex:(NSInteger)index;
 
 //- (void)setTabBarHidden:(BOOL)hidden animated:(BOOL)animated;
 

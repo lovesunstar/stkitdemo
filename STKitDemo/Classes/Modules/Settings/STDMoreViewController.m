@@ -109,6 +109,8 @@
     webViewController.hidesBottomBarWhenPushed = YES;
     webViewController.webViewBarHidden = YES;
     [self.st_navigationController pushViewController:webViewController animated:YES];
+//    webViewController.st_navigationBar.barTintColor = [UIColor];
+    webViewController.st_navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor st_colorWithRGB:0x06365F], NSFontAttributeName:[UIFont systemFontOfSize:14.]};
     
 }
 

@@ -55,6 +55,6 @@ typedef enum {
 @interface UIViewController (SideBarController)
 
 @property(nonatomic, readonly, assign) STSideBarController *st_sideBarController;
-@property(nonatomic, assign) NSInteger st_sideInteractionArea;
+@property(nonatomic, assign, setter=st_setSideInteractionArea:) NSInteger st_sideInteractionArea;
 
 @end

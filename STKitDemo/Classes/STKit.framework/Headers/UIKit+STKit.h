@@ -306,6 +306,8 @@ typedef enum STBlurEffectStyle {
                           tintColor:(UIColor *)tintColor
               saturationDeltaFactor:(CGFloat)saturationDeltaFactor
                           maskImage:(UIImage *)maskImage;
+
+- (UIImage *)st_imageWithTintColor:(UIColor *)tintColor;
 @end
 
 /// UIView 截图
