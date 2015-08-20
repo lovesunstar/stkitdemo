@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0600"
+   LastUpgradeVersion = "0640"
    wasCreatedForAppExtension = "YES"
-   version = "1.3">
+   version = "2.0">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
@@ -58,16 +58,12 @@
       selectedDebuggerIdentifier = ""
       selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
       launchStyle = "0"
-      askForAppToLaunch = "Yes"
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
-      allowLocationSimulation = "YES">
-      <IDERemoteRunnable
-         RemotePath = "/Users/Suen/Library/Developer/CoreSimulator/Devices/939194C7-F2CA-419C-991D-3B9B34AAAFA6/data/Containers/Bundle/Application/78060051-F223-4214-9B99-912EF635C683/STKitDemo.app"
-         BundleIdentifier = "/Users/Suen/Library/Developer/CoreSimulator/Devices/939194C7-F2CA-419C-991D-3B9B34AAAFA6/data/Containers/Bundle/Application/78060051-F223-4214-9B99-912EF635C683/STKitDemo.app">
-      </IDERemoteRunnable>
+      allowLocationSimulation = "YES"
+      launchAutomaticallySubstyle = "2">
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
@@ -79,6 +75,10 @@
       </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
+      <IDERemoteRunnable
+         RemotePath = "/Users/Suen/Library/Developer/CoreSimulator/Devices/939194C7-F2CA-419C-991D-3B9B34AAAFA6/data/Containers/Bundle/Application/78060051-F223-4214-9B99-912EF635C683/STKitDemo.app"
+         BundleIdentifier = "/Users/Suen/Library/Developer/CoreSimulator/Devices/939194C7-F2CA-419C-991D-3B9B34AAAFA6/data/Containers/Bundle/Application/78060051-F223-4214-9B99-912EF635C683/STKitDemo.app">
+      </IDERemoteRunnable>
    </LaunchAction>
    <ProfileAction
       shouldUseLaunchSchemeArgsEnv = "YES"
@@ -86,8 +86,9 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES"
-      askForAppToLaunch = "Yes">
-      <BuildableProductRunnable>
+      launchAutomaticallySubstyle = "2">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0602B48E196974150004ACBB"

@@ -7,13 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <STKit/STDefines.h>
 
+ST_ASSUME_NONNULL_BEGIN
 @interface STKeychain : NSObject
 
-- (id)initWithIdentifier:(NSString *)identifier accessGroup:(NSString *)accessGroup NS_DESIGNATED_INITIALIZER;
+- (id)initWithIdentifier:(STNULLABLE NSString *)identifier accessGroup:(STNULLABLE NSString *)accessGroup NS_DESIGNATED_INITIALIZER;
 
-- (void)setValue:(id)value forKey:(NSString *)key;
-- (id)valueForKey:(NSString *)key;
+- (void)setValue:(STNULLABLE id)value forKey:(NSString *)key;
+- (STNULLABLE id)valueForKey:(NSString *)key;
 
 - (void)removeAllValues;
 
@@ -23,7 +25,8 @@
 
 + (instancetype)sharedManager;
 
-- (void)setValue:(id)value forKey:(NSString *)key;
-- (id)valueForKey:(NSString *)key;
+- (void)setValue:(STNULLABLE id)value forKey:(NSString *)key;
+- (STNULLABLE id)valueForKey:(NSString *)key;
 
 @end
+ST_ASSUME_NONNULL_END

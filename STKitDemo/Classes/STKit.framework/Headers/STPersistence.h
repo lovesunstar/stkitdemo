@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <STKit/Foundation+STKit.h>
 
+ST_ASSUME_NONNULL_BEGIN
 typedef enum {
     STPersistenceDirectoryDocument,  // document 目录
     STPersistenceDirectoryLibiary,   // Libiary  目录
@@ -24,12 +25,12 @@ extern NSString *STPersistTemporyDirectory();
 @interface STPersistence : NSObject
 
 - (instancetype)initWithDirectory:(STPersistenceDirectory)directory
-                          subpath:(NSString *)subpath;
+                          subpath:(STNULLABLE NSString *)subpath;
 
-- (void)setValue:(id)value forKey:(NSString *)key;
+- (void)setValue:(STNULLABLE id)value forKey:(NSString *)key;
 - (id)valueForKey:(NSString *)key;
 
-- (NSString *)cacheDirectory;
+- (STNONNULL NSString *)cacheDirectory;
 
 @end
 
@@ -38,7 +39,7 @@ extern NSString *STPersistTemporyDirectory();
 
 + (instancetype)standardPersistence;
 
-+ (instancetype)persistenceNamed:(NSString *)name;
++ (instancetype)persistenceNamed:(STNULLABLE NSString *)name;
 
 @end
 
@@ -50,18 +51,19 @@ extern NSString *STPersistTemporyDirectory();
 + (instancetype)tempoaryPersistence;
 + (instancetype)cachePersistence;
 
-+ (instancetype)documentPersistenceWithSubpath:(NSString *)subpath;
-+ (instancetype)libiaryPersistenceWithSubpath:(NSString *)subpath;
-+ (instancetype)cachePersistenceWithSubpath:(NSString *)subpath;
-+ (instancetype)tempoaryPersistenceWithSubpath:(NSString *)subpath;
++ (instancetype)documentPersistenceWithSubpath:(STNULLABLE NSString *)subpath;
++ (instancetype)libiaryPersistenceWithSubpath:(STNULLABLE NSString *)subpath;
++ (instancetype)cachePersistenceWithSubpath:(STNULLABLE NSString *)subpath;
++ (instancetype)tempoaryPersistenceWithSubpath:(STNULLABLE NSString *)subpath;
 
 @end
 
 @interface STPersistence (STPersistenceClean)
 
 /// 这个对 persistenceNamed的无效， persistenceNamed的需要使用reset/removeAllCachedValues来清空
-- (void)removeCachedValuesSinceDate:(NSDate *)date;
+- (void)removeCachedValuesSinceDate:(STNULLABLE NSDate *)date;
 /// 
 - (void)removeAllCachedValues;
 
 @end
+ST_ASSUME_NONNULL_END

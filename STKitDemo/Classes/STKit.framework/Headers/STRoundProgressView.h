@@ -14,9 +14,9 @@
  */
 @interface STRoundProgressView : UIControl
 /// 完成度
-@property(nonatomic, assign) CGFloat completion;
+@property(nonatomic) CGFloat completion;
 - (void)setCompletion:(CGFloat)completion animated:(BOOL)animated;
 
-@property(nonatomic, strong) UIColor *progressTintColor;
+@property(STPROPERTYNULLABLE nonatomic, strong) UIColor *progressTintColor;
 
 @end

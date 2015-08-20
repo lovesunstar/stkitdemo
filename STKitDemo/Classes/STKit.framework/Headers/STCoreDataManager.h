@@ -10,19 +10,21 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+ST_ASSUME_NONNULL_BEGIN
 /**
  * @abstract CoreData管理。
  *
  */
 @interface STCoreDataManager : NSObject
 
-+ (STCoreDataManager *)defaultDataManager;
+/**
+ * @param path xxx.sqlite3
+ */
+- (instancetype)initWithModelName:(NSString *)modelName dbFilePath:(NSString *)path NS_DESIGNATED_INITIALIZER;
+- (STNULLABLE instancetype)init NS_DEPRECATED_IOS(2_0, 2_0, "Please use initWithModelName");
 
-@property(nonatomic, readonly, strong) NSString *modelName;
-@property(nonatomic, readonly, strong) NSString *dbFilePath;
-/// 设置 momd 文件名称。 不需要后缀。会生成一个同名的sqlite文件
-- (void)setModelName:(NSString *)modelName;
-
+@property(STPROPERTYNULLABLE nonatomic, readonly, copy) NSString *modelName;
+@property(STPROPERTYNULLABLE nonatomic, readonly, copy) NSString *dbFilePath;
 /// 该Context始终在主线程中。 UIViewController的fetchResultsController
 @property(nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
 /// 该Context始终在子线程，并且parentContext为楼上的Context。为了提升主线程的绘制效率，建议所有的保存操作都在此Context进行。
@@ -49,16 +51,9 @@
 - (void)performBlockInBackground:(void (^)(NSManagedObjectContext *))block waitUntilDone:(BOOL)waitUntilDone;
 @end
 
-@interface NSFetchedResultsController (STCoreDataManager)
-
-- (NSFetchedResultsController *)initWithFetchRequest:(NSFetchRequest *)fetchRequest
-                                  sectionNameKeyPath:(NSString *)sectionName
-                                           cacheName:(NSString *)cacheName;
-
-@end
-
 @interface NSManagedObjectContext (STCoreDataManager)
 - (NSEntityDescription *)descriptionForEntityName:(NSString *)entityName;
 - (NSManagedObject *)entityClassFromString:(NSString *)className name:(NSString *)entityName;
 
 @end
+ST_ASSUME_NONNULL_END

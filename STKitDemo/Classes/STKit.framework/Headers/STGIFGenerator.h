@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <ImageIO/ImageIO.h>
+#import <STKit/STDefines.h>
 
 typedef NS_ENUM(NSInteger, STGIFPropertyColorModel) {
     STGIFPropertyColorModelRGB,
@@ -17,28 +18,30 @@ typedef NS_ENUM(NSInteger, STGIFPropertyColorModel) {
     STGIFPropertyColorModelLab
 };
 
+ST_ASSUME_NONNULL_BEGIN
 @interface STGIFProperty : NSObject
 + (STGIFProperty *)defaultGIFProperty;
 /// default YES
-@property (nonatomic, getter=hasGlobalColorMap) BOOL hasGlobalColorMap;
+@property(nonatomic, getter=hasGlobalColorMap) BOOL hasGlobalColorMap;
 /// default STGIFPropertyColorModelRGB
-@property (nonatomic) STGIFPropertyColorModel    colorModel;
+@property(nonatomic) STGIFPropertyColorModel    colorModel;
 /// default 8
-@property (nonatomic) CGFloat   depth;
+@property(nonatomic) CGFloat   depth;
 /// default 0
-@property (nonatomic) NSInteger loopCount;
+@property(nonatomic) NSInteger loopCount;
 
 @end
 
 @interface STGIFGenerator : NSObject
 
-- (instancetype)initWithProperty:(STGIFProperty *)property;
+- (instancetype)initWithProperty:(STNULLABLE STGIFProperty *)property;
 
-@property (nonatomic, assign) CGSize    preferredImageSize;
+@property(nonatomic) CGSize    preferredImageSize;
 
 - (void)appendImage:(UIImage *)image duration:(NSTimeInterval)duration;
 
-- (void)startGeneratorWithPath:(NSString *)path completionHandler:(void(^)(NSString *))completionHandler;
+- (void)startGeneratorWithPath:(STNULLABLE NSString *)path completionHandler:(void(^ ST_NULLABLE)(NSString *))completionHandler;
 - (void)cancel;
 
 @end
+ST_ASSUME_NONNULL_END

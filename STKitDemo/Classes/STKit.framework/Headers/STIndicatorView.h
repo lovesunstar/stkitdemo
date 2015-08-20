@@ -75,27 +75,27 @@ ST_ASSUME_NONNULL_BEGIN
 - (void)hideAnimated:(BOOL)animated afterDelay:(NSTimeInterval)delay;
 - (void)hideAnimated:(BOOL)animated afterDelay:(NSTimeInterval)delay completion:(STNULLABLE void (^)(void))completion;
 
-@property(nonatomic, assign) STBlurEffectStyle blurEffectStyle;
+@property(nonatomic) STBlurEffectStyle blurEffectStyle;
 /// 指示器弧度，默认 10
-@property(nonatomic, assign) CGFloat cornerRadius;
+@property(nonatomic) CGFloat cornerRadius;
 /// 指示器间距，default 0 0
-@property(nonatomic, assign) CGPoint contentOffset;
+@property(nonatomic) CGPoint contentOffset;
 /// default 20
-@property(nonatomic, assign) UIEdgeInsets contentInsets;
+@property(nonatomic) UIEdgeInsets contentInsets;
 /// 指示器最小为多大，默认 0 0
-@property(nonatomic, assign) CGSize minimumSize;
+@property(nonatomic) CGSize minimumSize;
 /// 您可以添加默认的customView. 当mode为STIndicatorTypeCustom时
 @property(STPROPERTYNULLABLE nonatomic, strong) UIView *customView;
-@property(nonatomic, assign) id<STIndicatorViewDelegate> delegate;
+@property(nonatomic, weak) id<STIndicatorViewDelegate> delegate;
 
-@property(nonatomic, assign) STIndicatorType indicatorType;
+@property(nonatomic) STIndicatorType indicatorType;
 
 @property(STPROPERTYNONNULL nonatomic, readonly, strong) UILabel *textLabel;
 @property(STPROPERTYNONNULL nonatomic, readonly, strong) UILabel *detailLabel;
 /// 是否强制为正方形。 默认NO
-@property(nonatomic, assign, getter=isForceSquare) BOOL forceSquare;
+@property(nonatomic, getter=isForceSquare) BOOL forceSquare;
 /// 当指示器不显示的时候是否将指示器移除
-@property(nonatomic, assign) BOOL removeWhenStopped;
+@property(nonatomic) BOOL removeWhenStopped;
 
 @property(nonatomic) CGFloat    minimumDisplayDuration;
 @end

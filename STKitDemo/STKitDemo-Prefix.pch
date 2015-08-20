@@ -13,6 +13,7 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import "STDCoreDataManager.h"
     #define kSTKitDemoUmengAppKey @"52c2a67156240b811a09028e"
 
 extern void STDLogRemoteWithString(NSString *string, NSString *colorString);

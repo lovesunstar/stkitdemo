@@ -54,7 +54,7 @@ NSString *const STDChatSystemDefaultID = @"97676900";
         NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"STDMessage"];
         NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"time" ascending:YES];
         fetchRequest.sortDescriptors = @[sortDescriptor];
-        self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest sectionNameKeyPath:nil cacheName:nil];
+        self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[STDCoreDataManager chatDataManager].managedObjectContext sectionNameKeyPath:nil cacheName:nil];
         [self.fetchedResultsController performFetch:nil];
         self.fetchedResultsController.delegate = self;
         
@@ -168,7 +168,7 @@ NSString *const STDChatSystemDefaultID = @"97676900";
         return;
     }
     
-    [[STCoreDataManager defaultDataManager] performBlockInBackground:^(NSManagedObjectContext *managedObjectContext) {
+    [[STDCoreDataManager chatDataManager] performBlockInBackground:^(NSManagedObjectContext *managedObjectContext) {
         {
             STDUser *user = [self createUserIfNotExistWithID:STDChatUserDefaultID inManageObjectContext:managedObjectContext];
             STDMessage *message = (STDMessage *)[managedObjectContext entityClassFromString:@"STDMessage" name:@"STDMessage"];
@@ -213,7 +213,7 @@ NSString *const STDChatSystemDefaultID = @"97676900";
         message.height = height;
         message.identifier = identifier;
         message.chatViewRect = NSStringFromCGRect(chatViewRect);
-        [[STCoreDataManager defaultDataManager] saveManagedObjectContext:managedObjectContext error:nil];
+        [[STDCoreDataManager chatDataManager] saveManagedObjectContext:managedObjectContext error:nil];
     } waitUntilDone:YES];
 }
 
@@ -367,11 +367,11 @@ NSString *const STDChatSystemDefaultID = @"97676900";
 
 - (void)_deleteViewControllerActionFired:(id)sender {
     self.tableViewEditing = YES;
-    [[STCoreDataManager defaultDataManager] performBlockOnMainThread:^(NSManagedObjectContext * context) {
+    [[STDCoreDataManager chatDataManager] performBlockOnMainThread:^(NSManagedObjectContext * context) {
         [self.selectedManagedObjects enumerateObjectsUsingBlock:^(STDMessage * obj, NSUInteger idx, BOOL *stop) {
             [context deleteObject:obj];
         }];
-        [[STCoreDataManager defaultDataManager] saveManagedObjectContext:context error:nil];
+        [[STDCoreDataManager chatDataManager] saveManagedObjectContext:context error:nil];
     } waitUntilDone:YES];
     [self.selectedManagedObjects removeAllObjects];
     self.tableViewEditing = NO;

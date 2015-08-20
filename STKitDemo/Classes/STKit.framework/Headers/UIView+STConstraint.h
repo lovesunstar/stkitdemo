@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <STKit/STDefines.h>
 
 @interface UIView (STConstraint)
 
-- (NSArray *)st_constraintsWithFirstItem:(UIView *)firstItem;
-- (NSArray *)st_constraintsWithFirstItem:(UIView *)firstItem
+- (STNULLABLE NSArray *)st_constraintsWithFirstItem:(STNULLABLE UIView *)firstItem;
+- (STNULLABLE NSArray *)st_constraintsWithFirstItem:(STNULLABLE UIView *)firstItem
                           firstAttribute:(NSLayoutAttribute)attribute;
 
 @end

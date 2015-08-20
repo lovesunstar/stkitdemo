@@ -157,14 +157,14 @@
     indicatorView.textLabel.text = @"删除中";
     indicatorView.blurEffectStyle = STBlurEffectStyleDark;
     indicatorView.forceSquare = YES;
-    [[STCoreDataManager defaultDataManager] performBlockOnMainThread:^(NSManagedObjectContext *context) {
+    [[STDCoreDataManager chatDataManager] performBlockOnMainThread:^(NSManagedObjectContext *context) {
         NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"STDMessage"];
         NSArray *messages = [context executeFetchRequest:fetchRequest error:nil];
         if (messages.count > 0) {
             [messages enumerateObjectsUsingBlock:^(STDMessage *obj, NSUInteger idx, BOOL *stop) {
                 [context deleteObject:obj];
             }];
-            [[STCoreDataManager defaultDataManager] saveManagedObjectContext:context error:nil];
+            [[STDCoreDataManager chatDataManager] saveManagedObjectContext:context error:nil];
         }
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             indicatorView.textLabel.text = @"已删除";

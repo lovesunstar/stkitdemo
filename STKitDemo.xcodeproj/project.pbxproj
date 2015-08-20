@@ -114,7 +114,6 @@
 		0642E28E1AE0F3D100B820D1 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A1CD331978DE0700F68F35 /* CoreTelephony.framework */; };
 		0642E28F1AE0F3D100B820D1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C6F9CD1920F0C10028B2B3 /* CoreLocation.framework */; };
 		0642E2901AE0F3D100B820D1 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 06291AE4191F314700EDBD35 /* libxml2.dylib */; };
-		0642E2911AE0F3D100B820D1 /* STKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CB648C1A59523F00ABD7D3 /* STKit.framework */; };
 		0642E2921AE0F3D100B820D1 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F69CFE261873032B00327D8A /* libz.dylib */; };
 		0642E2931AE0F3D100B820D1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E5B875186413A700FF3408 /* AVFoundation.framework */; };
 		0642E2941AE0F3D100B820D1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E5B8721864139D00FF3408 /* AudioToolbox.framework */; };
@@ -195,7 +194,6 @@
 		06A4D3C019E6B3C7007D332D /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A4D3BF19E6B3C7007D332D /* NotificationCenter.framework */; };
 		06A4D3C619E6B3C7007D332D /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A4D3C519E6B3C7007D332D /* TodayViewController.m */; };
 		06A4D3C819E6B3C7007D332D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A4D3C719E6B3C7007D332D /* MainInterface.storyboard */; };
-		06B6C1851A0407B600C9218E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0634101A19C9EBE3003BC34E /* LaunchScreen.xib */; };
 		06BE56D11A0404CF00FBC4C8 /* STDemoImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06BE56D01A0404CF00FBC4C8 /* STDemoImages.xcassets */; };
 		06C518601AAD4E3F00C2B2E3 /* SimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C5185D1AAD4E3F00C2B2E3 /* SimplePing.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		06C518651AAD4E6E00C2B2E3 /* STDLocationPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C518641AAD4E6E00C2B2E3 /* STDLocationPickerController.m */; };
@@ -276,8 +274,6 @@
 		06CB65E51A59524000ABD7D3 /* STDMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB647C1A59523F00ABD7D3 /* STDMapViewController.m */; };
 		06CB65E61A59524000ABD7D3 /* STDMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06CB647D1A59523F00ABD7D3 /* STDMapViewController.xib */; };
 		06CB65E71A59524000ABD7D3 /* STDStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB647F1A59523F00ABD7D3 /* STDStartViewController.m */; };
-		06CB65EE1A59524000ABD7D3 /* STKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CB648C1A59523F00ABD7D3 /* STKit.framework */; };
-		06CB65EF1A59527E00ABD7D3 /* STKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CB648C1A59523F00ABD7D3 /* STKit.framework */; };
 		06CB65F01A5952B700ABD7D3 /* STDBNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64701A59523F00ABD7D3 /* STDBNetwork.m */; };
 		06CB65F11A5952C700ABD7D3 /* STDFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64071A59523F00ABD7D3 /* STDFeedItem.m */; };
 		06CB88A61A88C8C40082DACA /* STDBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB88A51A88C8C40082DACA /* STDBridge.m */; };
@@ -285,9 +281,14 @@
 		06CF9BD21A8BD2A3000037EF /* STDAbstractFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CF9BCC1A8BD2A3000037EF /* STDAbstractFactoryTests.m */; };
 		06CF9BD31A8BD2A3000037EF /* STDFactoryMethodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CF9BCD1A8BD2A3000037EF /* STDFactoryMethodTests.m */; };
 		06CF9BD41A8BD2A3000037EF /* STDSingletonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CF9BCE1A8BD2A3000037EF /* STDSingletonTests.m */; };
-		06CF9BD51A8BD2A3000037EF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06CF9BD01A8BD2A3000037EF /* Info.plist */; };
 		06CF9BD61A8BD2A3000037EF /* STKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CF9BD11A8BD2A3000037EF /* STKitDemoTests.m */; };
 		06CFCBBF1A676F39003DDC93 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0698C21C19D1CCE400D0D69A /* WebKit.framework */; };
+		06DD3BF81B79CB6C002FA2B6 /* STDCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 06DD3BF71B79CB6C002FA2B6 /* STDCoreDataManager.m */; };
+		06DD3BF91B79CB6C002FA2B6 /* STDCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 06DD3BF71B79CB6C002FA2B6 /* STDCoreDataManager.m */; };
+		06E467071B70D55E00368460 /* STKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CB648C1A59523F00ABD7D3 /* STKit.framework */; };
+		06E467081B70D55F00368460 /* STKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CB648C1A59523F00ABD7D3 /* STKit.framework */; };
+		06E467091B70D56100368460 /* STKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CB648C1A59523F00ABD7D3 /* STKit.framework */; };
+		06E4670A1B71FCBF00368460 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0634101A19C9EBE3003BC34E /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -567,6 +568,8 @@
 		06CF9BD11A8BD2A3000037EF /* STKitDemoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKitDemoTests.m; sourceTree = "<group>"; };
 		06CFCB9C1A63973C003DDC93 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		06DBF9E019F8CFBB009ECABA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		06DD3BF61B79CB6C002FA2B6 /* STDCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDCoreDataManager.h; sourceTree = "<group>"; };
+		06DD3BF71B79CB6C002FA2B6 /* STDCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STDCoreDataManager.m; sourceTree = "<group>"; };
 		F6471E791851CD7C00574E94 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F6471E7B1851CD7C00574E94 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F6471E7D1851CD7C00574E94 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -596,7 +599,6 @@
 				06A1CD341978DE0700F68F35 /* CoreTelephony.framework in Frameworks */,
 				0602B4F6196974150004ACBB /* CoreLocation.framework in Frameworks */,
 				0602B4F7196974150004ACBB /* libxml2.dylib in Frameworks */,
-				06CB65EE1A59524000ABD7D3 /* STKit.framework in Frameworks */,
 				0602B4F9196974150004ACBB /* libz.dylib in Frameworks */,
 				0602B4FA196974150004ACBB /* AVFoundation.framework in Frameworks */,
 				0602B4FB196974150004ACBB /* AudioToolbox.framework in Frameworks */,
@@ -604,6 +606,7 @@
 				0602B4FE196974150004ACBB /* QuartzCore.framework in Frameworks */,
 				0602B4FF196974150004ACBB /* MapKit.framework in Frameworks */,
 				0602B500196974150004ACBB /* CoreGraphics.framework in Frameworks */,
+				06E467071B70D55E00368460 /* STKit.framework in Frameworks */,
 				0602B501196974150004ACBB /* UIKit.framework in Frameworks */,
 				0602B503196974150004ACBB /* Foundation.framework in Frameworks */,
 			);
@@ -620,7 +623,6 @@
 				0642E28E1AE0F3D100B820D1 /* CoreTelephony.framework in Frameworks */,
 				0642E28F1AE0F3D100B820D1 /* CoreLocation.framework in Frameworks */,
 				0642E2901AE0F3D100B820D1 /* libxml2.dylib in Frameworks */,
-				0642E2911AE0F3D100B820D1 /* STKit.framework in Frameworks */,
 				0642E2921AE0F3D100B820D1 /* libz.dylib in Frameworks */,
 				0642E2931AE0F3D100B820D1 /* AVFoundation.framework in Frameworks */,
 				0642E2941AE0F3D100B820D1 /* AudioToolbox.framework in Frameworks */,
@@ -628,6 +630,7 @@
 				0642E2961AE0F3D100B820D1 /* QuartzCore.framework in Frameworks */,
 				0642E2971AE0F3D100B820D1 /* MapKit.framework in Frameworks */,
 				0642E2981AE0F3D100B820D1 /* CoreGraphics.framework in Frameworks */,
+				06E467081B70D55F00368460 /* STKit.framework in Frameworks */,
 				0642E2991AE0F3D100B820D1 /* UIKit.framework in Frameworks */,
 				0642E29A1AE0F3D100B820D1 /* Foundation.framework in Frameworks */,
 			);
@@ -647,7 +650,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06CB65EF1A59527E00ABD7D3 /* STKit.framework in Frameworks */,
+				06E467091B70D56100368460 /* STKit.framework in Frameworks */,
 				06A4D3C019E6B3C7007D332D /* NotificationCenter.framework in Frameworks */,
 				06C841711A7E3395008BB97F /* libz.dylib in Frameworks */,
 			);
@@ -858,6 +861,8 @@
 				06758ACF1ACEE34D0000E2F8 /* STDRotateTransitionDelegate.m */,
 				06758AD41AD3BC3F0000E2F8 /* STDScrollViewController.h */,
 				06758AD51AD3BC3F0000E2F8 /* STDScrollViewController.m */,
+				06DD3BF61B79CB6C002FA2B6 /* STDCoreDataManager.h */,
+				06DD3BF71B79CB6C002FA2B6 /* STDCoreDataManager.m */,
 			);
 			path = BaseUI;
 			sourceTree = "<group>";
@@ -1330,7 +1335,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = STD;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = SunJiangting;
 				TargetAttributes = {
 					0602B48E196974150004ACBB = {
@@ -1388,7 +1393,6 @@
 				06CB65D91A59524000ABD7D3 /* icon_rightarrow.png in Resources */,
 				06CB60011A594F9900ABD7D3 /* shangxin_292182.jpg in Resources */,
 				06758AC11ACED7330000E2F8 /* 02@2x.png in Resources */,
-				06B6C1851A0407B600C9218E /* LaunchScreen.xib in Resources */,
 				06758AC51ACED7330000E2F8 /* 06@2x.png in Resources */,
 				06CB60021A594F9900ABD7D3 /* shangxin_292182@2x.jpg in Resources */,
 				06CB65DB1A59524000ABD7D3 /* red_line_and_shadow@2x.png in Resources */,
@@ -1410,6 +1414,7 @@
 				06758AC71ACED7330000E2F8 /* 08@2x.png in Resources */,
 				06758AC21ACED7330000E2F8 /* 03@2x.png in Resources */,
 				06CB65D21A59524000ABD7D3 /* chat_image_7.jpg in Resources */,
+				06E4670A1B71FCBF00368460 /* LaunchScreen.xib in Resources */,
 				06758AC61ACED7330000E2F8 /* 07@2x.png in Resources */,
 				06BE56D11A0404CF00FBC4C8 /* STDemoImages.xcassets in Resources */,
 				06CB65E41A59524000ABD7D3 /* STDNavigationSettingViewController.xib in Resources */,
@@ -1471,7 +1476,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06CF9BD51A8BD2A3000037EF /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1550,6 +1554,7 @@
 				06CB65AC1A59523F00ABD7D3 /* STDFeedViewController.m in Sources */,
 				06CB65B71A59523F00ABD7D3 /* STAHanoiViewController.m in Sources */,
 				067A9F5F1AADA73300651433 /* STDDebugPingViewController.m in Sources */,
+				06DD3BF81B79CB6C002FA2B6 /* STDCoreDataManager.m in Sources */,
 				065D78DE1A8344C30083D058 /* STDFacade.m in Sources */,
 				06CB65C31A59523F00ABD7D3 /* STDUser.m in Sources */,
 				06758AD61AD3BC3F0000E2F8 /* STDScrollViewController.m in Sources */,
@@ -1642,6 +1647,7 @@
 				0642E2751AE0F3D100B820D1 /* STAHanoiViewController.m in Sources */,
 				0642E2761AE0F3D100B820D1 /* STDDebugPingViewController.m in Sources */,
 				0642E2771AE0F3D100B820D1 /* STDFacade.m in Sources */,
+				06DD3BF91B79CB6C002FA2B6 /* STDCoreDataManager.m in Sources */,
 				0642E2781AE0F3D100B820D1 /* STDUser.m in Sources */,
 				0642E2791AE0F3D100B820D1 /* STDScrollViewController.m in Sources */,
 				0642E27A1AE0F3D100B820D1 /* STDTextViewController.m in Sources */,
@@ -2086,7 +2092,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos6.1;
+				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 arm64";
 			};
 			name = Debug;
@@ -2119,7 +2125,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				SDKROOT = iphoneos6.1;
+				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 arm64";
 			};

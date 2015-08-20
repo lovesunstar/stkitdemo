@@ -15,10 +15,10 @@ typedef void (^STBridgeHandler)(STJavaScriptBridgeItem *item, STBridgeCompletion
 
 @interface STJavaScriptBridgeItem : NSObject
 
-@property (nonatomic, copy) NSString     *eventID;
-@property (nonatomic, copy) NSString     *callbackID;
-@property (nonatomic, copy) NSString     *method;
-@property (nonatomic, copy) NSDictionary *parameters;
+@property(nonatomic, copy) NSString     *eventID;
+@property(nonatomic, copy) NSString     *callbackID;
+@property(nonatomic, copy) NSString     *method;
+@property(nonatomic, copy) NSDictionary *parameters;
 
 @end
 

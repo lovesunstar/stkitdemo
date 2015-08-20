@@ -69,7 +69,10 @@
         [button addTarget:self action:@selector(_leftBarButtonItemAction:) forControlEvents:UIControlEventTouchUpInside];
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     }
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"设置" target:self action:@selector(_settingActionFired:)];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0, 0, 100, 44);
+    button.backgroundColor = [UIColor blueColor];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Identifier"];
 }
 

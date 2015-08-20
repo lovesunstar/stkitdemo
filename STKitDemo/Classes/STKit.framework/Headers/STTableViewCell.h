@@ -10,6 +10,6 @@
 
 @interface STTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) UIColor   *selectedBackgroundColor;
-@property (nonatomic, strong) UIColor   *backgroundColor;
+@property(nonatomic, strong) UIColor   *selectedBackgroundColor;
+@property(nonatomic, strong) UIColor   *backgroundColor;
 @end
