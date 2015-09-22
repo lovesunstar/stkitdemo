@@ -214,7 +214,7 @@ NSString *const STDChatSystemDefaultID = @"97676900";
         message.identifier = identifier;
         message.chatViewRect = NSStringFromCGRect(chatViewRect);
         [[STDCoreDataManager chatDataManager] saveManagedObjectContext:managedObjectContext error:nil];
-    } waitUntilDone:YES];
+    } completionHandler:NULL];
 }
 
 
@@ -372,7 +372,7 @@ NSString *const STDChatSystemDefaultID = @"97676900";
             [context deleteObject:obj];
         }];
         [[STDCoreDataManager chatDataManager] saveManagedObjectContext:context error:nil];
-    } waitUntilDone:YES];
+    } completionHandler:NULL];
     [self.selectedManagedObjects removeAllObjects];
     self.tableViewEditing = NO;
     if (self.tableView.isEditing) {

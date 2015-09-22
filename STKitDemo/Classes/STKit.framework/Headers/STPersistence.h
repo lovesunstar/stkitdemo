@@ -9,13 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <STKit/Foundation+STKit.h>
 
-ST_ASSUME_NONNULL_BEGIN
-typedef enum {
+typedef NS_ENUM(NSInteger, STPersistenceDirectory) {
     STPersistenceDirectoryDocument,  // document 目录
     STPersistenceDirectoryLibiary,   // Libiary  目录
     STPersistenceDirectoryCache,     // Cache 目录
     STPersistenceDirectoryTemporary, // 临时目录
-} STPersistenceDirectory;
+};
+
+ST_ASSUME_NONNULL_BEGIN
 
 extern NSString *STPersistDocumentDirectory();
 extern NSString *STPersistLibiaryDirectory();
@@ -28,9 +29,12 @@ extern NSString *STPersistTemporyDirectory();
                           subpath:(STNULLABLE NSString *)subpath;
 
 - (void)setValue:(STNULLABLE id)value forKey:(NSString *)key;
-- (id)valueForKey:(NSString *)key;
+
+- (STNULLABLE id)valueForKey:(NSString *)key;
+- (BOOL)containsValueForKey:(NSString *)key;
 
 - (STNONNULL NSString *)cacheDirectory;
+- (NSString *)cachedPathForKey:(NSString *)key;
 
 @end
 

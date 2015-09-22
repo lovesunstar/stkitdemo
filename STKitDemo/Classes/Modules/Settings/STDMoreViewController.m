@@ -69,14 +69,10 @@
         [button addTarget:self action:@selector(_leftBarButtonItemAction:) forControlEvents:UIControlEventTouchUpInside];
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     }
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(0, 0, 100, 44);
-    button.backgroundColor = [UIColor blueColor];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Identifier"];
 }
 
-- (void) viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 }
 

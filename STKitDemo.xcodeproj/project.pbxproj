@@ -22,6 +22,10 @@
 		0602B503196974150004ACBB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6471E791851CD7C00574E94 /* Foundation.framework */; };
 		0602B512196974150004ACBB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F6471E821851CD7C00574E94 /* InfoPlist.strings */; };
 		060798F11AC3E68A007C1AA7 /* STDAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 060798F01AC3E68A007C1AA7 /* STDAuthorization.m */; };
+		062BAE031B8971C6004380A2 /* STDemoImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06BE56D01A0404CF00FBC4C8 /* STDemoImages.xcassets */; };
+		062BAE041B8971C8004380A2 /* STDemoImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06BE56D01A0404CF00FBC4C8 /* STDemoImages.xcassets */; };
+		062BAE051B897201004380A2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0634101A19C9EBE3003BC34E /* LaunchScreen.xib */; };
+		062BAE061B897202004380A2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0634101A19C9EBE3003BC34E /* LaunchScreen.xib */; };
 		0642E2341AE0F3D100B820D1 /* STDLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB636F1A59523F00ABD7D3 /* STDLeftViewController.m */; };
 		0642E2351AE0F3D100B820D1 /* STDSwitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64721A59523F00ABD7D3 /* STDSwitchViewController.m */; };
 		0642E2361AE0F3D100B820D1 /* STDMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64761A59523F00ABD7D3 /* STDMoreViewController.m */; };
@@ -126,7 +130,6 @@
 		0642E29C1AE0F3D100B820D1 /* icon_rightarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 06CB64661A59523F00ABD7D3 /* icon_rightarrow.png */; };
 		0642E29D1AE0F3D100B820D1 /* shangxin_292182.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 06CB5FFF1A594F9900ABD7D3 /* shangxin_292182.jpg */; };
 		0642E29E1AE0F3D100B820D1 /* 02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06758AB91ACED7330000E2F8 /* 02@2x.png */; };
-		0642E29F1AE0F3D100B820D1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0634101A19C9EBE3003BC34E /* LaunchScreen.xib */; };
 		0642E2A01AE0F3D100B820D1 /* 06@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06758ABD1ACED7330000E2F8 /* 06@2x.png */; };
 		0642E2A11AE0F3D100B820D1 /* shangxin_292182@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 06CB60001A594F9900ABD7D3 /* shangxin_292182@2x.jpg */; };
 		0642E2A21AE0F3D100B820D1 /* red_line_and_shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06CB64681A59523F00ABD7D3 /* red_line_and_shadow@2x.png */; };
@@ -149,12 +152,10 @@
 		0642E2B31AE0F3D100B820D1 /* 03@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06758ABA1ACED7330000E2F8 /* 03@2x.png */; };
 		0642E2B41AE0F3D100B820D1 /* chat_image_7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 06CB64551A59523F00ABD7D3 /* chat_image_7.jpg */; };
 		0642E2B51AE0F3D100B820D1 /* 07@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06758ABE1ACED7330000E2F8 /* 07@2x.png */; };
-		0642E2B61AE0F3D100B820D1 /* STDemoImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06BE56D01A0404CF00FBC4C8 /* STDemoImages.xcassets */; };
 		0642E2B71AE0F3D100B820D1 /* STDNavigationSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06CB64791A59523F00ABD7D3 /* STDNavigationSettingViewController.xib */; };
 		0642E2C41AE0F47700B820D1 /* STDFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64071A59523F00ABD7D3 /* STDFeedItem.m */; };
 		0642E2C51AE0F47700B820D1 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A4D3C519E6B3C7007D332D /* TodayViewController.m */; };
 		0642E2C61AE0F47700B820D1 /* STDBNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CB64701A59523F00ABD7D3 /* STDBNetwork.m */; };
-		0642E2C81AE0F47700B820D1 /* STKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CB648C1A59523F00ABD7D3 /* STKit.framework */; };
 		0642E2C91AE0F47700B820D1 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A4D3BF19E6B3C7007D332D /* NotificationCenter.framework */; };
 		0642E2CA1AE0F47700B820D1 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F69CFE261873032B00327D8A /* libz.dylib */; };
 		0642E2CC1AE0F47700B820D1 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A4D3C719E6B3C7007D332D /* MainInterface.storyboard */; };
@@ -171,6 +172,11 @@
 		065D78DE1A8344C30083D058 /* STDFacade.m in Sources */ = {isa = PBXBuildFile; fileRef = 065D78DD1A8344C30083D058 /* STDFacade.m */; };
 		065D78E11A834AF00083D058 /* STDProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 065D78E01A834AF00083D058 /* STDProxy.m */; };
 		065D78E51A8382AC0083D058 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 065D78E41A8382AC0083D058 /* CFNetwork.framework */; };
+		0661EAEE1B8EE94700709CE6 /* STKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0661EAEC1B8EE94700709CE6 /* STKit.framework */; };
+		0661EAEF1B8EE94700709CE6 /* STKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0661EAEC1B8EE94700709CE6 /* STKit.framework */; };
+		0661EAF01B8EE94700709CE6 /* STKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0661EAEC1B8EE94700709CE6 /* STKit.framework */; };
+		0661EAF11B8EE94700709CE6 /* STKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0661EAEC1B8EE94700709CE6 /* STKit.framework */; };
+		0661EAF21B8EE96600709CE6 /* STKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0661EAEC1B8EE94700709CE6 /* STKit.framework */; };
 		066494FA1A90AE930026D498 /* licenses.html in Resources */ = {isa = PBXBuildFile; fileRef = 066494F91A90AE930026D498 /* licenses.html */; };
 		0664952F1A90C6020026D498 /* STDSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0664952E1A90C6020026D498 /* STDSettingViewController.m */; };
 		06758AC01ACED7330000E2F8 /* 01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06758AB81ACED7330000E2F8 /* 01@2x.png */; };
@@ -194,7 +200,6 @@
 		06A4D3C019E6B3C7007D332D /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A4D3BF19E6B3C7007D332D /* NotificationCenter.framework */; };
 		06A4D3C619E6B3C7007D332D /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A4D3C519E6B3C7007D332D /* TodayViewController.m */; };
 		06A4D3C819E6B3C7007D332D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A4D3C719E6B3C7007D332D /* MainInterface.storyboard */; };
-		06BE56D11A0404CF00FBC4C8 /* STDemoImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06BE56D01A0404CF00FBC4C8 /* STDemoImages.xcassets */; };
 		06C518601AAD4E3F00C2B2E3 /* SimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C5185D1AAD4E3F00C2B2E3 /* SimplePing.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		06C518651AAD4E6E00C2B2E3 /* STDLocationPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C518641AAD4E6E00C2B2E3 /* STDLocationPickerController.m */; };
 		06C518681AAD519900C2B2E3 /* STDPingServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C518671AAD519900C2B2E3 /* STDPingServices.m */; };
@@ -285,10 +290,6 @@
 		06CFCBBF1A676F39003DDC93 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0698C21C19D1CCE400D0D69A /* WebKit.framework */; };
 		06DD3BF81B79CB6C002FA2B6 /* STDCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 06DD3BF71B79CB6C002FA2B6 /* STDCoreDataManager.m */; };
 		06DD3BF91B79CB6C002FA2B6 /* STDCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 06DD3BF71B79CB6C002FA2B6 /* STDCoreDataManager.m */; };
-		06E467071B70D55E00368460 /* STKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CB648C1A59523F00ABD7D3 /* STKit.framework */; };
-		06E467081B70D55F00368460 /* STKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CB648C1A59523F00ABD7D3 /* STKit.framework */; };
-		06E467091B70D56100368460 /* STKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CB648C1A59523F00ABD7D3 /* STKit.framework */; };
-		06E4670A1B71FCBF00368460 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0634101A19C9EBE3003BC34E /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -374,6 +375,7 @@
 		065D78DF1A834AF00083D058 /* STDProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDProxy.h; sourceTree = "<group>"; };
 		065D78E01A834AF00083D058 /* STDProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STDProxy.m; sourceTree = "<group>"; };
 		065D78E41A8382AC0083D058 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		0661EAEC1B8EE94700709CE6 /* STKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = STKit.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/STWorkspace-geijllfmuymgingxsjgqvtuhlffp/Build/Products/Debug-iphonesimulator/STKit.framework"; sourceTree = "<group>"; };
 		066494F91A90AE930026D498 /* licenses.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = licenses.html; sourceTree = "<group>"; };
 		0664952D1A90C6020026D498 /* STDSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDSettingViewController.h; sourceTree = "<group>"; };
 		0664952E1A90C6020026D498 /* STDSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STDSettingViewController.m; sourceTree = "<group>"; };
@@ -555,7 +557,6 @@
 		06CB647D1A59523F00ABD7D3 /* STDMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = STDMapViewController.xib; sourceTree = "<group>"; };
 		06CB647E1A59523F00ABD7D3 /* STDStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDStartViewController.h; sourceTree = "<group>"; };
 		06CB647F1A59523F00ABD7D3 /* STDStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STDStartViewController.m; sourceTree = "<group>"; };
-		06CB648C1A59523F00ABD7D3 /* STKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = STKit.framework; sourceTree = "<group>"; };
 		06CB88A41A88C8C40082DACA /* STDBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDBridge.h; sourceTree = "<group>"; };
 		06CB88A51A88C8C40082DACA /* STDBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STDBridge.m; sourceTree = "<group>"; };
 		06CF9BAC1A8BB802000037EF /* STKitDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STKitDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -606,7 +607,7 @@
 				0602B4FE196974150004ACBB /* QuartzCore.framework in Frameworks */,
 				0602B4FF196974150004ACBB /* MapKit.framework in Frameworks */,
 				0602B500196974150004ACBB /* CoreGraphics.framework in Frameworks */,
-				06E467071B70D55E00368460 /* STKit.framework in Frameworks */,
+				0661EAF21B8EE96600709CE6 /* STKit.framework in Frameworks */,
 				0602B501196974150004ACBB /* UIKit.framework in Frameworks */,
 				0602B503196974150004ACBB /* Foundation.framework in Frameworks */,
 			);
@@ -630,7 +631,7 @@
 				0642E2961AE0F3D100B820D1 /* QuartzCore.framework in Frameworks */,
 				0642E2971AE0F3D100B820D1 /* MapKit.framework in Frameworks */,
 				0642E2981AE0F3D100B820D1 /* CoreGraphics.framework in Frameworks */,
-				06E467081B70D55F00368460 /* STKit.framework in Frameworks */,
+				0661EAF01B8EE94700709CE6 /* STKit.framework in Frameworks */,
 				0642E2991AE0F3D100B820D1 /* UIKit.framework in Frameworks */,
 				0642E29A1AE0F3D100B820D1 /* Foundation.framework in Frameworks */,
 			);
@@ -640,7 +641,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0642E2C81AE0F47700B820D1 /* STKit.framework in Frameworks */,
+				0661EAF11B8EE94700709CE6 /* STKit.framework in Frameworks */,
 				0642E2C91AE0F47700B820D1 /* NotificationCenter.framework in Frameworks */,
 				0642E2CA1AE0F47700B820D1 /* libz.dylib in Frameworks */,
 			);
@@ -650,7 +651,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06E467091B70D56100368460 /* STKit.framework in Frameworks */,
+				0661EAEE1B8EE94700709CE6 /* STKit.framework in Frameworks */,
 				06A4D3C019E6B3C7007D332D /* NotificationCenter.framework in Frameworks */,
 				06C841711A7E3395008BB97F /* libz.dylib in Frameworks */,
 			);
@@ -660,6 +661,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0661EAEF1B8EE94700709CE6 /* STKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -791,10 +793,10 @@
 		06CB61E51A59523F00ABD7D3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0661EAEC1B8EE94700709CE6 /* STKit.framework */,
 				06CB61E61A59523F00ABD7D3 /* 3rdLibs */,
 				06CB636C1A59523F00ABD7D3 /* BaseUI */,
 				06CB63801A59523F00ABD7D3 /* Modules */,
-				06CB648C1A59523F00ABD7D3 /* STKit.framework */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1397,6 +1399,7 @@
 				06CB60021A594F9900ABD7D3 /* shangxin_292182@2x.jpg in Resources */,
 				06CB65DB1A59524000ABD7D3 /* red_line_and_shadow@2x.png in Resources */,
 				06CB65D01A59524000ABD7D3 /* chat_image_5.jpg in Resources */,
+				062BAE041B8971C8004380A2 /* STDemoImages.xcassets in Resources */,
 				066494FA1A90AE930026D498 /* licenses.html in Resources */,
 				06CB65D11A59524000ABD7D3 /* chat_image_6.jpg in Resources */,
 				06CB65CC1A59524000ABD7D3 /* chat_image_1.jpg in Resources */,
@@ -1413,10 +1416,9 @@
 				06758AC41ACED7330000E2F8 /* 05@2x.png in Resources */,
 				06758AC71ACED7330000E2F8 /* 08@2x.png in Resources */,
 				06758AC21ACED7330000E2F8 /* 03@2x.png in Resources */,
+				062BAE061B897202004380A2 /* LaunchScreen.xib in Resources */,
 				06CB65D21A59524000ABD7D3 /* chat_image_7.jpg in Resources */,
-				06E4670A1B71FCBF00368460 /* LaunchScreen.xib in Resources */,
 				06758AC61ACED7330000E2F8 /* 07@2x.png in Resources */,
-				06BE56D11A0404CF00FBC4C8 /* STDemoImages.xcassets in Resources */,
 				06CB65E41A59524000ABD7D3 /* STDNavigationSettingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1428,11 +1430,11 @@
 				0642E29C1AE0F3D100B820D1 /* icon_rightarrow.png in Resources */,
 				0642E29D1AE0F3D100B820D1 /* shangxin_292182.jpg in Resources */,
 				0642E29E1AE0F3D100B820D1 /* 02@2x.png in Resources */,
-				0642E29F1AE0F3D100B820D1 /* LaunchScreen.xib in Resources */,
 				0642E2A01AE0F3D100B820D1 /* 06@2x.png in Resources */,
 				0642E2A11AE0F3D100B820D1 /* shangxin_292182@2x.jpg in Resources */,
 				0642E2A21AE0F3D100B820D1 /* red_line_and_shadow@2x.png in Resources */,
 				0642E2A31AE0F3D100B820D1 /* chat_image_5.jpg in Resources */,
+				062BAE031B8971C6004380A2 /* STDemoImages.xcassets in Resources */,
 				0642E2A41AE0F3D100B820D1 /* licenses.html in Resources */,
 				0642E2A51AE0F3D100B820D1 /* chat_image_6.jpg in Resources */,
 				0642E2A61AE0F3D100B820D1 /* chat_image_1.jpg in Resources */,
@@ -1449,9 +1451,9 @@
 				0642E2B11AE0F3D100B820D1 /* 05@2x.png in Resources */,
 				0642E2B21AE0F3D100B820D1 /* 08@2x.png in Resources */,
 				0642E2B31AE0F3D100B820D1 /* 03@2x.png in Resources */,
+				062BAE051B897201004380A2 /* LaunchScreen.xib in Resources */,
 				0642E2B41AE0F3D100B820D1 /* chat_image_7.jpg in Resources */,
 				0642E2B51AE0F3D100B820D1 /* 07@2x.png in Resources */,
-				0642E2B61AE0F3D100B820D1 /* STDemoImages.xcassets in Resources */,
 				0642E2B71AE0F3D100B820D1 /* STDNavigationSettingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1739,6 +1741,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1754,7 +1757,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/STKitDemo/STKitDemo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/STKitDemo",
@@ -1780,6 +1783,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: WEIWEI YE (U9JEY66N6A)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1795,7 +1799,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/STKitDemo/STKitDemo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/STKitDemo",
@@ -1906,6 +1910,7 @@
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/STWorkspace-geijllfmuymgingxsjgqvtuhlffp/Build/Products/Debug-iphonesimulator",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/STKitDemo/Classes",
+					"$(PROJECT_DIR)/STKitDemo",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1939,6 +1944,7 @@
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/STWorkspace-geijllfmuymgingxsjgqvtuhlffp/Build/Products/Debug-iphonesimulator",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/STKitDemo/Classes",
+					"$(PROJECT_DIR)/STKitDemo",
 				);
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "STKitWidget/STKitWidgetInHouse-Info.plist";
@@ -1966,6 +1972,7 @@
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/STWorkspace-geijllfmuymgingxsjgqvtuhlffp/Build/Products/Debug-iphonesimulator",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/STKitDemo/Classes",
+					"$(PROJECT_DIR)/STKitDemo",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1999,6 +2006,7 @@
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/STWorkspace-geijllfmuymgingxsjgqvtuhlffp/Build/Products/Debug-iphonesimulator",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/STKitDemo/Classes",
+					"$(PROJECT_DIR)/STKitDemo",
 				);
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = STKitWidget/Info.plist;
@@ -2022,6 +2030,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/STKitDemo/Classes",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/STWorkspace-geijllfmuymgingxsjgqvtuhlffp/Build/Products/Debug-iphonesimulator",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -2046,6 +2056,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/STKitDemo/Classes",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/STWorkspace-geijllfmuymgingxsjgqvtuhlffp/Build/Products/Debug-iphonesimulator",
 				);
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = STKitDemoTests/Info.plist;

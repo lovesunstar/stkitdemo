@@ -103,10 +103,10 @@ ST_EXTERN NSInteger STCleanBitOffset(NSInteger value, NSInteger bit);
 
 @end
 
-typedef enum STBookSeekDirection {
+typedef NS_ENUM(NSInteger, STBookSeekDirection) {
     STBookSeekDirectionForward = 1,
     STBookSeekDirectionReverse = 2,
-} STBookSeekDirection;
+};
 
 /// @require <CoreText/CoreText.h>
 @interface NSString (STPagination)

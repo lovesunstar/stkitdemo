@@ -15,6 +15,29 @@
 #import <objc/runtime.h>
 #import <objc/message.h>
 
+
+typedef struct {
+    SInt8 b0:1;
+    SInt8 b1:1;
+    SInt8 b2:1;
+    SInt8 b3:1;
+    SInt8 b4:1;
+    SInt8 b5:1;
+    SInt8 b6:1;
+    SInt8 b7:1;
+} STByte;
+
+typedef union {
+    int32_t intValue;
+    Float32 floatValue;
+    struct {
+        STByte byte0;
+        STByte byte1;
+        STByte byte2;
+        STByte byte3;
+    } bytes;
+} STMagic;
+
 @interface STDAppDelegate ()
 
 @end
@@ -22,7 +45,6 @@
 @implementation STDAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
     [self initializeCustomUserSetting];
     if ([application respondsToSelector:@selector(setStatusBarStyle:)]) {
         application.statusBarStyle = UIStatusBarStyleDefault;

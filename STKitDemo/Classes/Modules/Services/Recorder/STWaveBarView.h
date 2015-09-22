@@ -12,12 +12,12 @@
 #import <QuartzCore/QuartzCore.h>
 #import <AudioToolbox/AudioToolbox.h>
 
-typedef enum STWaveStyle {
+typedef NS_ENUM(NSInteger, STWaveStyle) {
     SWaveStyleBar,
     SWaveStyleCurve,
     SWaveStyleBezier,
     SWaveStyleMedia,
-} STWaveStyle;
+};
 
 /// 模拟window media player
 @interface STWaveBarView : UIView {

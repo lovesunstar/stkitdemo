@@ -7,12 +7,14 @@
 //
 
 #import <STKit/STDefines.h>
+
+#import <STKit/STShadow.h>
 #import <STKit/STViewController.h>
 
-typedef enum STViewControllerTransitionType {
+typedef NS_ENUM(NSInteger, STViewControllerTransitionType) {
     STViewControllerTransitionTypePush,
     STViewControllerTransitionTypePop,
-} STViewControllerTransitionType;
+};
 
 ST_ASSUME_NONNULL_BEGIN
 @interface STNavigationControllerTransitionContext : NSObject
@@ -37,7 +39,7 @@ ST_ASSUME_NONNULL_END
 @protocol STNavigationControllerDelegate;
 @interface STNavigationController : STViewController
 
-- (STNULLABLE instancetype)initWithRootViewController:(UIViewController * ST_NULLABLE)rootViewController; // Convenience method pushes the root view controller without animation.
+- (STNONNULL instancetype)initWithRootViewController:(UIViewController * ST_NULLABLE)rootViewController; // Convenience method pushes the root view controller without animation.
 
 - (void)pushViewController:(UIViewController * ST_NONNULL)viewController animated:(BOOL)animated; // Uses a horizontal slide transition. Has no effect if the view controller is already in the stack.
 
@@ -60,6 +62,10 @@ ST_ASSUME_NONNULL_END
 
 @property(STPROPERTYNONNULL nonatomic, strong, readonly) UIView *transitionView;
 
+@property(STPROPERTYNULLABLE nonatomic, strong, readonly) STShadow *shadow;
+
+@property(nonatomic) CGFloat maximumPopAnimationMaskAlpha;
+
 @end
 
 /// NavigationController Push/Pop时间
@@ -67,17 +73,17 @@ extern CGFloat const STTransitionViewControllerAnimationDuration;
 
 @interface UIViewController (STNavigationController)
 
-@property(nonatomic, assign) BOOL st_navigationBarHidden;
+@property(nonatomic, setter=st_setNavigationBarHidden:) BOOL st_navigationBarHidden;
 
 @property(STPROPERTYNULLABLE nonatomic, readonly, strong) STNavigationBar *st_navigationBar;
 @property(STPROPERTYNULLABLE nonatomic, readonly, strong) STNavigationController *st_navigationController;
 
 /// @li 从最左侧开始生效返回手势，这个变量决定距离左侧多少可以激活手势，设置为0，则禁止左滑跟随返回
 /// @li 有些套了手机壳的手机，壳边缘比较厚，设置比较小的话，影响操作，很难触发。
-@property(nonatomic, assign) CGFloat st_maximumInteractivePopEdgeDistance; // 默认 30pt,系统默认13。
+@property(nonatomic, setter=st_setMaximumInteractivePopEdgeDistance:) CGFloat st_maximumInteractivePopEdgeDistance; // 默认 30pt,系统默认13。
 /// Pop/Push ViewController时，前一个ViewController's view的偏移量（iOS7的返回效果）。
 /// 变量应该为Unsigned
-@property(nonatomic, assign) CGFloat st_interactivePopTransitionOffset; // default 80pt
+@property(nonatomic, setter=st_setInteractivePopTransitionOffset:) CGFloat st_interactivePopTransitionOffset; // default 80pt
 
 @end
 /// 30pt

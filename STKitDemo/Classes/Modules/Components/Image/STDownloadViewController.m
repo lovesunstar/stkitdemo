@@ -95,7 +95,7 @@
     NSString * imageURL = self.thumbURL;
     if ([STImageCache hasCachedImageForKey:imageURL]) {
         __weak STDownloadViewController * weakSelf = self;
-        [self.imageView setImageWithURLString:imageURL finishedHandler:^(UIImage *image, NSString * URLString, BOOL usingCache, NSError *error) {
+        [self.imageView st_setImageWithURLString:imageURL finishedHandler:^(UIImage *image, NSString * URLString, BOOL usingCache, NSError *error) {
             weakSelf.imageView.image = image;
         }];
         return;
@@ -104,7 +104,7 @@
     __weak STDownloadViewController * weakSelf = self;
     self.roundProgressView.hidden = NO;
     self.roundProgressView.center = CGPointMake(self.imageView.bounds.size.width / 2, self.imageView.bounds.size.height / 2);
-    [self.imageView setImageWithURLString:imageURL progressHandler:^(CGFloat completion) {
+    [self.imageView st_setImageWithURLString:imageURL progressHandler:^(CGFloat completion) {
         weakSelf.roundProgressView.completion = completion;
     } finishedHandler:^(UIImage *image, NSString * URLString, BOOL usingCache, NSError *error) {
         weakSelf.roundProgressView.hidden = YES;

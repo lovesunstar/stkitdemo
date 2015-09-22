@@ -31,11 +31,11 @@ ST_ASSUME_NONNULL_BEGIN
 @end
 ST_ASSUME_NONNULL_END
 
-typedef enum STBarButtonCustomItem {
+typedef NS_ENUM(NSInteger, STBarButtonCustomItem) {
     STBarButtonCustomItemBack,
     STBarButtonCustomItemDismiss,
     STBarButtonCustomItemMore,
-} STBarButtonCustomItem;
+};
 
 @interface UIBarButtonItem (STKit)
 

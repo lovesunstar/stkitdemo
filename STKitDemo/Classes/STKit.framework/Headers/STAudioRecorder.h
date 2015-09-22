@@ -11,13 +11,13 @@
 #import <AudioToolbox/AudioToolbox.h>
 
 /// 录音状态
-typedef enum STAudioRecorderState : NSInteger {
-                                        STAudioRecorderBegan,      // 开始录音
-                                        STAudioRecorderProgressed, // 正在录音
-                                        STAudioRecorderEnded,
-                                        STAudioRecorderCancelled, // 理论上该方法不会被调用。
-                                        STAudioRecorderFailed,    // 录音失败,文件错误等等
-                                    } STAudioRecorderState;
+typedef NS_ENUM(NSInteger, STAudioRecorderState) {
+    STAudioRecorderBegan,      // 开始录音
+    STAudioRecorderProgressed, // 正在录音
+    STAudioRecorderEnded,
+    STAudioRecorderCancelled, // 理论上该方法不会被调用。
+    STAudioRecorderFailed,    // 录音失败,文件错误等等
+};
 
 /**
  * @abstract 录音回调

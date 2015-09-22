@@ -250,7 +250,7 @@ ST_ASSUME_NONNULL_END
  *
  * @param  STImageDataTypeUnknown 未知类型
  */
-typedef enum {
+typedef NS_ENUM(NSInteger, STImageDataType) {
     STImageDataTypeUnknown,
     STImageDataTypePCX,  // 文件头  共1字节  0A
     STImageDataTypeBMP,  // 文件头  共2字节  42 4d
@@ -258,7 +258,7 @@ typedef enum {
     STImageDataTypePNG,  // 文件头  共8字节  89 50 4e 47 0d 0a 1a 0a
     STImageDataTypeGIF,  // 文件头  共6字节  47 49 46 38 39/37 61
     STImageDataTypeWebP,  // 文件头  共6字节  47 49 46 38 39/37 61
-} STImageDataType;
+};
 
 /**
  * @abstract 根据Data内容，解析文件头。
@@ -291,12 +291,12 @@ typedef enum {
  * STBlurEffectStyleExtraLight  系统从最底部往上滑动的设置毛玻璃效果
  * STBlurEffectStyleDark        通知中心的毛玻璃效果
  */
-typedef enum STBlurEffectStyle {
+typedef NS_ENUM(NSInteger, STBlurEffectStyle) {
     STBlurEffectStyleNone,
     STBlurEffectStyleExtraLight,
     STBlurEffectStyleLight,
     STBlurEffectStyleDark
-} STBlurEffectStyle;
+};
 
 ST_ASSUME_NONNULL_BEGIN
 /// 给图片添加毛玻璃效果

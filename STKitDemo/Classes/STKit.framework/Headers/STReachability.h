@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <SystemConfiguration/SCNetworkReachability.h>
 
-typedef enum {
+typedef NS_ENUM(NSInteger, STNetworkStatus) {
     STNetworkStatusReachNone, // 网络不通
     STNetworkStatusReachWIFI, // WIFI
     STNetworkStatusReachWWAN, // GPRS,E等
-} STNetworkStatus;
+};
 
 /**
  * @abstract 此类可以获取网络的一些状况

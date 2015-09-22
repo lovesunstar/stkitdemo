@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 /// attention: 这个方向是表示朝向，比如Up就表示从下往上弹出。
-typedef enum STPopoverViewDirection {
+typedef NS_ENUM(NSInteger, STPopoverViewDirection) {
 
     STPopoverViewDirectionUp,
     STPopoverViewDirectionDown,
@@ -17,7 +17,7 @@ typedef enum STPopoverViewDirection {
     STPopoverViewDirectionLeft,
     STPopoverViewDirectionRight,
 
-} STPopoverViewDirection;
+};
 
 @protocol STPopoverViewDelegate;
 @interface STPopoverView : UIView

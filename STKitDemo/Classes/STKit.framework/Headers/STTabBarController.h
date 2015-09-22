@@ -47,7 +47,7 @@ ST_ASSUME_NONNULL_END
 @interface UIViewController (STTabBarControllerItem)
 
 // Automatically created lazily with the view controller's title if it's not set explicitly.
-@property(STPROPERTYNONNULL nonatomic, strong) STTabBarItem *st_tabBarItem;
+@property(STPROPERTYNONNULL nonatomic, strong, setter=st_setTabBarItem:) STTabBarItem *st_tabBarItem;
 
 // If the view controller has a tab bar controller as its ancestor, return it. Returns nil otherwise.
 @property(STPROPERTYNULLABLE nonatomic, readonly, strong) STTabBarController *st_tabBarController;

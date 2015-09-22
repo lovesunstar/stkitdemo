@@ -30,6 +30,11 @@
 	<string>技术哥不会随便获取你的地理位置的，就算获取了之后也会加密的，放心吧</string>
 	<key>NSMainNibFile</key>
 	<string>LaunchScreen</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>

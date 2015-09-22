@@ -10,6 +10,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+typedef void(^ STCoreDataCompletionHandler)(void);
 ST_ASSUME_NONNULL_BEGIN
 /**
  * @abstract CoreData管理。
@@ -46,9 +47,14 @@ ST_ASSUME_NONNULL_BEGIN
  * @param    block 需要执行的代码段
  * @param    waitUntilDone 是否需要等待执行, 如果是NO,则立刻返回，將block添加到queue中等待执行
  */
-- (void)performBlock:(void (^)(NSManagedObjectContext *))block waitUntilDone:(BOOL)waitUntilDone;
-- (void)performBlockOnMainThread:(void (^)(NSManagedObjectContext *))block waitUntilDone:(BOOL)waitUntilDone;
-- (void)performBlockInBackground:(void (^)(NSManagedObjectContext *))block waitUntilDone:(BOOL)waitUntilDone;
+- (void)performBlock:(void (^)(NSManagedObjectContext *dispatchedContext))block
+   completionHandler:(void (^ ST_NULLABLE)(void))completionHandler;
+
+- (void)performBlockOnMainThread:(void (^)(NSManagedObjectContext *mainContext))block
+               completionHandler:(void (^ ST_NULLABLE)(void))completionHandler;
+
+- (void)performBlockInBackground:(void (^)(NSManagedObjectContext *backgroundContext))block
+               completionHandler:(void (^ ST_NULLABLE)(void))completionHandler;
 @end
 
 @interface NSManagedObjectContext (STCoreDataManager)

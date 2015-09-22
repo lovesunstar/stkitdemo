@@ -71,7 +71,7 @@ const UIEdgeInsets    STDFeedCellTitleContentInset = {5,5,10,5};
         self.imageView.contentMode = UIViewContentModeScaleAspectFill;
         self.imageView.clipsToBounds = YES;
         self.imageView.userInteractionEnabled = YES;
-        self.imageView.placeholderImage = [UIImage imageNamed:@"product_default"];
+        self.imageView.st_placeholderImage = [UIImage imageNamed:@"product_default"];
         [self.backgroundImageView addSubview:self.imageView];
         
         self.containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 20, 40, 40)];
@@ -110,7 +110,7 @@ const UIEdgeInsets    STDFeedCellTitleContentInset = {5,5,10,5};
 
 - (void) setFeedItem:(STDFeedItem *)feedItem {
     if (_feedItem != feedItem) {
-        [self.imageView setImageWithURLString:feedItem.thumbURLString];
+        [self.imageView st_setImageWithURLString:feedItem.thumbURLString];
         self.titleLabel.text = feedItem.title;
         _feedItem = feedItem;
     }

@@ -42,7 +42,9 @@ extern void STImageCachePopContext(STIdentifier contextId);
 /// 是否有缓存该图片
 + (BOOL)hasCachedImageForKey:(NSString *)key;
 + (UIImage *)cachedImageForKey:(NSString *)key;
+
 + (void)cacheData:(NSData *)data forKey:(NSString *)key;
++ (NSData *)cachedDataForKey:(NSString *)key;
 
 /// default backgroundQueue / DISPATCH_QUEUE_PRIORITY_BACKGROUND
 + (void)calculateCacheSizeWithCompletionHandler:(void(^)(CGFloat))completionHandler;

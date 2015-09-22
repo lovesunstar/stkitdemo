@@ -31,7 +31,7 @@
         self.collectionDirector = [[STScrollDirector alloc] init];
         STDRefreshControl *refreshControl = [[STDRefreshControl alloc] initWithFrame:CGRectMake(0, 0, 200, 76)];
         refreshControl.threshold = 76;
-        self.collectionDirector.refreshControl = refreshControl;
+//        self.collectionDirector.refreshControl = refreshControl;
         [self.collectionDirector setTitle:@"加载更多" forState:STScrollDirectorStatePaginationNormal];
         [self.collectionDirector setTitle:@"正在加载更多" forState:STScrollDirectorStatePaginationLoading];
         [self.collectionDirector setTitle:@"重新加载" forState:STScrollDirectorStatePaginationFailed];

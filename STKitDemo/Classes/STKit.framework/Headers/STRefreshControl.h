@@ -40,13 +40,10 @@
 
 @interface STDefaultRefreshControl : STRefreshControl
 // 内部的控件
-@property(nonatomic, weak) UILabel      *refreshTimeLabel;
 @property(nonatomic, weak) UILabel      *refreshStatusLabel;
 @property(nonatomic, weak) UIImageView  *arrowImageView;
 
 @property(nonatomic, weak) UIActivityIndicatorView *indicatorView;
-
-@property(nonatomic, strong) NSDate *refreshTime;
 
 - (void)setTitle:(NSString *)title forState:(STRefreshControlState)state;
 - (NSString *)titleForState:(STRefreshControlState)state;

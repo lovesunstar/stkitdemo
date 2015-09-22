@@ -42,7 +42,7 @@
     // Do any additional setup after loading the view from its nib.
     
     UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 100, 100)];
-    imageView.placeholderImage = [UIImage imageNamed:@"product_default"];
+    imageView.st_placeholderImage = [UIImage imageNamed:@"product_default"];
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     imageView.clipsToBounds = YES;
     [self.view addSubview:imageView];
@@ -126,7 +126,7 @@
         return;
     }
     STDFeedItem * feedItem = self.feeds[selectedIndex];
-    [self.imageView setImageWithURLString:feedItem.thumbURLString];
+    [self.imageView st_setImageWithURLString:feedItem.thumbURLString];
     self.titleLabel.text = feedItem.title;
     self.prevButton.hidden = !(selectedIndex > 0);
     self.nextButton.hidden = !(selectedIndex < (self.feeds.count - 1));

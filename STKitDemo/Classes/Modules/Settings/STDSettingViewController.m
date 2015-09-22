@@ -166,11 +166,12 @@
             }];
             [[STDCoreDataManager chatDataManager] saveManagedObjectContext:context error:nil];
         }
+        [indicatorView hideAnimated:YES afterDelay:1.5];
+    } completionHandler:^{
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             indicatorView.textLabel.text = @"已删除";
         });
-        [indicatorView hideAnimated:YES afterDelay:1.5];
-    } waitUntilDone:YES];
+    }];
 }
 
 - (void)_navigationSettingActionFired {

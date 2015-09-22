@@ -12,11 +12,11 @@
 /**
  * 数据加载的来源，包括从本地Cache加载，下拉刷新，分页获取更多等
  */
-typedef enum STModelDataSourceType {
+typedef NS_ENUM(NSInteger, STModelDataSourceType) {
     STModelDataSourceTypeCache,
     STModelDataSourceTypeRemote,
     STModelDataSourceTypePagination,
-} STModelDataSourceType;
+};
 
 @class STModel;
 @protocol STModelDelegate <NSObject>

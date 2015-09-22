@@ -55,8 +55,8 @@ ST_ASSUME_NONNULL_BEGIN
  *
  * @param    view 有指示器的view。
  */
-+ (instancetype)indicatorInView:(STNULLABLE UIView *)view;
-+ (NSArray *)allIndicatorInView:(STNULLABLE UIView *)view;
++ (STNULLABLE instancetype)indicatorInView:(STNULLABLE UIView *)view;
++ (STNULLABLE NSArray *)allIndicatorInView:(STNULLABLE UIView *)view;
 
 /**
  * @abstract default initializer
@@ -90,8 +90,8 @@ ST_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic) STIndicatorType indicatorType;
 
-@property(STPROPERTYNONNULL nonatomic, readonly, strong) UILabel *textLabel;
-@property(STPROPERTYNONNULL nonatomic, readonly, strong) UILabel *detailLabel;
+@property(nonatomic, readonly, strong) UILabel *textLabel;
+@property(nonatomic, readonly, strong) UILabel *detailLabel;
 /// 是否强制为正方形。 默认NO
 @property(nonatomic, getter=isForceSquare) BOOL forceSquare;
 /// 当指示器不显示的时候是否将指示器移除
