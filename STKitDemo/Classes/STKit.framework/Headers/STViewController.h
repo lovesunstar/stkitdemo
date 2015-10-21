@@ -25,8 +25,6 @@
 /// default is nil
 @property(nonatomic, strong) STSearchDisplayController *customSearchDisplayController;
 
-@property (nonatomic) UIStatusBarStyle  statusBarStyle;
-
 @end
 
 #import <STKit/STNavigationController.h>

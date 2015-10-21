@@ -26,7 +26,7 @@ extern CGSize const STAccessoryViewMinimumSize;
 /// 可以为scrollView添加下拉刷新和分页加载更多。
 @interface STScrollDirector : NSObject
 /// 主要提供set方法。。
-@property(nonatomic, weak) UIScrollView *scrollView;
+@property(nonatomic, strong) UIScrollView *scrollView;
 
 @property(nonatomic, strong) STRefreshControl *refreshControl;
 @property(nonatomic, strong) STPaginationControl *paginationControl;

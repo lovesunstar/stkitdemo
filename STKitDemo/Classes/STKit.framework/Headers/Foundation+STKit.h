@@ -9,6 +9,11 @@
 #import <STKit/STDefines.h>
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
+#import <objc/runtime.h>
+
+ST_EXTERN void STExchangeSelectors(Class aClass, SEL oldSelector, SEL newSelector);
+
+ST_EXTERN void STClassAddMethod(Class aClass, SEL selector, Method method);
 
 /// 是否是某个类的子类
 ST_EXTERN BOOL STClassIsKindOfClass(Class _class, Class parentClass);
@@ -72,14 +77,14 @@ ST_EXTERN NSInteger STCleanBitOffset(NSInteger value, NSInteger bit);
 /// 过滤空格
 - (NSString *)st_stringByTrimingWhitespace;
 /// substring的range
-- (NSArray *)st_rangesOfString:(NSString *)string;
+- (NSArray<NSString *> *)st_rangesOfString:(NSString *)string;
 /// 使用正则表达式将字符串分割，array中不包含正则表达式
-- (NSArray *)st_componentsSeparatedByRegex:(NSString *)regex;
+- (NSArray<NSString *> *)st_componentsSeparatedByRegex:(NSString *)regex;
 /// ranges substring's range
-- (NSArray *)st_componentsSeparatedByRegex:(NSString *)regex ranges:(NSArray **)ranges;
+- (NSArray<NSString *> *)st_componentsSeparatedByRegex:(NSString *)regex ranges:(NSArray **)ranges;
 /// ranges 表示正则表达式的区间。 里面为字符串，使用 NSRangeFromString可以直接解析
-- (NSArray *)st_componentsSeparatedByRegex:(NSString *)regex regexRanges:(NSArray **)ranges;
-- (NSArray *)st_componentsSeparatedByRegex:(NSString *)regex ranges:(NSArray **)ranges checkingResults:(NSArray **)checkingResults;
+- (NSArray<NSString *> *)st_componentsSeparatedByRegex:(NSString *)regex regexRanges:(NSArray **)ranges;
+- (NSArray<NSString *> *)st_componentsSeparatedByRegex:(NSString *)regex ranges:(NSArray **)ranges checkingResults:(NSArray **)checkingResults;
 - (NSString *)st_stringByAddingHTMLEscapes;
 - (NSString *)st_stringByReplacingHTMLEscapes;
 - (NSData *)st_UTF8EncodedData;
@@ -267,4 +272,5 @@ typedef void(^STTimerFiredHandler) (NSTimer * timer, BOOL *invalidate);
 - (NSString *)st_stringByURLDecoded;
 @end
 
+extern NSString *STGetMachineID(void);
 extern NSString *STKitGetVersion(void);

@@ -7,31 +7,33 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "STHTTPConfiguration.h"
+#import <STKit/STDefines.h>
+#import <STKit/STHTTPConfiguration.h>
 
+ST_ASSUME_NONNULL_BEGIN
 @interface STMultipartItem : NSObject
 
 @property(nonatomic, copy) NSString *name;
 /// 如果传送文件
-@property(nonatomic, copy) NSString *path;
+@property(STPROPERTYNULLABLE nonatomic, copy) NSString *path;
 /// 发送图片或者data
-@property(nonatomic, copy) NSData   *data;
+@property(STPROPERTYNULLABLE nonatomic, copy) NSData   *data;
 
-@property(nonatomic, copy) NSString *MIMEType;
+@property(STPROPERTYNULLABLE nonatomic, copy) NSString *MIMEType;
 
 @end
 
 @interface STHTTPRequest : NSObject
 
-@property(nonatomic, copy)STHTTPConfiguration   *HTTPConfiguration;
+@property(STPROPERTYNULLABLE nonatomic, copy)STHTTPConfiguration   *HTTPConfiguration;
 
 - (instancetype)initWithURLString:(NSString *)URLString
                        HTTPMethod:(NSString *)HTTPMethod
-                       parameters:(NSDictionary *)parameters;
+                       parameters:(STNULLABLE NSDictionary *)parameters;
 
 + (instancetype)requestWithURLString:(NSString *)URLString
                           HTTPMethod:(NSString *)HTTPMethod
-                          parameters:(NSDictionary *)parameters;
+                          parameters:(STNULLABLE NSDictionary *)parameters;
 
 @property(nonatomic, copy, readonly) NSURLRequest *URLRequest;
 
@@ -53,7 +55,7 @@
  message, the key-value pair is skipped.
  @param headerFields a dictionary containing HTTP header fields.
  */
-- (void)setAllHTTPHeaderFields:(NSDictionary *)headerFields;
+- (void)setAllHTTPHeaderFields:(STNULLABLE NSDictionary *)headerFields;
 
 /*!
  @method setValue:forHTTPHeaderField:
@@ -65,7 +67,7 @@
  @param value the header field value.
  @param field the header field name (case-insensitive).
  */
-- (void)setValue:(NSString *)value forHTTPHeaderField:(NSString *)field;
+- (void)setValue:(STNULLABLE NSString *)value forHTTPHeaderField:(NSString *)field;
 
 /*!
  @method addValue:forHTTPHeaderField:
@@ -83,7 +85,7 @@
  */
 - (void)addValue:(NSString *)value forHTTPHeaderField:(NSString *)field;
 
-- (void)setParameter:(id <NSCopying>)parameter forField:(NSString *)field;
+- (void)setParameter:(STNULLABLE id <NSCopying>)parameter forField:(NSString *)field;
 - (void)addParameter:(id <NSCopying>)parameter forField:(NSString *)field;
 
 @end
@@ -93,3 +95,7 @@
 - (NSString *)stringByAppendingURLParameters:(NSDictionary *)parameters;
 
 @end
+
+ST_EXTERN NSString *STJoinQueryComponentsWithParameters(NSDictionary *parameters);
+
+ST_ASSUME_NONNULL_END

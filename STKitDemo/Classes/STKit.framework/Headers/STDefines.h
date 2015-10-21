@@ -19,6 +19,10 @@
 #define STNULLABLE nullable
 #define STPROPERTYNULLABLE nullable,
 #define ST_NULLABLE __nullable
+#define _STNULLABLE _Nullable
+#define _STNonnull _Nonnull
+
+
 
 #define ST_ASSUME_NONNULL_BEGIN NS_ASSUME_NONNULL_BEGIN
 #define ST_ASSUME_NONNULL_END NS_ASSUME_NONNULL_END
@@ -33,8 +37,8 @@
 #define STPROPERTYNULLABLE
 
 #define ST_NULLABLE
-#define ST_START_NONNULL
-#define ST_END_NONNULL
+#define _STNULLABLE
+#define _STNonnull
 
 #define ST_ASSUME_NONNULL_BEGIN
 #define ST_ASSUME_NONNULL_END

@@ -191,6 +191,17 @@ ST_ASSUME_NONNULL_END
 @end
 
 ST_ASSUME_NONNULL_BEGIN
+typedef BOOL (^STPanGestureShouldBeginHandler)(UIScrollView *, UIPanGestureRecognizer *);
+@interface UIScrollView (STGestureShouldBegin)
+//
+//(CollectionView, UIPanGestureRecognizer) -> Bool
+@property(STPROPERTYNULLABLE nonatomic, strong, setter=st_setPanGestureShouldHandler:, getter=st_panGestureShouldHandler) STPanGestureShouldBeginHandler st_panGestureShouldHandler;
+
+@end
+
+ST_ASSUME_NONNULL_END
+
+ST_ASSUME_NONNULL_BEGIN
 @interface UIResponder (STResponder)
 
 /**

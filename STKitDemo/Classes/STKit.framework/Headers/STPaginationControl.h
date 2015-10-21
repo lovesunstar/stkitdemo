@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <STKit/UIKit+STKit.h>
 #import <STKit/STControlDefines.h>
 
 /// 分页空间，列表滑动到最底部时，请求加载下一页。加载更多
@@ -19,6 +20,9 @@
 @property(nonatomic, assign) STPaginationControlState paginationState;
 
 - (void)paginationControlDidChangedToState:(STPaginationControlState)controlState;
+
+/// 尝试去触发LoadMore（如果条件允许的话）
+- (void)paginationTest;
 
 @end
 

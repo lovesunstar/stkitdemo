@@ -80,3 +80,5 @@
 #import <STKit/STKeychain.h>
 
 #import <STKit/STCategories.h>
+
+#import <STKit/STTrashManager.h>

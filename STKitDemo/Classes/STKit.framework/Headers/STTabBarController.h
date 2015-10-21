@@ -19,10 +19,10 @@ ST_ASSUME_NONNULL_BEGIN
 @property(nonatomic, readonly, strong) UIView *transitionView;
 @property(nonatomic) BOOL animatedWhenTransition;
 
-@property(STPROPERTYNULLABLE nonatomic, copy) IBOutletCollection(UIViewController) NSArray *viewControllers;
+@property(STPROPERTYNULLABLE nonatomic, copy)NSArray<UIViewController *> *viewControllers;
 // If the number of view controllers is greater than the number displayable by a tab bar, a "More" navigation controller will automatically be shown.
 // The "More" navigation controller will not be returned by -viewControllers, but it may be returned by -selectedViewController.
-- (void)setViewControllers:(NSArray *)viewControllers animated:(BOOL)animated;
+- (void)setViewControllers:(NSArray<__kindof UIViewController *> *)viewControllers animated:(BOOL)animated;
 
 @property(STPROPERTYNULLABLE nonatomic, weak) UIViewController *selectedViewController;
 @property(nonatomic) NSUInteger selectedIndex;

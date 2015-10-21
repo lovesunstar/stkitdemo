@@ -50,8 +50,8 @@ ST_ASSUME_NONNULL_END
 @property(STPROPERTYNULLABLE nonatomic, readonly, strong) UIViewController *topViewController; // The top view controller on the stack.
 @property(STPROPERTYNULLABLE nonatomic, readonly, strong) UIViewController *visibleViewController; // Return modal view controller if it exists. Otherwise the top view controller.
 
-@property(STPROPERTYNULLABLE nonatomic, copy) NSArray *viewControllers; // The current view controller stack.
-- (void)setViewControllers:(NSArray * ST_NULLABLE)viewControllers animated:(BOOL)animated; // If animated is YES, then simulate a push or pop depending on whether the new top view controller was
+@property(STPROPERTYNULLABLE nonatomic, copy) NSArray<UIViewController *> *viewControllers; // The current view controller stack.
+- (void)setViewControllers:(NSArray<__kindof UIViewController *> * ST_NULLABLE)viewControllers animated:(BOOL)animated; // If animated is YES, then simulate a push or pop depending on whether the new top view controller was
                                            // previously in the stack.
 @property(STPROPERTYNONNULL nonatomic, readonly) STNavigationBar *navigationBar; // The navigation bar managed by the controller. Pushing, popping or setting navigation
                                                                // items on a managed navigation bar is not supported.
