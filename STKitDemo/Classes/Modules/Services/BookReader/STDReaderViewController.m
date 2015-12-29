@@ -245,7 +245,7 @@
         STNavigationController *navigationController = viewControllers[0];
         NSArray *array1 = navigationController.viewControllers;
         if (array1.count > 0) {
-            STDBookViewController *bookViewController = navigationController.viewControllers[0];
+            STDBookViewController *bookViewController = (STDBookViewController *)navigationController.viewControllers[0];
             firstPage = bookViewController.page == 0;
         }
     }

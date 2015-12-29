@@ -70,7 +70,7 @@
 }
 
 - (void)reloadNavigationTransitionDelegate {
-    STNavigationController *navigationController = [self.viewControllers firstObject];
+    STNavigationController *navigationController = (STNavigationController *)[self.viewControllers firstObject];
     if ([navigationController isKindOfClass:[STNavigationController class]]) {
         navigationController.delegate = [STDSettingViewController allowsCustomNavigationTransition]?[STDRotateTransitionDelegate sharedDelegate]:nil;
     }

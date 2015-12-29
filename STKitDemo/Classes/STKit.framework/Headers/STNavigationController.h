@@ -104,3 +104,15 @@ shouldBeginTransitionContext:(STNavigationControllerTransitionContext * ST_NONNU
 
 - (void)navigationController:(STNavigationController * ST_NONNULL)navigationController didEndTransitionContext:(STNavigationControllerTransitionContext * ST_NONNULL)transitionContext;
 @end
+
+@interface UIViewController (STNavigationCallback)
+// This is a callback, do not need to call super
+- (void)st_didPopViewControllerAnimated:(BOOL)animated;
+
+@end
+
+@interface UIViewController (STNavigationScreenView)
+
+@property(STPROPERTYNULLABLE nonatomic, weak, readonly) UIView *st_superview;
+
+@end

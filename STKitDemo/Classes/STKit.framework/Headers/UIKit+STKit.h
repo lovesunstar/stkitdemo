@@ -14,6 +14,8 @@ ST_EXTERN CGFloat STOnePixel();
 ST_EXTERN CGFloat STGetScreenWidth();
 ST_EXTERN CGFloat STGetScreenHeight();
 
+ST_EXTERN UIView * ST_NULLABLE STGetStatusBarWindow();
+
 ST_EXTERN CGAffineTransform STTransformMakeRotation(CGPoint center, CGPoint anchorPoint, CGFloat angle);
 
 ST_EXTERN CGFloat STGetSystemVersion();

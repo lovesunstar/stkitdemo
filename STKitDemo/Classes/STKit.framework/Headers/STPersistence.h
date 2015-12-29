@@ -67,7 +67,7 @@ extern NSString *STPersistTemporyDirectory();
 - (void)calculateCacheSizeWithCompletionHandler:(void(^)(unsigned long long))completionHandler;
 - (void)calculateCacheSizeInQueue:(STNULLABLE dispatch_queue_t)backgroundQueue completionHandler:(void(^)(unsigned long long))completionHandler;
 /// 这个对 persistenceNamed的无效， persistenceNamed的需要使用reset/removeAllCachedValues来清空
-- (void)removeCachedValuesSinceDate:(STNULLABLE NSDate *)date;
+- (void)removeCachedValuesBeforeDate:(STNULLABLE NSDate *)date;
 /// 
 - (void)removeAllCachedValues;
 

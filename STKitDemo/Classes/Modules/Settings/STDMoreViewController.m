@@ -10,7 +10,6 @@
 
 #import "STDAboutViewController.h"
 #import "STDAppDelegate.h"
-#import "STDBigViewController.h"
 #import "STDSettingViewController.h"
 
 @interface STDMoreViewController ()
@@ -27,10 +26,6 @@
     self = [super initWithStyle:tableViewStyle];
     if (self) {
         NSMutableArray *dataSource = [NSMutableArray arrayWithCapacity:5];
-
-        STDTableViewCellItem *item00 = [[STDTableViewCellItem alloc] initWithTitle:@"豆瓣妹子" target:self action:@selector(_dbMeiziActionFired)];
-        STDTableViewSectionItem *section0 = [[STDTableViewSectionItem alloc] initWithSectionTitle:@"" items:@[item00]];
-        [dataSource addObject:section0];
         
         STDTableViewCellItem *item30 = [[STDTableViewCellItem alloc] initWithTitle:@"开源组件许可" target:self action:@selector(_openSourceLicenseActionFired)];
         STDTableViewCellItem *item31 = [[STDTableViewCellItem alloc] initWithTitle:@"关于STKit" target:self action:@selector(_aboutActionFired)];
@@ -85,11 +80,6 @@
     STDSettingViewController *settingViewController = [[STDSettingViewController alloc] initWithStyle:UITableViewStyleGrouped];
     settingViewController.hidesBottomBarWhenPushed = YES;
     [self.st_navigationController pushViewController:settingViewController animated:YES];
-}
-
-- (void)_dbMeiziActionFired {
-    STDBigViewController *viewController = [[STDBigViewController alloc] init];
-    [self.st_navigationController pushViewController:viewController animated:YES];
 }
 
 - (void)_aboutActionFired {

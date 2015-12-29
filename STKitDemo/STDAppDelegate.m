@@ -15,6 +15,7 @@
 #import <objc/runtime.h>
 #import <objc/message.h>
 
+
 @interface STDAppDelegate ()
 
 @end
@@ -22,6 +23,7 @@
 @implementation STDAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
     [self initializeCustomUserSetting];
     if ([application respondsToSelector:@selector(setStatusBarStyle:)]) {
         application.statusBarStyle = UIStatusBarStyleDefault;
