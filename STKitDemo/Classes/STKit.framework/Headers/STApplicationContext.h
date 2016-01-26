@@ -35,4 +35,6 @@
 /// when openURL, the context will enumerate all URLs to find the appropriate class.
 - (BOOL)registerClass:(Class)class forURLString:(NSString *)URLString;
 
+- (UIViewController *)topmostViewControllerExcludeClasses:(NSArray<NSString *> *)classes;
+
 @end

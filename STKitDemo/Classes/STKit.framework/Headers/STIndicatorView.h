@@ -89,7 +89,7 @@ ST_ASSUME_NONNULL_BEGIN
 @property(nonatomic, weak) id<STIndicatorViewDelegate> delegate;
 
 @property(nonatomic) STIndicatorType indicatorType;
-
+@property(STPROPERTYNONNULL nonatomic, strong, readonly) UIView  *backgroundView;
 @property(nonatomic, readonly, strong) UILabel *textLabel;
 @property(nonatomic, readonly, strong) UILabel *detailLabel;
 /// 是否强制为正方形。 默认NO

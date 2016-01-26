@@ -90,11 +90,11 @@
 }
 
 - (void)showOverlayAnimated:(BOOL)animated {
-    [self setNavigationBarHidden:NO animated:animated];
+    [self st_setNavigationBarHidden:NO animated:animated];
 }
 
 - (void)hideOverlayAnimated:(BOOL)animated {
-    [self setNavigationBarHidden:YES animated:animated];
+    [self st_setNavigationBarHidden:YES animated:animated];
 }
 
 - (void)showOverlayIfNeeded {

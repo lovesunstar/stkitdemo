@@ -116,3 +116,10 @@ shouldBeginTransitionContext:(STNavigationControllerTransitionContext * ST_NONNU
 @property(STPROPERTYNULLABLE nonatomic, weak, readonly) UIView *st_superview;
 
 @end
+
+@interface UIViewController (STNavigationBarVisiblity)
+
+- (void)st_setNavigationBarHidden:(BOOL)st_navigationBarHidden animated:(BOOL)animated;
+- (void)st_setNavigationBarHidden:(BOOL)st_navigationBarHidden animated:(BOOL)animated alongWithAnimations:(nullable void(^)(void))animations;
+
+@end
